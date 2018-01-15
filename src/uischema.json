@@ -1,0 +1,118 @@
+{
+	"type": "VerticalLayout",
+	"elements": [
+		{
+			"type": "HorizontalLayout",
+			"elements": [
+				{
+					"type": "Control",
+					"scope": {
+						"$ref": "#/properties/firstName"
+					}
+				},
+				{
+					"type": "Control",
+					"scope": {
+						"$ref": "#/properties/lastName"
+					}
+				}
+			]
+		},
+		{
+			"type": "HorizontalLayout",
+			"elements": [
+				{
+					"type": "Control",
+					"scope": {
+						"$ref": "#/properties/age"
+					}
+				},
+				{
+					"type": "Control",
+					"scope": {
+						"$ref": "#/properties/dateOfBirth"
+					}
+				}
+			]
+		},
+		{
+			"type": "HorizontalLayout",
+			"elements": [
+				{
+					"type": "Control",
+					"scope": {
+						"$ref": "#/properties/height"
+					}
+				},
+				{
+					"type": "Control",
+					"scope": {
+						"$ref": "#/properties/gender"
+					}
+				},
+				{
+					"type": "Control",
+					"scope": {
+						"$ref": "#/properties/rating"
+					}
+				},
+				{
+					"type": "Control",
+					"scope": {
+						"$ref": "#/properties/committer"
+					}
+				}
+			]
+		},
+		{
+			"type": "Group",
+			"label": "Address for Shipping T-Shirt",
+			"elements": [
+				{
+					"type": "HorizontalLayout",
+					"elements": [
+						{
+							"type": "Control",
+							"scope": {
+								"$ref": "#/properties/address/properties/street"
+							}
+						},
+						{
+							"type": "Control",
+							"scope": {
+								"$ref": "#/properties/address/properties/streetnumber"
+							}
+						}
+					]
+				},
+				{
+					"type": "HorizontalLayout",
+					"elements": [
+						{
+							"type": "Control",
+							"scope": {
+								"$ref": "#/properties/address/properties/postalCode"
+							}
+						},
+						{
+							"type": "Control",
+							"scope": {
+								"$ref": "#/properties/address/properties/city"
+							}
+						}
+					]
+				}
+			],
+			"rule": {
+				"effect": "SHOW",
+				"condition": {
+					"type": "LEAF",
+					"scope": {
+						"$ref": "#/properties/committer"
+					},
+					"expectedValue": true
+				}
+			}
+		}
+	]
+}

@@ -3,14 +3,38 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@jsonforms/core": "^2.0.0-beta.6",
+    "@jsonforms/material-renderers": "^2.0.0-beta.6",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "classnames": "^2.2.5",
+    "global": "^4.3.2",
+    "marked": "^0.3.7",
+    "material-ui": "^1.0.0-beta.29",
+    "material-ui-icons": "^1.0.0-beta.17",
+    "prism": "^4.1.2",
+    "prismjs": "^1.9.0",
+    "radium": "^0.19.6",
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
-    "react-scripts": "1.0.17"
+    "react-markdown": "^3.1.4",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.0.17",
+    "redux": "^3.7.2",
+    "typeface-roboto": "0.0.45"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-preval": "^1.6.2",
+    "prepack": "^0.2.14",
+    "raw-loader": "^0.5.1",
+    "react-docgen": "^2.20.0",
+    "text-loader": "0.0.1"
   }
 }
