@@ -1,6 +1,6 @@
 import React from 'react';
 import {Grid, Typography, withStyles} from "material-ui";
-import commonStyles from "../common/styles";
+import commonStyles from "../../common/styles";
 import Alert from 'material-ui-icons/Error'
 
 const styles = () => ({
@@ -31,7 +31,6 @@ const UiSchemaElements = ({ classes }) => (
         <p>
           Please note that the UI schema hasn't been finalized yet!
           We'll try keep changes to a minimum and only do them if it's an substantial improvement to the framework.
-          Of course, we'll also provide migration guidelines for all breaking changes.
         </p>
         <p>Thanks for your understanding!</p>
       </Grid>

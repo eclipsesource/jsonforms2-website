@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {Button, withStyles} from "material-ui";
-import commonStyles from "./pages/common/styles";
+import commonStyles from "./common/styles";
 
 const styles = () => ({
   link: commonStyles.link,

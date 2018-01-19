@@ -4,11 +4,12 @@ import {Typography, withStyles} from "material-ui";
 import { DispatchRenderer, initJsonFormsStore } from "@jsonforms/core";
 import { Provider } from "react-redux";
 import Radium from 'radium';
-import MarkdownElement from "../../MarkdownElement";
-import Demo from "../../Demo";
 import {UiSchemaElementsCode} from "./listings/uischema";
-import commonStyles from "../common/styles";
-import UISchemaProp from "../common/UISchemaProp";
+import {  } from "../../common";
+import Demo from "../../common/Demo";
+import commonStyles from "../../common/styles";
+import UISchemaProp from "../../common/UISchemaProp";
+import MarkdownElement from "../../common/MarkdownElement";
 
 const styles = () => ({
   code: commonStyles.code,
@@ -42,7 +43,7 @@ const Controls = ({ classes }) => {
       </Typography>
       <p>
         Controls are of
-        type <a href='/api/core/interfaces/scopable.html' className={classes.link}>Scopable</a> and
+        type <a href='/api/core/interfaces/scopable.html' className={classes.link} target="_blank">Scopable</a> and
         represent the basic building blocks for creating forms and propagating data updates.
       </p>
 
@@ -53,7 +54,7 @@ const Controls = ({ classes }) => {
         <a href="https://spacetelescope.github.io/understanding-json-schema/structuring.html#reuse"
            className={classes.link}>
           JSON schema reference
-        </a>&nbsp;
+        </a>,&nbsp;
         allows us to path to a property within the schema.
 
         <p>

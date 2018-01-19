@@ -1,13 +1,12 @@
 import React from 'react'
 import {Link} from "react-router-dom";
 import {Typography, withStyles} from "material-ui";
-import { DispatchRenderer, initJsonFormsStore } from "@jsonforms/core";
-import { Provider } from "react-redux";
+import { initJsonFormsStore } from "@jsonforms/core";
 import Radium from 'radium';
-import MarkdownElement from "../../MarkdownElement";
-import Demo from "../../Demo";
 import {UiSchemaElementsCode} from "./listings/uischema";
-import commonStyles from "../common/styles";
+import MarkdownElement from "../../common/MarkdownElement";
+import commonStyles from "../../common/styles";
+import UISchemaProp from "../../common/UISchemaProp";
 /* eslint import/no-webpack-loader-syntax: off */
 const rule = require('!raw-loader!./listings/rule.md');
 
@@ -62,7 +61,7 @@ const Rules = ({ classes }) => {
         to true, executing the associated <code>effect</code>.
       </p>
 
-      <Typography type={'headline'} className={classes.headline}><code>effect</code></Typography>
+      <UISchemaProp title='effect' type='RuleEffect' link='/api/core/enums/ruleeffect.html'/>
       <p>
         The <code>effect</code> property determines what should happen to the attached UI schema element once
         the <code>condition</code> is met. In the example above, if the <code>name</code> property has the value
@@ -76,7 +75,7 @@ const Rules = ({ classes }) => {
         </ul>
       </p>
 
-      <Typography type={'headline'} className={classes.headline}><code>condition</code></Typography>
+      <UISchemaProp title='condition' type='Condition' link='/api/core/interfaces/condition.html'/>
       <p>
         The <code>condition</code> property describes what value should be observed and compares that value with the
         one provided via <code>expectedValue</code>. The format for describing the scope is the same as for regular

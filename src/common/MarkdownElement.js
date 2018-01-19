@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { withStyles } from 'material-ui/styles';
 import marked from 'marked';
-import prism from './utils/prism';
+import prism from '../utils/prism';
 
 //
 // Based on https://github.com/mui-org/material-ui/blob/v1-beta/docs/src/modules/components/MarkdownElement.js

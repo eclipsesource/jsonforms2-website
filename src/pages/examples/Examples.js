@@ -2,12 +2,12 @@ import React from 'react';
 import {Grid, Typography, withStyles} from "material-ui";
 import {Link, Route, Switch} from "react-router-dom";
 import Radium from 'radium';
-import commonStyles from "../common/styles";
-import UnderConstruction from "../common/UnderConstruction";
-import {generateLinks} from "../common/gen-links";
+import commonStyles from "../../common/styles";
+import UnderConstruction from "../../common/UnderConstruction";
+import {generateLinks} from "../../common/gen-links";
 
 import Person from "./Person";
-import Layouts from "./Layouts";
+import Layouts from "./LayoutExamples";
 import Array from "./Array";
 import CategorizationExample from "./Categorization";
 import RuleExample from "./RuleExample";

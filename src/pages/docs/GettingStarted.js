@@ -1,7 +1,7 @@
 import React from 'react';
 import {Typography, withStyles} from "material-ui";
-import MarkdownElement from "../../MarkdownElement";
-import commonStyles from "../common/styles";
+import MarkdownElement from "../../common/MarkdownElement";
+import commonStyles from "../../common/styles";
 /* eslint import/no-webpack-loader-syntax: off */
 const init = require('!raw-loader!./listings/init.md');
 const existingRedux = require('!raw-loader!./listings/existing-redux.md');

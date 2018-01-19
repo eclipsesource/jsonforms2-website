@@ -4,12 +4,11 @@ import {Route, Switch} from "react-router-dom";
 import Intro from "./Intro";
 import GettingStarted from "./GettingStarted";
 import CustomRenderers from './CustomRenderers';
-import commonStyles from '../common/styles'
-import API from "./API";
+import commonStyles from '../../common/styles'
 import UISchemaElements from "./UISchemaElements";
 import Controls from "./Controls";
 import Layouts from "./Layouts";
-import {generateLinks} from "../common/gen-links";
+import {generateLinks} from "../../common/gen-links";
 import Rules from "./Rules";
 
 const styles = () => ({
@@ -39,7 +38,6 @@ const Docs = ({ classes, match, location }) => (
         <Route path={`${match.url}/uischema/rules`} component={Rules}/>
         <Route path={`${match.url}/uischema`} component={UISchemaElements}/>
         <Route path={`${match.url}/custom-renderers`} component={CustomRenderers}/>
-        <Route path={`${match.url}/api`} component={API}/>
         <Route path={match.url} render={() => (
           <div>
             <Typography type="headline">Documentation</Typography>
@@ -88,12 +86,11 @@ const Docs = ({ classes, match, location }) => (
               slug: 'custom-renderers',
               name: 'Custom renderers'
             },
-            {
-              slug: 'api',
-              name: 'API'
-            }
           ])
         }
+        <li>
+          <a href='/api/core/index.html' className={classes.link} target="_blank">API</a>
+        </li>
       </ul>
     </Grid>
   </Grid>

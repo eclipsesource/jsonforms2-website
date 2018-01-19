@@ -1,7 +1,7 @@
 import React from 'react';
 import {Grid, Typography, withStyles} from "material-ui";
-import commonStyles from './common/styles';
-import UnderConstruction from "./common/UnderConstruction";
+import commonStyles from '../common/styles';
+import UnderConstruction from "../common/UnderConstruction";
 
 const styles = () => ({
   grid: commonStyles.grid,

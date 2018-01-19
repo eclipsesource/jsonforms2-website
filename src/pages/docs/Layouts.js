@@ -6,11 +6,8 @@ import { DispatchRenderer, initJsonFormsStore } from "@jsonforms/core";
 import { layout } from '@jsonforms/examples';
 import { Provider } from "react-redux";
 import Radium from 'radium';
-import Demo from "../../Demo";
-import commonStyles from "../common/styles";
 import layouts from './listings/layouts'
-import MarkdownElement from "../../MarkdownElement";
-import UISchemaProp from "../common/UISchemaProp";
+import { Demo, MarkdownElement, commonStyles, UISchemaPropTitle, ApiLink } from '../../common';
 
 const styles = () => ({
   code: commonStyles.code,
@@ -54,19 +51,19 @@ const Layouts = ({ classes }) => (
       Layouts
     </Typography>
     <p>
-      Layouts serve the purpose of structuring UI schema elements
-      like <RadiumLink to='/docs/uischema/controls' className={classes.link}>Controls</RadiumLink> or
+      <a href="/api/core/interfaces/layout.html" target="_blank" className={classes.link}>Layouts</a> serve
+      the purpose of structuring UI schema elements like <RadiumLink to='/docs/uischema/controls' className={classes.link}>Controls</RadiumLink> or
       other layouts.
     </p>
 
-    <UISchemaProp title='elements' type='UISchemaElement[]'/>
+    <UISchemaPropTitle title='elements' type='UISchemaElement[]' link={'/api/core/interfaces/uischemaelement.html'}/>
     <p>
       All layouts need to declare an <code>elements</code> property which contains the children which are
       to be arranged by the layout. It is expected to be an array of UI Schema elements, e.g. controls
       or other layouts.
     </p>
 
-    <UISchemaProp title='type' type='string'/>
+    <UISchemaPropTitle title='type' type='string'/>
     By default, JSON Forms supports four different kinds of layouts: <code>VerticalLayout</code>&nbsp;
     and <code>HorizontalLayout</code>, a slightly modified version of the vertical layout called <code>Group</code>,
     as well <code>Categorization</code>, which is often used to bundle related data, for instance by means of Tabs.
@@ -76,7 +73,8 @@ const Layouts = ({ classes }) => (
       Horizontal Layout (<RadiumHashLink to={'/examples/layouts#horizontal-layout'} className={classes.link}>Demo</RadiumHashLink>)
     </Typography>
     <p>
-      A horizontal layout uses the <code>HorizontalLayout</code> type and arranges its <code>elements</code> in a
+      A <ApiLink link={'/api/core/interfaces/horizontallayout.html'}>Horizontal Layout</ApiLink> uses
+      the <code>HorizontalLayout</code> type and arranges its <code>elements</code> in a
       horizontal fashion. Each child occupies the same amount of space, i.e. for n children a child occupies 1/n space.
     </p>
     <MarkdownElement
@@ -96,7 +94,7 @@ const Layouts = ({ classes }) => (
       Vertical Layout (<RadiumHashLink to={'/examples/layouts#vertical-layout'} className={classes.link}>Demo</RadiumHashLink>)
     </Typography>
     <p>
-      A vertical layout uses the <code>VerticalLayout</code> type and arranges its <code>elements</code> in a
+      A <ApiLink link='/api/core/interfaces/verticallayout.html'>Vertical Layout</ApiLink> uses the <code>VerticalLayout</code> type and arranges its <code>elements</code> in a
       vertical fashion, i.e. all elements are placed beneath each other.
     </p>
 
@@ -117,13 +115,14 @@ const Layouts = ({ classes }) => (
       Group (<RadiumHashLink to={'/examples/layouts#group-layout'} className={classes.link}>Demo</RadiumHashLink>)
     </Typography>
     <p>
-      A Group is very similar to a <code>VerticalLayout</code> but features an additional mandatory <code>label</code>
-      property that is used to describe the <code>elements</code>.
+      A <ApiLink link='/api/core/interfaces/group.html'>Group</ApiLink> is very similar to
+      a <code>VerticalLayout</code> but features an additional mandatory <code>label</code> property
+      that is used to describe the <code>elements</code>.
     </p>
-    <UISchemaProp title='label' type='string'/>
+    <UISchemaPropTitle title='label' type='string'/>
     <p>
-      The label property defines an additional string that is ought to describe the <code>elements</code> of the
-      <code>Group</code>.
+      The label property defines an additional string that is ought to describe the <code>elements</code> of
+      the <code>Group</code>.
     </p>
 
     <MarkdownElement
@@ -137,7 +136,8 @@ const Layouts = ({ classes }) => (
       Categorization
     </Typography>
     <p>
-      A categorization layout uses the <code>Categorization</code> type and can only contain <code>elements</code>
+      A <ApiLink link='/api/core/interfaces/categorization.html'>Categorization</ApiLink> layout uses
+      the <code>Categorization</code> type and can only contain <code>elements</code>
       of type <code>Category</code>. A <code>Category</code> itself acts as a container and has an <code>elements</code>
       of its own as well as a <code>label</code> that describes the contained data.
       Categorizations are typically used to structure different data bits which belong together.

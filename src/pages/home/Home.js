@@ -4,10 +4,10 @@ import FeaturesIcon from 'material-ui-icons/Report';
 import CustomizeIcon from 'material-ui-icons/Brush';
 import { DispatchRenderer, initJsonFormsStore }  from '@jsonforms/core'
 import { Provider } from 'react-redux';
-import Logo from './logo'
 import schema from './schema.json';
 import uischema from './uischema.json';
-import Demo from "./Demo";
+
+import { Demo, Logo } from '../../common'
 import schemaLogo from './schemalogo.svg';
 
 const styles = () => ({

@@ -2,11 +2,11 @@ import React from 'react';
 import {Typography, withStyles} from "material-ui";
 import { Provider } from 'react-redux';
 import { DispatchRenderer, initJsonFormsStore, registerRenderer } from '@jsonforms/core';
-import Demo from "../../Demo";
 import RatingControl from './RatingControl';
 import { ratingControlTester } from './rating.tester';
-import MarkdownElement from "../../MarkdownElement";
-import commonStyles from '../common/styles';
+import MarkdownElement from "../../common/MarkdownElement";
+import Demo from "../../common/Demo";
+import commonStyles from '../../common/styles';
 /* eslint import/no-webpack-loader-syntax: off */
 const seed = require('!raw-loader!./listings/seed.md');
 const ratingControlCode = require('!raw-loader!./RatingControl.jsx');

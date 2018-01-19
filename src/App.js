@@ -6,16 +6,16 @@ import {
   Switch,
 } from 'react-router-dom';
 import {AppBar, Button, Toolbar, Typography, withStyles} from "material-ui";
+import 'typeface-roboto'
 import Radium from 'radium';
 import './App.css';
-import Home from './Home';
-import 'typeface-roboto'
+import Home from './pages/home/Home';
 import Imprint from "./pages/Imprint";
 import Docs from "./pages/docs/Docs";
 import Examples from "./pages/examples/Examples";
 import Support from "./pages/Support";
 import Footer from "./Footer";
-import commonStyles from "./pages/common/styles";
+import { commonStyles, Logo } from './common';
 
 const styles = theme => ({
   root: {
@@ -68,14 +68,13 @@ class App extends Component {
         <div className={classes.main}>
           <AppBar className={classes.appBar}>
             <Toolbar>
+              <RadiumLink to='/' style={{ alignItems: 'center', display: 'flex' }}>
+                <Logo width={45} height={30} color='#fff'/>
+              </RadiumLink>
+              &nbsp;
               <Typography type="title" color="inherit" className={classes.flex}>
                 JSONForms
               </Typography>
-              <Button
-                component={({...props}) => <RadiumLink to='/' {...props} className={classes.link}/>}
-              >
-                Home
-              </Button>
               <Button
                 component={({...props}) => <RadiumLink to='/examples' {...props} className={classes.link} />}
               >

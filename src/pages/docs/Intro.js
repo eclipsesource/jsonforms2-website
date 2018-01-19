@@ -3,14 +3,11 @@ import Radium from 'radium';
 import { Link } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import {Grid, Typography, withStyles} from "material-ui";
-import Demo from "../../Demo";
 import DispatchRenderer, { initJsonFormsStore, registerRenderer } from '@jsonforms/core';
 import { IntroCode } from './listings/intro';
-import MarkdownElement from "../../MarkdownElement";
 import RatingControl from './RatingControl';
 import { ratingControlTester} from "./rating.tester";
-import commonStyles from '../common/styles';
-import Logo from '../../logo';
+import { Demo, MarkdownElement, commonStyles, Logo } from '../../common';
 
 const RadiumLink = Radium(Link);
 

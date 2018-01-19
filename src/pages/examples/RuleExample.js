@@ -3,7 +3,7 @@ import { rule } from '@jsonforms/examples';
 import { DispatchRenderer, initJsonFormsStore } from '@jsonforms/core';
 import { Provider } from 'react-redux';
 import {Typography, withStyles} from "material-ui";
-import commonStyles from "../common/styles";
+import commonStyles from "../../common/styles";
 
 const styles = () => ({
   display1: commonStyles.display1
