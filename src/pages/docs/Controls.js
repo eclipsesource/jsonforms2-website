@@ -12,6 +12,7 @@ import commonStyles from "../common/styles";
 const styles = () => ({
   code: commonStyles.code,
   display1: commonStyles.display1,
+  headline: commonStyles.headline,
   link: commonStyles.link,
   caption: {
     display: 'flex',

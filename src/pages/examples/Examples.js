@@ -4,82 +4,77 @@ import {Link, Route, Switch} from "react-router-dom";
 import Radium from 'radium';
 import commonStyles from "../common/styles";
 import UnderConstruction from "../common/UnderConstruction";
+import {generateLinks} from "../common/gen-links";
+
+import Person from "./Person";
+import Layouts from "./Layouts";
+import Array from "./Array";
+import CategorizationExample from "./Categorization";
+import RuleExample from "./RuleExample";
 
 const RadiumLink = Radium(Link);
 
-const Basic = () => (
-  <h1>Basic</h1>
-);
-
-const Layouts = () => (
-  <h1>Layouts</h1>
-);
-
-const Array = () => (
-  <h1>Array</h1>
-);
-
 const styles = () => ({
   link: commonStyles.link,
-  grid: commonStyles.grid
+  grid: commonStyles.grid,
+  mainSection: commonStyles.mainSection,
+  sidebar: commonStyles.sidebar,
 });
 
-const Examples = ({ classes, match }) => (
+const Examples = ({ classes, location, match }) => (
   <Grid container
         spacing={0}
         className={classes.grid}
         alignItems={'stretch'}
   >
-    <Grid item xs={1}></Grid>
-    <Grid item xs={7}>
+    <Grid item xs={1}/>
+    <Grid item xs={6} className={classes.mainSection}>
       <Switch>
-        <Route path={`${match.url}/basic`} component={Basic}/>
+        <Route path={`${match.url}/basic`} component={Person}/>
         <Route path={`${match.url}/layouts`} component={Layouts}/>
-        <Route path={`${match.url}/uischema`} component={Array}/>
-        <Route exact path={match.url} render={() => (
+        <Route path={`${match.url}/array`} component={Array}/>
+        <Route path={`${match.url}/categorization`} component={CategorizationExample}/>
+        <Route path={`${match.url}/rule`} component={RuleExample}/>
+        <Route path={match.url} render={() => (
           <div>
             <Typography type="headline">Examples</Typography>
+            <p>
+              Each example runs in an isolated environemnt with its own redux store.
+            </p>
             <UnderConstruction />
           </div>
         )}/>
       </Switch>
     </Grid>
-    <Grid item xs={3}>
+    <Grid item xs={2} />
+    <Grid item xs={3} className={classes.sidebar}>
       <ul style={{ listStyleType: 'none' }}>
-        <li>
-          <RadiumLink to={`${match.url}/basic`} className={classes.link}>
-            Basic Use-case with validation
-          </RadiumLink>
-        </li>
-        <li>
-          <RadiumLink to={`${match.url}/layouts`} className={classes.link}>
-            Layouts
-          </RadiumLink>
-        </li>
-        <li>
-          <RadiumLink
-            to={`${match.url}/array`}
-            className={classes.link}
-          >
-            Array control
-          </RadiumLink>
-        </li>
-        <li>
-          <RadiumLink
-            to={`${match.url}/categories`}
-            className={classes.link}
-          >
-            Categories control
-          </RadiumLink>
-        </li>
-        <li>
-          <RadiumLink
-            to={`${match.url}/rule`}
-            className={classes.link}
-          >
-            Rule
-          </RadiumLink>
-        </li>
+        {
+          generateLinks(
+            location.pathname, classes, match.url, [
+              {
+                slug: 'basic',
+                name: 'Basic person example with validation'
+              },
+              {
+                slug: 'layouts',
+                name: 'Layouts',
+              },
+              {
+                slug: 'array',
+                name: 'Array'
+              },
+              {
+                slug: 'categorization',
+                name: 'Categorization'
+              },
+              {
+                slug: 'rule',
+                name: 'Rule'
+              }
+            ]
+          )
+        }
         <li>
           <RadiumLink
             to={`${match.url}/uischema`}

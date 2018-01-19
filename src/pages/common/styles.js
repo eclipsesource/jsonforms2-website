@@ -28,11 +28,19 @@ export default {
     padding: '0.5em',
     lineHeight: '1.7',
   },
+  sidebarLinks: {
+    listStyleType: 'none',
+    paddingTop: 0,
+    paddingBottom: 0,
+  },
   display1: {
     paddingTop: '0.5em',
     paddingBottom: '0.5em',
   },
   headline: {
+    marginTop: '0.5em'
+  },
+  title: {
     marginTop: '0.5em'
   },
   caption: {

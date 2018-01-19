@@ -5,6 +5,7 @@
   "homepage": "https://edgarmueller.github.io/jsonforms2-website",
   "dependencies": {
     "@jsonforms/core": "^2.0.0-beta.6",
+    "@jsonforms/examples": "^2.0.0-beta.6",
     "@jsonforms/material-renderers": "^2.0.0-beta.6",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "classnames": "^2.2.5",
@@ -20,6 +21,7 @@
     "react-markdown": "^3.1.4",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
+    "react-router-hash-link": "^1.1.1",
     "react-scripts": "1.0.17",
     "redux": "^3.7.2",
     "typeface-roboto": "0.0.45"
@@ -30,7 +32,7 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"  
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

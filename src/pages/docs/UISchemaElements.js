@@ -1,6 +1,7 @@
 import React from 'react';
-import {Typography, withStyles} from "material-ui";
+import {Grid, Typography, withStyles} from "material-ui";
 import commonStyles from "../common/styles";
+import Alert from 'material-ui-icons/Error'
 
 const styles = () => ({
   display1: commonStyles.display1
@@ -21,6 +22,20 @@ const UiSchemaElements = ({ classes }) => (
       The type of an element can be specified via the type property.
       In this article, we provide a detailed overview about the currently available core UI schema elements.
     </p>
+
+    <Grid container style={{ backgroundColor: '#F44336', color: '#fff', borderRadius: '0.25em', padding: '0.25em', marginTop: '1em' }}>
+      <Grid item xs={1}>
+        <Alert style={{ width: '100%', height: '100%' }}/>
+      </Grid>
+      <Grid item xs={11}>
+        <p>
+          Please note that the UI schema hasn't been finalized yet!
+          We'll try keep changes to a minimum and only do them if it's an substantial improvement to the framework.
+          Of course, we'll also provide migration guidelines for all breaking changes.
+        </p>
+        <p>Thanks for your understanding!</p>
+      </Grid>
+    </Grid>
   </div>
 );
 

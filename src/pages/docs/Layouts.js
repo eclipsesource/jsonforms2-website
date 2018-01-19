@@ -1,35 +1,30 @@
 import React from 'react'
 import {Link} from "react-router-dom";
+import { HashLink } from 'react-router-hash-link'
 import {Typography, withStyles} from "material-ui";
 import { DispatchRenderer, initJsonFormsStore } from "@jsonforms/core";
+import { layout } from '@jsonforms/examples';
 import { Provider } from "react-redux";
 import Radium from 'radium';
 import Demo from "../../Demo";
 import commonStyles from "../common/styles";
 import layouts from './listings/layouts'
+import MarkdownElement from "../../MarkdownElement";
 
 const styles = () => ({
   code: commonStyles.code,
   display1: commonStyles.display1,
   link: commonStyles.link,
-  caption: {
-    display: 'flex',
-    justifyContent: 'center',
-    marginTop: '-1em',
-    marginBottom: '0.5em'
-  }
+  caption: commonStyles.caption,
+  headline: commonStyles.headline,
+  title: commonStyles.headline,
 });
 
 const RadiumLink = Radium(Link);
+const RadiumHashLink = Radium(HashLink);
 
 const data = layouts.data;
 const schema = layouts.schema;
-
-const verticalLayoutStore = initJsonFormsStore({
-  data,
-  schema,
-  uischema: layouts.verticalLayout,
-});
 
 const groupStore = initJsonFormsStore({
   data,
@@ -60,36 +55,52 @@ const Layouts = ({ classes }) => (
     <p>
       Layouts serve the purpose of structuring UI schema elements
       like <RadiumLink to='/docs/uischema/controls' className={classes.link}>Controls</RadiumLink> or
-      other UI layouts.
-    </p>
-    <p>
-      All layouts need to declare an <code>elements</code> property which contains the children which are
-      to be layout.
+      other layouts.
     </p>
 
-    <Typography type='headline'>
-      Vertical Layout
+    <Typography type={'headline'} className={classes.headline}><code>elements</code></Typography>
+    <p>
+      All layouts need to declare an <code>elements</code> property which contains the children which are
+      to be arranged by the layout. It is expected to be an array. See the different types of layouts
+      on this page for examples.
+    </p>
+
+    <Typography type={'headline'} className={classes.headline}><code>type</code></Typography>
+    By default, JSON Forms supports four different kinds of layouts: <code>VerticalLayout</code>&nbsp;
+    and <code>HorizontalLayout</code>, a slightly modified version of the vertical layout called <code>Group</code>,
+    as well <code>Categorization</code>, which is often used to bundle related data, for instance within Tabs.
+
+
+    <Typography type='title' className={classes.title}>
+      Horizontal Layout (<RadiumHashLink to={'/examples/layouts#horizontal-layout-example'} className={classes.link}>Demo</RadiumHashLink>)
+    </Typography>
+    <p>
+      A horizontal layout uses the <code>HorizontalLayout</code> type and arranges its <code>elements</code> in a
+      horizontal fashion. Each child occupies the same amount of space, i.e. for n children a child occupies 1/n space.
+    </p>
+    <MarkdownElement
+      dir="ltr"
+      className={classes.code}
+      text={`\`\`\`json\n${JSON.stringify(layout.uischemaHorizontal, null, 2)}\n\`\`\``}
+    />
+    <Typography type={'caption'} className={classes.caption}>Example of a Horizontal Layout</Typography>
+
+    <Typography type='title' className={classes.title}>
+      Vertical Layout (<RadiumLink to={'/examples/layouts#vertical-layout-example'} className={classes.link}>Demo</RadiumLink>)
     </Typography>
     <p>
       A vertical layout uses the <code>VerticalLayout</code> type and arranges its <code>elements</code> in a
-      vertical fashion.
+      vertical fashion
     </p>
-    <Provider store={verticalLayoutStore}>
-      <Demo
-        js={() => {
-          return (
-            <DispatchRenderer
-              schema={schema}
-              uischema={layouts.verticalLayout.uischema}
-            />
-          )
-        }}
-        schema={schema}
-        uischema={layouts.verticalLayout.uischema}
-      />
-    </Provider>
 
-    <Typography type='headline'>
+    <MarkdownElement
+      dir="ltr"
+      className={classes.code}
+      text={`\`\`\`json\n${JSON.stringify(layout.uischemaVertical, null, 2)}\n\`\`\``}
+    />
+    <Typography type={'caption'} className={classes.caption}>Example of a Vertical Layout</Typography>
+
+    <Typography type='title' className={classes.title}>
       Group
     </Typography>
     <p>
@@ -112,28 +123,6 @@ const Layouts = ({ classes }) => (
     </Provider>
 
     <Typography type='headline'>
-      Horizontal Layout
-    </Typography>
-    <p>
-      A horizontal layout uses the <code>HorizontalLayout</code> type and arranges its <code>elements</code> in a
-      horizontal fashion.
-    </p>
-    <Provider store={horizontalStore}>
-      <Demo
-        js={() => {
-          return (
-            <DispatchRenderer
-              schema={schema}
-              uischema={layouts.horizontalLayout}
-            />
-          )
-        }}
-        schema={schema}
-        uischema={layouts.horizontalLayout}
-      />
-    </Provider>
-
-    <Typography type='headline'>
       Categorization
     </Typography>
     <p>
@@ -142,7 +131,7 @@ const Layouts = ({ classes }) => (
       of its own as well as a <code>label</code> that describes the contained data.
       Categorizations are typically used to structure different data bits which belong together.
     </p>
-    <Provider store={horizontalStore}>
+    <Provider store={categorizationStore}>
       <Demo
         js={() => {
           return (
