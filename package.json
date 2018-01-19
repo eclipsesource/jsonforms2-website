@@ -2,7 +2,7 @@
   "name": "jsonforms2-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://edgarmueller.github.io/jsonforms2-website",
+  "homepage": "https://jsonforms-beta.de",
   "dependencies": {
     "@jsonforms/core": "^2.0.0-beta.6",
     "@jsonforms/examples": "^2.0.0-beta.6",
