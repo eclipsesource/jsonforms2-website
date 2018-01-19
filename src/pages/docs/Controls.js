@@ -8,6 +8,7 @@ import MarkdownElement from "../../MarkdownElement";
 import Demo from "../../Demo";
 import {UiSchemaElementsCode} from "./listings/uischema";
 import commonStyles from "../common/styles";
+import UISchemaProp from "../common/UISchemaProp";
 
 const styles = () => ({
   code: commonStyles.code,
@@ -40,8 +41,28 @@ const Controls = ({ classes }) => {
         Controls
       </Typography>
       <p>
-        Controls are the basic building blocks for creating forms and are responsible for
-        propagating data updates. They expect a mandatory <code>scope</code> property that describes
+        Controls are of
+        type <a href='/api/core/interfaces/scopable.html' className={classes.link}>Scopable</a> and
+        represent the basic building blocks for creating forms and propagating data updates.
+      </p>
+
+      <UISchemaProp title='scope' type='string' />
+      <p>
+        The type of the actually rendered control depends on what subschema it is bound against.
+        The <code>scope</code> property, which expects a&nbsp;
+        <a href="https://spacetelescope.github.io/understanding-json-schema/structuring.html#reuse"
+           className={classes.link}>
+          JSON schema reference
+        </a>&nbsp;
+        allows us to path to a property within the schema.
+
+        <p>
+          For instance, if the <code>scope</code> property points to something of type <code>string</code>,
+          JSON Forms will render a text field, but if the property is of type <code>boolean</code>, a checkbox
+          will be rendered.
+        </p>
+
+        They expect a mandatory <code>scope</code> property that describes
         against which part of the schema they should bind to.
       </p>
       <p>
@@ -86,12 +107,6 @@ const Controls = ({ classes }) => {
           uischema={UiSchemaElementsCode.controls.uischema}
         />
       </Provider>
-
-      <p>
-        The actually rendered component is dependent of the type of the property the <code>scope</code> refers to,
-        for instance JSON Forms will render a text field, if the property is of type <code>string</code>, but a checkbox if
-        the type is <code>boolean</code>.
-      </p>
 
       <p>
         JSON Forms ships with default renderers for all primitive types as well as for arrays and allows controls to be

@@ -10,6 +10,7 @@ import Demo from "../../Demo";
 import commonStyles from "../common/styles";
 import layouts from './listings/layouts'
 import MarkdownElement from "../../MarkdownElement";
+import UISchemaProp from "../common/UISchemaProp";
 
 const styles = () => ({
   code: commonStyles.code,
@@ -58,21 +59,21 @@ const Layouts = ({ classes }) => (
       other layouts.
     </p>
 
-    <Typography type={'headline'} className={classes.headline}><code>elements</code></Typography>
+    <UISchemaProp title='elements' type='UISchemaElement[]'/>
     <p>
       All layouts need to declare an <code>elements</code> property which contains the children which are
-      to be arranged by the layout. It is expected to be an array. See the different types of layouts
-      on this page for examples.
+      to be arranged by the layout. It is expected to be an array of UI Schema elements, e.g. controls
+      or other layouts.
     </p>
 
-    <Typography type={'headline'} className={classes.headline}><code>type</code></Typography>
+    <UISchemaProp title='type' type='string'/>
     By default, JSON Forms supports four different kinds of layouts: <code>VerticalLayout</code>&nbsp;
     and <code>HorizontalLayout</code>, a slightly modified version of the vertical layout called <code>Group</code>,
-    as well <code>Categorization</code>, which is often used to bundle related data, for instance within Tabs.
+    as well <code>Categorization</code>, which is often used to bundle related data, for instance by means of Tabs.
 
-
+    {/* HORIZONTAL LAYOUT */}
     <Typography type='title' className={classes.title}>
-      Horizontal Layout (<RadiumHashLink to={'/examples/layouts#horizontal-layout-example'} className={classes.link}>Demo</RadiumHashLink>)
+      Horizontal Layout (<RadiumHashLink to={'/examples/layouts#horizontal-layout'} className={classes.link}>Demo</RadiumHashLink>)
     </Typography>
     <p>
       A horizontal layout uses the <code>HorizontalLayout</code> type and arranges its <code>elements</code> in a
@@ -83,14 +84,20 @@ const Layouts = ({ classes }) => (
       className={classes.code}
       text={`\`\`\`json\n${JSON.stringify(layout.uischemaHorizontal, null, 2)}\n\`\`\``}
     />
-    <Typography type={'caption'} className={classes.caption}>Example of a Horizontal Layout</Typography>
+    <Typography
+      type={'caption'}
+      className={classes.caption}
+    >
+      Example of a Horizontal Layout UI schema placing two controls side-by-side
+    </Typography>
 
+    {/* VERTICAL LAYOUT */}
     <Typography type='title' className={classes.title}>
-      Vertical Layout (<RadiumLink to={'/examples/layouts#vertical-layout-example'} className={classes.link}>Demo</RadiumLink>)
+      Vertical Layout (<RadiumHashLink to={'/examples/layouts#vertical-layout'} className={classes.link}>Demo</RadiumHashLink>)
     </Typography>
     <p>
       A vertical layout uses the <code>VerticalLayout</code> type and arranges its <code>elements</code> in a
-      vertical fashion
+      vertical fashion, i.e. all elements are placed beneath each other.
     </p>
 
     <MarkdownElement
@@ -98,30 +105,34 @@ const Layouts = ({ classes }) => (
       className={classes.code}
       text={`\`\`\`json\n${JSON.stringify(layout.uischemaVertical, null, 2)}\n\`\`\``}
     />
-    <Typography type={'caption'} className={classes.caption}>Example of a Vertical Layout</Typography>
+    <Typography
+      type={'caption'}
+      className={classes.caption}
+    >
+      Example of a Vertical Layout placing two controls vertically
+    </Typography>
 
+    {/* GROUP */}
     <Typography type='title' className={classes.title}>
-      Group
+      Group (<RadiumHashLink to={'/examples/layouts#group-layout'} className={classes.link}>Demo</RadiumHashLink>)
     </Typography>
     <p>
-      A Group is very similiar to a <code>VerticalLayout</code> but features an additional mandatory <code>label</code>
+      A Group is very similar to a <code>VerticalLayout</code> but features an additional mandatory <code>label</code>
       property that is used to describe the <code>elements</code>.
     </p>
-    <Provider store={groupStore}>
-      <Demo
-        js={() => {
-          return (
-            <DispatchRenderer
-              schema={schema}
-              uischema={layouts.group}
-            />
-          )
-        }}
-        schema={schema}
-        uischema={layouts.group}
-      />
-    </Provider>
+    <UISchemaProp title='label' type='string'/>
+    <p>
+      The label property defines an additional string that is ought to describe the <code>elements</code> of the
+      <code>Group</code>.
+    </p>
 
+    <MarkdownElement
+      dir="ltr"
+      className={classes.code}
+      text={`\`\`\`json\n${JSON.stringify(layout.uischemaGroup, null, 2)}\n\`\`\``}
+    />
+
+    {/* CATEGORIZATION */}
     <Typography type='headline'>
       Categorization
     </Typography>
@@ -133,14 +144,7 @@ const Layouts = ({ classes }) => (
     </p>
     <Provider store={categorizationStore}>
       <Demo
-        js={() => {
-          return (
-            <DispatchRenderer
-              schema={schema}
-              uischema={layouts.categorization}
-            />
-          )
-        }}
+        js={() => <DispatchRenderer/> }
         schema={schema}
         uischema={layouts.categorization}
       />
