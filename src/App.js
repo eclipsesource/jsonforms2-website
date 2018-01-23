@@ -28,13 +28,15 @@ const styles = theme => ({
     flexDirection: 'column'
   },
   appBar: {
-    minHeight: '5vh',
+    minHeight: '4em',
     margin: 0,
     backgroundColor: '#212121',
+    boxShadow: 'none',
+    padding: 0
   },
   content: {
     display: 'flex',
-    paddingTop: '7vh',
+    paddingTop: '4em',
     flex: 1,
     padding: '0em'
   },
