@@ -28,7 +28,7 @@ const Examples = ({ classes, location, match }) => (
         alignItems={'stretch'}
   >
     <Grid item xs={1}/>
-    <Grid item xs={6} className={classes.mainSection}>
+    <Grid item xs={7} className={classes.mainSection}>
       <Switch>
         <Route path={`${match.url}/basic`} component={Person}/>
         <Route path={`${match.url}/layouts`} component={Layouts}/>
@@ -46,7 +46,7 @@ const Examples = ({ classes, location, match }) => (
         )}/>
       </Switch>
     </Grid>
-    <Grid item xs={2} />
+    <Grid item xs={1} />
     <Grid item xs={3} className={classes.sidebar}>
       <ul style={{ listStyleType: 'none' }}>
         {
