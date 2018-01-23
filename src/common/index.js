@@ -1,3 +1,7 @@
+import { HashLink } from 'react-router-hash-link'
+import { Link } from 'react-router-dom';
+import Radium from 'radium';
+
 import commonStyles from './styles';
 import MarkdownElement from './MarkdownElement';
 import Demo from './Demo';
@@ -12,3 +16,7 @@ export { MarkdownElement };
 export { UISchemaPropTitle };
 export { ApiLink }
 export { Logo };
+
+
+export const RadiumLink = Radium(Link);
+export const RadiumHashLink = Radium(HashLink);
