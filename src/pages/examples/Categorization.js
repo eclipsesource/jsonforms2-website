@@ -4,6 +4,7 @@ import { DispatchRenderer, initJsonFormsStore } from '@jsonforms/core';
 import { Provider } from 'react-redux';
 import {Typography, withStyles} from "material-ui";
 import commonStyles from "../../common/styles";
+import Demo from "../../common/Demo";
 
 const styles = () => ({
   display1: commonStyles.display1
@@ -31,7 +32,13 @@ const CategorizationExample = ({ classes }) => {
         Categorization Control
       </Typography>
       <Provider store={store}>
-        <DispatchRenderer />
+        <Demo
+          schema={categorization.schema}
+          uischema={categorization.uischema}
+          js={() => (
+            <DispatchRenderer />
+          )}
+        />
       </Provider>
     </div>
   );
