@@ -1,5 +1,6 @@
 import React from 'react';
 import {Card, CardContent, Grid, Typography, withStyles} from "material-ui";
+import { commonStyles } from '../common';
 
 const styles = () => ({
   root: {
@@ -14,6 +15,10 @@ const styles = () => ({
     display: 'flex',
     justifyContent: 'center',
   },
+  display1: commonStyles.display1,
+  p: {
+    paddingTop: '0.5em'
+  }
 });
 
 const Imprint = ({ classes }) => (
@@ -23,7 +28,7 @@ const Imprint = ({ classes }) => (
         <div className={classes.container}>
           <Card className={classes.card}>
             <CardContent>
-              <Typography type="headline">Imprint</Typography>
+              <Typography type="display1" className={classes.display1}>Imprint</Typography>
               <address>
                 EclipseSource München GmbH<br/>
                 Agnes-Pockels-Bogen 1<br/>
@@ -31,14 +36,14 @@ const Imprint = ({ classes }) => (
                 Germany<br/>
               </address>
 
-              <p>
+              <p className={classes.p}>
                 Email: munich@eclipsesource.com<br/>
                 Web: http://eclipsesource.com/munich<br/>
                 Phone: +49 89 21 555 301<br/>
                 Fax: +49 89 21 555 302<br/>
               </p>
 
-              <p>
+              <p className={classes.p}>
                 General Managers: Dr. Jonas Helming, Dr. Maximilian Kögel<br/>
                 Registered Office: Agnes-Pockels-Bogen 1, 80992 München, Commercial Register München, HRB 191789
               </p>
