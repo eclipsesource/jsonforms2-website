@@ -115,7 +115,7 @@ const Layouts = ({ classes }) => (
       Group (<RadiumHashLink to={'/examples/layouts#group-layout'} className={classes.link}>Demo</RadiumHashLink>)
     </Typography>
     <p>
-      A <ApiLink link='/api/core/interfaces/group.html'>Group</ApiLink> is very similar to
+      A <ApiLink link='/api/core/interfaces/grouplayout.html'>Group</ApiLink> is very similar to
       a <code>VerticalLayout</code> but features an additional mandatory <code>label</code> property
       that is used to describe the <code>elements</code>.
     </p>
