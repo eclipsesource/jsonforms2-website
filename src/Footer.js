@@ -4,7 +4,10 @@ import {Button, withStyles} from "material-ui";
 import commonStyles from "./common/styles";
 
 const styles = () => ({
-  link: commonStyles.link,
+  link: {
+    ...commonStyles.link,
+    paddingLeft: '1em'
+  },
   footer: {
     backgroundColor: '#212121',
     justifyContent: 'flex-end',
