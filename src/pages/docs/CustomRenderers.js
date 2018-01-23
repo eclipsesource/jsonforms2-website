@@ -47,7 +47,12 @@ const styles = theme => ({
   title: {
     marginTop: '0.5em'
   },
-  display1: commonStyles.display1
+  display1: commonStyles.display1,
+  list: {
+    paddingLeft: '1em',
+    paddingTop: '0.5em',
+    paddingBottom: '0.5em',
+  }
 });
 
 export const CustomRenderers = ({ classes }) => {
@@ -65,7 +70,6 @@ export const CustomRenderers = ({ classes }) => {
         but there might be certain situations where you'd want to customize the rendered forms.
         JSON Forms allows for this by registering a custom renderer that produces a different UI
         control.
-
       </p>
 
       <p>
@@ -143,7 +147,7 @@ export const CustomRenderers = ({ classes }) => {
         So in order to add a renderer, we need to perform the following steps:
       </p>
 
-      <ol>
+      <ol className={classes.list}>
         <li>Create a renderer based on a React component</li>
         <li>Create a corresponding tester for the renderer</li>
         <li>Register both the renderer and the tester</li>
