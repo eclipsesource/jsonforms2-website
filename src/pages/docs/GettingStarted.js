@@ -25,7 +25,7 @@ const GettingStarted = ({ classes }) => {
         This section describes how you can get quickly started with JSON Forms.
       </p>
 
-      <Typography type={'headline'}>Usage with new redux store</Typography>
+      <Typography type={'headline'}>Usage with redux</Typography>
       <ol style={{ paddingLeft: '1em' }}>
         <li>
           Install JSON Forms and renderer set
@@ -67,19 +67,19 @@ const GettingStarted = ({ classes }) => {
         </li>
       </ol>
 
-      <Typography type={'headline'}>Usage with existing redux store</Typography>
-      <p id={'existing-redux'}>
-        If you already have a store you need to import the <code>jsonformsReducer</code> and put it into your store
-      </p>
-      <MarkdownElement
-        dir="ltr"
-        className={classes.code}
-        text={`\`\`\`jsx\n${existingRedux}\n\`\`\``}
-      />
-      <p>
-        Note that when setting up your own store, you need to hand in the <code>jsonforms</code> substore into
-        state selector like <code>getData()</code>.
-      </p>
+      {/*<Typography type={'headline'}>Usage with existing redux store</Typography>*/}
+      {/*<p id={'existing-redux'}>*/}
+        {/*If you already have a store you need to import the <code>jsonformsReducer</code> and put it into your store*/}
+      {/*</p>*/}
+      {/*<MarkdownElement*/}
+        {/*dir="ltr"*/}
+        {/*className={classes.code}*/}
+        {/*text={`\`\`\`jsx\n${existingRedux}\n\`\`\``}*/}
+      {/*/>*/}
+      {/*<p>*/}
+        {/*Note that when setting up your own store, you need to hand in the <code>jsonforms</code> substore into*/}
+        {/*state selector like <code>getData()</code>.*/}
+      {/*</p>*/}
     </div>
   );
 };

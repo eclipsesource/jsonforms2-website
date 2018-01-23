@@ -146,13 +146,16 @@ const Layouts = ({ classes }) => (
       of its own as well as a <code>label</code> that describes the contained data.
       Categorizations are typically used to structure different data bits which belong together.
     </p>
-    <Provider store={categorizationStore}>
-      <Demo
-        js={() => <DispatchRenderer/> }
-        schema={schema}
-        uischema={layouts.categorization}
-      />
-    </Provider>
+
+    <MarkdownElement
+      dir="ltr"
+      className={classes.code}
+      text={`\`\`\`json\n${JSON.stringify(layouts.categorization, null, 2)}\n\`\`\``}
+    />
+
+    <p>
+      In the example above note how each child within the <code>elements</code> is of type <code>Category</code>.
+    </p>
   </div>
 );
 
