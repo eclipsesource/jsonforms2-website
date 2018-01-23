@@ -19,7 +19,7 @@ const styles = () => ({
   mainSection: commonStyles.mainSection,
   sidebar: commonStyles.sidebar,
   sidebarLinks: commonStyles.sidebarLinks,
-  headline: commonStyles.headline
+  display1: commonStyles.display1
 });
 
 const Docs = ({ classes, match, location }) => (
@@ -40,7 +40,7 @@ const Docs = ({ classes, match, location }) => (
         <Route path={`${match.url}/custom-renderers`} component={CustomRenderers}/>
         <Route path={match.url} render={() => (
           <div>
-            <Typography type="headline" className={classes.headline}>Documentation</Typography>
+            <Typography type="display1" className={classes.display1}>Documentation</Typography>
             <p>
               We provide articles on different aspects of JSON Forms -
               from a basic introduction to implementing custom renderers.

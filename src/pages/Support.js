@@ -5,6 +5,7 @@ import UnderConstruction from "../common/UnderConstruction";
 
 const styles = () => ({
   grid: commonStyles.grid,
+  display1: commonStyles.display1
 });
 
 const Support = ({ classes }) => (
@@ -12,7 +13,7 @@ const Support = ({ classes }) => (
     <Grid item xs={1}/>
     <Grid item xs={7}>
       <div>
-        <Typography type="headline">Support</Typography>
+        <Typography type="display1" className={classes.display1}>Support</Typography>
         <UnderConstruction/>
       </div>
     </Grid>
