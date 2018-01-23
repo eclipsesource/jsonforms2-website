@@ -21,6 +21,7 @@ const styles = () => ({
   grid: commonStyles.grid,
   mainSection: commonStyles.mainSection,
   sidebar: commonStyles.sidebar,
+  headline: commonStyles.headline
 });
 
 const Examples = ({ classes, location, match }) => (
@@ -37,15 +38,18 @@ const Examples = ({ classes, location, match }) => (
         <Route path={`${match.url}/array`} component={Array}/>
         <Route path={`${match.url}/categorization`} component={CategorizationExample}/>
         <Route path={`${match.url}/rule`} component={RuleExample}/>
-        <Route path={`${match.url}/generate-uischema`} component={GenerateUISchemaExample}></Route>
+        <Route path={`${match.url}/generate-uischema`} component={GenerateUISchemaExample}/>
         <Route path={`${match.url}/generate-schemata`} component={GenerateSchemaExample}/>
         <Route path={match.url} render={() => (
           <div>
-            <Typography type="headline">Examples</Typography>
+            <Typography type="headline" className={classes.headline}>Examples</Typography>
             <p>
-              Each example runs in an isolated environemnt with its own redux store.
+              This section shows different examples how JSON Forms can be put to use.
+              You can browse the examples on the right.
+              Each example runs within its own redux store provided via a <code>Provider</code> element.
+              You can inspect the corresponding data, schema and UI schema entries within the store
+              by clicking the respective buttons on top right hande side of each example.
             </p>
-            <UnderConstruction />
           </div>
         )}/>
       </Switch>
