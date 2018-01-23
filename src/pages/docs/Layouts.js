@@ -90,7 +90,11 @@ const Layouts = ({ classes }) => (
     </Typography>
 
     {/* VERTICAL LAYOUT */}
-    <Typography type='title' className={classes.title}>
+    <Typography
+      type='title'
+      className={classes.title}
+      id='vertical-layout'
+    >
       Vertical Layout (<RadiumHashLink to={'/examples/layouts#vertical-layout'} className={classes.link}>Demo</RadiumHashLink>)
     </Typography>
     <p>

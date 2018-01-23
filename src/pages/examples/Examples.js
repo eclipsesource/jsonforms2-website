@@ -12,6 +12,7 @@ import Array from "./Array";
 import CategorizationExample from "./Categorization";
 import RuleExample from "./RuleExample";
 import GenerateSchemaExample from "./GenerateSchemaExample";
+import GenerateUISchemaExample from "./GenerateUISchemaExample";
 
 const RadiumLink = Radium(Link);
 
@@ -36,6 +37,7 @@ const Examples = ({ classes, location, match }) => (
         <Route path={`${match.url}/array`} component={Array}/>
         <Route path={`${match.url}/categorization`} component={CategorizationExample}/>
         <Route path={`${match.url}/rule`} component={RuleExample}/>
+        <Route path={`${match.url}/generate-uischema`} component={GenerateUISchemaExample}></Route>
         <Route path={`${match.url}/generate-schemata`} component={GenerateSchemaExample}/>
         <Route path={match.url} render={() => (
           <div>
@@ -75,21 +77,16 @@ const Examples = ({ classes, location, match }) => (
                 name: 'Rule'
               },
               {
+                slug: 'generate-uischema',
+                name: 'Inferring a UI schema'
+              },
+              {
                 slug: 'generate-schemata',
                 name: 'Inferring both schemata'
               }
             ]
           )
         }
-        <li>
-          <RadiumLink
-            to={`${match.url}/uischema`}
-            className={classes.link}
-          >
-            Inferring a UI schema
-          </RadiumLink>
-        </li>
-
         <li>
           <RadiumLink
             to={`${match.url}/custom-controls`}
