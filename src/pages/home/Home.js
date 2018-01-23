@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import schema from './schema.json';
 import uischema from './uischema.json';
 
-import { Demo, Logo } from '../../common'
+import {commonStyles, Demo, Logo, RadiumLink} from '../../common'
 import schemaLogo from './schemalogo.svg';
 
 const styles = () => ({
@@ -61,6 +61,7 @@ const styles = () => ({
     textAlign: 'center',
     margin: 'auto',
   },
+  link: commonStyles.link,
 });
 
 const store = initJsonFormsStore({
@@ -89,25 +90,35 @@ const Home = ({ classes }) => {
           </div>
 
           <div className={classes.container}>
-            <Button
-              raised
-              style={{
-                backgroundColor: '#11b3bb',
-                color: 'white'
-              }}
+            <RadiumLink
+              to='/docs/getting-started'
+              className={classes.link}
             >
-              Get started
-            </Button>
-            <Button
-              raised
-              style={{
-                backgroundColor: '#11b3bb',
-                color: 'white',
-                margin: '1em'
-              }}
+              <Button
+                raised
+                style={{
+                  backgroundColor: '#11b3bb',
+                  color: 'white'
+                }}
+              >
+                Get started
+              </Button>
+            </RadiumLink>
+            <RadiumLink
+              to='/docs/intro'
+              className={classes.link}
             >
-              Read the docs
-            </Button>
+              <Button
+                raised
+                style={{
+                  backgroundColor: '#11b3bb',
+                  color: 'white',
+                  margin: '1em'
+                }}
+              >
+                Read the docs
+              </Button>
+            </RadiumLink>
           </div>
         </Grid>
 
