@@ -4,6 +4,7 @@ import { DispatchRenderer, initJsonFormsStore } from '@jsonforms/core';
 import { Provider } from 'react-redux';
 import {Typography, withStyles} from "material-ui";
 import commonStyles from "../../common/styles";
+import Demo from "../../common/Demo";
 
 const styles = () => ({
   display1: commonStyles.display1
@@ -11,20 +12,21 @@ const styles = () => ({
 
 const Array = ({ classes }) => {
 
+  const uischema = {
+    type: 'VerticalLayout',
+    elements: [
+      {
+        type: 'Control',
+        scope: {
+          $ref: '#/properties/comments'
+        },
+      }
+    ]
+  };
   const store = initJsonFormsStore({
     data: array.data,
     schema: array.schema,
-    uischema: {
-      type: 'VerticalLayout',
-      elements: [
-        {
-          type: 'Control',
-          scope: {
-            $ref: '#/properties/comments'
-          },
-        }
-      ]
-    }
+    uischema
   });
 
   return (
@@ -36,7 +38,13 @@ const Array = ({ classes }) => {
         Array Control
       </Typography>
       <Provider store={store}>
-        <DispatchRenderer />
+        <Demo
+          schema={array.schema}
+          uischema={uischema}
+          js={() => (
+            <DispatchRenderer />
+          )}
+        />
       </Provider>
     </div>
   );
