@@ -7,6 +7,7 @@ import {UiSchemaElementsCode} from "./listings/uischema";
 import MarkdownElement from "../../common/MarkdownElement";
 import commonStyles from "../../common/styles";
 import UISchemaProp from "../../common/UISchemaProp";
+import ApiLink from "../../common/ApiLink";
 /* eslint import/no-webpack-loader-syntax: off */
 const rule = require('!raw-loader!./listings/rule.md');
 
@@ -37,14 +38,13 @@ const Rules = ({ classes }) => {
         type='display1'
         className={classes.display1}
       >
-        Rules
+        Rules (<RadiumLink to='/examples/rule' className={classes.link}>Demo</RadiumLink>)
       </Typography>
       <p>
-        Rules allow for dynamic aspects for a form, e.g. by hiding or disabling UI schema elements.
+        <ApiLink link='/api/core/interfaces/rule.html'>Rules</ApiLink> allow for dynamic aspects for a form,
+        e.g. by hiding or disabling UI schema elements.
         A rule may be attached to any UI schema element and can be defined with the <code>rule</code> property.
         We'll first look at an example definition of a rule and then explain it in detail.
-        If you want to see a rule in action rightaway, see
-        the <RadiumLink to='/examples/rule' className={classes.link}>corresponding example</RadiumLink>.
       </p>
 
       <MarkdownElement
@@ -69,7 +69,7 @@ const Rules = ({ classes }) => {
         Current effects include:
         <ul className={classes.ul}>
           <li><code>HIDE</code>: hide the UI schema element</li>
-          <li><code>SHOW</code>: show the UI schema element (TODO: do we describe anywhere how to initially hide elements?)</li>
+          <li><code>SHOW</code>: show the UI schema element</li>
           <li><code>DISABLE</code>: disable the UI schema element</li>
           <li><code>ENABLE</code>: enable the UI schema element</li>
         </ul>
