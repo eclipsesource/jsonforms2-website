@@ -4,11 +4,10 @@ import {Route, Switch} from "react-router-dom";
 import Intro from "./Intro";
 import GettingStarted from "./GettingStarted";
 import CustomRenderers from './CustomRenderers';
-import commonStyles from '../../common/styles'
 import UISchemaElements from "./UISchemaElements";
 import Controls from "./Controls";
 import Layouts from "./Layouts";
-import {generateLinks} from "../../common/gen-links";
+import { generateLinks, commonStyles } from "../../common";
 import Rules from "./Rules";
 
 const styles = () => ({
@@ -19,7 +18,8 @@ const styles = () => ({
   link: commonStyles.link,
   mainSection: commonStyles.mainSection,
   sidebar: commonStyles.sidebar,
-  sidebarLinks: commonStyles.sidebarLinks
+  sidebarLinks: commonStyles.sidebarLinks,
+  headline: commonStyles.headline
 });
 
 const Docs = ({ classes, match, location }) => (
@@ -40,12 +40,12 @@ const Docs = ({ classes, match, location }) => (
         <Route path={`${match.url}/custom-renderers`} component={CustomRenderers}/>
         <Route path={match.url} render={() => (
           <div>
-            <Typography type="headline">Documentation</Typography>
+            <Typography type="headline" className={classes.headline}>Documentation</Typography>
             <p>
               We provide articles on different aspects of JSON Forms -
               from a basic introduction to implementing custom renderers.
               This page lists important articles to get started below.
-              A list of all available articles is available to the left.
+              A list of all available articles is available to the right.
             </p>
           </div>
         )}/>
