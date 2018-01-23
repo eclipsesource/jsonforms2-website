@@ -81,7 +81,13 @@ const Layouts = ({ classes }) => {
       </Provider>
 
       {/* GROUP LAYOUT */}
-      <Typography type={'headline'} className={classes.headline}>Group Layout</Typography>
+      <Typography
+        type={'headline'}
+        className={classes.headline}
+        id='group-layout'
+      >
+        Group Layout
+      </Typography>
       <p>
         A <code>Group</code> is like a <code>VerticalLayout</code> but features an additonal <code>label</code> property.
         In this case it has been set to 'My Group'.
@@ -95,7 +101,12 @@ const Layouts = ({ classes }) => {
       </Provider>
 
       {/* NESTED LAYOUTS */}
-      <Typography type={'headline'} className={classes.headline}>Nested Layouts</Typography>
+      <Typography
+        type={'headline'}
+        className={classes.headline}
+      >
+        Nested Layouts
+      </Typography>
       <p>
         This example demonstrates how layouts can be nested in order to create more complex forms.
         The top UI schema element is a <code>Group</code> which in turn contains a <code>HorizontalLayout</code>.
