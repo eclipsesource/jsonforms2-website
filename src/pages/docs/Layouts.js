@@ -51,9 +51,11 @@ const Layouts = ({ classes }) => (
       Layouts
     </Typography>
     <p>
-      <a href="/api/core/interfaces/layout.html" target="_blank" className={classes.link}>Layouts</a> serve
-      the purpose of structuring UI schema elements like <RadiumLink to='/docs/uischema/controls' className={classes.link}>Controls</RadiumLink> or
-      other layouts.
+      <a href="/api/core/interfaces/layout.html" target="_blank" className={classes.link}>Layout</a> elements
+      in the UI Schema contain other UI Schema elements
+      like <RadiumLink to='/docs/uischema/controls' className={classes.link}>Controls</RadiumLink> or other layouts
+      and serve the purpose of defining the layout of those, e.g. a layout could arrange all its contained
+      UI Schema Elements into a horizontal alignment.
     </p>
 
     <UISchemaPropTitle title='elements' type='UISchemaElement[]' link={'/api/core/interfaces/uischemaelement.html'}/>
@@ -67,6 +69,7 @@ const Layouts = ({ classes }) => (
     By default, JSON Forms supports four different kinds of layouts: <code>VerticalLayout</code>&nbsp;
     and <code>HorizontalLayout</code>, a slightly modified version of the vertical layout called <code>Group</code>,
     as well <code>Categorization</code>, which is often used to bundle related data, for instance by means of Tabs.
+    Those four core layouts are detailed in the following.
 
     {/* HORIZONTAL LAYOUT */}
     <Typography type='title' className={classes.title}>
@@ -74,7 +77,7 @@ const Layouts = ({ classes }) => (
     </Typography>
     <p>
       A <ApiLink link={'/api/core/interfaces/horizontallayout.html'}>Horizontal Layout</ApiLink> uses
-      the <code>HorizontalLayout</code> type and arranges its <code>elements</code> in a
+      the <code>HorizontalLayout</code> type and arranges its contained <code>elements</code> in a
       horizontal fashion. Each child occupies the same amount of space, i.e. for n children a child occupies 1/n space.
     </p>
     <MarkdownElement
@@ -141,10 +144,11 @@ const Layouts = ({ classes }) => (
     </Typography>
     <p>
       A <ApiLink link='/api/core/interfaces/categorization.html'>Categorization</ApiLink> layout uses
-      the <code>Categorization</code> type and can only contain <code>elements</code>
-      of type <code>Category</code>. A <code>Category</code> itself acts as a container and has an <code>elements</code>
-      of its own as well as a <code>label</code> that describes the contained data.
-      Categorizations are typically used to structure different data bits which belong together.
+      the <code>Categorization</code> type and can only contain <code>elements</code> of
+      type <code>Category</code>. A <code>Category</code> itself acts as a container and has
+      an <code>elements</code> of its own as well as a <code>label</code> that describes the contained data.
+      Categorizations are typically used to structure controls with related data, e.g. 'Personal Data'
+      and 'Dietary requirements' as demonstrated in example below.
     </p>
 
     <MarkdownElement

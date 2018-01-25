@@ -16,7 +16,8 @@ const styles = theme => ({
   link: commonStyles.link,
   display1: commonStyles.display1,
   headline: commonStyles.headline,
-  caption: commonStyles.caption
+  caption: commonStyles.caption,
+  list: commonStyles.list
 });
 
 const Intro = ({ classes }) => {
@@ -41,7 +42,7 @@ const Intro = ({ classes }) => {
 
       <p>
         JSON Forms is a declarative framework for efficiently building form-based web UIs.
-        These UIs are targeted at entering, modifying, and viewing data and are usually embedded within an application.
+        These UIs are targeted at entering, modifying and viewing data and are usually embedded within an application.
       </p>
 
       <Typography type={'headline'} className={classes.headline}>
@@ -49,7 +50,12 @@ const Intro = ({ classes }) => {
       </Typography>
       <p>
         Writing HTML templates and Javascript for data binding by hand is hard, especially in applications
-        of reasonable size. JSONForms utilizes the capabilities of JSON and JSON schema and
+        of reasonable size.
+        Furthermore a form is often more than just a collection of input fields, usually more
+        advanced functionality is required, e.g. validation or conditional visibility.
+      </p>
+      <p>
+        JSONForms utilizes the capabilities of JSON and JSON schema and
         provides a simple and declarative way of describing forms.
         Forms are then rendered with a UI framework, currently one that is based on React/Redux.
       </p>
@@ -61,19 +67,19 @@ const Intro = ({ classes }) => {
         Any UI is defined by using two schemata:
       </p>
 
-      <ul style={{ paddingLeft: '1em' }}>
+      <ul className={classes.list}>
         <li>The data/JSON schema defines the underlying data to be shown in the UI (objects, properties, and their types).</li>
         <li>The UI schema defines how this data is rendered as a form, e.g. the order of controls, their visibility, and the layout.</li>
       </ul>
 
       <p>
-        Both artifacts are interpreted during runtime by the framework and mapped to respective React components,
+        Both artifacts are interpreted during runtime by the framework and mapped to respective UI components,
         which already feature data binding, validation, etc.
       </p>
 
       <p>
         Let's look at an example: Below is given a JSON schema on the left hand side describing a task while on the
-        right hand side there's an UI schema, which defines three controls which will be arranged in a vertical fashion.
+        right hand side there's an UI schema, which defines four controls which are to be arranged in a vertical fashion.
         The result of rendering the form with JSON Forms can be seen at the bottom.
       </p>
 

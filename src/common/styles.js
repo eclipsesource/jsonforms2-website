@@ -33,6 +33,11 @@ export default {
     paddingTop: 0,
     paddingBottom: 0,
   },
+  list: {
+    paddingLeft: '1em',
+    paddingTop: '0.5em',
+    paddingBottom: '0.5em',
+  },
   display1: {
     paddingTop: '0.5em',
     paddingBottom: '0.5em',

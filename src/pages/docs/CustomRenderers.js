@@ -7,6 +7,7 @@ import { ratingControlTester } from './rating.tester';
 import MarkdownElement from "../../common/MarkdownElement";
 import Demo from "../../common/Demo";
 import commonStyles from '../../common/styles';
+import ApiLink from "../../common/ApiLink";
 /* eslint import/no-webpack-loader-syntax: off */
 const seed = require('!raw-loader!./listings/seed.md');
 const ratingControlCode = require('!raw-loader!./RatingControl.jsx');
@@ -48,11 +49,7 @@ const styles = theme => ({
     marginTop: '0.5em'
   },
   display1: commonStyles.display1,
-  list: {
-    paddingLeft: '1em',
-    paddingTop: '0.5em',
-    paddingBottom: '0.5em',
-  }
+  list: commonStyles.list
 });
 
 export const CustomRenderers = ({ classes }) => {
@@ -67,15 +64,15 @@ export const CustomRenderers = ({ classes }) => {
 
       <p>
         The default renderers of JSON Forms are a good fit for most scenarios,
-        but there might be certain situations where you'd want to customize the rendered forms.
+        but there might be certain situations where you'd want to customize the rendered UI Schema elements.
         JSON Forms allows for this by registering a custom renderer that produces a different UI
-        control.
+        for a given UI Schema element.
       </p>
 
       <p>
-        In this section you will learn how to create and register a custom renderer within a native
-        React application. We do so by replacing the default renderer for integer values which is
-        depicted below where it is used to render a rating ranging from 0 to 5.
+        In this section you will learn how to create and register a custom renderer for a control.
+        We will replace the default renderer for integer values of a rating property. By default an integer
+        property is rendered like this:
       </p>
 
       <Provider store={store} >
@@ -91,7 +88,7 @@ export const CustomRenderers = ({ classes }) => {
         </Demo>
       </Provider>
 
-      The replacement will be a control which renders the rating as stars:
+      Our goal is to instead render the UI for rating depicted below:
 
       <Provider store={storeWithRatingControlExample} >
         <Demo
@@ -109,7 +106,7 @@ export const CustomRenderers = ({ classes }) => {
       </Typography>
       <p>
         If you want to follow along this tutorial, you may want to clone the seed repository
-        which basically is just a React application scaffolded by create-react-app with redux
+        which basically is just a skeleton application scaffolded by create-react-app with redux
         and JSON Forms dependencies added.
       </p>
 
@@ -122,7 +119,7 @@ export const CustomRenderers = ({ classes }) => {
       <p>
         Once the dependencies are installed and the local server has been started,
         navigate to <code>localhost:3000</code> in order to see the application running.
-        The seed is described in detail within the <code>README.md</code> file of the repo, hence we only focus
+        The seed is described in more detail within the <code>README.md</code> file of the repo, hence we only focus
         on the most crucial parts of the app in the following.
       </p>
 
@@ -135,22 +132,28 @@ export const CustomRenderers = ({ classes }) => {
       </p>
 
       <p>
-        JSON Forms maintains a set of renderers which are regular React components. When JSON Forms is instructed to
-        render a given UI schema to produce a form, the question then becomes how JSON Forms is supposed to choose a
-        renderer. This is handled by an additional concept we call testers. Each renderer needs to define a corresponding tester.
+        JSON Forms maintains a registry of renderers (which are regular React components). When JSON Forms is instructed to
+        render a given UI schema to produce a form, it will start with the root element of the UI Schema and try to
+        find a render for this UI Schema element in its registry of renderers.
+        To find a matching renderer JSON Forms relies on the so-called Testers of the renderers.
+        Every renderer has a tester associated with its registration. The tester will provide JSON Forms with
+        a priority for a given UI Schema Element for the respective tester.
+        This priority expresses if and how well a renderer can actually render the given UI Schema Element
+        (where -1 means "not at all").
       </p>
 
       <p>
-        A tester then is just a function which is passed the UI schema and the data schema and returns a number.
-        The returned number determines the priority by which JSON Forms will use the renderer to render the form, hence
-        the higher the number, the more likely it will be picked.
-        So in order to add a renderer, we need to perform the following steps:
+        A tester then is therefore just a function which is passed the current UI schema element and the
+        corresponding data subschema and returns a number for the priority.
+      </p>
+      <p>
+        So in order to create and register a renderer, we need to perform the following steps:
       </p>
 
       <ol className={classes.list}>
-        <li>Create a renderer based on a React component</li>
+        <li>Create a renderer (based on a React component)</li>
         <li>Create a corresponding tester for the renderer</li>
-        <li>Register both the renderer and the tester</li>
+        <li>Register both the renderer and the tester with the framework</li>
       </ol>
 
       <p>
@@ -165,7 +168,7 @@ export const CustomRenderers = ({ classes }) => {
       As mentioned previously the seed app already features a component which we want to make a renderer from.
       It's contained in <code>src/Rating.js</code> and is a rating control, i.e. it allows to set a value between 0 and 5
       by selecting the appropriate number of stars. We won't go into detail about the control itself, but we should mention
-      that we need to provide an <code>onClick</code> prop in order to allow specifying a callback which gets called
+      that we need to provide an <code>onClick</code> property in order to allow specifying a callback which gets called
       every time the user clicks on a star as well as an initial <code>value</code>.
       </p>
 
@@ -179,7 +182,7 @@ export const CustomRenderers = ({ classes }) => {
 
       <p>
         For the <code>onClick</code> prop we pass the <code>handleChange</code> handler which we retrieve
-        via another helper function <code>mapDispatchToFieldProps</code>
+        via another helper function <code>mapDispatchToFieldProps</code>.
         All the handler actually does is to emit a change with the new value.
       </p>
 
@@ -209,15 +212,15 @@ export const CustomRenderers = ({ classes }) => {
 
       <p>
         Generally speaking, the tester API if made out of different predicates as well as functions that allow
-        for composition, such as <code>and</code> or <code>or</code>. For a complete overview see TODO.
+        for composition, such as <code>and</code> or <code>or</code>.
       </p>
 
       <Typography type='title'>
         Register the renderer
       </Typography>
       <p>
-        All there is left to do is to register the renderer with its tester. We can do so by calling the
-        <code>registerRenderer</code> action on the store:
+        All there is left to do is to register the renderer with its tester. We can do so by calling
+        the <code>registerRenderer</code> action on the store:
       </p>
 
       <MarkdownElement
@@ -230,7 +233,15 @@ export const CustomRenderers = ({ classes }) => {
         And that's it, the rating control will now be used to render the <code>rating</code> property.
         It should be noted that in order to create a full-fledged control there's more work left,
         since we did not cover concepts like validation or visibility.
-        Please refer to TODO the API docs if you are interested in these.
+      </p>
+      <p style={{
+        backgroundColor: '#d1d1d1',
+        padding: '0.5em',
+        borderRadius: '0.5em',
+        marginTop: '0.5em',
+        marginBottom: '0.5em'
+      }}>
+        <strong>NOTE</strong>: We are working on the sections. Expect this page to be updated soon!
       </p>
     </div>
 

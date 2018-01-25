@@ -42,32 +42,27 @@ const Controls = ({ classes }) => {
         Controls
       </Typography>
       <p>
+        Controls represent the basic building blocks for creating forms.
+      </p>
+      <p>
+        A control is usually displaying the value of one property from the data in an UI element such as an input field.
+        How a control is rendered depends on the type of the property as defined in the JSON Schema,
+        e.g. a property of type <code>boolean</code> is rendered as a Checkbox by default.
         Controls are of
         type <a href='/api/core/interfaces/scopable.html' className={classes.link} target="_blank">Scopable</a> and
-        represent the basic building blocks for creating forms and propagating data updates.
+        therefore have a <code>scope</code> property.
       </p>
 
       <UISchemaProp title='scope' type='string' />
       <p>
-        The type of the actually rendered control depends on what subschema it is bound against.
-        The <code>scope</code> property, which expects a&nbsp;
+        The mandatory <code>scope</code> property, which expects a&nbsp;
         <a href="https://spacetelescope.github.io/understanding-json-schema/structuring.html#reuse"
            className={classes.link}>
           JSON schema reference
-        </a>,&nbsp;
-        allows us to path to a property within the schema.
-
-        <p>
-          For instance, if the <code>scope</code> property points to something of type <code>string</code>,
-          JSON Forms will render a text field, but if the property is of type <code>boolean</code>, a checkbox
-          will be rendered.
-        </p>
-
-        They expect a mandatory <code>scope</code> property that describes
-        against which part of the schema they should bind to.
+        </a>&nbsp;, defines to which property of the data the control should be bound to.
       </p>
       <p>
-        For instance, let's suppose we want to create a control for the <code>name</code> property in this schema:
+        For instance, let us suppose we want to create a control for the <code>name</code> property in this schema:
       </p>
       <MarkdownElement
         dir="ltr"
@@ -79,7 +74,9 @@ const Controls = ({ classes }) => {
       </Typography>
 
       <p>
-        The corresponding UI Schema needs to set the type property as <code>Control</code> and looks as follows:
+        The corresponding UI Schema needs to set the <code>type</code> of the UI Schema Element
+        to <code>Control</code> and set the <code>scope</code> to point to
+        the <code>name</code> property from the JSON schema as follows:
       </p>
       <MarkdownElement
         dir="ltr"
@@ -91,7 +88,7 @@ const Controls = ({ classes }) => {
       </Typography>
 
       <p>
-        The form rendered by JSON Forms:
+        JSON Forms will render the following form from this UI Schema:
       </p>
 
       <Provider store={store} >
@@ -110,9 +107,10 @@ const Controls = ({ classes }) => {
       </Provider>
 
       <p>
-        JSON Forms ships with default renderers for all primitive types as well as for arrays and allows controls to be
-        replaced in case one wants to customize the rendered form, see the section about &nbsp;
-        <RadiumLink to={'/docs/custom-renderers'} className={classes.link}>Custom renderers</RadiumLink>.
+        JSON Forms ships with a default renderer set which consists of renderers for all primitive types as well as
+        for arrays. Furthermore JSON Forms allows controls to be replaced or new controls to be added for newly
+        invented UI Schema Elements. For documentation on these so called <em>Custom Renderers</em> please see the section
+        about <RadiumLink to={'/docs/custom-renderers'} className={classes.link}>Custom renderers</RadiumLink>.
       </p>
     </div>
   );
