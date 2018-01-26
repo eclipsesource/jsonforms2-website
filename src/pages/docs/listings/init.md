@@ -1,3 +1,3 @@
 <Provider store={store}>
-  <DispatchRenderer/>
+  <App />
 </Provider>

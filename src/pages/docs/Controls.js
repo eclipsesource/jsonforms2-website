@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from "react-router-dom";
 import {Typography, withStyles} from "material-ui";
-import { DispatchRenderer, initJsonFormsStore } from "@jsonforms/core";
+import { DispatchRenderer } from "@jsonforms/core";
 import { Provider } from "react-redux";
 import Radium from 'radium';
 import {UiSchemaElementsCode} from "./listings/uischema";
@@ -10,6 +10,7 @@ import Demo from "../../common/Demo";
 import commonStyles from "../../common/styles";
 import UISchemaProp from "../../common/UISchemaProp";
 import MarkdownElement from "../../common/MarkdownElement";
+import {createJsonFormsStore} from "../../common/store";
 
 const styles = () => ({
   code: commonStyles.code,
@@ -27,7 +28,7 @@ const styles = () => ({
 const RadiumLink = Radium(Link);
 
 const Controls = ({ classes }) => {
-  const store = initJsonFormsStore({
+  const store = createJsonFormsStore({
     data: UiSchemaElementsCode.controls.data,
     schema: UiSchemaElementsCode.controls.schema,
     uischema: UiSchemaElementsCode.controls.uischema,

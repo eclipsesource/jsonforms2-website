@@ -1,10 +1,11 @@
 import React from 'react';
 import { categorization } from '@jsonforms/examples';
-import { DispatchRenderer, initJsonFormsStore } from '@jsonforms/core';
+import { DispatchRenderer } from '@jsonforms/core';
 import { Provider } from 'react-redux';
 import {Typography, withStyles} from "material-ui";
 import commonStyles from "../../common/styles";
 import Demo from "../../common/Demo";
+import {createJsonFormsStore} from "../../common/store";
 
 const styles = () => ({
   display1: commonStyles.display1
@@ -12,7 +13,7 @@ const styles = () => ({
 
 const CategorizationExample = ({ classes }) => {
 
-  const store = initJsonFormsStore({
+  const store = createJsonFormsStore({
     data: {
       name: 'Max Power',
       vegetrian: true,

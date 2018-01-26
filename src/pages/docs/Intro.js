@@ -3,11 +3,12 @@ import Radium from 'radium';
 import { Link } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import {Grid, Typography, withStyles} from "material-ui";
-import DispatchRenderer, { initJsonFormsStore, registerRenderer } from '@jsonforms/core';
+import { DispatchRenderer, registerRenderer } from '@jsonforms/core';
 import { IntroCode } from './listings/intro';
 import RatingControl from './RatingControl';
 import { ratingControlTester} from "./rating.tester";
 import { Demo, MarkdownElement, commonStyles, Logo } from '../../common';
+import {createJsonFormsStore} from "../../common/store";
 
 const RadiumLink = Radium(Link);
 
@@ -22,13 +23,13 @@ const styles = theme => ({
 
 const Intro = ({ classes }) => {
 
-  const storeWithoutCustomControl = initJsonFormsStore({
+  const storeWithoutCustomControl = createJsonFormsStore({
     data: {},
     schema: IntroCode.schema,
     uischema: IntroCode.uischema
   });
 
-  const storeWithRatingControlExample = initJsonFormsStore({
+  const storeWithRatingControlExample = createJsonFormsStore({
     data: {},
     schema: IntroCode.schema,
     uischema: IntroCode.uischema
@@ -109,21 +110,7 @@ const Intro = ({ classes }) => {
         <Grid item xs={12}>
           <Provider store={storeWithoutCustomControl}>
             <Demo
-              js={() => {
-                const store = initJsonFormsStore({
-                  data: { },
-                  schema: IntroCode.schema,
-                  uischema:  IntroCode.uischema
-                });
-                return (
-                  <Provider store={store} >
-                    <DispatchRenderer
-                      schema={IntroCode.schema}
-                      uischema={IntroCode.uischema}
-                    />
-                  </Provider>
-                )
-              }}
+              js={() => <DispatchRenderer /> }
               schema={IntroCode.schema}
               uischema={IntroCode.uischema}
             />

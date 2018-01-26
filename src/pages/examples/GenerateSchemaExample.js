@@ -1,9 +1,10 @@
 import React from 'react';
-import { generators } from '@jsonforms/examples';
-import { DispatchRenderer, initJsonFormsStore } from '@jsonforms/core';
+import { generateSchema } from '@jsonforms/examples';
+import { DispatchRenderer, generateDefaultUISchema, generateJsonSchema } from '@jsonforms/core';
 import { Provider } from 'react-redux';
 import {Typography, withStyles} from "material-ui";
 import { commonStyles, Demo } from "../../common";
+import {createJsonFormsStore} from "../../common/store";
 
 const styles = () => ({
   display1: commonStyles.display1
@@ -11,10 +12,14 @@ const styles = () => ({
 
 const GenerateSchemaExample = ({ classes }) => {
 
-  const store = initJsonFormsStore({
-    data: generators.data,
-    schema: generators.schema,
-    uischema: generators.uischema
+  const schema = generateJsonSchema(generateSchema.data);
+  // TODO: this example shouldn't generate its UI schema
+  const uischema = generateDefaultUISchema(schema);
+
+  const store = createJsonFormsStore({
+    data: generateSchema.data,
+    schema,
+    uischema
   });
 
   return (
@@ -38,8 +43,8 @@ const GenerateSchemaExample = ({ classes }) => {
 
       <Provider store={store}>
         <Demo
-          schema={generators.schema}
-          uischema={generators.uischema}
+          schema={schema}
+          uischema={uischema}
           js={() =>
             <DispatchRenderer />
           }

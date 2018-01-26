@@ -1,5 +1,5 @@
-import {rankWith, refEndsWith} from '@jsonforms/core'
+import { rankWith, scopeEndsWith } from '@jsonforms/core'
 import React from "react";
 
 export const ratingControlTester =
-  rankWith(3, refEndsWith('rating'));
+  rankWith(3, scopeEndsWith('rating'));

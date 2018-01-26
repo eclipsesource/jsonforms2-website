@@ -1,34 +1,35 @@
 import React from 'react';
 import { layout } from '@jsonforms/examples';
-import { DispatchRenderer, initJsonFormsStore } from '@jsonforms/core';
+import { DispatchRenderer } from '@jsonforms/core';
 import { Provider } from 'react-redux';
 import {Typography, withStyles} from "material-ui";
 import { commonStyles, Demo }from "../../common";
+import {createJsonFormsStore} from "../../common/store";
 
 const styles = () => ({
   display1: commonStyles.display1,
   headline: commonStyles.headline
 });
 
-const verticalLayoutStore = initJsonFormsStore({
+const verticalLayoutStore = createJsonFormsStore({
   data: layout.data,
   schema: layout.schema,
   uischema: layout.uischemaVertical
 });
 
-const groupStore = initJsonFormsStore({
+const groupStore = createJsonFormsStore({
   data: layout.data,
   schema: layout.schema,
   uischema: layout.uischemaGroup,
 });
 
-const horizontalStore = initJsonFormsStore({
+const horizontalStore = createJsonFormsStore({
   data: layout.data,
   schema: layout.schema,
   uischema: layout.uischemaHorizontal,
 });
 
-const complexStore = initJsonFormsStore({
+const complexStore = createJsonFormsStore({
   data: layout.data,
   schema: layout.schema,
   uischema: layout.uischemaComplex,

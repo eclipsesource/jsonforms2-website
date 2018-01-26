@@ -22,15 +22,11 @@ export const IntroCode = {
     elements: [
       {
         type: 'Control',
-        scope: {
-          '$ref': '#/properties/name'
-        }
+        scope: '#/properties/name'
       },
       {
         type: 'Control',
-        scope: {
-          '$ref': '#/properties/description'
-        },
+        scope: '#/properties/description',
         options: {
           multi: true
         }
@@ -38,16 +34,12 @@ export const IntroCode = {
       {
         type: 'Control',
         label: 'Rating',
-        scope: {
-          '$ref': '#/properties/rating'
-        }
+        scope: '#/properties/rating'
       },
       {
         type: 'Control',
         label: 'Done?',
-        scope: {
-          '$ref': '#/properties/done'
-        }
+        scope: '#/properties/done'
       }
     ]
   },

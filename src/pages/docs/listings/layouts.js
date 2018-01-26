@@ -11,15 +11,11 @@ export default {
     elements: [
       {
         type: "Control",
-        scope: {
-          $ref: "#/properties/foo"
-        }
+        scope: "#/properties/foo"
       },
       {
         type: "Control",
-        scope: {
-          $ref: "#/properties/bar"
-        }
+        scope: "#/properties/bar"
       }
     ]
   },
@@ -29,15 +25,11 @@ export default {
     elements: [
       {
         type: "Control",
-        scope: {
-          $ref: "#/properties/foo"
-        }
+        scope: "#/properties/foo"
       },
       {
         type: "Control",
-        scope: {
-          $ref: "#/properties/bar"
-        }
+        scope: "#/properties/bar"
       }
     ]
   },
@@ -46,15 +38,11 @@ export default {
     elements: [
       {
         type: "Control",
-        scope: {
-          $ref: "#/properties/foo"
-        }
+        scope: "#/properties/foo"
       },
       {
         type: "Control",
-        scope: {
-          $ref: "#/properties/bar"
-        }
+        scope: "#/properties/bar"
       }
     ]
   },
@@ -63,25 +51,41 @@ export default {
     elements: [
       {
         type: "Category",
-        label: "Colors",
+        label: "Personal Data",
         elements: [
           {
             type: "Control",
-            scope: {
-              $ref: "#/properties/foo"
-            }
+            scope: "#/properties/firstName"
+          },
+          {
+            type: "Control",
+            scope: "#/properties/lastName"
+          },
+          {
+            type: "Control",
+            scope: "#/properties/age"
+          },
+          {
+            type: "Control",
+            scope: "#/properties/height"
+          },
+          {
+            type: "Control",
+            scope: "#/properties/dateOfBirth"
           }
         ]
       },
       {
         type: "Category",
-        label: "Chocolate bars",
+        label: "Dietary requirements",
         elements: [
           {
             type: "Control",
-            scope: {
-              $ref: "#/properties/bar"
-            }
+            scope: "#/properties/diet"
+          },
+          {
+            type: "Control",
+            scope: "allergicToPeanuts"
           }
         ]
       }

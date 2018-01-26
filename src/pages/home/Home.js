@@ -2,13 +2,16 @@ import * as React from "react";
 import {Button, Card, CardContent, Grid, Typography, withStyles} from "material-ui";
 import FeaturesIcon from 'material-ui-icons/Report';
 import CustomizeIcon from 'material-ui-icons/Brush';
-import { DispatchRenderer, initJsonFormsStore }  from '@jsonforms/core'
+import { DispatchRenderer, jsonformsReducer }  from '@jsonforms/core'
+import { applyMiddleware, createStore } from 'redux';
+import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
 import schema from './schema.json';
 import uischema from './uischema.json';
 
 import {commonStyles, Demo, Logo, RadiumLink} from '../../common'
 import schemaLogo from './schemalogo.svg';
+import {createJsonFormsStore} from "../../common/store";
 
 const styles = () => ({
   root: {
@@ -64,11 +67,11 @@ const styles = () => ({
   link: commonStyles.link,
 });
 
-const store = initJsonFormsStore({
+const store = createJsonFormsStore({
   data: { firstName: 'Max Power' },
   schema,
   uischema
-});
+  });
 
 const Home = ({ classes }) => {
   return (

@@ -1,13 +1,16 @@
 import React from 'react';
 import {Typography, withStyles} from "material-ui";
+import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { DispatchRenderer, initJsonFormsStore, registerRenderer } from '@jsonforms/core';
+import thunk from 'redux-thunk';
+import { DispatchRenderer, jsonformsReducer, registerRenderer } from '@jsonforms/core';
 import RatingControl from './RatingControl';
 import { ratingControlTester } from './rating.tester';
 import MarkdownElement from "../../common/MarkdownElement";
 import Demo from "../../common/Demo";
 import commonStyles from '../../common/styles';
 import ApiLink from "../../common/ApiLink";
+import {createJsonFormsStore} from "../../common/store";
 /* eslint import/no-webpack-loader-syntax: off */
 const seed = require('!raw-loader!./listings/seed.md');
 const ratingControlCode = require('!raw-loader!./RatingControl.jsx');
@@ -30,16 +33,13 @@ const ratingSchema = {
 
 const ratingUiSchema = {
   type: 'Control',
-  scope: {
-    $ref: '#/properties/rating'
-  }
+  scope: '#/properties/rating'
 };
 
-
-const storeWithRatingControlExample = initJsonFormsStore({
+const storeWithRatingControlExample = createJsonFormsStore({
   data: ratingData,
   schema: ratingSchema,
-  uischema: ratingUiSchema,
+  uischema: ratingUiSchema
 });
 
 const styles = theme => ({
@@ -53,11 +53,12 @@ const styles = theme => ({
 });
 
 export const CustomRenderers = ({ classes }) => {
-  const store = initJsonFormsStore({
+  const store = createJsonFormsStore({
     data: ratingData,
     schema: ratingSchema,
     uischema: ratingUiSchema
   });
+
   return (
     <div>
       <Typography type={'display1'} className={classes.display1}>Custom Renderers</Typography>

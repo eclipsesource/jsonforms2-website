@@ -4,9 +4,9 @@
   "private": true,
   "homepage": "https://jsonforms-beta.de",
   "dependencies": {
-    "@jsonforms/core": "^2.0.0-beta.6",
-    "@jsonforms/examples": "^2.0.0-beta.6",
-    "@jsonforms/material-renderers": "^2.0.0-beta.6",
+    "@jsonforms/core": "^2.0.0-rc.0",
+    "@jsonforms/examples": "^2.0.0-rc.0",
+    "@jsonforms/material-renderers": "^2.0.0-rc.0",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "classnames": "^2.2.5",
     "global": "^4.3.2",
@@ -24,6 +24,7 @@
     "react-router-hash-link": "^1.1.1",
     "react-scripts": "1.0.17",
     "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
     "typeface-roboto": "0.0.45"
   },
   "scripts": {

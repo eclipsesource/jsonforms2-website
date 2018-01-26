@@ -1,13 +1,13 @@
 import React from 'react'
 import {Link} from "react-router-dom";
 import {Typography, withStyles} from "material-ui";
-import { initJsonFormsStore } from "@jsonforms/core";
 import Radium from 'radium';
 import {UiSchemaElementsCode} from "./listings/uischema";
 import MarkdownElement from "../../common/MarkdownElement";
 import commonStyles from "../../common/styles";
 import UISchemaProp from "../../common/UISchemaProp";
 import ApiLink from "../../common/ApiLink";
+import {createJsonFormsStore} from "../../common/store";
 /* eslint import/no-webpack-loader-syntax: off */
 const rule = require('!raw-loader!./listings/rule.md');
 
@@ -26,7 +26,7 @@ const styles = () => ({
 const RadiumLink = Radium(Link);
 
 const Rules = ({ classes }) => {
-  const store = initJsonFormsStore({
+  const store = createJsonFormsStore({
     data: UiSchemaElementsCode.controls.data,
     schema: UiSchemaElementsCode.controls.schema,
     uischema: UiSchemaElementsCode.controls.uischema,

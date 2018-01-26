@@ -6,15 +6,11 @@
 			"elements": [
 				{
 					"type": "Control",
-					"scope": {
-						"$ref": "#/properties/firstName"
-					}
+					"scope": "#/properties/firstName"
 				},
 				{
 					"type": "Control",
-					"scope": {
-						"$ref": "#/properties/lastName"
-					}
+					"scope": "#/properties/lastName"
 				}
 			]
 		},
@@ -23,15 +19,11 @@
 			"elements": [
 				{
 					"type": "Control",
-					"scope": {
-						"$ref": "#/properties/age"
-					}
+					"scope": "#/properties/age"
 				},
 				{
 					"type": "Control",
-					"scope": {
-						"$ref": "#/properties/dateOfBirth"
-					}
+					"scope": "#/properties/dateOfBirth"
 				}
 			]
 		},
@@ -40,27 +32,19 @@
 			"elements": [
 				{
 					"type": "Control",
-					"scope": {
-						"$ref": "#/properties/height"
-					}
+					"scope": "#/properties/height"
 				},
 				{
 					"type": "Control",
-					"scope": {
-						"$ref": "#/properties/gender"
-					}
+					"scope": "#/properties/gender"
 				},
 				{
 					"type": "Control",
-					"scope": {
-						"$ref": "#/properties/rating"
-					}
+					"scope": "#/properties/rating"
 				},
 				{
 					"type": "Control",
-					"scope": {
-						"$ref": "#/properties/committer"
-					}
+					"scope": "#/properties/committer"
 				}
 			]
 		},
@@ -73,15 +57,11 @@
 					"elements": [
 						{
 							"type": "Control",
-							"scope": {
-								"$ref": "#/properties/address/properties/street"
-							}
+							"scope": "#/properties/address/properties/street"
 						},
 						{
 							"type": "Control",
-							"scope": {
-								"$ref": "#/properties/address/properties/streetnumber"
-							}
+							"scope": "#/properties/address/properties/streetnumber"
 						}
 					]
 				},
@@ -90,15 +70,11 @@
 					"elements": [
 						{
 							"type": "Control",
-							"scope": {
-								"$ref": "#/properties/address/properties/postalCode"
-							}
+							"scope": "#/properties/address/properties/postalCode"
 						},
 						{
 							"type": "Control",
-							"scope": {
-								"$ref": "#/properties/address/properties/city"
-							}
+							"scope": "#/properties/address/properties/city"
 						}
 					]
 				}
@@ -107,9 +83,7 @@
 				"effect": "SHOW",
 				"condition": {
 					"type": "LEAF",
-					"scope": {
-						"$ref": "#/properties/committer"
-					},
+					"scope": "#/properties/committer",
 					"expectedValue": true
 				}
 			}

@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from "react-router-dom";
 import { HashLink } from 'react-router-hash-link'
 import {Typography, withStyles} from "material-ui";
-import { DispatchRenderer, initJsonFormsStore } from "@jsonforms/core";
+import { DispatchRenderer } from "@jsonforms/core";
 import { layout } from '@jsonforms/examples';
 import { Provider } from "react-redux";
 import Radium from 'radium';
@@ -23,24 +23,6 @@ const RadiumHashLink = Radium(HashLink);
 
 const data = layouts.data;
 const schema = layouts.schema;
-
-const groupStore = initJsonFormsStore({
-  data,
-  schema,
-  uischema: layouts.group,
-});
-
-const horizontalStore = initJsonFormsStore({
-  data,
-  schema,
-  uischema: layouts.horizontalLayout,
-});
-
-const categorizationStore = initJsonFormsStore({
-  data,
-  schema,
-  uischema: layouts.categorization,
-});
 
 const Layouts = ({ classes }) => (
   <div>

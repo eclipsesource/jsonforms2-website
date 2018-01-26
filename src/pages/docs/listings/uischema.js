@@ -6,8 +6,8 @@ export const UiSchemaElementsCode = {
       }
     },
     uischema: {
-      'type': 'Control',
-      'scope': { '$ref': '#/properties/name' }
+      type: 'Control',
+      scope: '#/properties/name'
     },
     data: {
       name: 'Ottgar',

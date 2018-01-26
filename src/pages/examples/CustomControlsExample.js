@@ -1,10 +1,11 @@
 import React from 'react';
 import { day3, ratingControlTester, RatingControl } from '@jsonforms/examples';
-import { DispatchRenderer, initJsonFormsStore, registerRenderer } from '@jsonforms/core';
+import { DispatchRenderer, registerRenderer } from '@jsonforms/core';
 import { Provider } from 'react-redux';
 import {Typography, withStyles} from "material-ui";
 
 import {commonStyles, Demo, RadiumHashLink} from '../../common'
+import {createJsonFormsStore} from "../../common/store";
 
 const styles = () => ({
   display1: commonStyles.display1,
@@ -13,7 +14,7 @@ const styles = () => ({
 
 const CustomControlsExample = ({ classes }) => {
 
-  const store = initJsonFormsStore({
+  const store = createJsonFormsStore({
     data: day3.data,
     schema: day3.schema,
     uischema: day3.uischema

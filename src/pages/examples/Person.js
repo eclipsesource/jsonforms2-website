@@ -1,9 +1,10 @@
 import React from 'react';
 import { person } from '@jsonforms/examples';
-import { DispatchRenderer, initJsonFormsStore } from '@jsonforms/core';
+import { DispatchRenderer } from '@jsonforms/core';
 import { Provider } from 'react-redux';
 import {Typography, withStyles} from "material-ui";
 import commonStyles from "../../common/styles";
+import {createJsonFormsStore} from "../../common/store";
 
 const styles = () => ({
   display1: commonStyles.display1
@@ -11,7 +12,7 @@ const styles = () => ({
 
 const Person = ({ classes }) => {
 
-  const store = initJsonFormsStore({
+  const store = createJsonFormsStore({
     data: person.data,
     schema: person.schema,
     uischema: person.uischema

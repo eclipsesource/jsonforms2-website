@@ -1,10 +1,11 @@
 import React from 'react';
 import { array } from '@jsonforms/examples';
-import { DispatchRenderer, initJsonFormsStore } from '@jsonforms/core';
+import { DispatchRenderer } from '@jsonforms/core';
 import { Provider } from 'react-redux';
 import {Typography, withStyles} from "material-ui";
 import commonStyles from "../../common/styles";
 import Demo from "../../common/Demo";
+import {createJsonFormsStore} from "../../common/store";
 
 const styles = () => ({
   display1: commonStyles.display1
@@ -17,13 +18,11 @@ const Array = ({ classes }) => {
     elements: [
       {
         type: 'Control',
-        scope: {
-          $ref: '#/properties/comments'
-        },
+        scope: '#/properties/comments'
       }
     ]
   };
-  const store = initJsonFormsStore({
+  const store = createJsonFormsStore({
     data: array.data,
     schema: array.schema,
     uischema
