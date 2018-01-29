@@ -107,21 +107,6 @@ const Home = ({ classes }) => {
                 Get started
               </Button>
             </RadiumLink>
-            <RadiumLink
-              to='/docs/intro'
-              className={classes.link}
-            >
-              <Button
-                raised
-                style={{
-                  backgroundColor: '#11b3bb',
-                  color: 'white',
-                  margin: '1em'
-                }}
-              >
-                Read the docs
-              </Button>
-            </RadiumLink>
           </div>
         </Grid>
 
