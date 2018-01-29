@@ -88,7 +88,7 @@ const Home = ({ classes }) => {
 
           <div className={classes.container}>
             <Typography type={'headline'} style={{ color: '#747474' }}>
-              Complex React/Redux-based forms in the blink of an eye
+              Complex forms in the blink of an eye
             </Typography>
           </div>
 
