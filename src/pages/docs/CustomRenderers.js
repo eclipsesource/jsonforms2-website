@@ -78,12 +78,7 @@ export const CustomRenderers = ({ classes }) => {
 
       <Provider store={store} >
         <Demo
-          js={() => {
-            // TODO: remove uischema/schema props from DispatchRenderer once JSON Forms dependency has been updated
-            return (
-              <DispatchRenderer />
-            )
-          }}
+          js={() => <DispatchRenderer />}
           schema={ratingSchema}
           uischema={ratingUiSchema}>
         </Demo>
