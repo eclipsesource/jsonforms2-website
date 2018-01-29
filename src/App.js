@@ -46,6 +46,7 @@ const styles = theme => ({
   link: {
     ...commonStyles.link,
     marginLeft: '1em',
+    fontWeight: 'bold'
   },
   menuButton: {
     marginLeft: -12,
@@ -98,11 +99,26 @@ class App extends Component {
 
           <div className={classes.content}>
             <Switch>
-              <Route exact path="/" component={Home}/>
-              <Route path="/examples" component={Examples}/>
-              <Route path="/docs" component={Docs}/>
-              <Route path="/support" component={Support}/>
-              <Route path="/imprint" component={Imprint}/>
+              <Route exact 
+                path="/" 
+                component={Home} 
+                />
+              <Route 
+                path="/examples" 
+                component={Examples} 
+                />
+              <Route 
+                path="/docs"     
+                component={Docs}
+              />
+              <Route 
+                path="/support"
+                component={Support}
+              />
+              <Route 
+                path="/imprint" 
+                component={Imprint}
+              />
             </Switch>
           </div>
 
