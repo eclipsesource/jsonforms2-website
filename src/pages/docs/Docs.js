@@ -10,6 +10,7 @@ import Layouts from "./Layouts";
 import { generateLinks, commonStyles } from "../../common";
 import Rules from "./Rules";
 import Store from "./Store";
+import Tutorial from "./Tutorial";
 
 const styles = () => ({
   grid: commonStyles.grid,
@@ -34,6 +35,7 @@ const Docs = ({ classes, match, location }) => (
       <Switch>
         <Route path={`${match.url}/intro`} component={Intro}/>
         <Route path={`${match.url}/getting-started`} component={GettingStarted}/>
+        <Route path={`${match.url}/tutorial`} component={Tutorial}/>
         <Route path={`${match.url}/uischema/controls`} component={Controls}/>
         <Route path={`${match.url}/uischema/layouts`} component={Layouts}/>
         <Route path={`${match.url}/uischema/rules`} component={Rules}/>
@@ -64,7 +66,11 @@ const Docs = ({ classes, match, location }) => (
             },
             {
               slug: 'intro',
-              name: 'Intro'
+              name: 'What is JSON Forms?'
+            },
+            {
+              slug: 'tutorial',
+              name: 'Tutorial'
             },
             {
               slug: 'uischema',

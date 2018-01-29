@@ -29,7 +29,9 @@ const Store = ({ classes }) => (
     <Typography type='headline' className={classes.headline}>
       Basic structure
     </Typography>
-    The basic structure of the JSON Forms state looks like this:
+    JSON Forms exports its reducer via
+    the <ApiLink link='/api/core/globals.html#jsonformsreducer'>jsonformsReducer</ApiLink> function.
+    It describes the basic structure of the JSON Forms state which looks like this:
     <MarkdownElement
       dir="ltr"
       className={classes.code}

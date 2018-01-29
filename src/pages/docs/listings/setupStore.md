@@ -1,9 +1,6 @@
-import { applyMiddleware, createStore } from 'redux';
-import thunk from 'redux-thunk';
-import { Actions, JsonForms, jsonformsReducer } from '@jsonforms/core';
 
 // TODO: settup up 2nd argument (initial state) need to be more convenient 
-export const store = ({ data, schema, uischema}) => createStore(
+export const store = createStore(
   jsonformsReducer(),  
   {
     jsonforms: {

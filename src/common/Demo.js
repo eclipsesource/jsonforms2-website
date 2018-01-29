@@ -89,10 +89,16 @@ const styles = theme => ({
 });
 
 class Demo extends React.Component {
-  state = {
-    schemaOpen: false,
-    uischemaOpen: false,
-  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      dataOpen: props.js === undefined,
+      schemaOpen: false,
+      uischemaOpen: false,
+    };
+  }
+
 
   handleClickOpenSchema = () => {
     this.setState({
@@ -114,7 +120,7 @@ class Demo extends React.Component {
     this.setState({
       uischemaOpen: false,
       schemaOpen: false,
-      dataOpen: !this.state.dataOpen,
+      dataOpen: !this.state.dataOpen
     });
   };
 
@@ -155,9 +161,12 @@ class Demo extends React.Component {
           <MarkdownElement dir="ltr" className={classes.code} text={`\`\`\`json\n${dataAsString}\n\`\`\``} />
         </Collapse>
 
-        <div className={classes.demo}>
-          <DemoComponent />
-        </div>
+        {
+          this.props.js &&
+          <div className={classes.demo}>
+            <DemoComponent/>
+          </div>
+        }
       </div>
     );
   }
