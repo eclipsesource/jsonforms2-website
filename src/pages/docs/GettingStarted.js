@@ -27,6 +27,9 @@ const GettingStarted = ({ classes }) => {
       </Typography>
       <p>
         This section describes how you can get quickly started with JSON Forms.
+        Alternatively, you can also clone
+        the <a href="https://github.com/eclipsesource/jsonforms-react-seed" className={classes.link}>seed</a> if you
+        want access to the code directly.
       </p>
 
       <Typography type={'headline'}>Usage with redux</Typography>
@@ -34,18 +37,20 @@ const GettingStarted = ({ classes }) => {
 
         <li>
           We'll use <a href="https://github.com/facebookincubator/create-react-app" className={classes.link}>create-react-app</a> to scaffold a basic React application which we'll use as a
-          starting point. If you didn't install create-react-app yet, please do so now.
+          starting point.
+          If you didn't install create-react-app yet, please do so now.
           Let's now create a basic application with:
           <MarkdownElement
             dir="ltr"
             className={classes.code}
             text={`\`\`\`bash\ncreate-react-app my-jsonforms-app\n\`\`\``}
           />
-          Scaffolding may take a couple of moments. Once it's finished, switch to your newly created appl:
+          Scaffolding may take a couple of moments. Once it's finished, switch to your newly created app and
+          install all dependencies:
           <MarkdownElement
             dir="ltr"
             className={classes.code}
-            text={`\`\`\`bash\ncd my-jsonforms-app\n\`\`\``}
+            text={`\`\`\`bash\ncd my-jsonforms-app\nnpm install\n\`\`\``}
           />
         </li>
 
@@ -59,9 +64,9 @@ const GettingStarted = ({ classes }) => {
         </li>
 
         <li>
-          Open <code>index.js</code> and create a new store with the <code>createStore</code> function provided by redux.
-          JSON Forms exports its reducers, which you can combine with other reducer with <code>combineReducers</code>, if necessary.
-          We also need to setup the initial state (which right now is a bit cumbersome, see TODO):
+          Switch to the <code>src</code> directory and open <code>index.js</code> with an editor of your choice.
+          Let's now create a new store with the <code>createStore</code> function provided by redux. JSON Forms
+          exports its reducer and makes use of <code>redux-thunk</code>, hence we must set-up the necessary imports:
 
           <MarkdownElement
             dir="ltr"
