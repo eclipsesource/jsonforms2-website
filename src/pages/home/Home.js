@@ -27,20 +27,19 @@ const styles = () => ({
   },
   logo: {
     textAlign: 'center',
+    marginTop: '0.5em',
     paddingTop: '0.25em',
     paddingBottom: '0.5em',
     fontSize: '2em',
   },
   icon: {
     color: '#fff',
-    width: '100px',
-    height: 'auto',
+    width: 'auto',
+    height: '6em',
   },
   iconWrapper: {
-    backgroundColor: '#7986CB',
-    height: '100px',
-    width: '100px',
-    borderRadius: '50px',
+    height: '3em',
+    width: '3em',
   },
   details: {
     color: '#9b9b9b',
@@ -65,6 +64,12 @@ const styles = () => ({
     margin: 'auto',
   },
   link: commonStyles.link,
+  button: {
+    backgroundColor: '#11b3bb',
+    color: 'white',
+    margin: '1em'
+  },
+
 });
 
 const store = createJsonFormsStore({
@@ -99,10 +104,7 @@ const Home = ({ classes }) => {
             >
               <Button
                 raised
-                style={{
-                  backgroundColor: '#11b3bb',
-                  color: 'white'
-                }}
+                className={classes.button}
               >
                 Get started
               </Button>
@@ -114,15 +116,8 @@ const Home = ({ classes }) => {
           <Card className={classes.card}>
             <CardContent>
               <Grid container justify={'center'} align={'center'}>
-                <Grid item xs={4} >
-                  <div style={{
-                    height: '100px',
-                    width: '100px',
-                    padding: '10px'
-                  }}>
-                    <img src={schemaLogo} alt='JSON Schema Logo' height={'100px'} />
-                    {/*<ExtensionIcon className={classes.icon} style={{color: '#fff', margin: 'auto'}}/>*/}
-                  </div>
+                <Grid item xs={4}>
+                  <img src={schemaLogo} alt='JSON Schema Logo' height='74px' style={{ margin: '11px', padding: 0 }}/>
                   <div className={classes.container}>
                     <div className={classes.details}>
                       Declare your forms as JSON based on a JSON Schema
@@ -131,13 +126,7 @@ const Home = ({ classes }) => {
                 </Grid>
 
                 <Grid item xs={4}>
-                  <div style={{
-                    height: '100px',
-                    width: '100px',
-                    padding: '10px'
-                  }}>
-                    <FeaturesIcon className={classes.icon}/>
-                  </div>
+                  <FeaturesIcon className={classes.icon} />
                   <div className={classes.container}>
                     <div className={classes.details}>
                       Fully-featured forms including data-binding, input validation, and rule-based visibility
@@ -147,11 +136,7 @@ const Home = ({ classes }) => {
                 </Grid>
 
                 <Grid item xs={4}>
-                  <div style={{
-                    height: '100px',
-                    width: '100px',
-                    padding: '10px'
-                  }}>
+                  <div>
                     <CustomizeIcon className={classes.icon} />
                   </div>
                   <div className={classes.container}>
