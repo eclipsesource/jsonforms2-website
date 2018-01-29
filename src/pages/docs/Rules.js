@@ -5,7 +5,7 @@ import Radium from 'radium';
 import {UiSchemaElementsCode} from "./listings/uischema";
 import MarkdownElement from "../../common/MarkdownElement";
 import commonStyles from "../../common/styles";
-import UISchemaProp from "../../common/UISchemaProp";
+import PropHeader from "../../common/PropHeader";
 import ApiLink from "../../common/ApiLink";
 import {createJsonFormsStore} from "../../common/store";
 /* eslint import/no-webpack-loader-syntax: off */
@@ -61,7 +61,7 @@ const Rules = ({ classes }) => {
         to true, executing the associated <code>effect</code>.
       </p>
 
-      <UISchemaProp title='effect' type='RuleEffect' link='/api/core/enums/ruleeffect.html'/>
+      <PropHeader title='effect' type='RuleEffect' link='/api/core/enums/ruleeffect.html'/>
       <p>
         The <code>effect</code> property determines what should happen to the attached UI schema element once
         the <code>condition</code> is met. In the example above, if the <code>name</code> property has the value
@@ -75,7 +75,7 @@ const Rules = ({ classes }) => {
         </ul>
       </p>
 
-      <UISchemaProp title='condition' type='Condition' link='/api/core/interfaces/condition.html'/>
+      <PropHeader title='condition' type='Condition' link='/api/core/interfaces/condition.html'/>
       <p>
         The <code>condition</code> property describes what value should be observed and compares that value with the
         one provided via <code>expectedValue</code>. The format for describing the scope is the same as for regular

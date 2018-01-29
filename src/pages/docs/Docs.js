@@ -9,6 +9,7 @@ import Controls from "./Controls";
 import Layouts from "./Layouts";
 import { generateLinks, commonStyles } from "../../common";
 import Rules from "./Rules";
+import Store from "./Store";
 
 const styles = () => ({
   grid: commonStyles.grid,
@@ -38,6 +39,7 @@ const Docs = ({ classes, match, location }) => (
         <Route path={`${match.url}/uischema/rules`} component={Rules}/>
         <Route path={`${match.url}/uischema`} component={UISchemaElements}/>
         <Route path={`${match.url}/custom-renderers`} component={CustomRenderers}/>
+        <Route path={`${match.url}/store`} component={Store}/>
         <Route path={match.url} render={() => (
           <div>
             <Typography type="display1" className={classes.display1}>Documentation</Typography>
@@ -79,13 +81,17 @@ const Docs = ({ classes, match, location }) => (
                 {
                   slug: 'rules',
                   name: 'Rules'
-                }
+                },
               ]
             },
             {
               slug: 'custom-renderers',
               name: 'Custom renderers'
             },
+            {
+              slug: 'store',
+              name: 'Store'
+            }
           ])
         }
         <li>

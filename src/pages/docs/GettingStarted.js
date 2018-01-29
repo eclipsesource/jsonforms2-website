@@ -7,8 +7,10 @@ const init = require('!raw-loader!./listings/init.md');
 const installation = require('!raw-loader!./listings/installation.md');
 const setupStore = require('!raw-loader!./listings/setupStore.md');
 const render = require('!raw-loader!./listings/render.md');
+const initAction = require('!raw-loader!./listings/initAction.md');
 
 const styles = () => ({
+  link: commonStyles.link,
   code: commonStyles.code,
   display1: commonStyles.display1,
 });
@@ -65,6 +67,23 @@ const GettingStarted = ({ classes }) => {
             dir="ltr"
             className={classes.code}
             text={`\`\`\`js\n${setupStore}\n\`\`\``}
+          />
+
+          In order for JSON Forms to initialize correctly, we need to dispatch an <code>INIT</code> action that will
+          set-up some internal state that's necessary for JSON Forms to work properly:
+
+          <MarkdownElement
+            dir="ltr"
+            className={classes.code}
+            text={`\`\`\`js\n${initAction}\n\`\`\``}
+          />
+
+          Finally, if you want validation results to appear initially, dispatch the validate action:
+
+          <MarkdownElement
+            dir="ltr"
+            className={classes.code}
+            text={`\`\`\`js\nstore.dispatch(Actions.validate())\n\`\`\``}
           />
         </li>
         {/**/}

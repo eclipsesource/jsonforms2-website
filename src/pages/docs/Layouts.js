@@ -2,12 +2,10 @@ import React from 'react'
 import {Link} from "react-router-dom";
 import { HashLink } from 'react-router-hash-link'
 import {Typography, withStyles} from "material-ui";
-import { DispatchRenderer } from "@jsonforms/core";
 import { layout } from '@jsonforms/examples';
-import { Provider } from "react-redux";
 import Radium from 'radium';
 import layouts from './listings/layouts'
-import { Demo, MarkdownElement, commonStyles, UISchemaPropTitle, ApiLink } from '../../common';
+import { MarkdownElement, commonStyles, PropHeader, ApiLink } from '../../common';
 
 const styles = () => ({
   code: commonStyles.code,
@@ -40,14 +38,14 @@ const Layouts = ({ classes }) => (
       UI Schema Elements into a horizontal alignment.
     </p>
 
-    <UISchemaPropTitle title='elements' type='UISchemaElement[]' link={'/api/core/interfaces/uischemaelement.html'}/>
+    <PropHeader title='elements' type='UISchemaElement[]' link={'/api/core/interfaces/uischemaelement.html'}/>
     <p>
       All layouts need to declare an <code>elements</code> property which contains the children which are
       to be arranged by the layout. It is expected to be an array of UI Schema elements, e.g. controls
       or other layouts.
     </p>
 
-    <UISchemaPropTitle title='type' type='string'/>
+    <PropHeader title='type' type='string'/>
     By default, JSON Forms supports four different kinds of layouts: <code>VerticalLayout</code>&nbsp;
     and <code>HorizontalLayout</code>, a slightly modified version of the vertical layout called <code>Group</code>,
     as well <code>Categorization</code>, which is often used to bundle related data, for instance by means of Tabs.
@@ -108,7 +106,7 @@ const Layouts = ({ classes }) => (
       a <code>VerticalLayout</code> but features an additional mandatory <code>label</code> property
       that is used to describe the <code>elements</code>.
     </p>
-    <UISchemaPropTitle title='label' type='string'/>
+    <PropHeader title='label' type='string'/>
     <p>
       The label property defines an additional string that is ought to describe the <code>elements</code> of
       the <code>Group</code>.

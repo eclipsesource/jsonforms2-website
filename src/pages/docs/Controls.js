@@ -5,10 +5,9 @@ import { DispatchRenderer } from "@jsonforms/core";
 import { Provider } from "react-redux";
 import Radium from 'radium';
 import {UiSchemaElementsCode} from "./listings/uischema";
-import {  } from "../../common";
 import Demo from "../../common/Demo";
 import commonStyles from "../../common/styles";
-import UISchemaProp from "../../common/UISchemaProp";
+import PropHeader from "../../common/PropHeader";
 import MarkdownElement from "../../common/MarkdownElement";
 import {createJsonFormsStore} from "../../common/store";
 
@@ -54,7 +53,7 @@ const Controls = ({ classes }) => {
         therefore have a <code>scope</code> property.
       </p>
 
-      <UISchemaProp title='scope' type='string' />
+      <PropHeader title='scope' type='string' />
       <p>
         The mandatory <code>scope</code> property, which expects a&nbsp;
         <a href="https://spacetelescope.github.io/understanding-json-schema/structuring.html#reuse"

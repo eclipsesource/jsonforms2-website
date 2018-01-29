@@ -14,7 +14,7 @@ const styles = () => ({
 
 const RadiumLink = Radium(Link);
 
-const UISchemaProp = ({ classes, title, type, link }) => (
+const PropHeader = ({ classes, title, type, link }) => (
   <Typography
     type='headline'
     className={classes.headline}
@@ -23,9 +23,10 @@ const UISchemaProp = ({ classes, title, type, link }) => (
     {
       link ?
         <span>(<a href={link} target="_blank" className={classes.link}>{type}</a>)</span> :
-        <span className={classes.type}>({type})</span>
+        type &&
+          <span className={classes.type}>({type})</span>
     }
   </Typography>
 );
 
-export default withStyles(styles)(UISchemaProp);
+export default withStyles(styles)(PropHeader);
