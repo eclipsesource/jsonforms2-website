@@ -31,7 +31,7 @@ const Layouts = ({ classes }) => (
       Layouts
     </Typography>
     <p>
-      <a href="/api/core/interfaces/layout.html" target="_blank" className={classes.link}>Layout</a> elements
+      <a href="/api/core/interfaces/layout.html" className={classes.link}>Layout</a> elements
       in the UI Schema contain other UI Schema elements
       like <RadiumLink to='/docs/uischema/controls' className={classes.link}>Controls</RadiumLink> or other layouts
       and serve the purpose of defining the layout of those, e.g. a layout could arrange all its contained

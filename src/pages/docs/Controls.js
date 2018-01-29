@@ -10,6 +10,7 @@ import commonStyles from "../../common/styles";
 import PropHeader from "../../common/PropHeader";
 import MarkdownElement from "../../common/MarkdownElement";
 import {createJsonFormsStore} from "../../common/store";
+import ApiLink from "../../common/ApiLink";
 
 const styles = () => ({
   code: commonStyles.code,
@@ -49,7 +50,7 @@ const Controls = ({ classes }) => {
         How a control is rendered depends on the type of the property as defined in the JSON Schema,
         e.g. a property of type <code>boolean</code> is rendered as a Checkbox by default.
         Controls are of
-        type <a href='/api/core/interfaces/scopable.html' className={classes.link} target="_blank">Scopable</a> and
+        type <ApiLink link='/api/core/interfaces/scopable.html'>Scopable</ApiLink> and
         therefore have a <code>scope</code> property.
       </p>
 

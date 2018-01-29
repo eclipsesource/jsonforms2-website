@@ -88,7 +88,7 @@ const Tutorial = ({ classes }) => {
 
           The <code>person</code> import is necessary for importing the person example
           while <code>@jsonforms/material-renderers</code> imports
-          the <a href="http://http://material-ui-next.com/" target="_blank" className={classes.link}>Material UI</a> based
+          the <a href="http://http://material-ui-next.com/" className={classes.link}>Material UI</a> based
           renderer set. The other ones will be explained shortly.
 
           Now let's define the variables that are crucial for JSON Forms to work,

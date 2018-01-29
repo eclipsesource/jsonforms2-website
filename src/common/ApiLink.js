@@ -7,7 +7,7 @@ const styles = () => ({
 });
 
 const ApiLink = ({ classes, link, children }) => (
-  <a href={link} target="_blank" className={classes.link}>{children}</a>
+  <a href={link} className={classes.link}>{children}</a>
 );
 
 export default withStyles(styles)(ApiLink)

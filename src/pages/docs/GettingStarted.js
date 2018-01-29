@@ -33,7 +33,7 @@ const GettingStarted = ({ classes }) => {
       </p>
       <ol className={classes.list}>
         <li>
-          Clone the <a target="_blank" href="https://github.com/eclipsesource/jsonforms-react-seed" className={classes.link}>seed</a> app with:
+          Clone the <a href="https://github.com/eclipsesource/jsonforms-react-seed" className={classes.link}>seed</a> app with:
           <MarkdownElement
             dir="ltr"
             className={classes.code}

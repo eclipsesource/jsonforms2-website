@@ -22,7 +22,7 @@ const PropHeader = ({ classes, title, type, link }) => (
     <code>{title}</code>&nbsp;
     {
       link ?
-        <span>(<a href={link} target="_blank" className={classes.link}>{type}</a>)</span> :
+        <span>(<a href={link} className={classes.link}>{type}</a>)</span> :
         type &&
           <span className={classes.type}>({type})</span>
     }

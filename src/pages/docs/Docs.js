@@ -11,6 +11,7 @@ import { generateLinks, commonStyles } from "../../common";
 import Rules from "./Rules";
 import Store from "./Store";
 import Tutorial from "./Tutorial";
+import APIs from "./APIs";
 
 const styles = () => ({
   grid: commonStyles.grid,
@@ -42,6 +43,7 @@ const Docs = ({ classes, match, location }) => (
         <Route path={`${match.url}/uischema`} component={UISchemaElements}/>
         <Route path={`${match.url}/custom-renderers`} component={CustomRenderers}/>
         <Route path={`${match.url}/store`} component={Store}/>
+        <Route path={`${match.url}/apis`} component={APIs}/>
         <Route path={match.url} render={() => (
           <div>
             <Typography type="display1" className={classes.display1}>Documentation</Typography>
@@ -97,12 +99,13 @@ const Docs = ({ classes, match, location }) => (
             {
               slug: 'store',
               name: 'Store'
+            },
+            {
+              slug: 'apis',
+              name: 'APIs'
             }
           ])
         }
-        <li>
-          <a href='/api/core/index.html' className={classes.link} target="_blank">API</a>
-        </li>
       </ul>
     </Grid>
   </Grid>
