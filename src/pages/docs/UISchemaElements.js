@@ -1,10 +1,21 @@
 import React from 'react';
 import {Grid, Typography, withStyles} from "material-ui";
 import commonStyles from "../../common/styles";
-import Alert from 'material-ui-icons/Error'
+import Info from 'material-ui-icons/Info'
 
 const styles = () => ({
-  display1: commonStyles.display1
+  display1: commonStyles.display1,
+  container: {
+    backgroundColor: '#3D5AFE',
+    color: '#fff',
+    borderRadius: '0.25em',
+    padding: '0.25em',
+    marginTop: '1em'
+  },
+  alert: {
+    width: '100%',
+    height: '100%'
+  }
 });
 
 const UiSchemaElements = ({ classes }) => (
@@ -23,9 +34,9 @@ const UiSchemaElements = ({ classes }) => (
       In this article, we provide a detailed overview about the currently available core UI schema elements.
     </p>
 
-    <Grid container style={{ backgroundColor: '#F44336', color: '#fff', borderRadius: '0.25em', padding: '0.25em', marginTop: '1em' }}>
+    <Grid container className={classes.container}>
       <Grid item xs={1}>
-        <Alert style={{ width: '100%', height: '100%' }}/>
+        <Info className={classes.alert} />
       </Grid>
       <Grid item xs={11}>
         <p>
