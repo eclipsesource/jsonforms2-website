@@ -114,8 +114,9 @@ export const CustomRenderers = ({ classes }) => {
 
       <p>
         Once the dependencies are installed and the local server has been started,
-        navigate to <code>localhost:3000</code> in order to see the application running.
-        The seed is described in more detail within the <code>README.md</code> file of the repo, hence we only focus
+        navigate to <code>http://localhost:3000</code> in order to see the application running.
+        The seed is described in more detail within the <code>README.md</code> file of
+        the <a href="https://github.com/eclipsesource/jsonforms-react-seed">repo</a>, hence we only focus
         on the most crucial parts of the app in the following.
       </p>
 
