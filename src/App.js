@@ -13,7 +13,7 @@ import Home from './pages/home/Home';
 import Imprint from "./pages/Imprint";
 import Docs from "./pages/docs/Docs";
 import Examples from "./pages/examples/Examples";
-import Support from "./pages/Support";
+import Support from "./pages/support/Support";
 import Footer from "./Footer";
 import { commonStyles, Logo } from './common';
 
@@ -96,7 +96,7 @@ class App extends Component {
               <Button
                 component={props => <Link to="/support" {...props} className={classes.link} />}
               >
-                Support
+                Professional Support
               </Button>
             </Toolbar>
           </AppBar>
