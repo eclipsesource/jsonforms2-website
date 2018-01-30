@@ -40,8 +40,10 @@ const styles = theme => ({
     flex: 1,
     padding: '0em'
   },
-  flex: {
-    flex: 1,
+  logoTitle: {
+    textDecoration: 'none',
+    color: '#fff',
+    flex: '1'
   },
   link: {
     ...commonStyles.link,
@@ -75,9 +77,11 @@ class App extends Component {
                 <Logo width={45} height={30} color='#fff'/>
               </RadiumLink>
               &nbsp;
-              <Typography type="title" color="inherit" className={classes.flex}>
-                JSONForms
-              </Typography>
+              <RadiumLink to='/' className={classes.logoTitle}>
+                <Typography type="title" color="inherit">
+                  JSONForms
+                </Typography>
+              </RadiumLink>
               <Button
                 component={({...props}) => <RadiumLink to='/examples' {...props} className={classes.link} />}
               >
