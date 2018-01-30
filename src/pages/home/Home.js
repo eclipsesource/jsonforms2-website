@@ -2,15 +2,15 @@ import * as React from "react";
 import {Button, Card, CardContent, Grid, Typography, withStyles} from "material-ui";
 import FeaturesIcon from 'material-ui-icons/Report';
 import CustomizeIcon from 'material-ui-icons/Brush';
-import { DispatchRenderer, jsonformsReducer }  from '@jsonforms/core'
-import { applyMiddleware, createStore } from 'redux';
-import thunk from 'redux-thunk';
+import { DispatchRenderer }  from '@jsonforms/core'
 import { Provider } from 'react-redux';
 import schema from './schema.json';
 import uischema from './uischema.json';
+import reactLogo from './reactLogo.svg';
+import schemaLogo from './schemalogo.svg';
+import reduxLogo from './reduxLogo.svg';
 
 import {commonStyles, Demo, Logo, RadiumLink} from '../../common'
-import schemaLogo from './schemalogo.svg';
 import {createJsonFormsStore} from "../../common/store";
 
 const styles = () => ({
@@ -21,7 +21,6 @@ const styles = () => ({
     margin: 'auto',
     paddingLeft: '10%',
     paddingRight: '10%',
-    marginBottom: '1em',
     backgroundColor: '#212121',
     color: '#fff',
   },
@@ -150,10 +149,32 @@ const Home = ({ classes }) => {
           </Card>
         </Grid>
 
+
+
+        <Grid item xs={12} className={classes.card} style={{ backgroundColor: '#eeeeee', marginTop: 0, padding: '1em' }}>
+          <Grid container>
+            <Grid item xs={3}/>
+            <Grid item xs={6} justify='center' align='center'>
+              <img src={reactLogo} alt="React logo" style={{ height: '80px' }}/>
+              <img src={reduxLogo} alt="Redux logo" style={{ height: '80px' }}/>
+              <Typography type='title' style={{ color: '#212121' }}>
+                JSON Forms primarily supports React/Redux based applications
+              </Typography>
+            </Grid>
+            <Grid item xs={3}/>
+            </Grid>
+          </Grid>
+
+        <Grid item xs={12} className={classes.container} style={{ paddingTop: '1em '}}>
+          <Typography type='heading'>
+            Demo
+          </Typography>
+        </Grid>
+
         <Grid item xs={12} className={classes.container}>
           <Provider store={store}>
             <Demo
-              js={() => (<DispatchRenderer />) }
+              js={() => <DispatchRenderer /> }
               schema={schema}
               uischema={uischema}
             />
@@ -161,7 +182,7 @@ const Home = ({ classes }) => {
         </Grid>
       </Grid>
     </div>
-  );
+);
 };
 
 export default withStyles(styles)(Home);
