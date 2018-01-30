@@ -23,6 +23,10 @@ const Footer = ({classes}) => (
       Twitter
     </a>
 
+    <a href="https://github.com/eclipsesource/jsonforms" className={classes.link}>
+      Github
+    </a>
+
     <Link to="/imprint" className={classes.link}>
       Imprint
     </Link>
