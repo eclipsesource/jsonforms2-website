@@ -18,14 +18,17 @@ export const generateLinks = (currentLocation, classes, url, routes, indentation
               >
                 <span style={{
                   color: '#ff1744',
-                  marginRight: '0.25em'
+                  marginRight: '0.25em',
+                  marginLeft: `${indentation * 0.5}em`
                 }}
                 >
                   |
                 </span>
                 {route.name}
               </span> :
-              <span>{route.name}</span>
+              <span style={{
+                marginLeft: `${indentation * 0.5}em`
+              }}>{route.name}</span>
           }
           {
             currentLocation.indexOf(`${url}/${route.slug}`) > -1 &&
