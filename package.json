@@ -4,9 +4,9 @@
   "private": true,
   "homepage": "https://jsonforms-beta.de",
   "dependencies": {
-    "@jsonforms/core": "^2.0.0-rc.0",
-    "@jsonforms/examples": "^2.0.0-rc.0",
-    "@jsonforms/material-renderers": "^2.0.0-rc.0",
+    "@jsonforms/core": "^2.0.0-rc.1",
+    "@jsonforms/examples": "^2.0.0-rc.1",
+    "@jsonforms/material-renderers": "^2.0.0-rc.1",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "classnames": "^2.2.5",
     "global": "^4.3.2",
