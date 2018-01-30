@@ -9,11 +9,11 @@ import {AppBar, Button, Toolbar, Typography, withStyles} from "material-ui";
 import 'typeface-roboto'
 import Radium from 'radium';
 import './App.css';
-import Home from './pages/home/Home';
+import Home from './pages/home';
 import Imprint from "./pages/Imprint";
-import Docs from "./pages/docs/Docs";
-import Examples from "./pages/examples/Examples";
-import Support from "./pages/support/Support";
+import Docs from "./pages/docs";
+import Examples from "./pages/examples";
+import Support from "./pages/support";
 import Footer from "./Footer";
 import { commonStyles, Logo } from './common';
 
