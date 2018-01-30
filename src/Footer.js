@@ -18,11 +18,14 @@ const styles = () => ({
 const Footer = ({classes}) => (
   <footer className={classes.footer}>
     © EclipseSource 2017
-    <Button
-      component={props => <Link to="/imprint" {...props} className={classes.link} />}
-    >
+
+    <a href="https://twitter.com/JSONForms" className={classes.link}>
+      Twitter
+    </a>
+
+    <Link to="/imprint" className={classes.link}>
       Imprint
-    </Button>
+    </Link>
   </footer>
 );
 export default withStyles(styles)(Footer);
