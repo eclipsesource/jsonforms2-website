@@ -2,9 +2,15 @@ import React from 'react';
 import {Grid, Typography, withStyles} from "material-ui";
 import commonStyles from "../../common/styles";
 import Info from 'material-ui-icons/Info'
+import { Link } from 'react-router-dom';
 
 const styles = () => ({
   display1: commonStyles.display1,
+  link: commonStyles.link,
+  list: {
+    ...commonStyles.list,
+    listStyleType: 'square'
+  },
   container: {
     backgroundColor: '#3D5AFE',
     color: '#fff',
@@ -27,11 +33,10 @@ const UiSchemaElements = ({ classes }) => (
       UI Schema Elements
     </Typography>
     <p>
-      The UI schema, which is passed into the jsonforms directive,
+      The UI schema, which is passed to JSON Forms,
       describes the general layout of a form and is just a regular JSON object.
-      It describes the form by means of different UI schema elements, which can be categorized into Controls or Layouts.
-      The type of an element can be specified via the type property.
-      In this article, we provide a detailed overview about the currently available core UI schema elements.
+      It describes the form by means of different UI schema elements, which can often categorized
+      into either Controls or Layouts.
     </p>
 
     <Grid container className={classes.container}>
@@ -46,6 +51,22 @@ const UiSchemaElements = ({ classes }) => (
         <p>Thanks for your understanding!</p>
       </Grid>
     </Grid>
+
+    <Typography type='title' style={{ marginTop: '1em' }}>
+      Available elements
+    </Typography>
+
+    <ul className={classes.list}>
+      <li>
+        <Link to='/docs/uischema/controls' className={classes.link}>Controls</Link>
+      </li>
+      <li>
+        <Link to='/docs/uischema/layouts' className={classes.link}>Layout</Link>
+      </li>
+      <li>
+        <Link to='/docs/uischema/rules' className={classes.link}>Rules</Link>
+      </li>
+    </ul>
   </div>
 );
 
