@@ -1,21 +1,16 @@
-import React from "react";
+import * as React from 'react';
+import { mapStateToControlProps, mapDispatchToControlProps } from '@jsonforms/core';
 import { connect } from 'react-redux';
-import {
-  mapDispatchToFieldProps,
-  mapStateToFieldProps
-} from '@jsonforms/core';
 import { Rating } from './Rating';
 
-const RatingControl = ({ data, handleChange, path }) => {
-  return (
-    <Rating
-      value={data}
-      onClick={ev => handleChange(path, Number(ev.value))}
-    />
-  );
-};
+const RatingControl = ({ data, handleChange, path }) => (
+  <Rating
+    value={data}
+    onClick={ev => handleChange(path, Number(ev.value))}
+  />
+);
 
 export default connect(
-  mapStateToFieldProps,
-  mapDispatchToFieldProps,
-)(RatingControl)
+  mapStateToControlProps,
+  mapDispatchToControlProps,
+)(RatingControl);

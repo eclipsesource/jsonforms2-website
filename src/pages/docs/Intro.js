@@ -6,7 +6,7 @@ import {Grid, Typography, withStyles} from "material-ui";
 import { DispatchRenderer, registerRenderer } from '@jsonforms/core';
 import { IntroCode } from './listings/intro';
 import RatingControl from './RatingControl';
-import { ratingControlTester} from "./rating.tester";
+import ratingControlTester from "./ratingControlTester";
 import { Demo, MarkdownElement, commonStyles, Logo } from '../../common';
 import {createJsonFormsStore} from "../../common/store";
 

@@ -1,20 +1,18 @@
 import React from 'react';
 import {Typography, withStyles} from "material-ui";
-import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
-import { DispatchRenderer, jsonformsReducer, registerRenderer } from '@jsonforms/core';
+import { DispatchRenderer, registerRenderer } from '@jsonforms/core';
 import RatingControl from './RatingControl';
-import { ratingControlTester } from './rating.tester';
+import ratingControlTester from './ratingControlTester';
 import MarkdownElement from "../../common/MarkdownElement";
 import Demo from "../../common/Demo";
 import commonStyles from '../../common/styles';
-import ApiLink from "../../common/ApiLink";
 import {createJsonFormsStore} from "../../common/store";
 /* eslint import/no-webpack-loader-syntax: off */
 const seed = require('!raw-loader!./listings/seed.md');
 const ratingControlCode = require('!raw-loader!./RatingControl.jsx');
-const ratingTesterCode = require('!raw-loader!./rating.tester');
+const ratingControlTesterCode = require('!raw-loader!./ratingControlTester');
+const registerRendererCode = require('!raw-loader!./listings/registerRenderer.md');
 
 const ratingData = {
   rating: 2,
@@ -49,7 +47,8 @@ const styles = theme => ({
     marginTop: '0.5em'
   },
   display1: commonStyles.display1,
-  list: commonStyles.list
+  list: commonStyles.list,
+  link: commonStyles.link
 });
 
 export const CustomRenderers = ({ classes }) => {
@@ -114,10 +113,11 @@ export const CustomRenderers = ({ classes }) => {
 
       <p>
         Once the dependencies are installed and the local server has been started,
-        navigate to <code>http://localhost:3000</code> in order to see the application running.
+        navigate to <a href="http://localhost:3000" className={classes.link}>http://localhost:3000</a> in order
+        to see the application running.
         The seed is described in more detail within the <code>README.md</code> file of
-        the <a href="https://github.com/eclipsesource/jsonforms-react-seed">repo</a>, hence we only focus
-        on the most crucial parts of the app in the following.
+        the <a href="https://github.com/eclipsesource/jsonforms-react-seed"className={classes.link}>repo</a>, hence we
+        only focus on the most crucial parts of the app in the following.
       </p>
 
       <Typography type={'headline'} className={classes.headline}>
@@ -179,11 +179,11 @@ export const CustomRenderers = ({ classes }) => {
 
       <p>
         For the <code>onClick</code> prop we pass the <code>handleChange</code> handler which we retrieve
-        via another helper function <code>mapDispatchToFieldProps</code>.
+        via another helper function <code>mapDispatchToControlProps</code>.
         All the handler actually does is to emit a change with the new value.
       </p>
 
-      <p>The complete code looks as follows:</p>
+      <p>The complete code of <code>src/RatingControl.js</code> looks as follows:</p>
 
       <MarkdownElement
         dir="ltr"
@@ -198,13 +198,14 @@ export const CustomRenderers = ({ classes }) => {
         Now that we have our renderer ready we need to tell JSON Forms when we want to make use of it.
         For that purpose we create a tester that checks if the corresponding UI schema element is a control
         and whether it is bound to a path that ends with <code>rating</code>. If that is the case we return a rank of
-        3 which is by one higher than what the default renderer sets provide.
+        3 which is by one higher than what the default renderer sets provide. The <code>ratingControlTester.js</code> file
+        contains the respective code as a default export.
       </p>
 
       <MarkdownElement
         dir="ltr"
         className={classes.code}
-        text={`\`\`\`jsx\n${ratingTesterCode}\n\`\`\``}
+        text={`\`\`\`jsx\n${ratingControlTesterCode}\n\`\`\``}
       />
 
       <p>
@@ -217,14 +218,14 @@ export const CustomRenderers = ({ classes }) => {
       </Typography>
       <p>
         All there is left to do is to register the renderer with its tester. We can do so by calling
-        the <code>registerRenderer</code> action on the store. Within <code>index.js</code>, add the following
-        statement:
+        the <code>registerRenderer</code> action on the store. Within <code>index.js</code>, the follwing
+        statement registers the renderer.
       </p>
 
       <MarkdownElement
         dir="ltr"
         className={classes.code}
-        text={`\`\`\`jsx\nstore.dispatch(\n  registerRenderer(ratingControlTester, RatingControl)\n);\n\`\`\``}
+        text={`\`\`\`jsx\n${registerRendererCode}\n\`\`\``}
       />
 
       <p>
