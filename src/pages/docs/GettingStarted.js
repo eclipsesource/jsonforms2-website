@@ -2,6 +2,7 @@ import React from 'react';
 import {Typography, withStyles} from "material-ui";
 import MarkdownElement from "../../common/MarkdownElement";
 import commonStyles from "../../common/styles";
+import {RadiumLink} from "../../common";
 /* eslint import/no-webpack-loader-syntax: off */
 const init = require('!raw-loader!./listings/init.md');
 const installation = require('!raw-loader!./listings/installation.md');
@@ -58,7 +59,12 @@ const GettingStarted = ({ classes }) => {
         </li>
       </ol>
       <p>
-        For more info about the seed app, please the corresponding README file of the repo.
+        For more info about the seed app, please see the corresponding README file of the
+        the <a href="https://github.com/eclipsesource/jsonforms-react-seed" className={classes.link}>seed repo</a>.
+      </p>
+      <p>
+        For a more detailed tutorial about the usage of JSON Forms, please
+        see <RadiumLink to='/docs/tutorial'>our tutorial</RadiumLink>.
       </p>
     </div>
   );

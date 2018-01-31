@@ -23,6 +23,8 @@ const styles = () => ({
     paddingRight: '10%',
     backgroundColor: '#212121',
     color: '#fff',
+    paddingTop: '1.5em',
+    paddingBottom: '1.5em'
   },
   logo: {
     textAlign: 'center',
@@ -164,12 +166,6 @@ const Home = ({ classes }) => {
             <Grid item xs={3}/>
             </Grid>
           </Grid>
-
-        <Grid item xs={12} className={classes.container} style={{ paddingTop: '1em '}}>
-          <Typography type='heading'>
-            Demo
-          </Typography>
-        </Grid>
 
         <Grid item xs={12} className={classes.container}>
           <Provider store={store}>
