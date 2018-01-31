@@ -2,7 +2,7 @@
   "name": "jsonforms2-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jsonforms-beta.de",
+  "homepage": "https://jsonforms.io",
   "dependencies": {
     "@jsonforms/core": "^2.0.0-rc.1",
     "@jsonforms/examples": "^2.0.0-rc.1",
