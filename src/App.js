@@ -83,13 +83,13 @@ class App extends Component {
                 </Typography>
               </RadiumLink>
               <Button
-                component={({...props}) => <RadiumLink to='/examples' {...props} className={classes.link} />}
+                component={({...props}) => <RadiumLink to='/examples/basic' {...props} className={classes.link} />}
               >
                 Examples
               </Button>
 
               <Button
-                component={props => <Link to="/docs" {...props} className={classes.link} />}
+                component={props => <Link to="/docs/getting-started" {...props} className={classes.link} />}
               >
                 Docs
               </Button>
