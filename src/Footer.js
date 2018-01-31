@@ -17,7 +17,7 @@ const styles = () => ({
 
 const Footer = ({classes}) => (
   <footer className={classes.footer}>
-    © EclipseSource 2017
+    © EclipseSource 2018
 
     <a href="https://twitter.com/JSONForms" className={classes.link}>
       Twitter
