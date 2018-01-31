@@ -18,6 +18,7 @@ const styles = () => ({
   currentRoute: {
     fontWeight: 'bold'
   },
+  sidebarLink: commonStyles.sidebarLink,
   link: commonStyles.link,
   mainSection: commonStyles.mainSection,
   sidebar: commonStyles.sidebar,

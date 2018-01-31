@@ -15,14 +15,16 @@ import GenerateSchemaExample from "./GenerateSchemaExample";
 import GenerateUISchemaExample from "./GenerateUISchemaExample";
 import CustomControlsExample from "./CustomControlsExample";
 
-const RadiumLink = Radium(Link);
-
 const styles = () => ({
   link: commonStyles.link,
+  sidebarLink: commonStyles.sidebarLink,
   grid: commonStyles.grid,
   mainSection: commonStyles.mainSection,
   sidebar: commonStyles.sidebar,
-  display1: commonStyles.display1
+  display1: commonStyles.display1,
+  currentRoute: {
+    fontWeight: 'bold'
+  },
 });
 
 const Examples = ({ classes, location, match }) => (
@@ -64,7 +66,7 @@ const Examples = ({ classes, location, match }) => (
             location.pathname, classes, match.url, [
               {
                 slug: 'basic',
-                name: 'Basic person example with validation'
+                name: 'Basic Example'
               },
               {
                 slug: 'layouts',
