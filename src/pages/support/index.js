@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid, Typography, withStyles} from "material-ui";
+import {Button, Grid, Typography, withStyles} from "material-ui";
 import Feedback from 'material-ui-icons/Feedback'
 import Build from 'material-ui-icons/Build'
 import School from 'material-ui-icons/School'
@@ -8,6 +8,7 @@ import Chat from 'material-ui-icons/Chat'
 import LocalOffer from 'material-ui-icons/LocalOffer'
 import commonStyles from '../../common/styles';
 import eclipseSourceLogo from './eclipsesource.png';
+import EmailIcon from 'material-ui-icons/Email';
 
 const styles = () => ({
   grid: {
@@ -90,6 +91,15 @@ const Support = ({ classes }) => (
         Let us adapt and enhance the framework based on your specific requirements
       </Grid>
       <Grid item xs/>
+    </Grid>
+
+    <Grid container>
+      <Grid item xs>
+        <Button style={{ paddingTop: '2em', paddingBottom: '2em' }} color={'primary'} component={props => <a href='mailto:munich@eclipsesource.com' {...props}/>}>
+          <EmailIcon/>
+          Contact us
+        </Button> for more details!
+      </Grid>
     </Grid>
   </Grid>
 );
