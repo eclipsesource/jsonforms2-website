@@ -4,12 +4,13 @@ import Radium from 'radium';
 
 const RadiumLink = Radium(Link);
 
+// TODO: classes should be object with key-value-pairs where values map to stylename
 export const generateLinks = (currentLocation, classes, url, routes, indentation = 1) => {
   return routes.map(route => {
     return (
       <RadiumLink
         to={`${url}/${route.slug}`}
-        className={classes.link}
+        className={classes.sidebarLink}
       >
         <li key={route.slug}>
           {

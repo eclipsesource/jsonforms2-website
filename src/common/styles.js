@@ -6,6 +6,10 @@ export default {
     color: 'rgb(17, 179, 187)',
     textDecoration: 'none',
   },
+  sidebarLink: {
+    color: '#212121',
+    textDecoration: 'none',
+  },
   code: theme => ({
     display: 'none',
     padding: 0,
@@ -25,8 +29,9 @@ export default {
   },
   sidebar: {
     backgroundColor: '#E0E0E0',
-    padding: '0.5em',
+    padding: '2em',
     lineHeight: '1.7',
+    borderLeft: '1px solid #d4d4d4'
   },
   sidebarLinks: {
     listStyleType: 'none',
@@ -39,8 +44,8 @@ export default {
     paddingBottom: '0.5em',
   },
   display1: {
-    paddingTop: '0.5em',
-    paddingBottom: '0.5em',
+    paddingTop: '1.5em',
+    paddingBottom: '1em',
   },
   headline: {
     marginTop: '0.5em'
