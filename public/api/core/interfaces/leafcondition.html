@@ -38,8 +38,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -78,6 +76,9 @@
 				<ul class="tsd-hierarchy">
 					<li>
 						<a href="condition.html" class="tsd-signature-type">Condition</a>
+					</li>
+					<li>
+						<a href="scopable.html" class="tsd-signature-type">Scopable</a>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">LeafCondition</span>
@@ -94,8 +95,8 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="leafcondition.html#expectedvalue" class="tsd-kind-icon">expected<wbr>Value</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="leafcondition.html#scope" class="tsd-kind-icon">scope</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="leafcondition.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="leafcondition.html#scope" class="tsd-kind-icon">scope</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite"><a href="leafcondition.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
 					</div>
@@ -109,7 +110,7 @@
 					<div class="tsd-signature tsd-kind-icon">expected<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/edgarmueller/jsonforms/blob/22f291a1/packages/core/src/models/uischema.ts#L62">models/uischema.ts:62</a></li>
+							<li>Defined in models/uischema.ts:59</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -118,44 +119,32 @@
 						</div>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="scope" class="tsd-anchor"></a>
 					<h3>scope</h3>
-					<div class="tsd-signature tsd-kind-icon">scope<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<div class="tsd-signature tsd-kind-icon">scope<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
+						<p>Inherited from <a href="scopable.html">Scopable</a>.<a href="scopable.html#scope">scope</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/edgarmueller/jsonforms/blob/22f291a1/packages/core/src/models/uischema.ts#L56">models/uischema.ts:56</a></li>
+							<li>Defined in models/uischema.ts:153</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>The sub schema the condition is bound to.</p>
+							<p>The scope that determines to which part this element should be bound to.</p>
 						</div>
-					</div>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>$ref<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
-							</li>
-						</ul>
 					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite">
 					<a name="type" class="tsd-anchor"></a>
 					<h3>type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"LEAF"</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="condition.html">Condition</a>.<a href="condition.html#type">type</a></p>
+						<p>Overrides <a href="condition.html">Condition</a>.<a href="condition.html#type">type</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/edgarmueller/jsonforms/blob/22f291a1/packages/core/src/models/uischema.ts#L46">models/uischema.ts:46</a></li>
+							<li>Defined in models/uischema.ts:54</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>A string describing the type of condition</p>
-						</div>
-					</div>
 				</section>
 			</section>
 		</div>
@@ -177,10 +166,10 @@
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="leafcondition.html#expectedvalue" class="tsd-kind-icon">expected<wbr>Value</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 								<a href="leafcondition.html#scope" class="tsd-kind-icon">scope</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite">
 								<a href="leafcondition.html#type" class="tsd-kind-icon">type</a>
 							</li>
 						</ul>

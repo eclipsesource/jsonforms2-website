@@ -1,15 +1,15 @@
 export interface JsonFormsState {
   jsonforms: {
-    common: {
+    core: {
       data: any;
       schema?: JsonSchema;
       uischema?: UISchemaElement;
+      validation?: ValidationState,
     };
-    validation?: ValidationState,
     // TODO: should we type these?    
     renderers?: any[];
     fields?: any[];
     // allow additional state for JSONForms
-    [x: string]: any;
+    [additionalState: string]: any;
   };
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { generateSchema } from '@jsonforms/examples';
-import { DispatchRenderer, generateDefaultUISchema, generateJsonSchema } from '@jsonforms/core';
+import { JsonForms, generateDefaultUISchema, generateJsonSchema } from '@jsonforms/core';
 import { Provider } from 'react-redux';
 import {Typography, withStyles} from "material-ui";
 import { commonStyles, Demo } from "../../common";
@@ -46,7 +46,7 @@ const GenerateSchemaExample = ({ classes }) => {
           schema={schema}
           uischema={uischema}
           js={() =>
-            <DispatchRenderer />
+            <JsonForms />
           }
         />
       </Provider>

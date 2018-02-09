@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from "react-router-dom";
 import {Typography, withStyles} from "material-ui";
-import { DispatchRenderer } from "@jsonforms/core";
+import { JsonForms } from "@jsonforms/core";
 import { Provider } from "react-redux";
 import Radium from 'radium';
 import {UiSchemaElementsCode} from "./listings/uischema";
@@ -96,7 +96,7 @@ const Controls = ({ classes }) => {
         <Demo
           js={() => {
             return (
-              <DispatchRenderer
+              <JsonForms
                 schema={UiSchemaElementsCode.controls.schema}
                 uischema={UiSchemaElementsCode.controls.uischema}
               />

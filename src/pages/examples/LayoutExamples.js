@@ -1,6 +1,6 @@
 import React from 'react';
 import { layout } from '@jsonforms/examples';
-import { DispatchRenderer } from '@jsonforms/core';
+import { JsonForms } from '@jsonforms/core';
 import { Provider } from 'react-redux';
 import {Typography, withStyles} from "material-ui";
 import { commonStyles, Demo }from "../../common";
@@ -59,7 +59,7 @@ const Layouts = ({ classes }) => {
       </Typography>
       <Provider store={horizontalStore}>
         <Demo
-          js={() => <DispatchRenderer/> }
+          js={() => <JsonForms/> }
           uischema={layout.uischemaHorizontal}
           schema={layout.schema}
         />
@@ -75,7 +75,7 @@ const Layouts = ({ classes }) => {
       </Typography>
       <Provider store={verticalLayoutStore}>
         <Demo
-          js={() => <DispatchRenderer/> }
+          js={() => <JsonForms/> }
           uischema={layout.uischemaVertical}
           schema={layout.schema}
         />
@@ -95,7 +95,7 @@ const Layouts = ({ classes }) => {
       </p>
       <Provider store={groupStore}>
         <Demo
-          js={() => <DispatchRenderer/> }
+          js={() => <JsonForms/> }
           uischema={layout.uischemaGroup}
           schema={layout.schema}
         />
@@ -115,7 +115,7 @@ const Layouts = ({ classes }) => {
       </p>
       <Provider store={complexStore}>
         <Demo
-          js={() => <DispatchRenderer/> }
+          js={() => <JsonForms/> }
           uischema={layout.uischemaComplex}
           schema={layout.schema}
         />

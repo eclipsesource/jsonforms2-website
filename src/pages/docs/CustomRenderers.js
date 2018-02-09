@@ -1,7 +1,7 @@
 import React from 'react';
 import {Typography, withStyles} from "material-ui";
 import { Provider } from 'react-redux';
-import { DispatchRenderer, registerRenderer } from '@jsonforms/core';
+import { JsonForms, registerRenderer } from '@jsonforms/core';
 import RatingControl from './RatingControl';
 import ratingControlTester from './ratingControlTester';
 import MarkdownElement from "../../common/MarkdownElement";
@@ -77,7 +77,7 @@ export const CustomRenderers = ({ classes }) => {
 
       <Provider store={store} >
         <Demo
-          js={() => <DispatchRenderer />}
+          js={() => <JsonForms />}
           schema={ratingSchema}
           uischema={ratingUiSchema}>
         </Demo>
@@ -89,7 +89,7 @@ export const CustomRenderers = ({ classes }) => {
         <Demo
           js={() => {
             storeWithRatingControlExample.dispatch(registerRenderer(ratingControlTester, RatingControl));
-            return (<DispatchRenderer />);
+            return (<JsonForms />);
           }}
           schema={ratingSchema}
           uischema={ratingUiSchema}

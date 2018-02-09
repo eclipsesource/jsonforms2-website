@@ -64,7 +64,7 @@ const GettingStarted = ({ classes }) => {
       </p>
       <p>
         For a more detailed tutorial about the usage of JSON Forms, please
-        see <RadiumLink to='/docs/tutorial'>our tutorial</RadiumLink>.
+        see <RadiumLink to='/docs/tutorial' className={classes.link}>our tutorial</RadiumLink>.
       </p>
     </div>
   );

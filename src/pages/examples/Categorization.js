@@ -1,6 +1,6 @@
 import React from 'react';
 import { categorization } from '@jsonforms/examples';
-import { DispatchRenderer } from '@jsonforms/core';
+import { JsonForms } from '@jsonforms/core';
 import { Provider } from 'react-redux';
 import {Typography, withStyles} from "material-ui";
 import commonStyles from "../../common/styles";
@@ -37,7 +37,7 @@ const CategorizationExample = ({ classes }) => {
           schema={categorization.schema}
           uischema={categorization.uischema}
           js={() => (
-            <DispatchRenderer />
+            <JsonForms />
           )}
         />
       </Provider>

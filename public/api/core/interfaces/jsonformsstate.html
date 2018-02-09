@@ -38,8 +38,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -66,6 +64,13 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>The state shape of JSONForms.</p>
+					</div>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -74,10 +79,6 @@
 					</li>
 				</ul>
 			</section>
-			<section class="tsd-panel tsd-kind-interface">
-				<h3 class="tsd-before-signature">Indexable</h3>
-				<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">[</span>x: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></div>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -85,9 +86,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="jsonformsstate.html#common" class="tsd-kind-icon">common</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="jsonformsstate.html#fields" class="tsd-kind-icon">fields</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="jsonformsstate.html#renderers" class="tsd-kind-icon">renderers</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="jsonformsstate.html#jsonforms" class="tsd-kind-icon">jsonforms</a></li>
 							</ul>
 						</section>
 					</div>
@@ -96,48 +95,60 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="common" class="tsd-anchor"></a>
-					<h3>common</h3>
-					<div class="tsd-signature tsd-kind-icon">common<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<a name="jsonforms" class="tsd-anchor"></a>
+					<h3>jsonforms</h3>
+					<div class="tsd-signature tsd-kind-icon">jsonforms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/edgarmueller/jsonforms/blob/22f291a1/packages/core/src/store.ts#L23">store.ts:23</a></li>
+							<li>Defined in store.ts:19</li>
 						</ul>
 					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Represents JSONForm&#39;s substate.</p>
+						</div>
+					</div>
 					<div class="tsd-type-declaration">
 						<h4>Type declaration</h4>
 						<ul class="tsd-parameters">
-							<li class="tsd-parameter">
-								<h5>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
+							<li class="tsd-parameter-index-signature">
+								<h5><span class="tsd-signature-symbol">[</span>additionalState: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> schema<span class="tsd-signature-symbol">?: </span><a href="jsonschema.html" class="tsd-signature-type">JsonSchema</a></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> common<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Substate for storing common data.</p>
+									</div>
+								</div>
+								<ul class="tsd-parameters">
+									<li class="tsd-parameter">
+										<h5>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
+										<div class="tsd-comment tsd-typography">
+											<div class="lead">
+												<p>The actual data to be rendered.</p>
+											</div>
+										</div>
+									</li>
+									<li class="tsd-parameter">
+										<h5><span class="tsd-flag ts-flagOptional">Optional</span> errors<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ErrorObject</span><span class="tsd-signature-symbol">[]</span></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5><span class="tsd-flag ts-flagOptional">Optional</span> schema<span class="tsd-signature-symbol">?: </span><a href="jsonschema.html" class="tsd-signature-type">JsonSchema</a></h5>
+									</li>
+									<li class="tsd-parameter">
+										<h5><span class="tsd-flag ts-flagOptional">Optional</span> uischema<span class="tsd-signature-symbol">?: </span><a href="uischemaelement.html" class="tsd-signature-type">UISchemaElement</a></h5>
+									</li>
+								</ul>
 							</li>
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> uischema<span class="tsd-signature-symbol">?: </span><a href="uischemaelement.html" class="tsd-signature-type">UISchemaElement</a></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> fields<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> renderers<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
 							</li>
 						</ul>
 					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="fields" class="tsd-anchor"></a>
-					<h3>fields</h3>
-					<div class="tsd-signature tsd-kind-icon">fields<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/edgarmueller/jsonforms/blob/22f291a1/packages/core/src/store.ts#L29">store.ts:29</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="renderers" class="tsd-anchor"></a>
-					<h3>renderers</h3>
-					<div class="tsd-signature tsd-kind-icon">renderers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/edgarmueller/jsonforms/blob/22f291a1/packages/core/src/store.ts#L28">store.ts:28</a></li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 		</div>
@@ -157,13 +168,7 @@
 						<a href="jsonformsstate.html" class="tsd-kind-icon">Json<wbr>Forms<wbr>State</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="jsonformsstate.html#common" class="tsd-kind-icon">common</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="jsonformsstate.html#fields" class="tsd-kind-icon">fields</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="jsonformsstate.html#renderers" class="tsd-kind-icon">renderers</a>
+								<a href="jsonformsstate.html#jsonforms" class="tsd-kind-icon">jsonforms</a>
 							</li>
 						</ul>
 					</li>

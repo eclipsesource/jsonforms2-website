@@ -114,9 +114,8 @@ const Tutorial = ({ classes }) => {
 
         <li>
           Still in <code>index.js</code>, create a new store with the <code>createStore</code> function provided by redux.
-          For that purpose JSON Forms exports its reducer via <code>jsonformsReducer</code>. It is also
-          expecting the <code>redux-thunk</code> middleware. For the initial state we supply
-          our defined set of variables as well renderers/fields which are stored in the <code>JsonForms</code> object:
+          For that purpose JSON Forms exports its reducer via <code>jsonformsReducer</code>. For the initial state we supply
+          the renderers we want to use, which we have imported from <code>@jsonforms/material-renderers</code>:
 
           <MarkdownElement
             dir="ltr"
@@ -124,21 +123,13 @@ const Tutorial = ({ classes }) => {
             text={`\`\`\`js\n${setupStore}\n\`\`\``}
           />
 
-          In order for JSON Forms to initialize correctly, we also need to dispatch an <code>INIT</code> action that will
+          In order for JSON Forms to initialize correctly, we also need to dispatch an initialization action that will
           set-up some internal state that's necessary for JSON Forms:
 
           <MarkdownElement
             dir="ltr"
             className={classes.code}
             text={`\`\`\`js\n${initAction}\n\`\`\``}
-          />
-
-          Finally, if you want validation results to appear initially, dispatch the validate action:
-
-          <MarkdownElement
-            dir="ltr"
-            className={classes.code}
-            text={`\`\`\`js\nstore.dispatch(Actions.validate())\n\`\`\``}
           />
         </li>
         {/**/}
@@ -153,15 +144,17 @@ const Tutorial = ({ classes }) => {
         </li>
 
         <li>
-          Open the <code>App.js</code> file and import
-          the <code>DispatchRenderer</code> from <code>@jsonforms/core</code>. Add
-          the <code>DispatchRenderer</code> anywhere you like in oder to get a form rendered:
+          Open the <code>App.js</code> file and
+          import the <code>JsonForms</code> component from <code>@jsonforms/core</code>. Add
+          the <code>JsonForms</code> anywhere you like in oder to get a form rendered:
           <MarkdownElement
             dir="ltr"
             className={classes.code}
             text={`\`\`\`jsx\n${render}\n\`\`\``}
           />
         </li>
+        If you are wondering why the control labels are prefixed with <code>%</code> in the UI schema:
+        this is because of i18n, a feature we are currently working on.
       </ol>
     </div>
   );

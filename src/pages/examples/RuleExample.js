@@ -1,6 +1,6 @@
 import React from 'react';
 import { rule } from '@jsonforms/examples';
-import { DispatchRenderer } from '@jsonforms/core';
+import { JsonForms } from '@jsonforms/core';
 import { Provider } from 'react-redux';
 import {Typography, withStyles} from "material-ui";
 import commonStyles from "../../common/styles";
@@ -41,7 +41,7 @@ const RuleExample = ({ classes }) => {
           schema={rule.schema}
           uischema={rule.uischema}
           js={() =>
-            <DispatchRenderer />
+            <JsonForms />
           }
         />
       </Provider>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { day3, ratingControlTester, RatingControl } from '@jsonforms/examples';
-import { DispatchRenderer, registerRenderer } from '@jsonforms/core';
+import { JsonForms, registerRenderer } from '@jsonforms/core';
 import { Provider } from 'react-redux';
 import {Typography, withStyles} from "material-ui";
 
@@ -44,7 +44,7 @@ const CustomControlsExample = ({ classes }) => {
           schema={day3.schema}
           uischema={day3.uischema}
           js={() => (
-            <DispatchRenderer />
+            <JsonForms />
           )}
         />
       </Provider>

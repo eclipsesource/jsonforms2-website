@@ -3,7 +3,7 @@ import Radium from 'radium';
 import { Link } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import {Grid, Typography, withStyles} from "material-ui";
-import { DispatchRenderer, registerRenderer } from '@jsonforms/core';
+import { JsonForms, registerRenderer } from '@jsonforms/core';
 import { IntroCode } from './listings/intro';
 import RatingControl from './RatingControl';
 import ratingControlTester from "./ratingControlTester";
@@ -110,7 +110,7 @@ const Intro = ({ classes }) => {
         <Grid item xs={12}>
           <Provider store={storeWithoutCustomControl}>
             <Demo
-              js={() => <DispatchRenderer /> }
+              js={() => <JsonForms /> }
               schema={IntroCode.schema}
               uischema={IntroCode.uischema}
             />
@@ -129,7 +129,7 @@ const Intro = ({ classes }) => {
           js={() => {
             storeWithRatingControlExample.dispatch(registerRenderer(ratingControlTester, RatingControl));
             return (
-              <DispatchRenderer
+              <JsonForms
                 schema={IntroCode.schema}
                 uischema={IntroCode.uischema}
               />

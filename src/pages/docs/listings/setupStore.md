@@ -1,17 +1,9 @@
-
-// TODO: settup up 2nd argument (initial state) need to be more convenient 
-export const store = createStore(
-  jsonformsReducer(),  
+const store = createStore(
+  combineReducers({ jsonforms: jsonformsReducer() }),  
   {
     jsonforms: {
-      common: {
-        data,
-        schema,
-        uischema,
-      },
-      renderers: JsonForms.renderers,
-      fields: JsonForms.fields,
+      renderers: materialRenderers,
+      fields: materialFields,
     }
-  },
-  applyMiddleware(thunk)
+  }
 );

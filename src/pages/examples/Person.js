@@ -1,6 +1,6 @@
 import React from 'react';
 import { person } from '@jsonforms/examples';
-import { DispatchRenderer } from '@jsonforms/core';
+import { JsonForms } from '@jsonforms/core';
 import { Provider } from 'react-redux';
 import {Typography, withStyles} from "material-ui";
 import commonStyles from "../../common/styles";
@@ -29,7 +29,7 @@ const Person = ({ classes }) => {
       </Typography>
       <Provider store={store}>
         <Demo
-          js={() => <DispatchRenderer/>}
+          js={() => <JsonForms/>}
           schema={person.schema}
           uischema={person.uischema}
         />

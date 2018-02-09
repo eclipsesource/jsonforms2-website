@@ -1,29 +1,25 @@
-import { applyMiddleware, createStore } from 'redux';
-import thunk from 'redux-thunk';
-import { Actions, JsonForms, jsonformsReducer } from '@jsonforms/core';
+import { combineReducers, createStore } from 'redux';
+import { Actions, jsonformsReducer } from '@jsonforms/core';
+import {
+  materialFields,
+  materialRenderers,
+  materialCategorizationTester,
+  MaterialCategorizationLayout
+} from '@jsonforms/material-renderers';
 
 export const createJsonFormsStore = ({ data, schema, uischema }) => {
   const store = createStore(
-    jsonformsReducer(),
+    combineReducers({ jsonforms: jsonformsReducer() }),
     {
       jsonforms: {
-        common: {
-          data,
-          schema,
-          uischema,
-        },
-        renderers: JsonForms.renderers,
-        fields: JsonForms.fields,
+        renderers: materialRenderers
+          .concat([{ tester: materialCategorizationTester, renderer: MaterialCategorizationLayout}]),
+        fields: materialFields,
       }
-    },
-    applyMiddleware(thunk)
+    }
   );
-  store.dispatch({
-    type: Actions.INIT,
-    data,
-    schema,
-    uischema
-  });
-  store.dispatch(Actions.validate());
+
+  store.dispatch(Actions.init(data, schema, uischema));
+
   return store;
 };

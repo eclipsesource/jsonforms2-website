@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>UISchemaRegistry | JSON Forms Core</title>
+	<title>StatePropsOfRenderer | JSON Forms Core</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -38,8 +38,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -56,10 +54,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="uischemaregistry.html">UISchemaRegistry</a>
+					<a href="statepropsofrenderer.html">StatePropsOfRenderer</a>
 				</li>
 			</ul>
-			<h1>Interface UISchemaRegistry</h1>
+			<h1>Interface StatePropsOfRenderer</h1>
 		</div>
 	</div>
 </header>
@@ -69,9 +67,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>A registry of UI schemas. This registry can be utilized whenever
-							multiple UI schemas are applicable for a given JSON schema in order
-						to resolve ambiguity.</p>
+						<p>State-based props of a <a href="../globals.html#renderer">Renderer</a>.</p>
 					</div>
 				</div>
 			</section>
@@ -79,14 +75,16 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">UISchemaRegistry</span>
+						<span class="target">StatePropsOfRenderer</span>
+						<ul class="tsd-hierarchy">
+							<li>
+								<a href="rendererprops.html" class="tsd-signature-type">RendererProps</a>
+							</li>
+							<li>
+								<a href="statepropsofscopedrenderer.html" class="tsd-signature-type">StatePropsOfScopedRenderer</a>
+							</li>
+						</ul>
 					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel">
-				<h3>Implemented by</h3>
-				<ul class="tsd-hierarchy">
-					<li><a href="../classes/uischemaregistryimpl.html" class="tsd-signature-type">UISchemaRegistryImpl</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -94,129 +92,96 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Methods</h3>
+							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="uischemaregistry.html#deregister" class="tsd-kind-icon">deregister</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="uischemaregistry.html#findmostapplicableuischema" class="tsd-kind-icon">find<wbr>Most<wbr>ApplicableUISchema</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="uischemaregistry.html#register" class="tsd-kind-icon">register</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="statepropsofrenderer.html#enabled" class="tsd-kind-icon">enabled</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="statepropsofrenderer.html#path" class="tsd-kind-icon">path</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="statepropsofrenderer.html#schema" class="tsd-kind-icon">schema</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="statepropsofrenderer.html#uischema" class="tsd-kind-icon">uischema</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="statepropsofrenderer.html#visible" class="tsd-kind-icon">visible</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="deregister" class="tsd-anchor"></a>
-					<h3>deregister</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">deregister<span class="tsd-signature-symbol">(</span>uiSchema<span class="tsd-signature-symbol">: </span><a href="uischemaelement.html" class="tsd-signature-type">UISchemaElement</a>, tester<span class="tsd-signature-symbol">: </span><a href="../globals.html#uischematester" class="tsd-signature-type">UISchemaTester</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/edgarmueller/jsonforms/blob/22f291a1/packages/core/src/legacy/uischema.registry.ts#L27">legacy/uischema.registry.ts:27</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Deregister a UI schema.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>uiSchema: <a href="uischemaelement.html" class="tsd-signature-type">UISchemaElement</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the UI schema to be unregistered</p>
-									</div>
-								</li>
-								<li>
-									<h5>tester: <a href="../globals.html#uischematester" class="tsd-signature-type">UISchemaTester</a></h5>
-									<div class="tsd-comment tsd-typography">
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="enabled" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> enabled</h3>
+					<div class="tsd-signature tsd-kind-icon">enabled<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in renderers/Renderer.tsx:27</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether the rendered element should be enabled.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="findmostapplicableuischema" class="tsd-anchor"></a>
-					<h3>find<wbr>Most<wbr>ApplicableUISchema</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">find<wbr>Most<wbr>ApplicableUISchema<span class="tsd-signature-symbol">(</span>schema<span class="tsd-signature-symbol">: </span><a href="jsonschema.html" class="tsd-signature-type">JsonSchema</a>, data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="uischemaelement.html" class="tsd-signature-type">UISchemaElement</a></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/edgarmueller/jsonforms/blob/22f291a1/packages/core/src/legacy/uischema.registry.ts#L35">legacy/uischema.registry.ts:35</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Find the UI schema that is most applicable for the given JSON schema
-									and data.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>schema: <a href="jsonschema.html" class="tsd-signature-type">JsonSchema</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the JSON schema for which to find a UI schema</p>
-									</div>
-								</li>
-								<li>
-									<h5>data: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the data for which to find a UI schema</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="uischemaelement.html" class="tsd-signature-type">UISchemaElement</a></h4>
-						</li>
-					</ul>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="path" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> path</h3>
+					<div class="tsd-signature tsd-kind-icon">path<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in renderers/Renderer.tsx:34</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Optional instance path. Necessary when the actual data
+								path can not be inferred via the UI schema element as
+							it is the case with nested controls.</p>
+						</div>
+					</div>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="register" class="tsd-anchor"></a>
-					<h3>register</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">register<span class="tsd-signature-symbol">(</span>uiSchema<span class="tsd-signature-symbol">: </span><a href="uischemaelement.html" class="tsd-signature-type">UISchemaElement</a>, tester<span class="tsd-signature-symbol">: </span><a href="../globals.html#uischematester" class="tsd-signature-type">UISchemaTester</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/edgarmueller/jsonforms/blob/22f291a1/packages/core/src/legacy/uischema.registry.ts#L19">legacy/uischema.registry.ts:19</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Register a UI schema.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>uiSchema: <a href="uischemaelement.html" class="tsd-signature-type">UISchemaElement</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the UI schema to be registered</p>
-									</div>
-								</li>
-								<li>
-									<h5>tester: <a href="../globals.html#uischematester" class="tsd-signature-type">UISchemaTester</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>the tester that determines whether
-										the given UI schema should be used</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="schema" class="tsd-anchor"></a>
+					<h3>schema</h3>
+					<div class="tsd-signature tsd-kind-icon">schema<span class="tsd-signature-symbol">:</span> <a href="jsonschema.html" class="tsd-signature-type">JsonSchema</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in renderers/Renderer.tsx:17</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The JSON schema that describes the data.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="uischema" class="tsd-anchor"></a>
+					<h3>uischema</h3>
+					<div class="tsd-signature tsd-kind-icon">uischema<span class="tsd-signature-symbol">:</span> <a href="uischemaelement.html" class="tsd-signature-type">UISchemaElement</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in renderers/Renderer.tsx:12</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The UI schema to be rendered.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="visible" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> visible</h3>
+					<div class="tsd-signature tsd-kind-icon">visible<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in renderers/Renderer.tsx:22</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Whether the rendered element should be visible.</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -233,16 +198,22 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface">
-						<a href="uischemaregistry.html" class="tsd-kind-icon">UISchema<wbr>Registry</a>
+						<a href="statepropsofrenderer.html" class="tsd-kind-icon">State<wbr>Props<wbr>OfRenderer</a>
 						<ul>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="uischemaregistry.html#deregister" class="tsd-kind-icon">deregister</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="statepropsofrenderer.html#enabled" class="tsd-kind-icon">enabled</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="uischemaregistry.html#findmostapplicableuischema" class="tsd-kind-icon">find<wbr>Most<wbr>ApplicableUISchema</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="statepropsofrenderer.html#path" class="tsd-kind-icon">path</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="uischemaregistry.html#register" class="tsd-kind-icon">register</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="statepropsofrenderer.html#schema" class="tsd-kind-icon">schema</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="statepropsofrenderer.html#uischema" class="tsd-kind-icon">uischema</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="statepropsofrenderer.html#visible" class="tsd-kind-icon">visible</a>
 							</li>
 						</ul>
 					</li>

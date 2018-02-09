@@ -38,8 +38,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -66,6 +64,21 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A controlled component convenience wrapper that additionally manages a focused state.</p>
+					</div>
+					<dl class="tsd-comment-tags">
+						<dt>template</dt>
+						<dd><p>P control specific properties</p>
+						</dd>
+						<dt>template</dt>
+						<dd><p>S the state managed by the control</p>
+						</dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-type-parameters">
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
@@ -81,7 +94,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="renderer.html" class="tsd-signature-type">Renderer</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span>
+						<a href="renderercomponent.html" class="tsd-signature-type">RendererComponent</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">Control</span>
@@ -132,9 +145,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="renderer.html">Renderer</a>.<a href="renderer.html#constructor">constructor</a></p>
+								<p>Overrides <a href="renderercomponent.html">RendererComponent</a>.<a href="renderercomponent.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/edgarmueller/jsonforms/blob/22f291a1/packages/core/src/renderers/Control.ts#L70">renderers/Control.ts:70</a></li>
+									<li>Defined in renderers/Control.ts:68</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -160,7 +173,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/edgarmueller/jsonforms/blob/22f291a1/packages/core/src/renderers/Control.ts#L82">renderers/Control.ts:82</a></li>
+									<li>Defined in renderers/Control.ts:80</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -183,13 +196,21 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/edgarmueller/jsonforms/blob/22f291a1/packages/core/src/renderers/Control.ts#L88">renderers/Control.ts:88</a></li>
+									<li>Defined in renderers/Control.ts:91</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Propagates a value change.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the updated value</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -206,9 +227,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/edgarmueller/jsonforms/blob/22f291a1/packages/core/src/renderers/Control.ts#L97">renderers/Control.ts:97</a></li>
+									<li>Defined in renderers/Control.ts:106</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set the focused state to false.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -223,9 +249,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/edgarmueller/jsonforms/blob/22f291a1/packages/core/src/renderers/Control.ts#L93">renderers/Control.ts:93</a></li>
+									<li>Defined in renderers/Control.ts:99</li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set the focused state to true.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -240,7 +271,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/edgarmueller/jsonforms/blob/22f291a1/packages/core/src/renderers/Control.ts#L101">renderers/Control.ts:101</a></li>
+									<li>Defined in renderers/Control.ts:110</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -264,7 +295,6 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ComponentLifecycle.componentDidCatch</p>
 								<ul>
-									<li>Defined in /home/edgar/git/jsonforms2-edgar/node_modules/@types/react/index.d.ts:406</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -297,7 +327,6 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ComponentLifecycle.componentDidMount</p>
 								<ul>
-									<li>Defined in /home/edgar/git/jsonforms2-edgar/node_modules/@types/react/index.d.ts:367</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -320,7 +349,6 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ComponentLifecycle.componentDidUpdate</p>
 								<ul>
-									<li>Defined in /home/edgar/git/jsonforms2-edgar/node_modules/@types/react/index.d.ts:396</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -355,7 +383,6 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ComponentLifecycle.componentWillMount</p>
 								<ul>
-									<li>Defined in /home/edgar/git/jsonforms2-edgar/node_modules/@types/react/index.d.ts:363</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -379,7 +406,6 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ComponentLifecycle.componentWillReceiveProps</p>
 								<ul>
-									<li>Defined in /home/edgar/git/jsonforms2-edgar/node_modules/@types/react/index.d.ts:375</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -414,7 +440,6 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ComponentLifecycle.componentWillUnmount</p>
 								<ul>
-									<li>Defined in /home/edgar/git/jsonforms2-edgar/node_modules/@types/react/index.d.ts:401</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -438,7 +463,6 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ComponentLifecycle.componentWillUpdate</p>
 								<ul>
-									<li>Defined in /home/edgar/git/jsonforms2-edgar/node_modules/@types/react/index.d.ts:392</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -474,7 +498,6 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ComponentLifecycle.shouldComponentUpdate</p>
 								<ul>
-									<li>Defined in /home/edgar/git/jsonforms2-edgar/node_modules/@types/react/index.d.ts:386</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">

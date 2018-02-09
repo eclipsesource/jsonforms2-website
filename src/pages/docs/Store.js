@@ -31,7 +31,8 @@ const Store = ({ classes }) => (
     </Typography>
     JSON Forms exports its reducer via
     the <ApiLink link='/api/core/globals.html#jsonformsreducer'>jsonformsReducer</ApiLink> function.
-    It describes the basic structure of the JSON Forms state which looks like this:
+    It's expected that you add this reducer to your application via <code>combineReducers</code> under the
+    <code>jsonforms</code> key. The basic structure of the JSON Forms state looks like this:
     <MarkdownElement
       dir="ltr"
       className={classes.code}
@@ -43,15 +44,14 @@ const Store = ({ classes }) => (
     </p>
     <ul className={classes.list}>
       <li>
-        <PropHeader title='common'/>
-        The common substate stores the <code>data</code>, which represents the data
+        <PropHeader title='core'/>
+        The core substate stores the <code>data</code>, which represents the data
         to be rendered, the <code>schema</code> which describes the structure of the <code>data</code> and
         the <code>uischema</code>, which describes how to render the <code>data</code>.
-      </li>
-      <li>
-        <PropHeader title='validation'/>
-        The <code>ValidationState</code> stores any validation errors the <code>data</code> currently has with
-        respect to the <code>schema</code>. It's internal shape is defined as:
+
+        The <code>validation</code> substate stores any validation errors the <code>data</code> currently has with
+        respect to the <code>schema</code>. It's shape is defined as:
+
         <MarkdownElement
           dir="ltr"
           className={classes.code}
@@ -107,16 +107,6 @@ const Store = ({ classes }) => (
       &nbsp;<ApiLink link='/api/core/globals.html#mapdispatchtofieldprops'>mapDispatchToFieldProps</ApiLink>&nbsp;
       provide a helper function called <code>handleChange</code> which already dispatches the <code>update</code> action,
       so that you rarely need to interact with <code>update</code> itself, if at all.
-    </p>
-
-    <PropHeader title='validate'/>
-    <p>
-      The <code>validate</code> action cause a validation to be executed.
-      When using
-      &nbsp;<ApiLink link='/api/core/globals.html#mapdispatchtocontrolprops'>mapDispatchToControlProps</ApiLink> or
-      &nbsp;<ApiLink link='/api/core/globals.html#mapdispatchtofieldprops'>mapDispatchToFieldProps</ApiLink>&nbsp;
-      to trigger change notifications this will be called automatically, but you need to call this action initially
-      yourself, if you want validation results to be appear on first rendering.
     </p>
 
     <PropHeader title='registerRenderer/unregisterRenderer'/>
