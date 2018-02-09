@@ -100,7 +100,7 @@ export const CustomRenderers = ({ classes }) => {
         Running the seed
       </Typography>
       <p>
-        If you want to follow along this tutorial, you may want to clone the seed repository
+        If you want to follow along with this tutorial, you may want to clone the seed repository
         which basically is just a skeleton application scaffolded by create-react-app with redux
         and JSON Forms dependencies added.
       </p>
@@ -124,7 +124,7 @@ export const CustomRenderers = ({ classes }) => {
         Core concepts about rendering
       </Typography>
       <p>
-        Before explaining how to contribute a component (which we refer to a custom control) to JSON Forms,
+        Before explaining how to contribute a component (which will be referred to as "custom control") to JSON Forms,
         we first explain how the basic process of rendering works.
       </p>
 
@@ -132,7 +132,7 @@ export const CustomRenderers = ({ classes }) => {
         JSON Forms maintains a registry of renderers (which are regular React components). When JSON Forms is instructed to
         render a given UI schema to produce a form, it will start with the root element of the UI Schema and try to
         find a render for this UI Schema element in its registry of renderers.
-        To find a matching renderer JSON Forms relies on the so-called Testers of the renderers.
+        To find a matching renderer, JSON Forms relies on the so-called testers of the renderers.
         Every renderer has a tester associated with its registration. The tester will provide JSON Forms with
         a priority for a given UI Schema Element for the respective tester.
         This priority expresses if and how well a renderer can actually render the given UI Schema Element
@@ -140,11 +140,11 @@ export const CustomRenderers = ({ classes }) => {
       </p>
 
       <p>
-        A tester then is therefore just a function which is passed the current UI schema element and the
+        A tester is therefore just a function which is called with the current UI schema element and the
         corresponding data subschema and returns a number for the priority.
       </p>
       <p>
-        So in order to create and register a renderer, we need to perform the following steps:
+        In order to create and register a renderer, we need to perform the following steps:
       </p>
 
       <ol className={classes.list}>
@@ -162,7 +162,7 @@ export const CustomRenderers = ({ classes }) => {
         Create a renderer
       </Typography>
       <p>
-      As mentioned previously the seed app already features a component which we want to make a renderer from.
+      As mentioned previously, the seed app already features a component which we want to use as a renderer.
       It's contained in <code>src/Rating.js</code> and is a rating control, i.e. it allows to set a value between 0 and 5
       by selecting the appropriate number of stars. We won't go into detail about the control itself, but we should mention
       that we need to provide an <code>onClick</code> property in order to allow specifying a callback which gets called
@@ -170,15 +170,15 @@ export const CustomRenderers = ({ classes }) => {
       </p>
 
       <p>
-        In order to leverage the component to a renderer we need to connect it to the store in order to retrieve
-        the initial value as well as being able to send any events when the users clicks a star. JSON Forms provides
-        helper functions <code>mapStateToFieldProps</code> which already provides most of the necessary props for us,
-        in this case <code>data</code> (the actual data bit to be rendered) as well as <code>path</code> (which is
-        necessary to propagate an update back to the store).
+        In order to leverage the component to a renderer, we need to connect it to the store. This will allow us to retrieve
+        the initial value and to send any events when the users clicks on a star. JSON Forms provides a
+        helper function <code>mapStateToFieldProps</code> which already provides most of the necessary props for us. In this case,
+        the props are <code>data</code>, which is the actual data bit to be rendered, and <code>path</code>, which is
+        necessary to propagate an update back to the store.
       </p>
 
       <p>
-        For the <code>onClick</code> prop we pass the <code>handleChange</code> handler which we retrieve
+        For the <code>onClick</code> prop we pass the <code>handleChange</code> handler, which we retrieve
         via another helper function <code>mapDispatchToControlProps</code>.
         All the handler actually does is to emit a change with the new value.
       </p>
@@ -195,10 +195,11 @@ export const CustomRenderers = ({ classes }) => {
         Create a tester
       </Typography>
       <p>
-        Now that we have our renderer ready we need to tell JSON Forms when we want to make use of it.
+        Now that we have our renderer ready, we need to tell JSON Forms when we want to make use of it.
         For that purpose we create a tester that checks if the corresponding UI schema element is a control
-        and whether it is bound to a path that ends with <code>rating</code>. If that is the case we return a rank of
-        3 which is by one higher than what the default renderer sets provide. The <code>ratingControlTester.js</code> file
+        and whether it is bound to a path that ends with <code>rating</code>. If that is the case, we return a rank of
+        3. Since the default renderer sets provide a rank with a value of 2, our tester will rank the custom control higher, so it will 
+        be preferentially picked up for the rating control. The <code>ratingControlTester.js</code> file
         contains the respective code as a default export.
       </p>
 
@@ -229,7 +230,7 @@ export const CustomRenderers = ({ classes }) => {
       />
 
       <p>
-        And that's it, the rating control will now be used to render the <code>rating</code> property.
+        And that's it! The rating control will now be used to render the <code>rating</code> property.
         It should be noted that in order to create a full-fledged control there's more work left,
         since we did not cover concepts like validation or visibility.
       </p>
