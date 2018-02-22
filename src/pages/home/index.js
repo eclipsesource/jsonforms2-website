@@ -3,6 +3,7 @@ import {Button, Card, CardContent, Grid, Typography, withStyles} from "material-
 import FeaturesIcon from 'material-ui-icons/Report';
 import CustomizeIcon from 'material-ui-icons/Brush';
 import { JsonForms }  from '@jsonforms/core'
+import corePackageJson from '@jsonforms/core/package'
 import { Provider } from 'react-redux';
 import schema from './schema.json';
 import uischema from './uischema.json';
@@ -95,6 +96,11 @@ const Home = ({ classes }) => {
           <div className={classes.container}>
             <Typography type={'headline'} style={{ color: '#747474' }}>
               Complex forms in the blink of an eye
+            </Typography>
+          </div>
+          <div className={classes.container}>
+            <Typography >
+              Version {corePackageJson.version}
             </Typography>
           </div>
 
