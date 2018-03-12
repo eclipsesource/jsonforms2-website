@@ -3,14 +3,6 @@ import {Typography, withStyles} from "material-ui";
 import MarkdownElement from "../../common/MarkdownElement";
 import commonStyles from "../../common/styles";
 import {RadiumLink} from "../../common";
-/* eslint import/no-webpack-loader-syntax: off */
-const init = require('!raw-loader!./listings/init.md');
-const installation = require('!raw-loader!./listings/installation.md');
-const setupStore = require('!raw-loader!./listings/setupStore.md');
-const render = require('!raw-loader!./listings/render.md');
-const initAction = require('!raw-loader!./listings/initAction.md');
-const imports = require('!raw-loader!./listings/imports.md');
-const dataAndSchema = require('!raw-loader!./listings/variables.md');
 
 const styles = () => ({
   link: commonStyles.link,

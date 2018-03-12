@@ -29,9 +29,9 @@ const styles = () => ({
 const Support = ({ classes }) => (
   <Grid container spacing={0} className={classes.grid} justify={'center'} align={'center'}>
     <Grid item xs={3}/>
-    <Grid item xs={6} justify='center' align='center'>
+    <Grid item xs={6} align='center'>
       <Typography type="display1">Professional Support is brought to you by</Typography>
-      <img src={eclipseSourceLogo} />
+      <img alt="EclipseSource Logo" src={eclipseSourceLogo} />
     </Grid>
     <Grid item xs={3}/>
 
@@ -95,9 +95,8 @@ const Support = ({ classes }) => (
 
     <Grid container>
       <Grid item xs>
-        <Button style={{ paddingTop: '2em', paddingBottom: '2em' }} color={'primary'} component={props => <a href='mailto:munich@eclipsesource.com' {...props}/>}>
+        <Button style={{ paddingTop: '2em', paddingBottom: '2em' }} color={'primary'} component={props => <a href='mailto:munich@eclipsesource.com' {...props}>Contact us</a>}>
           <EmailIcon/>
-          Contact us
         </Button> for more details!
       </Grid>
     </Grid>

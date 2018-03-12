@@ -19,9 +19,6 @@ const styles = () => ({
 const RadiumLink = Radium(Link);
 const RadiumHashLink = Radium(HashLink);
 
-const data = layouts.data;
-const schema = layouts.schema;
-
 const Layouts = ({ classes }) => (
   <div>
     <Typography

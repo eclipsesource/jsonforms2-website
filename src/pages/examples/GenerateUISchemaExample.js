@@ -1,6 +1,7 @@
 import React from 'react';
 import { generateUISchema } from '@jsonforms/examples';
-import { JsonForms, generateDefaultUISchema, generateJsonSchema } from '@jsonforms/core';
+import { JsonForms } from '@jsonforms/react';
+import { generateDefaultUISchema, generateJsonSchema } from '@jsonforms/core';
 import { Provider } from 'react-redux';
 import {Typography, withStyles} from "material-ui";
 import { commonStyles, Demo, RadiumHashLink } from "../../common";

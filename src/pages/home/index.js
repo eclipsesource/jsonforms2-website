@@ -2,7 +2,7 @@ import * as React from "react";
 import {Button, Card, CardContent, Grid, Typography, withStyles} from "material-ui";
 import FeaturesIcon from 'material-ui-icons/Report';
 import CustomizeIcon from 'material-ui-icons/Brush';
-import { JsonForms }  from '@jsonforms/core'
+import { JsonForms }  from '@jsonforms/react'
 import corePackageJson from '@jsonforms/core/package'
 import { Provider } from 'react-redux';
 import schema from './schema.json';

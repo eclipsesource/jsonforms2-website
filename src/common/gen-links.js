@@ -9,10 +9,11 @@ export const generateLinks = (currentLocation, classes, url, routes, indentation
   return routes.map(route => {
     return (
       <RadiumLink
+        key={route.slug}
         to={`${url}/${route.slug}`}
         className={classes.sidebarLink}
       >
-        <li key={route.slug}>
+        <li>
           {
             (currentLocation === `${url}/${route.slug}`) ?
               <span className={classes.currentRoute}

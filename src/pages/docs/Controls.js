@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from "react-router-dom";
 import {Typography, withStyles} from "material-ui";
-import { JsonForms } from "@jsonforms/core";
+import { JsonForms } from "@jsonforms/react";
 import { Provider } from "react-redux";
 import Radium from 'radium';
 import {UiSchemaElementsCode} from "./listings/uischema";

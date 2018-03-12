@@ -1,7 +1,8 @@
 import React from 'react';
 import {Typography, withStyles} from "material-ui";
 import { Provider } from 'react-redux';
-import { JsonForms, registerRenderer } from '@jsonforms/core';
+import { registerRenderer } from '@jsonforms/core';
+import { JsonForms } from '@jsonforms/react';
 import RatingControl from './RatingControl';
 import ratingControlTester from './ratingControlTester';
 import MarkdownElement from "../../common/MarkdownElement";

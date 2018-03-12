@@ -1,7 +1,5 @@
 import React from 'react';
-import Radium from 'radium';
 import {Typography, withStyles} from "material-ui";
-import { Link } from 'react-router-dom';
 import commonStyles from "./styles";
 
 const styles = () => ({
@@ -11,8 +9,6 @@ const styles = () => ({
     color: '#424242',
   },
 });
-
-const RadiumLink = Radium(Link);
 
 const PropHeader = ({ classes, title, type, link }) => (
   <Typography

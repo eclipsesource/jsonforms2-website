@@ -1,13 +1,26 @@
 import React from 'react';
+import { JsonForms } from '@jsonforms/react';
+import { jsonformsReducer } from '@jsonforms/core';
+import {
+  materialFields,
+  materialRenderers,
+  materialCategorizationTester,
+  MaterialCategorizationLayout
+} from '@jsonforms/material-renderers';
 import commonStyles from "../../common/styles";
 import {Typography, withStyles} from "material-ui";
 import MarkdownElement from "../../common/MarkdownElement";
 import PropHeader from "../../common/PropHeader";
 import {RadiumLink} from "../../common";
 import ApiLink from "../../common/ApiLink";
+import { schemas, uischemas, schema, uischema } from './listings/store';
+import {Provider} from "react-redux";
+import Demo from "../../common/Demo";
+import {combineReducers, createStore} from "redux";
 /* eslint import/no-webpack-loader-syntax: off */
 const jsonFormsState = require('!raw-loader!./listings/jsonFormsState.md');
 const validationState = require('!raw-loader!./listings/validationState.md');
+const multipleForms = require('!raw-loader!./listings/multipleForms.md');
 
 const styles = () => ({
   link: commonStyles.link,
@@ -16,6 +29,28 @@ const styles = () => ({
   headline: commonStyles.headline,
   list: commonStyles.list
 });
+
+const store = createStore(
+  combineReducers({ jsonforms: jsonformsReducer() }),
+  {
+    jsonforms: {
+      renderers: materialRenderers
+        .concat([{ tester: materialCategorizationTester, renderer: MaterialCategorizationLayout}]),
+      fields: materialFields,
+    }
+  }
+);
+
+const linkedFormsStore = createStore(
+  combineReducers({ jsonforms: jsonformsReducer() }),
+  {
+    jsonforms: {
+      renderers: materialRenderers
+        .concat([{ tester: materialCategorizationTester, renderer: MaterialCategorizationLayout}]),
+      fields: materialFields,
+    }
+  }
+);
 
 const Store = ({ classes }) => (
   <div>
@@ -116,6 +151,68 @@ const Store = ({ classes }) => (
       about <RadiumLink to='/docs/custom-renderers' className={classes.link}>Custom Renderers</RadiumLink> for an example
       how to use these.
     </p>
+
+    <Typography type='headline' className={classes.headline}>
+      Linking forms
+    </Typography>
+    Forms can interact with each other by using $ref and setting the <code>scope</code> property within the UI schema
+    accordingly. In this example, we have two entities, Person and Address. Whenever we change
+    the <code>shippingAddress</code> property of the person, it is accordingly updated in the address form and vice versa.
+    <Provider store={linkedFormsStore}>
+      <Demo
+        js={() => (
+          <JsonForms schema={schema}
+                     uischema={uischema}
+          />
+        )}
+        schema={schema}
+        uischema={uischema}
+      />
+    </Provider>
+
+    <Typography type='headline' className={classes.headline}>
+        Multiple forms within single store
+    </Typography>
+    There might be use cases where you have forms that do not have anything in common. In such cases
+    you can explicitly pass  <code>schema</code> and <code>uischema</code> props to the <code>JsonForms</code> component
+    (if you don't specify these, they will be fetched from the store).
+
+    Additionally, the <code>JsonForms</code> component also takes a <code>path</code> prop which specifies
+    the instance path that is used to bind against the data.
+
+    To illustrate, let's look again at the example from before, but this time
+    the <code>person</code> and <code>address</code> schemas are not stored in any common parent schema.
+
+    <Provider store={store}>
+      <Demo
+        js={() => (
+          <div>
+            <JsonForms schema={schemas.person}
+                       uischema={uischemas.person}
+                       path='person'
+            />
+            <JsonForms schema={schemas.address}
+                       uischema={uischemas.address}
+                       path='shippingAddress'
+            />
+          </div>
+        )}
+        schema={schemas}
+        uischema={uischemas}
+      />
+    </Provider>
+
+    The code for the above example looks as follows:
+
+    <MarkdownElement
+      dir="ltr"
+      className={classes.code}
+      text={`\`\`\`jsx\n${multipleForms}\n\`\`\``}
+    />
+
+    As you can see we explicitly pass in the <code>schema</code> and <code>uischema</code> props.
+    We also need to specify which property the data should be written to, in this case we
+    use <code>person</code> and <code>shippingAddress</code>.
   </div>
 );
 
