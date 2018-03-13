@@ -153,8 +153,6 @@ const Tutorial = ({ classes }) => {
             text={`\`\`\`jsx\n${render}\n\`\`\``}
           />
         </li>
-        If you are wondering why the control labels are prefixed with <code>%</code> in the UI schema:
-        this is because of i18n, a feature we are currently working on.
       </ol>
     </div>
   );

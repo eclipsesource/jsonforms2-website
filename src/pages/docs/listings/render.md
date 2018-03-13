@@ -1,4 +1,4 @@
-import { JsonForms } from '@jsonforms/core';
+import { JsonForms } from '@jsonforms/react';
 // other imports...
 
 class App extends Component {
