@@ -95,7 +95,9 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="tablecontrolprops.html#childerrors" class="tsd-kind-icon">child<wbr>Errors</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="tablecontrolprops.html#config" class="tsd-kind-icon">config</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="tablecontrolprops.html#data" class="tsd-kind-icon">data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="tablecontrolprops.html#description" class="tsd-kind-icon">description</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="tablecontrolprops.html#enabled" class="tsd-kind-icon">enabled</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="tablecontrolprops.html#errors" class="tsd-kind-icon">errors</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="tablecontrolprops.html#id" class="tsd-kind-icon">id</a></li>
@@ -103,8 +105,8 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="tablecontrolprops.html#parentpath" class="tsd-kind-icon">parent<wbr>Path</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited"><a href="tablecontrolprops.html#path" class="tsd-kind-icon">path</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="tablecontrolprops.html#required" class="tsd-kind-icon">required</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="tablecontrolprops.html#resolvedschema" class="tsd-kind-icon">resolved<wbr>Schema</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="tablecontrolprops.html#schema" class="tsd-kind-icon">schema</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited"><a href="tablecontrolprops.html#scopedschema" class="tsd-kind-icon">scoped<wbr>Schema</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="tablecontrolprops.html#uischema" class="tsd-kind-icon">uischema</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="tablecontrolprops.html#visible" class="tsd-kind-icon">visible</a></li>
 							</ul>
@@ -128,9 +130,25 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="statepropsoftable.html">StatePropsOfTable</a>.<a href="statepropsoftable.html#childerrors">childErrors</a></p>
 						<ul>
-							<li>Defined in util/renderer.ts:184</li>
+							<li>Defined in util/renderer.ts:350</li>
 						</ul>
 					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="config" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> config</h3>
+					<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="statepropsofrenderer.html">StatePropsOfRenderer</a>.<a href="statepropsofrenderer.html#config">config</a></p>
+						<ul>
+							<li>Defined in util/renderer.ts:90</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Any configuration options for the element.</p>
+						</div>
+					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="data" class="tsd-anchor"></a>
@@ -139,12 +157,28 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="statepropsofscopedrenderer.html">StatePropsOfScopedRenderer</a>.<a href="statepropsofscopedrenderer.html#data">data</a></p>
 						<ul>
-							<li>Defined in renderers/common.ts:11</li>
+							<li>Defined in util/renderer.ts:101</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>The data to be rendered.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="description" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> description</h3>
+					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="statepropsofcontrol.html">StatePropsOfControl</a>.<a href="statepropsofcontrol.html#description">description</a></p>
+						<ul>
+							<li>Defined in util/renderer.ts:149</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Description of input field</p>
 						</div>
 					</div>
 				</section>
@@ -155,7 +189,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="statepropsofrenderer.html">StatePropsOfRenderer</a>.<a href="statepropsofrenderer.html#enabled">enabled</a></p>
 						<ul>
-							<li>Defined in renderers/Renderer.tsx:27</li>
+							<li>Defined in util/renderer.ts:78</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -171,7 +205,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="statepropsofcontrol.html">StatePropsOfControl</a>.<a href="statepropsofcontrol.html#errors">errors</a></p>
 						<ul>
-							<li>Defined in renderers/Control.ts:12</li>
+							<li>Defined in util/renderer.ts:139</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -187,7 +221,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="statepropsofscopedrenderer.html">StatePropsOfScopedRenderer</a>.<a href="statepropsofscopedrenderer.html#id">id</a></p>
 						<ul>
-							<li>Defined in renderers/common.ts:29</li>
+							<li>Defined in util/renderer.ts:124</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -199,11 +233,11 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="label" class="tsd-anchor"></a>
 					<h3>label</h3>
-					<div class="tsd-signature tsd-kind-icon">label<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<div class="tsd-signature tsd-kind-icon">label<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="labels.html" class="tsd-signature-type">Labels</a></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="statepropsofcontrol.html">StatePropsOfControl</a>.<a href="statepropsofcontrol.html#label">label</a></p>
 						<ul>
-							<li>Defined in renderers/Control.ts:17</li>
+							<li>Defined in util/renderer.ts:144</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -219,7 +253,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="statepropsofscopedrenderer.html">StatePropsOfScopedRenderer</a>.<a href="statepropsofscopedrenderer.html#parentpath">parentPath</a></p>
 						<ul>
-							<li>Defined in renderers/common.ts:24</li>
+							<li>Defined in util/renderer.ts:114</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -236,7 +270,7 @@
 						<p>Inherited from <a href="statepropsofscopedrenderer.html">StatePropsOfScopedRenderer</a>.<a href="statepropsofscopedrenderer.html#path">path</a></p>
 						<p>Overrides <a href="statepropsofrenderer.html">StatePropsOfRenderer</a>.<a href="statepropsofrenderer.html#path">path</a></p>
 						<ul>
-							<li>Defined in renderers/common.ts:19</li>
+							<li>Defined in util/renderer.ts:109</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -255,7 +289,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="statepropsofcontrol.html">StatePropsOfControl</a>.<a href="statepropsofcontrol.html#required">required</a></p>
 						<ul>
-							<li>Defined in renderers/Control.ts:22</li>
+							<li>Defined in util/renderer.ts:154</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -265,29 +299,35 @@
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="resolvedschema" class="tsd-anchor"></a>
-					<h3>resolved<wbr>Schema</h3>
-					<div class="tsd-signature tsd-kind-icon">resolved<wbr>Schema<span class="tsd-signature-symbol">:</span> <a href="jsonschema.html" class="tsd-signature-type">JsonSchema</a></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="statepropsoftable.html">StatePropsOfTable</a>.<a href="statepropsoftable.html#resolvedschema">resolvedSchema</a></p>
-						<ul>
-							<li>Defined in util/renderer.ts:185</li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="schema" class="tsd-anchor"></a>
 					<h3>schema</h3>
 					<div class="tsd-signature tsd-kind-icon">schema<span class="tsd-signature-symbol">:</span> <a href="jsonschema.html" class="tsd-signature-type">JsonSchema</a></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="statepropsofrenderer.html">StatePropsOfRenderer</a>.<a href="statepropsofrenderer.html#schema">schema</a></p>
 						<ul>
-							<li>Defined in renderers/Renderer.tsx:17</li>
+							<li>Defined in util/renderer.ts:68</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>The JSON schema that describes the data.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+					<a name="scopedschema" class="tsd-anchor"></a>
+					<h3>scoped<wbr>Schema</h3>
+					<div class="tsd-signature tsd-kind-icon">scoped<wbr>Schema<span class="tsd-signature-symbol">:</span> <a href="jsonschema.html" class="tsd-signature-type">JsonSchema</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="statepropsofcontrol.html">StatePropsOfControl</a>.<a href="statepropsofcontrol.html#scopedschema">scopedSchema</a></p>
+						<p>Overrides <a href="statepropsofscopedrenderer.html">StatePropsOfScopedRenderer</a>.<a href="statepropsofscopedrenderer.html#scopedschema">scopedSchema</a></p>
+						<ul>
+							<li>Defined in util/renderer.ts:159</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The schema that corresponds to the data the control is bound to.</p>
 						</div>
 					</div>
 				</section>
@@ -298,7 +338,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="statepropsofrenderer.html">StatePropsOfRenderer</a>.<a href="statepropsofrenderer.html#uischema">uischema</a></p>
 						<ul>
-							<li>Defined in renderers/Renderer.tsx:12</li>
+							<li>Defined in util/renderer.ts:63</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -314,7 +354,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="statepropsofrenderer.html">StatePropsOfRenderer</a>.<a href="statepropsofrenderer.html#visible">visible</a></p>
 						<ul>
-							<li>Defined in renderers/Renderer.tsx:22</li>
+							<li>Defined in util/renderer.ts:73</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -337,7 +377,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="dispatchpropsoftable.html">DispatchPropsOfTable</a>.<a href="dispatchpropsoftable.html#additem">addItem</a></p>
 								<ul>
-									<li>Defined in util/renderer.ts:240</li>
+									<li>Defined in util/renderer.ts:379</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -361,7 +401,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="dispatchpropsoftable.html">DispatchPropsOfTable</a>.<a href="dispatchpropsoftable.html#removeitems">removeItems</a></p>
 								<ul>
-									<li>Defined in util/renderer.ts:241</li>
+									<li>Defined in util/renderer.ts:380</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -398,7 +438,13 @@
 								<a href="tablecontrolprops.html#childerrors" class="tsd-kind-icon">child<wbr>Errors</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="tablecontrolprops.html#config" class="tsd-kind-icon">config</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 								<a href="tablecontrolprops.html#data" class="tsd-kind-icon">data</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="tablecontrolprops.html#description" class="tsd-kind-icon">description</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 								<a href="tablecontrolprops.html#enabled" class="tsd-kind-icon">enabled</a>
@@ -422,10 +468,10 @@
 								<a href="tablecontrolprops.html#required" class="tsd-kind-icon">required</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="tablecontrolprops.html#resolvedschema" class="tsd-kind-icon">resolved<wbr>Schema</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 								<a href="tablecontrolprops.html#schema" class="tsd-kind-icon">schema</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited">
+								<a href="tablecontrolprops.html#scopedschema" class="tsd-kind-icon">scoped<wbr>Schema</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 								<a href="tablecontrolprops.html#uischema" class="tsd-kind-icon">uischema</a>

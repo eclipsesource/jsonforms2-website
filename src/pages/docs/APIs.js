@@ -23,6 +23,15 @@ const APIs = ({ classes }) => (
       <li>
         <ApiLink link={'/api/core/index.html'}>Core</ApiLink>
       </li>
+      <li>
+        <ApiLink link={'/api/react/index.html'}>React Integration</ApiLink>
+      </li>
+      <li>
+        <ApiLink link={'/api/material-renderers/index.html'}>React-based Material Renderers</ApiLink>
+      </li>
+      <li>
+        <ApiLink link={'/api/vanilla-renderers/index.html'}>React-based Vanilla Renderers</ApiLink>
+      </li>
     </ul>
   </div>
 );

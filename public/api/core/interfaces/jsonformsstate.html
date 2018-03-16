@@ -100,12 +100,12 @@
 					<div class="tsd-signature tsd-kind-icon">jsonforms<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in store.ts:19</li>
+							<li>Defined in store.ts:43</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>Represents JSONForm&#39;s substate.</p>
+							<p>Represents JSONForm&#39;s sub-state.</p>
 						</div>
 					</div>
 					<div class="tsd-type-declaration">
@@ -115,10 +115,18 @@
 								<h5><span class="tsd-signature-symbol">[</span>additionalState: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
 							</li>
 							<li class="tsd-parameter">
-								<h5><span class="tsd-flag ts-flagOptional">Optional</span> common<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span></h5>
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> config<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span></h5>
 								<div class="tsd-comment tsd-typography">
 									<div class="lead">
-										<p>Substate for storing common data.</p>
+										<p>Global configuration options.</p>
+									</div>
+								</div>
+							</li>
+							<li class="tsd-parameter">
+								<h5><span class="tsd-flag ts-flagOptional">Optional</span> core<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">object</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>Substate for storing mandatory sub-state.</p>
 									</div>
 								</div>
 								<ul class="tsd-parameters">
@@ -132,20 +140,45 @@
 									</li>
 									<li class="tsd-parameter">
 										<h5><span class="tsd-flag ts-flagOptional">Optional</span> errors<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ErrorObject</span><span class="tsd-signature-symbol">[]</span></h5>
+										<div class="tsd-comment tsd-typography">
+											<div class="lead">
+												<p>Any errors in case the data violates the JSON schema.</p>
+											</div>
+										</div>
 									</li>
 									<li class="tsd-parameter">
 										<h5><span class="tsd-flag ts-flagOptional">Optional</span> schema<span class="tsd-signature-symbol">?: </span><a href="jsonschema.html" class="tsd-signature-type">JsonSchema</a></h5>
+										<div class="tsd-comment tsd-typography">
+											<div class="lead">
+												<p>The JSON schema describing the data.</p>
+											</div>
+										</div>
 									</li>
 									<li class="tsd-parameter">
 										<h5><span class="tsd-flag ts-flagOptional">Optional</span> uischema<span class="tsd-signature-symbol">?: </span><a href="uischemaelement.html" class="tsd-signature-type">UISchemaElement</a></h5>
+										<div class="tsd-comment tsd-typography">
+											<div class="lead">
+												<p>The UI schema that describes the UI to be rendered.</p>
+											</div>
+										</div>
 									</li>
 								</ul>
 							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> fields<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>All available field renderers.</p>
+									</div>
+								</div>
 							</li>
 							<li class="tsd-parameter">
 								<h5><span class="tsd-flag ts-flagOptional">Optional</span> renderers<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								<div class="tsd-comment tsd-typography">
+									<div class="lead">
+										<p>All available renderers.</p>
+									</div>
+								</div>
 							</li>
 						</ul>
 					</div>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>RendererComponent | JSON Forms Core</title>
+	<title>Control | JSON Forms Core</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -38,6 +38,8 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
 							<input type="checkbox" id="tsd-filter-only-exported" />
 							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
@@ -54,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="renderercomponent.html">RendererComponent</a>
+					<a href="control.html">Control</a>
 				</li>
 			</ul>
-			<h1>Class RendererComponent&lt;P, S&gt;</h1>
+			<h1>Class Control&lt;P, S&gt;</h1>
 		</div>
 	</div>
 </header>
@@ -67,14 +69,14 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Convenience wrapper around React&#39;s Component for constraining props.</p>
+						<p>A controlled component convenience wrapper that additionally manages a focused state.</p>
 					</div>
 					<dl class="tsd-comment-tags">
 						<dt>template</dt>
-						<dd><p>P type of any renderer props</p>
+						<dd><p>P control specific properties</p>
 						</dd>
 						<dt>template</dt>
-						<dd><p>S state of the Renderer</p>
+						<dd><p>S the state managed by the control</p>
 						</dd>
 					</dl>
 				</div>
@@ -83,10 +85,10 @@
 				<h3>Type parameters</h3>
 				<ul class="tsd-type-parameters">
 					<li>
-						<h4>P<span class="tsd-signature-symbol">: </span><a href="../interfaces/rendererprops.html" class="tsd-signature-type">RendererProps</a></h4>
+						<h4>P<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ControlProps</span></h4>
 					</li>
 					<li>
-						<h4>S</h4>
+						<h4>S<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ControlState</span></h4>
 					</li>
 				</ul>
 			</section>
@@ -94,15 +96,10 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="tsd-signature-type">Component</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span>
+						<a href="renderercomponent.html" class="tsd-signature-type">RendererComponent</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">RendererComponent</span>
-								<ul class="tsd-hierarchy">
-									<li>
-										<a href="control.html" class="tsd-signature-type">Control</a>
-									</li>
-								</ul>
+								<span class="target">Control</span>
 							</li>
 						</ul>
 					</li>
@@ -115,32 +112,24 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="renderercomponent.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="control.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-inherited">
-							<h3>Properties</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="renderercomponent.html#context" class="tsd-kind-icon">context</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="renderercomponent.html#props" class="tsd-kind-icon">props</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="renderercomponent.html#refs" class="tsd-kind-icon">refs</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="renderercomponent.html#state" class="tsd-kind-icon">state</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-inherited">
+						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="renderercomponent.html#forceupdate" class="tsd-kind-icon">force<wbr>Update</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="renderercomponent.html#render" class="tsd-kind-icon">render</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited"><a href="renderercomponent.html#setstate" class="tsd-kind-icon">set<wbr>State</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="renderercomponent.html#componentdidcatch" class="tsd-kind-icon">component<wbr>Did<wbr>Catch</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="renderercomponent.html#componentdidmount" class="tsd-kind-icon">component<wbr>Did<wbr>Mount</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="renderercomponent.html#componentdidupdate" class="tsd-kind-icon">component<wbr>Did<wbr>Update</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="renderercomponent.html#componentwillmount" class="tsd-kind-icon">component<wbr>Will<wbr>Mount</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="renderercomponent.html#componentwillreceiveprops" class="tsd-kind-icon">component<wbr>Will<wbr>Receive<wbr>Props</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="renderercomponent.html#componentwillunmount" class="tsd-kind-icon">component<wbr>Will<wbr>Unmount</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="renderercomponent.html#componentwillupdate" class="tsd-kind-icon">component<wbr>Will<wbr>Update</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="renderercomponent.html#shouldcomponentupdate" class="tsd-kind-icon">should<wbr>Component<wbr>Update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="control.html#handlechange" class="tsd-kind-icon">handle<wbr>Change</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="control.html#onblur" class="tsd-kind-icon">on<wbr>Blur</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="control.html#onfocus" class="tsd-kind-icon">on<wbr>Focus</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="control.html#updatedata" class="tsd-kind-icon">update<wbr>Data</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="control.html#componentdidcatch" class="tsd-kind-icon">component<wbr>Did<wbr>Catch</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="control.html#componentdidmount" class="tsd-kind-icon">component<wbr>Did<wbr>Mount</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="control.html#componentdidupdate" class="tsd-kind-icon">component<wbr>Did<wbr>Update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="control.html#componentwillmount" class="tsd-kind-icon">component<wbr>Will<wbr>Mount</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="control.html#componentwillreceiveprops" class="tsd-kind-icon">component<wbr>Will<wbr>Receive<wbr>Props</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="control.html#componentwillunmount" class="tsd-kind-icon">component<wbr>Will<wbr>Unmount</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="control.html#componentwillupdate" class="tsd-kind-icon">component<wbr>Will<wbr>Update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="control.html#shouldcomponentupdate" class="tsd-kind-icon">should<wbr>Component<wbr>Update</a></li>
 							</ul>
 						</section>
 					</div>
@@ -152,14 +141,14 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Renderer<wbr>Component<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="renderercomponent.html" class="tsd-signature-type">RendererComponent</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Control<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="control.html" class="tsd-signature-type">Control</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides Component.__constructor</p>
+								<p>Overrides <a href="renderercomponent.html">RendererComponent</a>.<a href="renderercomponent.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in renderers/Renderer.tsx:48</li>
+									<li>Defined in <a href="https://github.com/eclipsesource/jsonforms/blob/d92562b/packages/react/src/Control.ts#L35">Control.ts:35</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -168,211 +157,107 @@
 									<h5>props: <span class="tsd-signature-type">P</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="renderercomponent.html" class="tsd-signature-type">RendererComponent</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="control.html" class="tsd-signature-type">Control</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="context" class="tsd-anchor"></a>
-					<h3>context</h3>
-					<div class="tsd-signature tsd-kind-icon">context<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from Component.context</p>
-						<ul>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="props" class="tsd-anchor"></a>
-					<h3>props</h3>
-					<div class="tsd-signature tsd-kind-icon">props<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from Component.props</p>
-						<ul>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="refs" class="tsd-anchor"></a>
-					<h3>refs</h3>
-					<div class="tsd-signature tsd-kind-icon">refs<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from Component.refs</p>
-						<ul>
-						</ul>
-					</aside>
-					<div class="tsd-type-declaration">
-						<h4>Type declaration</h4>
-						<ul class="tsd-parameters">
-							<li class="tsd-parameter-index-signature">
-								<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">ReactInstance</span></h5>
-							</li>
-						</ul>
-					</div>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-					<a name="state" class="tsd-anchor"></a>
-					<h3>state</h3>
-					<div class="tsd-signature tsd-kind-icon">state<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from Component.state</p>
-						<ul>
-						</ul>
-					</aside>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="forceupdate" class="tsd-anchor"></a>
-					<h3>force<wbr>Update</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">force<wbr>Update<span class="tsd-signature-symbol">(</span>callBack<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="handlechange" class="tsd-anchor"></a>
+					<h3>handle<wbr>Change</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">handle<wbr>Change<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from Component.forceUpdate</p>
 								<ul>
+									<li>Defined in <a href="https://github.com/eclipsesource/jsonforms/blob/d92562b/packages/react/src/Control.ts#L52">Control.ts:52</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Propagates a value change.</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> callBack: <span class="tsd-signature-type">function</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>the updated value</p>
+										</div>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="render" class="tsd-anchor"></a>
-					<h3>render</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">render<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ReactNode</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="onblur" class="tsd-anchor"></a>
+					<h3>on<wbr>Blur</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Blur<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from Component.render</p>
 								<ul>
+									<li>Defined in <a href="https://github.com/eclipsesource/jsonforms/blob/d92562b/packages/react/src/Control.ts#L67">Control.ts:67</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">ReactNode</span></h4>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set the focused state to false.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
-					<a name="setstate" class="tsd-anchor"></a>
-					<h3>set<wbr>State</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>State&lt;K&gt;<span class="tsd-signature-symbol">(</span>f<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span>, callback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						<li class="tsd-signature tsd-kind-icon">set<wbr>State&lt;K&gt;<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span>, callback<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="onfocus" class="tsd-anchor"></a>
+					<h3>on<wbr>Focus</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">on<wbr>Focus<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from Component.setState</p>
 								<ul>
+									<li>Defined in <a href="https://github.com/eclipsesource/jsonforms/blob/d92562b/packages/react/src/Control.ts#L60">Control.ts:60</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof S</span></h4>
-								</li>
-							</ul>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>f: <span class="tsd-signature-type">function</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>prevState<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span>, props<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-parameters-title">Parameters</h4>
-													<ul class="tsd-parameters">
-														<li>
-															<h5>prevState: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">&gt;</span></h5>
-														</li>
-														<li>
-															<h5>props: <span class="tsd-signature-type">P</span></h5>
-														</li>
-													</ul>
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span></h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> callback: <span class="tsd-signature-type">function</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-							</ul>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Set the focused state to true.</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="updatedata" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> update<wbr>Data</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">update<wbr>Data<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from Component.setState</p>
 								<ul>
+									<li>Defined in <a href="https://github.com/eclipsesource/jsonforms/blob/d92562b/packages/react/src/Control.ts#L71">Control.ts:71</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>K<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof S</span></h4>
-								</li>
-							</ul>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>state: <span class="tsd-signature-type">Pick</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">S</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">K</span><span class="tsd-signature-symbol">&gt;</span></h5>
-								</li>
-								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> callback: <span class="tsd-signature-type">function</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -390,6 +275,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ComponentLifecycle.componentDidCatch</p>
 								<ul>
+									<li>Defined in /mnt/c/Users/Enikö/git/jsonforms/node_modules/@types/react/index.d.ts:409</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -422,6 +308,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ComponentLifecycle.componentDidMount</p>
 								<ul>
+									<li>Defined in /mnt/c/Users/Enikö/git/jsonforms/node_modules/@types/react/index.d.ts:370</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -444,6 +331,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ComponentLifecycle.componentDidUpdate</p>
 								<ul>
+									<li>Defined in /mnt/c/Users/Enikö/git/jsonforms/node_modules/@types/react/index.d.ts:399</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -478,6 +366,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ComponentLifecycle.componentWillMount</p>
 								<ul>
+									<li>Defined in /mnt/c/Users/Enikö/git/jsonforms/node_modules/@types/react/index.d.ts:366</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -501,6 +390,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ComponentLifecycle.componentWillReceiveProps</p>
 								<ul>
+									<li>Defined in /mnt/c/Users/Enikö/git/jsonforms/node_modules/@types/react/index.d.ts:378</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -535,6 +425,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ComponentLifecycle.componentWillUnmount</p>
 								<ul>
+									<li>Defined in /mnt/c/Users/Enikö/git/jsonforms/node_modules/@types/react/index.d.ts:404</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -558,6 +449,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ComponentLifecycle.componentWillUpdate</p>
 								<ul>
+									<li>Defined in /mnt/c/Users/Enikö/git/jsonforms/node_modules/@types/react/index.d.ts:395</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -593,6 +485,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ComponentLifecycle.shouldComponentUpdate</p>
 								<ul>
+									<li>Defined in /mnt/c/Users/Enikö/git/jsonforms/node_modules/@types/react/index.d.ts:389</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -636,60 +529,81 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-has-type-parameter">
-						<a href="renderercomponent.html" class="tsd-kind-icon">Renderer<wbr>Component</a>
+						<a href="control.html" class="tsd-kind-icon">Control</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-								<a href="renderercomponent.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="control.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="renderercomponent.html#context" class="tsd-kind-icon">context</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="control.html#handlechange" class="tsd-kind-icon">handle<wbr>Change</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="renderercomponent.html#props" class="tsd-kind-icon">props</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="control.html#onblur" class="tsd-kind-icon">on<wbr>Blur</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="renderercomponent.html#refs" class="tsd-kind-icon">refs</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="control.html#onfocus" class="tsd-kind-icon">on<wbr>Focus</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="renderercomponent.html#state" class="tsd-kind-icon">state</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="renderercomponent.html#forceupdate" class="tsd-kind-icon">force<wbr>Update</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="renderercomponent.html#render" class="tsd-kind-icon">render</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-inherited">
-								<a href="renderercomponent.html#setstate" class="tsd-kind-icon">set<wbr>State</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
+								<a href="control.html#updatedata" class="tsd-kind-icon">update<wbr>Data</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="renderercomponent.html#componentdidcatch" class="tsd-kind-icon">component<wbr>Did<wbr>Catch</a>
+								<a href="control.html#componentdidcatch" class="tsd-kind-icon">component<wbr>Did<wbr>Catch</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="renderercomponent.html#componentdidmount" class="tsd-kind-icon">component<wbr>Did<wbr>Mount</a>
+								<a href="control.html#componentdidmount" class="tsd-kind-icon">component<wbr>Did<wbr>Mount</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="renderercomponent.html#componentdidupdate" class="tsd-kind-icon">component<wbr>Did<wbr>Update</a>
+								<a href="control.html#componentdidupdate" class="tsd-kind-icon">component<wbr>Did<wbr>Update</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="renderercomponent.html#componentwillmount" class="tsd-kind-icon">component<wbr>Will<wbr>Mount</a>
+								<a href="control.html#componentwillmount" class="tsd-kind-icon">component<wbr>Will<wbr>Mount</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="renderercomponent.html#componentwillreceiveprops" class="tsd-kind-icon">component<wbr>Will<wbr>Receive<wbr>Props</a>
+								<a href="control.html#componentwillreceiveprops" class="tsd-kind-icon">component<wbr>Will<wbr>Receive<wbr>Props</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="renderercomponent.html#componentwillunmount" class="tsd-kind-icon">component<wbr>Will<wbr>Unmount</a>
+								<a href="control.html#componentwillunmount" class="tsd-kind-icon">component<wbr>Will<wbr>Unmount</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="renderercomponent.html#componentwillupdate" class="tsd-kind-icon">component<wbr>Will<wbr>Update</a>
+								<a href="control.html#componentwillupdate" class="tsd-kind-icon">component<wbr>Will<wbr>Update</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="renderercomponent.html#shouldcomponentupdate" class="tsd-kind-icon">should<wbr>Component<wbr>Update</a>
+								<a href="control.html#shouldcomponentupdate" class="tsd-kind-icon">should<wbr>Component<wbr>Update</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-class tsd-has-type-parameter">
+						<a href="renderercomponent.html" class="tsd-kind-icon">Renderer<wbr>Component</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="unknownrenderer.html" class="tsd-kind-icon">Unknown<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="../interfaces/statelessrenderer.html" class="tsd-kind-icon">Stateless<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="../interfaces/unknownrendererprops.html" class="tsd-kind-icon">Unknown<wbr>Renderer<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="../globals.html#renderer" class="tsd-kind-icon">Renderer</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#dispatchfield" class="tsd-kind-icon">Dispatch<wbr>Field</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#jsonforms" class="tsd-kind-icon">Json<wbr>Forms</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-not-exported">
+						<a href="../globals.html#dispatch" class="tsd-kind-icon">Dispatch</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-not-exported">
+						<a href="../globals.html#jsonformsdispatchrenderer" class="tsd-kind-icon">Json<wbr>Forms<wbr>Dispatch<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="../globals.html#connecttojsonforms" class="tsd-kind-icon">connect<wbr>ToJson<wbr>Forms</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

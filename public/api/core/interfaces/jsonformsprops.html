@@ -64,13 +64,6 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>Props of the <a href="../globals.html#jsonforms">JsonForms</a> renderer.</p>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -91,6 +84,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="jsonformsprops.html#config" class="tsd-kind-icon">config</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="jsonformsprops.html#data" class="tsd-kind-icon">data</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="jsonformsprops.html#enabled" class="tsd-kind-icon">enabled</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="jsonformsprops.html#id" class="tsd-kind-icon">id</a></li>
@@ -98,6 +92,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-overwrite tsd-is-inherited"><a href="jsonformsprops.html#path" class="tsd-kind-icon">path</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="jsonformsprops.html#renderers" class="tsd-kind-icon">renderers</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="jsonformsprops.html#schema" class="tsd-kind-icon">schema</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="jsonformsprops.html#scopedschema" class="tsd-kind-icon">scoped<wbr>Schema</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="jsonformsprops.html#uischema" class="tsd-kind-icon">uischema</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="jsonformsprops.html#visible" class="tsd-kind-icon">visible</a></li>
 							</ul>
@@ -108,13 +103,29 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="config" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> config</h3>
+					<div class="tsd-signature tsd-kind-icon">config<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="statepropsofrenderer.html">StatePropsOfRenderer</a>.<a href="statepropsofrenderer.html#config">config</a></p>
+						<ul>
+							<li>Defined in util/renderer.ts:90</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Any configuration options for the element.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="data" class="tsd-anchor"></a>
 					<h3>data</h3>
 					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="statepropsofscopedrenderer.html">StatePropsOfScopedRenderer</a>.<a href="statepropsofscopedrenderer.html#data">data</a></p>
 						<ul>
-							<li>Defined in renderers/common.ts:11</li>
+							<li>Defined in util/renderer.ts:101</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -130,7 +141,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="statepropsofrenderer.html">StatePropsOfRenderer</a>.<a href="statepropsofrenderer.html#enabled">enabled</a></p>
 						<ul>
-							<li>Defined in renderers/Renderer.tsx:27</li>
+							<li>Defined in util/renderer.ts:78</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -146,7 +157,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="statepropsofscopedrenderer.html">StatePropsOfScopedRenderer</a>.<a href="statepropsofscopedrenderer.html#id">id</a></p>
 						<ul>
-							<li>Defined in renderers/common.ts:29</li>
+							<li>Defined in util/renderer.ts:124</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -162,7 +173,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="statepropsofscopedrenderer.html">StatePropsOfScopedRenderer</a>.<a href="statepropsofscopedrenderer.html#parentpath">parentPath</a></p>
 						<ul>
-							<li>Defined in renderers/common.ts:24</li>
+							<li>Defined in util/renderer.ts:114</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -179,7 +190,7 @@
 						<p>Inherited from <a href="statepropsofscopedrenderer.html">StatePropsOfScopedRenderer</a>.<a href="statepropsofscopedrenderer.html#path">path</a></p>
 						<p>Overrides <a href="statepropsofrenderer.html">StatePropsOfRenderer</a>.<a href="statepropsofrenderer.html#path">path</a></p>
 						<ul>
-							<li>Defined in renderers/common.ts:19</li>
+							<li>Defined in util/renderer.ts:109</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -197,14 +208,9 @@
 					<div class="tsd-signature tsd-kind-icon">renderers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in renderers/JsonForms.tsx:16</li>
+							<li>Defined in util/renderer.ts:209</li>
 						</ul>
 					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>All renderers that are considered by the dispatch renderer.</p>
-						</div>
-					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="schema" class="tsd-anchor"></a>
@@ -213,12 +219,28 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="statepropsofrenderer.html">StatePropsOfRenderer</a>.<a href="statepropsofrenderer.html#schema">schema</a></p>
 						<ul>
-							<li>Defined in renderers/Renderer.tsx:17</li>
+							<li>Defined in util/renderer.ts:68</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
 							<p>The JSON schema that describes the data.</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="scopedschema" class="tsd-anchor"></a>
+					<h3>scoped<wbr>Schema</h3>
+					<div class="tsd-signature tsd-kind-icon">scoped<wbr>Schema<span class="tsd-signature-symbol">:</span> <a href="jsonschema.html" class="tsd-signature-type">JsonSchema</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="statepropsofscopedrenderer.html">StatePropsOfScopedRenderer</a>.<a href="statepropsofscopedrenderer.html#scopedschema">scopedSchema</a></p>
+						<ul>
+							<li>Defined in util/renderer.ts:119</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The sub-schema that describes the data this element is bound to.</p>
 						</div>
 					</div>
 				</section>
@@ -229,7 +251,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="statepropsofrenderer.html">StatePropsOfRenderer</a>.<a href="statepropsofrenderer.html#uischema">uischema</a></p>
 						<ul>
-							<li>Defined in renderers/Renderer.tsx:12</li>
+							<li>Defined in util/renderer.ts:63</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -245,7 +267,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="statepropsofrenderer.html">StatePropsOfRenderer</a>.<a href="statepropsofrenderer.html#visible">visible</a></p>
 						<ul>
-							<li>Defined in renderers/Renderer.tsx:22</li>
+							<li>Defined in util/renderer.ts:73</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -272,6 +294,9 @@
 						<a href="jsonformsprops.html" class="tsd-kind-icon">Json<wbr>Forms<wbr>Props</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="jsonformsprops.html#config" class="tsd-kind-icon">config</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 								<a href="jsonformsprops.html#data" class="tsd-kind-icon">data</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
@@ -291,6 +316,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 								<a href="jsonformsprops.html#schema" class="tsd-kind-icon">schema</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="jsonformsprops.html#scopedschema" class="tsd-kind-icon">scoped<wbr>Schema</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 								<a href="jsonformsprops.html#uischema" class="tsd-kind-icon">uischema</a>

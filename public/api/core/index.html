@@ -64,10 +64,11 @@
 			<div class="tsd-panel tsd-typography">
 				<h1 id="jsonforms-more-forms-less-code">JSONForms - More Forms. Less Code</h1>
 				<h3 id="complex-forms-in-the-blink-of-an-eye">Complex Forms in the blink of an eye</h3>
-				<p>JSONForms uses HTML custom elements and eliminates the need to write HTML templates in order to create forms by leveraging the capabilities of JSON and JSON schema.</p>
+				<p>JSONForms eliminates the tedious task of writing fully-featued forms by hand by leveraging the capabilities of JSON, JSON Schema and Javascript.</p>
 				<h1 id="core-package">Core Package</h1>
-				<p>This is the JSONForms core package which does not contain any renderers by itself.</p>
-				<p>You can combine the core package with any renderer you want, for example the <a href="https://www.npmjs.com/package/@jsonforms/material-renderers">Material Renderers</a> or the <a href="https://www.npmjs.com/package/@jsonforms/vanilla-renderers">Vanilla Renderers</a>.</p>
+				<p>This is the JSONForms core package. This package provides basic functionality needed to render forms and is based on <a href="https://redux.js.org/">Redux</a>.</p>
+				<p>In order to use JSONForms Core you need to decide which UI framework you would like to use.</p>
+				<p>JSONForms currently supports <a href="https://www.npmjs.com/package/@jsonforms/react">React</a>. A proof of concept exists for <a href="https://github.com/eclipsesource/jsonforms/blob/master/packages/angular">Angular</a>.</p>
 				<p>See the <a href="https://www.npmjs.com/package/@jsonforms/examples">Example Package</a> on how to integrate JSONForms with your application.</p>
 				<p>Check <a href="https://www.npmjs.com/search?q=%40jsonforms">https://www.npmjs.com/search?q=%40jsonforms</a> for all published JSONForms packages.</p>
 				<h1 id="license">License</h1>
@@ -75,7 +76,10 @@
 				<h1 id="roadmap">Roadmap</h1>
 				<p>Our current roadmap is available <a href="https://github.com/eclipsesource/jsonforms/blob/master/ROADMAP.md">here</a>.</p>
 				<h1 id="development">Development</h1>
-				<p>JSONForms is developed by <a href="https://eclipsesource.com">EclipseSource</a>.</p>
+				<p>JSONForms is developed by <a href="https://eclipsesource.com">EclipseSource</a>.
+				We are always very happy to have contributions, whether for trivial cleanups or big new features.</p>
+				<h1 id="migration">Migration</h1>
+				<p>If you are already using JSONForms 1, check our <a href="https://github.com/eclipsesource/jsonforms/blob/master/MIGRATION.md">migration guide</a>.</p>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -91,20 +95,8 @@
 					<li class=" tsd-kind-enum">
 						<a href="enums/ruleeffect.html" class="tsd-kind-icon">Rule<wbr>Effect</a>
 					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
-						<a href="classes/control.html" class="tsd-kind-icon">Control</a>
-					</li>
 					<li class=" tsd-kind-class tsd-is-not-exported">
 						<a href="classes/gen.html" class="tsd-kind-icon">Gen</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/jsonformsglobal.html" class="tsd-kind-icon">Json<wbr>Forms<wbr>Global</a>
-					</li>
-					<li class=" tsd-kind-class tsd-has-type-parameter">
-						<a href="classes/renderercomponent.html" class="tsd-kind-icon">Renderer<wbr>Component</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="classes/unknownrenderer.html" class="tsd-kind-icon">Unknown<wbr>Renderer</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/categorization.html" class="tsd-kind-icon">Categorization</a>
@@ -136,6 +128,9 @@
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/fieldprops.html" class="tsd-kind-icon">Field<wbr>Props</a>
 					</li>
+					<li class=" tsd-kind-interface tsd-has-type-parameter">
+						<a href="interfaces/formatted.html" class="tsd-kind-icon">Formatted</a>
+					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/grouplayout.html" class="tsd-kind-icon">Group<wbr>Layout</a>
 					</li>
@@ -144,9 +139,6 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/jsonformsprops.html" class="tsd-kind-icon">Json<wbr>Forms<wbr>Props</a>
-					</li>
-					<li class=" tsd-kind-interface">
-						<a href="interfaces/jsonformsrendererconfig.html" class="tsd-kind-icon">Json<wbr>Forms<wbr>Renderer<wbr>Config</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/jsonformsstate.html" class="tsd-kind-icon">Json<wbr>Forms<wbr>State</a>
@@ -162,6 +154,9 @@
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/labelelement.html" class="tsd-kind-icon">Label<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/labels.html" class="tsd-kind-icon">Labels</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/layout.html" class="tsd-kind-icon">Layout</a>
@@ -199,9 +194,6 @@
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/statepropsoftable.html" class="tsd-kind-icon">State<wbr>Props<wbr>OfTable</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-has-type-parameter">
-						<a href="interfaces/statelessrenderer.html" class="tsd-kind-icon">Stateless<wbr>Renderer</a>
-					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/tablecontrolprops.html" class="tsd-kind-icon">Table<wbr>Control<wbr>Props</a>
 					</li>
@@ -209,7 +201,7 @@
 						<a href="interfaces/uischemaelement.html" class="tsd-kind-icon">UISchema<wbr>Element</a>
 					</li>
 					<li class=" tsd-kind-interface">
-						<a href="interfaces/unknownrendererprops.html" class="tsd-kind-icon">Unknown<wbr>Renderer<wbr>Props</a>
+						<a href="interfaces/updateaction.html" class="tsd-kind-icon">Update<wbr>Action</a>
 					</li>
 					<li class=" tsd-kind-interface">
 						<a href="interfaces/verticallayout.html" class="tsd-kind-icon">Vertical<wbr>Layout</a>
@@ -219,9 +211,6 @@
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#rankedtester" class="tsd-kind-icon">Ranked<wbr>Tester</a>
-					</li>
-					<li class=" tsd-kind-type-alias">
-						<a href="globals.html#renderer" class="tsd-kind-icon">Renderer</a>
 					</li>
 					<li class=" tsd-kind-type-alias">
 						<a href="globals.html#tester" class="tsd-kind-icon">Tester</a>
@@ -236,16 +225,7 @@
 						<a href="globals.html#add_renderer" class="tsd-kind-icon">ADD_<wbr>RENDERER</a>
 					</li>
 					<li class=" tsd-kind-variable">
-						<a href="globals.html#dispatchfield" class="tsd-kind-icon">Dispatch<wbr>Field</a>
-					</li>
-					<li class=" tsd-kind-variable">
 						<a href="globals.html#init" class="tsd-kind-icon">INIT</a>
-					</li>
-					<li class=" tsd-kind-variable">
-						<a href="globals.html#jsonforms" class="tsd-kind-icon">Json<wbr>Forms</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="globals.html#jsonformsinit" class="tsd-kind-icon">Json<wbr>Forms<wbr>Init</a>
 					</li>
 					<li class=" tsd-kind-variable tsd-is-not-exported">
 						<a href="globals.html#namespace" class="tsd-kind-icon">NAMESPACE</a>
@@ -261,6 +241,9 @@
 					</li>
 					<li class=" tsd-kind-variable tsd-is-not-exported">
 						<a href="globals.html#required_properties" class="tsd-kind-icon">REQUIRED_<wbr>PROPERTIES</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#set_config" class="tsd-kind-icon">SET_<wbr>CONFIG</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#update_data" class="tsd-kind-icon">UPDATE_<wbr>DATA</a>
@@ -281,6 +264,9 @@
 						<a href="globals.html#isdatecontrol" class="tsd-kind-icon">is<wbr>Date<wbr>Control</a>
 					</li>
 					<li class=" tsd-kind-variable">
+						<a href="globals.html#isdatetimecontrol" class="tsd-kind-icon">is<wbr>Date<wbr>Time<wbr>Control</a>
+					</li>
+					<li class=" tsd-kind-variable">
 						<a href="globals.html#isenumcontrol" class="tsd-kind-icon">is<wbr>Enum<wbr>Control</a>
 					</li>
 					<li class=" tsd-kind-variable">
@@ -291,6 +277,9 @@
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#isnumbercontrol" class="tsd-kind-icon">is<wbr>Number<wbr>Control</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#isnumberformatcontrol" class="tsd-kind-icon">is<wbr>Number<wbr>Format<wbr>Control</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#israngecontrol" class="tsd-kind-icon">is<wbr>Range<wbr>Control</a>
@@ -305,16 +294,13 @@
 						<a href="globals.html#mapdispatchtofieldprops" class="tsd-kind-icon">map<wbr>Dispatch<wbr>ToField<wbr>Props</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="globals.html#dispatch" class="tsd-kind-icon">Dispatch</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="globals.html#jsonformsdispatchrenderer" class="tsd-kind-icon">Json<wbr>Forms<wbr>Dispatch<wbr>Renderer</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
 						<a href="globals.html#addlabel" class="tsd-kind-icon">add<wbr>Label</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#and" class="tsd-kind-icon">and</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-not-exported">
+						<a href="globals.html#applydefaultconfiguration" class="tsd-kind-icon">apply<wbr>Default<wbr>Configuration</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#compose" class="tsd-kind-icon">compose</a>
@@ -326,7 +312,7 @@
 						<a href="globals.html#computelabel" class="tsd-kind-icon">compute<wbr>Label</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="globals.html#connecttojsonforms" class="tsd-kind-icon">connect<wbr>ToJson<wbr>Forms</a>
+						<a href="globals.html#configreducer" class="tsd-kind-icon">config<wbr>Reducer</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#converttovalidclassname" class="tsd-kind-icon">convert<wbr>ToValid<wbr>Class<wbr>Name</a>
@@ -395,6 +381,9 @@
 						<a href="globals.html#generateuischema" class="tsd-kind-icon">generateUISchema</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#getconfig" class="tsd-kind-icon">get<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="globals.html#getdata" class="tsd-kind-icon">get<wbr>Data</a>
 					</li>
 					<li class=" tsd-kind-function">
@@ -433,6 +422,9 @@
 					<li class=" tsd-kind-function tsd-is-not-exported">
 						<a href="globals.html#isobject" class="tsd-kind-icon">is<wbr>Object</a>
 					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#isplainlabel" class="tsd-kind-icon">is<wbr>Plain<wbr>Label</a>
+					</li>
 					<li class=" tsd-kind-function tsd-is-not-exported">
 						<a href="globals.html#isrequired" class="tsd-kind-icon">is<wbr>Required</a>
 					</li>
@@ -452,13 +444,16 @@
 						<a href="globals.html#mapstatetocontrolprops" class="tsd-kind-icon">map<wbr>State<wbr>ToControl<wbr>Props</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#mapstatetodispatchfieldprops" class="tsd-kind-icon">map<wbr>State<wbr>ToDispatch<wbr>Field<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#mapstatetodispatchrendererprops" class="tsd-kind-icon">map<wbr>State<wbr>ToDispatch<wbr>Renderer<wbr>Props</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="globals.html#mapstatetofieldprops" class="tsd-kind-icon">map<wbr>State<wbr>ToField<wbr>Props</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#mapstatetolayoutprops" class="tsd-kind-icon">map<wbr>State<wbr>ToLayout<wbr>Props</a>
-					</li>
-					<li class=" tsd-kind-function tsd-is-not-exported">
-						<a href="globals.html#mapstatetoprops" class="tsd-kind-icon">map<wbr>State<wbr>ToProps</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#mapstatetotablecontrolprops" class="tsd-kind-icon">map<wbr>State<wbr>ToTable<wbr>Control<wbr>Props</a>
@@ -473,13 +468,10 @@
 						<a href="globals.html#rankwith" class="tsd-kind-icon">rank<wbr>With</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#registerfield" class="tsd-kind-icon">register<wbr>Field</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="globals.html#registerrenderer" class="tsd-kind-icon">register<wbr>Renderer</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#registerstartupfield" class="tsd-kind-icon">register<wbr>Startup<wbr>Field</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#registerstartuprenderer" class="tsd-kind-icon">register<wbr>Startup<wbr>Renderer</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#rendererreducer" class="tsd-kind-icon">renderer<wbr>Reducer</a>
@@ -512,6 +504,9 @@
 						<a href="globals.html#scopeendswith" class="tsd-kind-icon">scope<wbr>Ends<wbr>With</a>
 					</li>
 					<li class=" tsd-kind-function">
+						<a href="globals.html#setconfig" class="tsd-kind-icon">set<wbr>Config</a>
+					</li>
+					<li class=" tsd-kind-function">
 						<a href="globals.html#suberrorsat" class="tsd-kind-icon">sub<wbr>Errors<wbr>At</a>
 					</li>
 					<li class=" tsd-kind-function">
@@ -525,6 +520,9 @@
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#uitypeis" class="tsd-kind-icon">ui<wbr>Type<wbr>Is</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#unregisterfield" class="tsd-kind-icon">unregister<wbr>Field</a>
 					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#unregisterrenderer" class="tsd-kind-icon">unregister<wbr>Renderer</a>
@@ -555,6 +553,9 @@
 					</li>
 					<li class=" tsd-kind-object-literal tsd-is-not-exported">
 						<a href="globals.html#runtime" class="tsd-kind-icon">Runtime</a>
+					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#configdefault" class="tsd-kind-icon">config<wbr>Default</a>
 					</li>
 				</ul>
 			</nav>
