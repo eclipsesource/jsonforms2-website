@@ -220,7 +220,7 @@ export const CustomRenderers = ({ classes }) => {
       </Typography>
       <p>
         All there is left to do is to register the renderer with its tester. We can do so by calling
-        the <code>registerRenderer</code> action on the store. Within <code>index.js</code>, the follwing
+        the <code>registerRenderer</code> action on the store. Within <code>index.js</code>, the following
         statement registers the renderer.
       </p>
 

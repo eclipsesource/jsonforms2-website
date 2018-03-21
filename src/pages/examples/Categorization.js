@@ -16,7 +16,7 @@ const CategorizationExample = ({ classes }) => {
   const store = createJsonFormsStore({
     data: {
       name: 'Max Power',
-      vegetrian: true,
+      vegetarian: true,
       birthDate: '1956-05-12',
       nationality: 'US'
     },

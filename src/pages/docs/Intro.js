@@ -87,26 +87,26 @@ const Intro = ({ classes }) => {
 
       <Grid container style={{ marginTop: '0.5em' }} justify={'center'}>
         <Grid item xs={5}>
-          <Typography type='title'style={{ textAlign: 'center' }}>JSON Schema</Typography>
+          <Typography type='title' style={{ textAlign: 'center' }}>JSON Schema</Typography>
           <MarkdownElement dir="ltr" className={classes.code} text={`\`\`\`json\n${JSON.stringify(IntroCode.schema, null, 2)}\n\`\`\``} />
         </Grid>
         <Grid item xs={1} style={{ alignItems: 'center' }}>
-          <Typography type='title'style={{ textAlign: 'center' }}>+</Typography>
+          <Typography type='title' style={{ textAlign: 'center' }}>+</Typography>
         </Grid>
         <Grid item xs={6}>
-          <Typography type='title'style={{ textAlign: 'center' }}>UI Schema</Typography>
+          <Typography type='title' style={{ textAlign: 'center' }}>UI Schema</Typography>
           <MarkdownElement dir="ltr" className={classes.code} text={`\`\`\`json\n${JSON.stringify(IntroCode.uischema, null, 2)}\n\`\`\``} />
         </Grid>
         <Grid item xs={4}>
-          <Typography type='title'style={{ textAlign: 'center' }}>⬇</Typography>
+          <Typography type='title' style={{ textAlign: 'center' }}>⬇</Typography>
         </Grid>
         <Grid item xs={4}>
-          <Typography type='title'style={{ textAlign: 'center' }}>
+          <Typography type='title' style={{ textAlign: 'center' }}>
             <Logo width={45} height={30}/>
           </Typography>
         </Grid>
         <Grid item xs={4}>
-          <Typography type='title'style={{ textAlign: 'center' }}>⬇</Typography>
+          <Typography type='title' style={{ textAlign: 'center' }}>⬇</Typography>
         </Grid>
         <Grid item xs={12}>
           <Provider store={storeWithoutCustomControl}>
@@ -143,7 +143,7 @@ const Intro = ({ classes }) => {
       <Typography type={'caption'} className={classes.caption}>The same form now rendered with a custom control renderer</Typography>
 
       If you are interested in learning more about JSON Forms, check out
-      the <RadiumLink to={'/docs/getting-started'} className={classes.link}>Getting started</RadiumLink> secion.
+      the <RadiumLink to={'/docs/getting-started'} className={classes.link}>Getting started</RadiumLink> section.
     </div>
   );
 };
