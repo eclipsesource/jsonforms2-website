@@ -90,7 +90,7 @@ const Layouts = ({ classes }) => {
         Group Layout
       </Typography>
       <p>
-        A <code>Group</code> is like a <code>VerticalLayout</code> but features an additonal <code>label</code> property.
+        A <code>Group</code> is like a <code>VerticalLayout</code> but features an additional <code>label</code> property.
         In this case it has been set to 'My Group'.
       </p>
       <Provider store={groupStore}>

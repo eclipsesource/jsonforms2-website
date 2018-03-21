@@ -146,7 +146,7 @@ const Tutorial = ({ classes }) => {
         <li>
           Open the <code>App.js</code> file and
           import the <code>JsonForms</code> component from <code>@jsonforms/react</code>. Add
-          the <code>JsonForms</code> anywhere you like in oder to get a form rendered:
+          the <code>JsonForms</code> anywhere you like in order to get a form rendered:
           <MarkdownElement
             dir="ltr"
             className={classes.code}

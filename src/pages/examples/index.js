@@ -50,7 +50,7 @@ const Examples = ({ classes, location, match }) => (
               You can browse the examples on the right.
               Each example runs within its own redux store provided via a <code>Provider</code> element.
               You can inspect the corresponding data, schema and UI schema entries within the store
-              by clicking the respective buttons on top right hande side of each example.
+              by clicking the respective buttons on top right handle side of each example.
             </p>
           </div>
         )}/>
