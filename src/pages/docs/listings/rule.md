@@ -2,9 +2,7 @@
   "effect": "HIDE",
   "condition": {
     "type": "LEAF",
-    "scope": {
-      "$ref": "#/properties/name"
-    },
+    "scope": "#/properties/name",
     "expectedValue": "foo"
   }
 }
