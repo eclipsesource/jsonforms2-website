@@ -67,6 +67,7 @@ class App extends Component {
   render() {
 
     const { classes } = this.props;
+    const baseUrl = process.env.PUBLIC_URL; // will be /hypercomp
 
     return (
       <Router>
@@ -104,23 +105,23 @@ class App extends Component {
           <div className={classes.content}>
             <Switch>
               <Route exact 
-                path="/" 
+                path={baseUrl + "/"}
                 component={Home} 
                 />
               <Route 
-                path="/examples" 
+                path={baseUrl + "/examples"}
                 component={Examples} 
                 />
               <Route 
-                path="/docs"     
+                path={baseUrl + "/docs"}
                 component={Docs}
               />
               <Route 
-                path="/support"
+                path={baseUrl + "/support"}
                 component={Support}
               />
               <Route 
-                path="/imprint" 
+                path={baseUrl + "/imprint"}
                 component={Imprint}
               />
             </Switch>
