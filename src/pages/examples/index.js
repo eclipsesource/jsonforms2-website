@@ -44,7 +44,7 @@ const Examples = ({ classes, location, match }) => (
         <Route path={`${match.url}/custom-controls`} component={CustomControlsExample}/>
         <Route path={match.url} render={() => (
           <div>
-            <Typography type="display1" className={classes.display1}>Examples</Typography>
+            <Typography variant="display1" className={classes.display1}>Examples</Typography>
             <p>
               This section shows different examples how JSON Forms can be put to use.
               You can browse the examples on the right.

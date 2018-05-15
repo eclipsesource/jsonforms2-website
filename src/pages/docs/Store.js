@@ -54,14 +54,14 @@ const linkedFormsStore = createStore(
 
 const Store = ({ classes }) => (
   <div>
-    <Typography type='display1' className={classes.display1}>
+    <Typography variant='display1' className={classes.display1}>
       Store setup
     </Typography>
     <p>
       JSON Forms makes use of redux to maintain its internal state. This section describes
       the state managed by the JSON Forms reducer.
     </p>
-    <Typography type='headline' className={classes.headline}>
+    <Typography variant='headline' className={classes.headline}>
       Basic structure
     </Typography>
     JSON Forms exports its reducer via
@@ -119,7 +119,7 @@ const Store = ({ classes }) => (
       via an index property.
     </p>
 
-    <Typography type='headline' className={classes.headline}>
+    <Typography variant='headline' className={classes.headline}>
       Available actions
     </Typography>
     <p>
@@ -152,7 +152,7 @@ const Store = ({ classes }) => (
       how to use these.
     </p>
 
-    <Typography type='headline' className={classes.headline}>
+    <Typography variant='headline' className={classes.headline}>
       Linking forms
     </Typography>
     Forms can interact with each other by using $ref and setting the <code>scope</code> property within the UI schema
@@ -170,7 +170,7 @@ const Store = ({ classes }) => (
       />
     </Provider>
 
-    <Typography type='headline' className={classes.headline}>
+    <Typography variant='headline' className={classes.headline}>
         Multiple forms within single store
     </Typography>
     There might be use cases where you have forms that do not have anything in common. In such cases

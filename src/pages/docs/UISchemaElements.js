@@ -27,7 +27,7 @@ const styles = () => ({
 const UiSchemaElements = ({ classes }) => (
   <div>
     <Typography
-      type='display1'
+      variant='display1'
       className={classes.display1}
     >
       UI Schema Elements
@@ -52,7 +52,7 @@ const UiSchemaElements = ({ classes }) => (
       </Grid>
     </Grid>
 
-    <Typography type='title' style={{ marginTop: '1em' }}>
+    <Typography variant='title' style={{ marginTop: '1em' }}>
       Available elements
     </Typography>
 

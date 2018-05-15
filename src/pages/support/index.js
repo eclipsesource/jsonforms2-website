@@ -30,7 +30,7 @@ const Support = ({ classes }) => (
   <Grid container spacing={0} className={classes.grid} justify={'center'} align={'center'}>
     <Grid item xs={3}/>
     <Grid item xs={6} align='center'>
-      <Typography type="display1">Professional Support is brought to you by</Typography>
+      <Typography variant="display1">Professional Support is brought to you by</Typography>
       <img alt="EclipseSource Logo" src={eclipseSourceLogo} />
     </Grid>
     <Grid item xs={3}/>
@@ -39,7 +39,7 @@ const Support = ({ classes }) => (
       <Grid item xs />
       <Grid item xs>
         <Feedback className={classes.icon}/>
-        <Typography type='title' className={classes.title}>
+        <Typography variant='title' className={classes.title}>
           Evaluation
         </Typography>
         <p>
@@ -48,7 +48,7 @@ const Support = ({ classes }) => (
       </Grid>
       <Grid item xs>
         <Build className={classes.icon}/>
-        <Typography type='title' className={classes.title}>
+        <Typography variant='title' className={classes.title}>
           Prototyping
         </Typography>
         <p>
@@ -57,7 +57,7 @@ const Support = ({ classes }) => (
       </Grid>
       <Grid item xs>
         <School className={classes.icon}/>
-        <Typography type='title' className={classes.title}>
+        <Typography variant='title' className={classes.title}>
           Training
         </Typography>
         <p>
@@ -71,21 +71,21 @@ const Support = ({ classes }) => (
       <Grid item xs />
       <Grid item xs>
         <Swap className={classes.icon}/>
-        <Typography type='title' className={classes.title}>
+        <Typography variant='title' className={classes.title}>
           Integration
         </Typography>
         Let us help you to integrate JSON Forms into your existing application as efficiently as possible
       </Grid>
       <Grid item xs>
         <Chat className={classes.icon}/>
-        <Typography type='title' className={classes.title}>
+        <Typography variant='title' className={classes.title}>
           Support
         </Typography>
         Let us assist your team when solving day-to-day issues, such as technical problems or architecture decisions
       </Grid>
       <Grid item xs>
         <LocalOffer className={classes.icon}/>
-        <Typography type='title' className={classes.title}>
+        <Typography variant='title' className={classes.title}>
           Sponsored Development
         </Typography>
         Let us adapt and enhance the framework based on your specific requirements

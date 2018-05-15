@@ -24,7 +24,7 @@ const RuleExample = ({ classes }) => {
   return (
     <div>
       <Typography
-        type={'display1'}
+        variant={'display1'}
         className={classes.display1}
       >
         Rules

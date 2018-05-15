@@ -38,7 +38,7 @@ const Intro = ({ classes }) => {
 
   return (
     <div>
-      <Typography type='display1' className={classes.display1}>
+      <Typography variant='display1' className={classes.display1}>
         What is JSONForms?
       </Typography>
 
@@ -47,7 +47,7 @@ const Intro = ({ classes }) => {
         These UIs are targeted at entering, modifying and viewing data and are usually embedded within an application.
       </p>
 
-      <Typography type={'headline'} className={classes.headline}>
+      <Typography variant={'headline'} className={classes.headline}>
         Why do we need such a framework?
       </Typography>
       <p>
@@ -62,7 +62,7 @@ const Intro = ({ classes }) => {
         Forms are then rendered with a UI framework, currently one that is based on React/Redux.
       </p>
 
-      <Typography type={'headline'} className={classes.headline}>
+      <Typography variant={'headline'} className={classes.headline}>
         How does it work?
       </Typography>
       <p>
@@ -87,26 +87,26 @@ const Intro = ({ classes }) => {
 
       <Grid container style={{ marginTop: '0.5em' }} justify={'center'}>
         <Grid item xs={5}>
-          <Typography type='title' style={{ textAlign: 'center' }}>JSON Schema</Typography>
+          <Typography variant='title' style={{ textAlign: 'center' }}>JSON Schema</Typography>
           <MarkdownElement dir="ltr" className={classes.code} text={`\`\`\`json\n${JSON.stringify(IntroCode.schema, null, 2)}\n\`\`\``} />
         </Grid>
         <Grid item xs={1} style={{ alignItems: 'center' }}>
-          <Typography type='title' style={{ textAlign: 'center' }}>+</Typography>
+          <Typography variant='title' style={{ textAlign: 'center' }}>+</Typography>
         </Grid>
         <Grid item xs={6}>
-          <Typography type='title' style={{ textAlign: 'center' }}>UI Schema</Typography>
+          <Typography variant='title' style={{ textAlign: 'center' }}>UI Schema</Typography>
           <MarkdownElement dir="ltr" className={classes.code} text={`\`\`\`json\n${JSON.stringify(IntroCode.uischema, null, 2)}\n\`\`\``} />
         </Grid>
         <Grid item xs={4}>
-          <Typography type='title' style={{ textAlign: 'center' }}>⬇</Typography>
+          <Typography variant='title' style={{ textAlign: 'center' }}>⬇</Typography>
         </Grid>
         <Grid item xs={4}>
-          <Typography type='title' style={{ textAlign: 'center' }}>
+          <Typography variant='title' style={{ textAlign: 'center' }}>
             <Logo width={45} height={30}/>
           </Typography>
         </Grid>
         <Grid item xs={4}>
-          <Typography type='title' style={{ textAlign: 'center' }}>⬇</Typography>
+          <Typography variant='title' style={{ textAlign: 'center' }}>⬇</Typography>
         </Grid>
         <Grid item xs={12}>
           <Provider store={storeWithoutCustomControl}>
@@ -116,7 +116,7 @@ const Intro = ({ classes }) => {
               uischema={IntroCode.uischema}
             />
           </Provider>
-          <Typography type={'caption'} className={classes.caption}>The form as rendered by JSON Forms</Typography>
+          <Typography variant={'caption'} className={classes.caption}>The form as rendered by JSON Forms</Typography>
         </Grid>
       </Grid>
 
@@ -140,7 +140,7 @@ const Intro = ({ classes }) => {
           uischema={IntroCode.uischema}
         />
       </Provider>
-      <Typography type={'caption'} className={classes.caption}>The same form now rendered with a custom control renderer</Typography>
+      <Typography variant={'caption'} className={classes.caption}>The same form now rendered with a custom control renderer</Typography>
 
       If you are interested in learning more about JSON Forms, check out
       the <RadiumLink to={'/docs/getting-started'} className={classes.link}>Getting started</RadiumLink> section.

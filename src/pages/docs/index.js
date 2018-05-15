@@ -47,7 +47,7 @@ const Docs = ({ classes, match, location }) => (
         <Route path={`${match.url}/apis`} component={APIs}/>
         <Route path={match.url} render={() => (
           <div>
-            <Typography type="display1" className={classes.display1}>Documentation</Typography>
+            <Typography variant="display1" className={classes.display1}>Documentation</Typography>
             <p>
               We provide articles on different aspects of JSON Forms -
               from a basic introduction to implementing custom renderers.

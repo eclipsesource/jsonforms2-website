@@ -13,7 +13,7 @@ const styles = () => ({
 
 const APIs = ({ classes }) => (
   <div>
-    <Typography type='display1' className={classes.display1}>
+    <Typography variant='display1' className={classes.display1}>
       API Documentation
     </Typography>
     <p>

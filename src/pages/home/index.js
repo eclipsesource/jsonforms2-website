@@ -94,12 +94,12 @@ const Home = ({ classes }) => {
           </div>
 
           <div className={classes.container}>
-            <Typography type={'headline'} style={{ color: '#747474' }}>
+            <Typography variant={'headline'} style={{ color: '#747474' }}>
               Complex forms in the blink of an eye
             </Typography>
           </div>
           <div className={classes.container}>
-            <Typography >
+            <Typography>
               Version {corePackageJson.version}
             </Typography>
           </div>
@@ -165,7 +165,7 @@ const Home = ({ classes }) => {
             <Grid item xs={6} justify='center' align='center'>
               <img src={reactLogo} alt="React logo" style={{ height: '80px' }}/>
               <img src={reduxLogo} alt="Redux logo" style={{ height: '80px' }}/>
-              <Typography type='title' style={{ color: '#212121' }}>
+              <Typography variant='title' style={{ color: '#212121' }}>
                 JSON Forms currently primarily supports React/Redux based applications
               </Typography>
             </Grid>

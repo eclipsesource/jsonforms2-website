@@ -28,7 +28,7 @@ const Imprint = ({ classes }) => (
         <div className={classes.container}>
           <Card className={classes.card}>
             <CardContent>
-              <Typography type="display1" className={classes.display1}>Imprint</Typography>
+              <Typography variant="display1" className={classes.display1}>Imprint</Typography>
               <address>
                 EclipseSource München GmbH<br/>
                 Agnes-Pockels-Bogen 1<br/>

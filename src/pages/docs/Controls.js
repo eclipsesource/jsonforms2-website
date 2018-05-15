@@ -37,7 +37,7 @@ const Controls = ({ classes }) => {
   return (
     <div>
       <Typography
-        type='display1'
+        variant='display1'
         className={classes.display1}
       >
         Controls
@@ -70,7 +70,7 @@ const Controls = ({ classes }) => {
         className={classes.code}
         text={`\`\`\`json\n${JSON.stringify(UiSchemaElementsCode.controls.schema, null, 2)}\n\`\`\``}
       />
-      <Typography type='caption' className={classes.caption}>
+      <Typography variant='caption' className={classes.caption}>
         JSON schema with a name property
       </Typography>
 
@@ -84,7 +84,7 @@ const Controls = ({ classes }) => {
         className={classes.code}
         text={`\`\`\`json\n${JSON.stringify(UiSchemaElementsCode.controls.uischema, null, 2)}\n\`\`\``}
       />
-      <Typography type='caption' className={classes.caption}>
+      <Typography variant='caption' className={classes.caption}>
         UI schema for binding a control against the name property
       </Typography>
 

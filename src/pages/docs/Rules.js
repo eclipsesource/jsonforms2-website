@@ -27,7 +27,7 @@ const Rules = ({ classes }) => {
   return (
     <div>
       <Typography
-        type='display1'
+        variant='display1'
         className={classes.display1}
       >
         Rules (<RadiumLink to='/examples/rule' className={classes.link}>Demo</RadiumLink>)
@@ -44,7 +44,7 @@ const Rules = ({ classes }) => {
         className={classes.code}
         text={`\`\`\`json\n${rule}\n\`\`\``}
       />
-      <Typography type={'caption'} className={classes.caption}>
+      <Typography variant={'caption'} className={classes.caption}>
         A basic rule definition
       </Typography>
 

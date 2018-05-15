@@ -22,7 +22,7 @@ const RadiumHashLink = Radium(HashLink);
 const Layouts = ({ classes }) => (
   <div>
     <Typography
-      type='display1'
+      variant='display1'
       className={classes.display1}
     >
       Layouts
@@ -49,7 +49,7 @@ const Layouts = ({ classes }) => (
     Those four core layouts are detailed in the following.
 
     {/* HORIZONTAL LAYOUT */}
-    <Typography type='title' className={classes.title}>
+    <Typography variant='title' className={classes.title}>
       Horizontal Layout (<RadiumHashLink to={'/examples/layouts#horizontal-layout'} className={classes.link}>Demo</RadiumHashLink>)
     </Typography>
     <p>
@@ -63,7 +63,7 @@ const Layouts = ({ classes }) => (
       text={`\`\`\`json\n${JSON.stringify(layout.uischemaHorizontal, null, 2)}\n\`\`\``}
     />
     <Typography
-      type={'caption'}
+      variant={'caption'}
       className={classes.caption}
     >
       Example of a Horizontal Layout UI schema placing two controls side-by-side
@@ -71,7 +71,7 @@ const Layouts = ({ classes }) => (
 
     {/* VERTICAL LAYOUT */}
     <Typography
-      type='title'
+      variant='title'
       className={classes.title}
       id='vertical-layout'
     >
@@ -88,14 +88,14 @@ const Layouts = ({ classes }) => (
       text={`\`\`\`json\n${JSON.stringify(layout.uischemaVertical, null, 2)}\n\`\`\``}
     />
     <Typography
-      type={'caption'}
+      variant={'caption'}
       className={classes.caption}
     >
       Example of a Vertical Layout placing two controls vertically
     </Typography>
 
     {/* GROUP */}
-    <Typography type='title' className={classes.title}>
+    <Typography variant='title' className={classes.title}>
       Group (<RadiumHashLink to={'/examples/layouts#group-layout'} className={classes.link}>Demo</RadiumHashLink>)
     </Typography>
     <p>
@@ -116,7 +116,7 @@ const Layouts = ({ classes }) => (
     />
 
     {/* CATEGORIZATION */}
-    <Typography type='headline'>
+    <Typography variant='headline'>
       Categorization
     </Typography>
     <p>

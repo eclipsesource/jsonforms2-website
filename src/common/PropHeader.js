@@ -12,7 +12,7 @@ const styles = () => ({
 
 const PropHeader = ({ classes, title, type, link }) => (
   <Typography
-    type='headline'
+    variant='headline'
     className={classes.headline}
   >
     <code>{title}</code>&nbsp;

@@ -61,7 +61,7 @@ export const CustomRenderers = ({ classes }) => {
 
   return (
     <div>
-      <Typography type={'display1'} className={classes.display1}>Custom Renderers</Typography>
+      <Typography variant={'display1'} className={classes.display1}>Custom Renderers</Typography>
 
       <p>
         The default renderers of JSON Forms are a good fit for most scenarios,
@@ -97,7 +97,7 @@ export const CustomRenderers = ({ classes }) => {
         />
       </Provider>
 
-      <Typography type={'headline'}>
+      <Typography variant={'headline'}>
         Running the seed
       </Typography>
       <p>
@@ -121,7 +121,7 @@ export const CustomRenderers = ({ classes }) => {
         only focus on the most crucial parts of the app in the following.
       </p>
 
-      <Typography type={'headline'} className={classes.headline}>
+      <Typography variant={'headline'} className={classes.headline}>
         Core concepts about rendering
       </Typography>
       <p>
@@ -159,7 +159,7 @@ export const CustomRenderers = ({ classes }) => {
         which we'll use in the following.
       </p>
 
-      <Typography type='title' className={classes.title}>
+      <Typography variant='title' className={classes.title}>
         Create a renderer
       </Typography>
       <p>
@@ -192,7 +192,7 @@ export const CustomRenderers = ({ classes }) => {
         text={`\`\`\`jsx\n${ratingControlCode}\n\`\`\``}
       />
 
-      <Typography type='title' className={classes.title}>
+      <Typography variant='title' className={classes.title}>
         Create a tester
       </Typography>
       <p>
@@ -215,7 +215,7 @@ export const CustomRenderers = ({ classes }) => {
         for composition, such as <code>and</code> or <code>or</code>.
       </p>
 
-      <Typography type='title'>
+      <Typography variant='title'>
         Register the renderer
       </Typography>
       <p>

@@ -78,7 +78,7 @@ class App extends Component {
               </RadiumLink>
               &nbsp;
               <RadiumLink to='/' className={classes.logoTitle}>
-                <Typography type="title" color="inherit">
+                <Typography variant="title" color="inherit">
                   JSONForms
                 </Typography>
               </RadiumLink>

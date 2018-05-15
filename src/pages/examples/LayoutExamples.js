@@ -39,7 +39,7 @@ const Layouts = ({ classes }) => {
   return (
     <div>
       <Typography
-        type={'display1'}
+        variant={'display1'}
         className={classes.display1}
       >
         Layouts
@@ -51,7 +51,7 @@ const Layouts = ({ classes }) => {
 
       {/* HORIZONTAL LAYOUT */}
       <Typography
-        type={'headline'}
+        variant={'headline'}
         className={classes.headline}
         id='horizontal-layout'
       >
@@ -67,7 +67,7 @@ const Layouts = ({ classes }) => {
 
       {/* VERTICAL LAYOUT */}
       <Typography
-        type={'headline'}
+        variant={'headline'}
         className={classes.headline}
         id='vertical-layout'
       >
@@ -83,7 +83,7 @@ const Layouts = ({ classes }) => {
 
       {/* GROUP LAYOUT */}
       <Typography
-        type={'headline'}
+        variant={'headline'}
         className={classes.headline}
         id='group-layout'
       >
@@ -103,7 +103,7 @@ const Layouts = ({ classes }) => {
 
       {/* NESTED LAYOUTS */}
       <Typography
-        type={'headline'}
+        variant={'headline'}
         className={classes.headline}
       >
         Nested Layouts
