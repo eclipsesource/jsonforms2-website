@@ -16,6 +16,7 @@ import Examples from "./pages/examples";
 import Support from "./pages/support";
 import Footer from "./Footer";
 import { commonStyles, Logo } from './common';
+import NotFound from "./pages/NotFound";
 
 const styles = theme => ({
   root: {
@@ -67,7 +68,6 @@ class App extends Component {
   render() {
 
     const { classes } = this.props;
-    const baseUrl = process.env.PUBLIC_URL; // will be /hypercomp
 
     return (
       <Router>
@@ -105,24 +105,27 @@ class App extends Component {
           <div className={classes.content}>
             <Switch>
               <Route exact 
-                path={baseUrl + "/"}
+                path="/"
                 component={Home} 
                 />
               <Route 
-                path={baseUrl + "/examples"}
+                path="/examples"
                 component={Examples} 
                 />
               <Route 
-                path={baseUrl + "/docs"}
+                path="/docs"
                 component={Docs}
               />
               <Route 
-                path={baseUrl + "/support"}
+                path="/support"
                 component={Support}
               />
               <Route 
-                path={baseUrl + "/imprint"}
+                path="/imprint"
                 component={Imprint}
+              />
+              <Route
+                component={NotFound}
               />
             </Switch>
           </div>
