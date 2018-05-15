@@ -1,7 +1,7 @@
-#/usr/bin/env bash
+#!/usr/bin/env bash
 WEBSITE_REPO=$( dirname "${BASH_SOURCE[0]}" )
 JSONFORMS_REPO=$1
-declare -a PACKAGES=(core material vanilla)
+declare -a PACKAGES=(core react material vanilla)
 
 if [[ -z $JSONFORMS_REPO || ! -d $JSONFORMS_REPO ]]; then
   echo "Error: please specificy JSONForms source repo location."
