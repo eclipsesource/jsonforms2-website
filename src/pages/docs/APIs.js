@@ -21,16 +21,16 @@ const APIs = ({ classes }) => (
     </p>
     <ul className={classes.list}>
       <li>
-        <ApiLink link={'/api/core/index.html'}>Core</ApiLink>
+        <ApiLink link={'/api/core/'}>Core</ApiLink>
       </li>
       <li>
-        <ApiLink link={'/api/react/index.html'}>React Integration</ApiLink>
+        <ApiLink link={'/api/react/'}>React Integration</ApiLink>
       </li>
       <li>
-        <ApiLink link={'/api/material-renderers/index.html'}>React-based Material Renderers</ApiLink>
+        <ApiLink link={'/api/material-renderers/'}>React-based Material Renderers</ApiLink>
       </li>
       <li>
-        <ApiLink link={'/api/vanilla-renderers/index.html'}>React-based Vanilla Renderers</ApiLink>
+        <ApiLink link={'/api/vanilla-renderers/'}>React-based Vanilla Renderers</ApiLink>
       </li>
     </ul>
   </div>

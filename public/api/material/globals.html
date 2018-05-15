@@ -68,12 +68,12 @@
 						<section class="tsd-index-section ">
 							<h3>Classes</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-class"><a href="classes/materialarraycontrolrenderer.html" class="tsd-kind-icon">Material<wbr>Array<wbr>Control<wbr>Renderer</a></li>
-								<li class="tsd-kind-class"><a href="classes/materialcategorizationlayoutrenderer.html" class="tsd-kind-icon">Material<wbr>Categorization<wbr>Layout<wbr>Renderer</a></li>
-								<li class="tsd-kind-class"><a href="classes/materialdatecontrol.html" class="tsd-kind-icon">Material<wbr>Date<wbr>Control</a></li>
-								<li class="tsd-kind-class"><a href="classes/materialdatetimecontrol.html" class="tsd-kind-icon">Material<wbr>Date<wbr>Time<wbr>Control</a></li>
-								<li class="tsd-kind-class"><a href="classes/materialinputcontrol.html" class="tsd-kind-icon">Material<wbr>Input<wbr>Control</a></li>
-								<li class="tsd-kind-class"><a href="classes/materialnativecontrol.html" class="tsd-kind-icon">Material<wbr>Native<wbr>Control</a></li>
+								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/materialarraycontrolrenderer.html" class="tsd-kind-icon">Material<wbr>Array<wbr>Control<wbr>Renderer</a></li>
+								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/materialcategorizationlayoutrenderer.html" class="tsd-kind-icon">Material<wbr>Categorization<wbr>Layout<wbr>Renderer</a></li>
+								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/materialdatecontrol.html" class="tsd-kind-icon">Material<wbr>Date<wbr>Control</a></li>
+								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/materialdatetimecontrol.html" class="tsd-kind-icon">Material<wbr>Date<wbr>Time<wbr>Control</a></li>
+								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/materialinputcontrol.html" class="tsd-kind-icon">Material<wbr>Input<wbr>Control</a></li>
+								<li class="tsd-kind-class tsd-has-type-parameter"><a href="classes/materialnativecontrol.html" class="tsd-kind-icon">Material<wbr>Native<wbr>Control</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -143,6 +143,7 @@
 								<li class="tsd-kind-function"><a href="globals.html#validationicon" class="tsd-kind-icon">Validation<wbr>Icon</a></li>
 								<li class="tsd-kind-function"><a href="globals.html#addlabelprops" class="tsd-kind-icon">add<wbr>Label<wbr>Props</a></li>
 								<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#generatecells" class="tsd-kind-icon">generate<wbr>Cells</a></li>
+								<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#generateheadercellforprimitives" class="tsd-kind-icon">generate<wbr>Header<wbr>Cell<wbr>For<wbr>Primitives</a></li>
 								<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#mapstatetoprops" class="tsd-kind-icon">map<wbr>State<wbr>ToProps</a></li>
 								<li class="tsd-kind-function tsd-is-not-exported"><a href="globals.html#renderchildren" class="tsd-kind-icon">render<wbr>Children</a></li>
 							</ul>
@@ -195,10 +196,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-variable">
 					<a name="materialarraycontroltester" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> material<wbr>Array<wbr>Control<wbr>Tester</h3>
-					<div class="tsd-signature tsd-kind-icon">material<wbr>Array<wbr>Control<wbr>Tester<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RankedTester</span><span class="tsd-signature-symbol"> =&nbsp;rankWith(3, isArrayObjectControl)</span></div>
+					<div class="tsd-signature tsd-kind-icon">material<wbr>Array<wbr>Control<wbr>Tester<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RankedTester</span><span class="tsd-signature-symbol"> =&nbsp;rankWith(3,or(isObjectArrayControl, isPrimitiveArrayControl))</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in complex/index.ts:32</li>
+							<li>Defined in complex/index.ts:34</li>
 						</ul>
 					</aside>
 				</section>
@@ -238,7 +239,7 @@
 					<div class="tsd-signature tsd-kind-icon">material<wbr>Date<wbr>Control<wbr>Tester<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RankedTester</span><span class="tsd-signature-symbol"> =&nbsp;rankWith(4, isDateControl)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in controls/MaterialDateControl.tsx:137</li>
+							<li>Defined in controls/MaterialDateControl.tsx:141</li>
 						</ul>
 					</aside>
 				</section>
@@ -258,7 +259,7 @@
 					<div class="tsd-signature tsd-kind-icon">material<wbr>Date<wbr>Time<wbr>Control<wbr>Tester<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RankedTester</span><span class="tsd-signature-symbol"> =&nbsp;rankWith(2, isDateTimeControl)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in controls/MaterialDateTimeControl.tsx:98</li>
+							<li>Defined in controls/MaterialDateTimeControl.tsx:102</li>
 						</ul>
 					</aside>
 				</section>
@@ -505,7 +506,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in complex/MaterialTableControl.tsx:53</li>
+									<li>Defined in complex/MaterialTableControl.tsx:77</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Element</span></h4>
@@ -836,7 +837,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in complex/MaterialTableControl.tsx:112</li>
+									<li>Defined in complex/MaterialTableControl.tsx:136</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -965,7 +966,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in complex/MaterialTableControl.tsx:62</li>
+									<li>Defined in complex/MaterialTableControl.tsx:86</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1005,7 +1006,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in complex/MaterialTableControl.tsx:59</li>
+									<li>Defined in complex/MaterialTableControl.tsx:83</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1082,7 +1083,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in complex/MaterialTableControl.tsx:90</li>
+									<li>Defined in complex/MaterialTableControl.tsx:114</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1136,7 +1137,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in controls/MaterialDateControl.tsx:123</li>
+									<li>Defined in controls/MaterialDateControl.tsx:127</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1174,13 +1175,13 @@
 					<a name="generatecells" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> generate<wbr>Cells</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">generate<wbr>Cells<span class="tsd-signature-symbol">(</span>Cell<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, scopedSchema<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, rowPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, cellErrors<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>Cells<span class="tsd-signature-symbol">(</span>Cell<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, scopedSchema<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, rowPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, cellErrors<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in complex/MaterialTableControl.tsx:37</li>
+									<li>Defined in complex/MaterialTableControl.tsx:38</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1198,7 +1199,33 @@
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> cellErrors: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Element</span>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">Element</span><span class="tsd-signature-symbol">[]</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-not-exported">
+					<a name="generateheadercellforprimitives" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> generate<wbr>Header<wbr>Cell<wbr>For<wbr>Primitives</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">generate<wbr>Header<wbr>Cell<wbr>For<wbr>Primitives<span class="tsd-signature-symbol">(</span>toolbarProps<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in complex/MaterialTableControl.tsx:68</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>toolbarProps: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Element</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1274,22 +1301,22 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
+					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="classes/materialarraycontrolrenderer.html" class="tsd-kind-icon">Material<wbr>Array<wbr>Control<wbr>Renderer</a>
 					</li>
-					<li class=" tsd-kind-class">
+					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="classes/materialcategorizationlayoutrenderer.html" class="tsd-kind-icon">Material<wbr>Categorization<wbr>Layout<wbr>Renderer</a>
 					</li>
-					<li class=" tsd-kind-class">
+					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="classes/materialdatecontrol.html" class="tsd-kind-icon">Material<wbr>Date<wbr>Control</a>
 					</li>
-					<li class=" tsd-kind-class">
+					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="classes/materialdatetimecontrol.html" class="tsd-kind-icon">Material<wbr>Date<wbr>Time<wbr>Control</a>
 					</li>
-					<li class=" tsd-kind-class">
+					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="classes/materialinputcontrol.html" class="tsd-kind-icon">Material<wbr>Input<wbr>Control</a>
 					</li>
-					<li class=" tsd-kind-class">
+					<li class=" tsd-kind-class tsd-has-type-parameter">
 						<a href="classes/materialnativecontrol.html" class="tsd-kind-icon">Material<wbr>Native<wbr>Control</a>
 					</li>
 					<li class=" tsd-kind-interface">
@@ -1453,6 +1480,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-is-not-exported">
 						<a href="globals.html#generatecells" class="tsd-kind-icon">generate<wbr>Cells</a>
+					</li>
+					<li class=" tsd-kind-function tsd-is-not-exported">
+						<a href="globals.html#generateheadercellforprimitives" class="tsd-kind-icon">generate<wbr>Header<wbr>Cell<wbr>For<wbr>Primitives</a>
 					</li>
 					<li class=" tsd-kind-function tsd-is-not-exported">
 						<a href="globals.html#mapstatetoprops" class="tsd-kind-icon">map<wbr>State<wbr>ToProps</a>
