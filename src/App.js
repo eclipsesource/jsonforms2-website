@@ -17,6 +17,8 @@ import Support from "./pages/support";
 import Footer from "./Footer";
 import { commonStyles, Logo } from './common';
 import NotFound from "./pages/NotFound";
+import CookiePolicy from "./pages/CookiePolicy";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 const styles = theme => ({
   root: {
@@ -123,6 +125,14 @@ class App extends Component {
               <Route 
                 path="/imprint"
                 component={Imprint}
+              />
+              <Route
+                path="/privacy-policy"
+                component={PrivacyPolicy}
+              />
+              <Route
+                path="/cookie-policy"
+                component={CookiePolicy}
               />
               <Route
                 component={NotFound}

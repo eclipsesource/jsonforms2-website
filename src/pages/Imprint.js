@@ -1,5 +1,6 @@
 import React from 'react';
 import {Card, CardContent, Grid, Typography, withStyles} from "material-ui";
+import { Link } from 'react-router-dom';
 import { commonStyles } from '../common';
 
 const styles = () => ({
@@ -18,7 +19,8 @@ const styles = () => ({
   display1: commonStyles.display1,
   p: {
     paddingTop: '0.5em'
-  }
+  },
+  link: commonStyles.link
 });
 
 const Imprint = ({ classes }) => (
@@ -46,6 +48,24 @@ const Imprint = ({ classes }) => (
               <p className={classes.p}>
                 General Managers: Dr. Jonas Helming, Dr. Maximilian Kögel<br/>
                 Registered Office: Agnes-Pockels-Bogen 1, 80992 München, Commercial Register München, HRB 191789
+              </p>
+
+              <p className={classes.p}>
+                <Link
+                  className={classes.link}
+                  to="/privacy-policy"
+                >
+                  Privacy Policy
+                </Link>
+              </p>
+
+              <p className={classes.p}>
+                <Link
+                  className={classes.link}
+                  to="/cookie-policy"
+                >
+                  Cookie Policy
+                </Link>
               </p>
             </CardContent>
           </Card>

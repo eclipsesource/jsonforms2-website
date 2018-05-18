@@ -34,6 +34,14 @@ const Footer = ({classes}) => (
       <Link to="/imprint" className={classes.link}>
         Imprint
       </Link>
+
+      <Link to="/privacy-policy" className={classes.link}>
+        Privacy Policy
+      </Link>
+
+      <Link to="/cookie-policy" className={classes.link}>
+        Cookie Policy
+      </Link>
     </span>
   </footer>
 );

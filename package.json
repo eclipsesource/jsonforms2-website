@@ -4,7 +4,6 @@
   "private": true,
   "homepage": "https://jsonforms.io",
   "dependencies": {
-    "@babel/runtime": "^7.0.0-beta.47",
     "@jsonforms/core": "2.0.1",
     "@jsonforms/examples": "2.0.1",
     "@jsonforms/material-renderers": "2.0.1",
