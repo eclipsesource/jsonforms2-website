@@ -40,10 +40,6 @@
 				},
 				{
 					"type": "Control",
-					"scope": "#/properties/rating"
-				},
-				{
-					"type": "Control",
 					"scope": "#/properties/committer"
 				}
 			]
