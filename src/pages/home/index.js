@@ -109,10 +109,7 @@ const Home = ({ classes }) => {
               to='/docs/getting-started'
               className={classes.link}
             >
-              <Button
-                raised
-                className={classes.button}
-              >
+              <Button className={classes.button}>
                 Get started
               </Button>
             </RadiumLink>
@@ -162,12 +159,14 @@ const Home = ({ classes }) => {
         <Grid item xs={12} className={classes.card} style={{ backgroundColor: '#eeeeee', marginTop: 0, padding: '1em' }}>
           <Grid container>
             <Grid item xs={3}/>
-            <Grid item xs={6} justify='center' align='center'>
-              <img src={reactLogo} alt="React logo" style={{ height: '80px' }}/>
-              <img src={reduxLogo} alt="Redux logo" style={{ height: '80px' }}/>
-              <Typography variant='title' style={{ color: '#212121' }}>
-                JSON Forms currently primarily supports React/Redux based applications
-              </Typography>
+            <Grid item xs={6} >
+              <Grid container justify='center' align='center'>
+                <img src={reactLogo} alt="React logo" style={{ height: '80px' }}/>
+                <img src={reduxLogo} alt="Redux logo" style={{ height: '80px' }}/>
+                <Typography variant='title' style={{ color: '#212121' }}>
+                  JSON Forms currently primarily supports React/Redux based applications
+                </Typography>
+              </Grid>
             </Grid>
             <Grid item xs={3}/>
             </Grid>
