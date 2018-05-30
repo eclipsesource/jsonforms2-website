@@ -27,10 +27,10 @@ const APIs = ({ classes }) => (
         <ApiLink link={'/api/react/'}>React Integration</ApiLink>
       </li>
       <li>
-        <ApiLink link={'/api/material-renderers/'}>React-based Material Renderers</ApiLink>
+        <ApiLink link={'/api/material/'}>React-based Material Renderers</ApiLink>
       </li>
       <li>
-        <ApiLink link={'/api/vanilla-renderers/'}>React-based Vanilla Renderers</ApiLink>
+        <ApiLink link={'/api/vanilla/'}>React-based Vanilla Renderers</ApiLink>
       </li>
     </ul>
   </div>
