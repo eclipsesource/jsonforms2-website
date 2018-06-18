@@ -2,10 +2,11 @@ import React from 'react';
 import { array } from '@jsonforms/examples';
 import { JsonForms } from '@jsonforms/react';
 import { Provider } from 'react-redux';
-import {Typography, withStyles} from "material-ui";
+import Typography from "@material-ui/core/Typography";
+import withStyles from "@material-ui/core/styles/withStyles";
 import commonStyles from "../../common/styles";
 import Demo from "../../common/Demo";
-import {createJsonFormsStore} from "../../common/store";
+import { createJsonFormsStore } from "../../common/store";
 
 const styles = () => ({
   display1: commonStyles.display1

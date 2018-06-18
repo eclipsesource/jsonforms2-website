@@ -3,7 +3,8 @@ import { day3, ratingControlTester, RatingControl } from '@jsonforms/examples';
 import { registerRenderer } from '@jsonforms/core';
 import { JsonForms } from '@jsonforms/react';
 import { Provider } from 'react-redux';
-import {Typography, withStyles} from "material-ui";
+import Typography from "@material-ui/core/Typography";
+import withStyles from "@material-ui/core/styles/withStyles";
 
 import {commonStyles, Demo, RadiumHashLink} from '../../common'
 import {createJsonFormsStore} from "../../common/store";

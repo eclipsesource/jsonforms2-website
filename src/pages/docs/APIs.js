@@ -1,7 +1,8 @@
 import React from 'react';
 import ApiLink from "../../common/ApiLink";
 import commonStyles from "../../common/styles";
-import {Typography, withStyles} from "material-ui";
+import Typography from "@material-ui/core/Typography";
+import withStyles from "@material-ui/core/styles/withStyles";
 
 const styles = () => ({
   display1: commonStyles.display1,

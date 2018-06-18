@@ -1,6 +1,7 @@
 import React from 'react'
 import {Link} from "react-router-dom";
-import {Typography, withStyles} from "material-ui";
+import Typography from "@material-ui/core/Typography";
+import withStyles from "@material-ui/core/styles/withStyles";
 import Radium from 'radium';
 import MarkdownElement from "../../common/MarkdownElement";
 import commonStyles from "../../common/styles";

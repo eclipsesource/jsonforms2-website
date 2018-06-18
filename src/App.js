@@ -5,7 +5,11 @@ import {
   Link,
   Switch,
 } from 'react-router-dom';
-import {AppBar, Button, Toolbar, Typography, withStyles} from "material-ui";
+import AppBar from "@material-ui/core/AppBar";
+import Button from "@material-ui/core/Button";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import withStyles from "@material-ui/core/styles/withStyles";
 import 'typeface-roboto'
 import Radium from 'radium';
 import './App.css';

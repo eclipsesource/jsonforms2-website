@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { withStyles } from "material-ui";
+import withStyles from "@material-ui/core/styles/withStyles";
 import corePackageJson from '@jsonforms/core/package'
 import commonStyles from "./common/styles";
 

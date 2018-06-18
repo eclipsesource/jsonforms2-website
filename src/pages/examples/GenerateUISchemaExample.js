@@ -3,7 +3,8 @@ import { generateUISchema } from '@jsonforms/examples';
 import { JsonForms } from '@jsonforms/react';
 import { generateDefaultUISchema, generateJsonSchema } from '@jsonforms/core';
 import { Provider } from 'react-redux';
-import {Typography, withStyles} from "material-ui";
+import Typography from "@material-ui/core/Typography";
+import withStyles from "@material-ui/core/styles/withStyles";
 import { commonStyles, Demo, RadiumHashLink } from "../../common";
 import {createJsonFormsStore} from "../../common/store";
 

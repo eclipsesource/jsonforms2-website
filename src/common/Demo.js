@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
-import IconButton from 'material-ui/IconButton';
-import Collapse from 'material-ui/transitions/Collapse';
-import DataIcon from 'material-ui-icons/Code';
-import SchemaIcon from 'material-ui-icons/Description';
-import UiSchemaIcon from 'material-ui-icons/ViewQuilt';
-import Tooltip from 'material-ui/Tooltip';
+import withStyles from '@material-ui/core/styles/withStyles';
+import IconButton from '@material-ui/core/Icon';
+import Tooltip from '@material-ui/core/Tooltip';
+import Collapse from '@material-ui/core/Collapse';
+import DataIcon from '@material-ui/icons/Code';
+import SchemaIcon from '@material-ui/icons/Description';
+import UiSchemaIcon from '@material-ui/icons/ViewQuilt';
 import { getData } from '@jsonforms/core';
 import MarkdownElement from './MarkdownElement';
 

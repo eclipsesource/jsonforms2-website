@@ -8,7 +8,8 @@ import {
   MaterialCategorizationLayout
 } from '@jsonforms/material-renderers';
 import commonStyles from "../../common/styles";
-import {Typography, withStyles} from "material-ui";
+import Typography from "@material-ui/core/Typography";
+import withStyles from "@material-ui/core/styles/withStyles";
 import MarkdownElement from "../../common/MarkdownElement";
 import PropHeader from "../../common/PropHeader";
 import {RadiumLink} from "../../common";

@@ -1,5 +1,7 @@
 import React from 'react';
-import {Grid, Typography, withStyles} from "material-ui";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import withStyles from "@material-ui/core/styles/withStyles";
 import {Route, Switch} from "react-router-dom";
 import Intro from "./Intro";
 import GettingStarted from "./GettingStarted";

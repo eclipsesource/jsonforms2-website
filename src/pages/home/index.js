@@ -1,7 +1,13 @@
 import * as React from "react";
-import {Button, Card, CardContent, Grid, Typography, withStyles} from "material-ui";
-import FeaturesIcon from 'material-ui-icons/Report';
-import CustomizeIcon from 'material-ui-icons/Brush';
+import Button from "@material-ui/core/Button";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import withStyles from "@material-ui/core/styles/withStyles";
+
+import FeaturesIcon from '@material-ui/icons/Report';
+import CustomizeIcon from '@material-ui/icons/Brush';
 import { JsonForms }  from '@jsonforms/react'
 import corePackageJson from '@jsonforms/core/package'
 import { Provider } from 'react-redux';
@@ -158,8 +164,8 @@ const Home = ({ classes }) => {
 
         <Grid item xs={12} className={classes.card} style={{ backgroundColor: '#eeeeee', marginTop: 0, padding: '1em' }}>
           <Grid container>
-            <Grid item xs={3}/>
-            <Grid item xs={6} >
+            <Grid item xs={4}/>
+            <Grid item xs={4} >
               <Grid container justify='center' align='center'>
                 <img src={reactLogo} alt="React logo" style={{ height: '80px' }}/>
                 <img src={reduxLogo} alt="Redux logo" style={{ height: '80px' }}/>
@@ -168,7 +174,7 @@ const Home = ({ classes }) => {
                 </Typography>
               </Grid>
             </Grid>
-            <Grid item xs={3}/>
+            <Grid item xs={4}/>
             </Grid>
           </Grid>
 

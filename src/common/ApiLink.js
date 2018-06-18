@@ -1,6 +1,6 @@
 import React from 'react';
 import commonStyles from "./styles";
-import {withStyles} from "material-ui";
+import withStyles from "@material-ui/core/styles/withStyles";
 
 const styles = () => ({
   link: commonStyles.link
