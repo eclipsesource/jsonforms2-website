@@ -153,6 +153,14 @@ const Store = ({ classes }) => (
       how to use these.
     </p>
 
+    <PropHeader title='registerUISchema/unregisterUISchema'/>
+    <p>
+      These actions allow to register or unregister UISchemas, respectively. The <code>registerUISchema</code> expects
+      two arguments, the 1st being a tester and the 2nd the actual UISchemaElement. Please see the section
+      about <RadiumLink to='/docs/providing-uischemas' className={classes.link}>Providing UISchemas</RadiumLink> for an example
+      how to reference additional uischemas from the registry.
+    </p>
+
     <Typography variant='headline' className={classes.headline}>
       Linking forms
     </Typography>

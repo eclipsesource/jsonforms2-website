@@ -14,6 +14,7 @@ import Rules from "./Rules";
 import Store from "./Store";
 import Tutorial from "./Tutorial";
 import APIs from "./APIs";
+import ProvidingUISchemas from './ProvidingUISchemas';
 
 const styles = () => ({
   grid: commonStyles.grid,
@@ -45,6 +46,7 @@ const Docs = ({ classes, match, location }) => (
         <Route path={`${match.url}/uischema/rules`} component={Rules}/>
         <Route path={`${match.url}/uischema`} component={UISchemaElements}/>
         <Route path={`${match.url}/custom-renderers`} component={CustomRenderers}/>
+        <Route path={`${match.url}/providing-uischemas`} component={ProvidingUISchemas}/>
         <Route path={`${match.url}/store`} component={Store}/>
         <Route path={`${match.url}/apis`} component={APIs}/>
         <Route path={match.url} render={() => (
@@ -98,6 +100,10 @@ const Docs = ({ classes, match, location }) => (
             {
               slug: 'custom-renderers',
               name: 'Custom renderers'
+            },
+            {
+              slug: 'providing-uischemas',
+              name: 'Providing UISchemas'
             },
             {
               slug: 'store',
