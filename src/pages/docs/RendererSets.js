@@ -19,7 +19,7 @@ const RendererSets = ({ classes }) => {
         variant={'display1'}
         className={classes.display1}
       >
-        RendererSets
+        Renderer Sets
       </Typography>
       <p>
         This section describes the two renderer sets which are available for react and some specifica about them.
@@ -37,6 +37,9 @@ const RendererSets = ({ classes }) => {
       <p>
         The Vanilla Renderer Set is based on plain HTML with a set of custom styles.
       </p>
+      <Typography variant='headline' className={classes.headline}>
+        Styling / Customization
+      </Typography>
       <p>
         You can define the classes to be set by providing styles to the store:
         <MarkdownElement
@@ -106,7 +109,7 @@ const RendererSets = ({ classes }) => {
         />
       </p>
       <p>
-        You can find all predefined ids in <a href="https://github.com/eclipsesource/jsonforms/blob/master/packages/vanilla/Styles.md" className={classes.link}>this list</a>.
+        You can find all predefined style constants in <a href="https://github.com/eclipsesource/jsonforms/blob/master/packages/vanilla/Styles.md" className={classes.link}>this list</a>.
       </p>
     </div>
   );

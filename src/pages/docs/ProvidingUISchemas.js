@@ -26,9 +26,9 @@ export const ProvidingUISchemas = ({ classes }) => {
       <Typography variant={'display1'} className={classes.display1}>Providing UISchemas</Typography>
 
       <p>
-        When initializing JSON Forms you have to provide a UISchema. In many cases this is enough as you can specify how the form should look like.
-        But in some cases especially when rendering arrays you must be able to provide a UISchema which can be retrieved.
-        This allows you to provide different UISchemas which will be selected by the renderer.
+        When initializing JSON Forms you have to provide a UISchema. In many cases this is already enough as it covers most use cases.
+        But in some cases, especially when rendering (nested) arrays, you have to provide a UISchema which can be retrieved.
+        This allows subsequent renderers to use a different UI Schema than the the one specified initially.
       </p>
 
       <Typography variant={'title'} className={classes.title}>
@@ -46,9 +46,9 @@ export const ProvidingUISchemas = ({ classes }) => {
         Retrieving a registered UISchema
       </Typography>
       <p>
-        To retrieve the registered UISchema you can call the 'findUISchema' functions which is provided through the properties.
+        To retrieve the registered UISchema you can call the 'findUISchema' function which is provided through the properties.
         This function needs the schema, the schemaPath and a subpath. All those parameters are also passed through the properties.
-        The use is shown using a renderer.
+        The usage is shown using a renderer.
       </p>
 
       <MarkdownElement
