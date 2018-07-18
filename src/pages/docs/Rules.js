@@ -60,13 +60,13 @@ const Rules = ({ classes }) => {
         the <code>condition</code> is met. In the example above, if the <code>name</code> property has the value
         of <code>foo</code>, we'll hide the UI schema element the rule is attached to.
         Current effects include:
-        <ul className={classes.ul}>
-          <li><code>HIDE</code>: hide the UI schema element</li>
-          <li><code>SHOW</code>: show the UI schema element</li>
-          <li><code>DISABLE</code>: disable the UI schema element</li>
-          <li><code>ENABLE</code>: enable the UI schema element</li>
-        </ul>
       </p>
+      <ul className={classes.ul}>
+        <li><code>HIDE</code>: hide the UI schema element</li>
+        <li><code>SHOW</code>: show the UI schema element</li>
+        <li><code>DISABLE</code>: disable the UI schema element</li>
+        <li><code>ENABLE</code>: enable the UI schema element</li>
+      </ul>
 
       <PropHeader title='condition' type='Condition' link='/api/core/interfaces/condition.html'/>
       <p>
