@@ -49,6 +49,11 @@ const styles = () => ({
     height: '3em',
     width: '3em',
   },
+  schemaLogo: {
+    padding: '18px',
+    height: '108px',
+    width: '108px'
+  },
   details: {
     color: '#9b9b9b',
     display: 'flex',
@@ -127,7 +132,7 @@ const Home = ({ classes }) => {
             <CardContent>
               <Grid container justify={'center'} align={'center'}>
                 <Grid item xs={4}>
-                  <img src={schemaLogo} alt='JSON Schema Logo' height='74px' style={{ margin: '11px', padding: 0 }}/>
+                  <img src={schemaLogo} alt='JSON Schema Logo' className={classes.schemaLogo} />
                   <div className={classes.container}>
                     <div className={classes.details}>
                       Declare your forms as JSON based on a JSON Schema
@@ -146,9 +151,7 @@ const Home = ({ classes }) => {
                 </Grid>
 
                 <Grid item xs={4}>
-                  <div>
-                    <CustomizeIcon className={classes.icon} />
-                  </div>
+                  <CustomizeIcon className={classes.icon} />
                   <div className={classes.container}>
                     <div className={classes.details}>
                       Designed for customizability from custom styling to custom widgets
