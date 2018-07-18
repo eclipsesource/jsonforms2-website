@@ -70,9 +70,14 @@ const Rules = ({ classes }) => {
 
       <PropHeader title='condition' type='Condition' link='/api/core/interfaces/condition.html'/>
       <p>
-        The <code>condition</code> property describes what value should be observed and compares that value with the
-        one provided via <code>expectedValue</code>. The format for describing the scope is the same as for regular
-        controls.
+        The <code>condition</code> property describes what value should be observed and validates that value with
+        against the JSON schema that is specified with `schema`. If validation succeeds the condition is fulfilled
+        and the associated <code>effect</code> will be triggered.
+      </p>
+      <p>
+        <strong>NOTE</strong>: These so-called <code>SchemaBasedCondition</code>s have been introduced with version
+        2.0.6 and have become the new default. The previous format via <code>type</code> and <code>expectedValue</code> properties
+        is still supported for the time being.
       </p>
     </div>
   );

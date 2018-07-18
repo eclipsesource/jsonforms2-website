@@ -1,8 +1,7 @@
 "rule": {
   "effect": "HIDE",
   "condition": {
-    "type": "LEAF",
     "scope": "#/properties/name",
-    "expectedValue": "foo"
+    "schema": { enum: ["foo"] }
   }
 }
