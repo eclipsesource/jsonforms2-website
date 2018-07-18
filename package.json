@@ -40,7 +40,7 @@
     "babel-plugin-preval": "^1.6.2",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "gh-pages": "^1.2.0",
-    "prepack": "^0.2.38",
+    "prepack": "^0.2.43",
     "raw-loader": "^0.5.1",
     "react-docgen": "^2.20.0",
     "text-loader": "0.0.1"
