@@ -1,5 +1,5 @@
 import React from 'react';
-import { day3, ratingControlTester, RatingControl } from '@jsonforms/examples';
+import { day3 } from '@jsonforms/examples';
 import { registerRenderer } from '@jsonforms/core';
 import { JsonForms } from '@jsonforms/react';
 import { Provider } from 'react-redux';
@@ -8,6 +8,8 @@ import withStyles from "@material-ui/core/styles/withStyles";
 
 import {commonStyles, Demo, RadiumHashLink} from '../../common'
 import {createJsonFormsStore} from "../../common/store";
+import ratingControlTester from "../docs/ratingControlTester";
+import RatingControl from "../docs/RatingControl";
 
 const styles = () => ({
   display1: commonStyles.display1,

@@ -8,8 +8,9 @@ import Demo from './Demo';
 import PropHeader from './PropHeader';
 import ApiLink from './ApiLink';
 import Logo from './Logo';
+import Links from './Links';
 
-export { generateLinks } from './gen-links';
+export { Links };
 export { Demo };
 export { commonStyles };
 export { MarkdownElement };
