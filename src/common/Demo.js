@@ -174,7 +174,7 @@ class Demo extends React.Component {
 
 Demo.propTypes = {
   classes: PropTypes.object.isRequired,
-  js: PropTypes.func.isRequired,
+  js: PropTypes.func,
   schema: PropTypes.object.isRequired,
   uischema: PropTypes.object.isRequired,
 };
@@ -184,6 +184,5 @@ const mapStateToProps = state => ({
 });
 
 export default connect(
-  mapStateToProps,
-  null
+  mapStateToProps
 )(withStyles(styles)(Demo));

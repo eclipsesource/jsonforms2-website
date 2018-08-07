@@ -9,7 +9,8 @@ import CustomRenderers from './CustomRenderers';
 import UISchemaElements from "./UISchemaElements";
 import Controls from "./Controls";
 import Layouts from "./Layouts";
-import { generateLinks, commonStyles } from "../../common";
+import { commonStyles } from "../../common";
+import Links from '../../common/Links'
 import Rules from "./Rules";
 import Store from "./Store";
 import Tutorial from "./Tutorial";
@@ -67,60 +68,65 @@ const Docs = ({ classes, match, location }) => (
     <Grid item xs={2}/>
     <Grid item xs={3} className={classes.sidebar}>
       <ul className={classes.sidebarLinks}>
-        {
-          generateLinks(location.pathname, classes, match.url, [
-            {
-              slug: 'getting-started',
-              name: 'Getting started'
-            },
-            {
-              slug: 'intro',
-              name: 'What is JSON Forms?'
-            },
-            {
-              slug: 'tutorial',
-              name: 'Tutorial'
-            },
-            {
-              slug: 'uischema',
-              name: 'UI Schema Elements',
-              routes: [
-                {
-                  slug: 'controls',
-                  name: 'Controls'
-                },
-                {
-                  slug: 'layouts',
-                  name: 'Layouts'
-                },
-                {
-                  slug: 'rules',
-                  name: 'Rules'
-                },
-              ]
-            },
-            {
-              slug: 'custom-renderers',
-              name: 'Custom renderers'
-            },
-            {
-              slug: 'providing-uischemas',
-              name: 'Providing UISchemas'
-            },
-            {
-              slug: 'renderer-sets',
-              name: 'Renderer Sets'
-            },
-            {
-              slug: 'store',
-              name: 'Store'
-            },
-            {
-              slug: 'apis',
-              name: 'APIs'
-            }
-          ])
-        }
+        <Links
+          currentLocation={location.pathname}
+          classes={classes}
+          url={match.url}
+          routes={
+            [
+              {
+                slug: 'getting-started',
+                name: 'Getting started'
+              },
+              {
+                slug: 'intro',
+                name: 'What is JSON Forms?'
+              },
+              {
+                slug: 'tutorial',
+                name: 'Tutorial'
+              },
+              {
+                slug: 'uischema',
+                name: 'UI Schema Elements',
+                routes: [
+                  {
+                    slug: 'controls',
+                    name: 'Controls'
+                  },
+                  {
+                    slug: 'layouts',
+                    name: 'Layouts'
+                  },
+                  {
+                    slug: 'rules',
+                    name: 'Rules'
+                  },
+                ]
+              },
+              {
+                slug: 'custom-renderers',
+                name: 'Custom renderers'
+              },
+              {
+                slug: 'providing-uischemas',
+                name: 'Providing UISchemas'
+              },
+              {
+                slug: 'renderer-sets',
+                name: 'Renderer Sets'
+              },
+              {
+                slug: 'store',
+                name: 'Store'
+              },
+              {
+                slug: 'apis',
+                name: 'APIs'
+              }
+            ]
+          }
+        />
       </ul>
     </Grid>
   </Grid>

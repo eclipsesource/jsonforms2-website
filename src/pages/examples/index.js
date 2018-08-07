@@ -4,7 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import withStyles from "@material-ui/core/styles/withStyles";
 import {Route, Switch} from "react-router-dom";
 import commonStyles from "../../common/styles";
-import {generateLinks} from "../../common/gen-links";
+import Links from "../../common/Links";
 
 import Person from "./Person";
 import Layouts from "./LayoutExamples";
@@ -61,44 +61,45 @@ const Examples = ({ classes, location, match }) => (
     <Grid item xs={1} />
     <Grid item xs={3} className={classes.sidebar}>
       <ul style={{ listStyleType: 'none' }}>
-        {
-          generateLinks(
-            location.pathname, classes, match.url, [
-              {
-                slug: 'basic',
-                name: 'Basic Example'
-              },
-              {
-                slug: 'layouts',
-                name: 'Layouts',
-              },
-              {
-                slug: 'array',
-                name: 'Array'
-              },
-              {
-                slug: 'categorization',
-                name: 'Categorization'
-              },
-              {
-                slug: 'rule',
-                name: 'Rule'
-              },
-              {
-                slug: 'generate-uischema',
-                name: 'Inferring a UI schema'
-              },
-              {
-                slug: 'generate-schemata',
-                name: 'Inferring both schemata'
-              },
-              {
-                slug: 'custom-controls',
-                name: 'Custom controls'
-              }
-            ]
-          )
-        }
+        <Links
+          currentLocation={location.pathname}
+          classes={classes}
+          url={match.url}
+          routes={[
+            {
+              slug: 'basic',
+              name: 'Basic Example'
+            },
+            {
+              slug: 'layouts',
+              name: 'Layouts',
+            },
+            {
+              slug: 'array',
+              name: 'Array'
+            },
+            {
+              slug: 'categorization',
+              name: 'Categorization'
+            },
+            {
+              slug: 'rule',
+              name: 'Rule'
+            },
+            {
+              slug: 'generate-uischema',
+              name: 'Inferring a UI schema'
+            },
+            {
+              slug: 'generate-schemata',
+              name: 'Inferring both schemata'
+            },
+            {
+              slug: 'custom-controls',
+              name: 'Custom controls'
+            }
+          ]}
+        />
       </ul>
     </Grid>
   </Grid>

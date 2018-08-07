@@ -133,7 +133,6 @@ const Tutorial = ({ classes }) => {
             text={`\`\`\`js\n${initAction}\n\`\`\``}
           />
         </li>
-        {/**/}
         <li>
           Wrap the existing <code>App</code> component within a <code>Provider</code>
           <MarkdownElement
