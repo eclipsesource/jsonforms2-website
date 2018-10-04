@@ -16,6 +16,7 @@ const ratingControlCode = require('!raw-loader!./RatingControl.jsx');
 const ratingControlTesterCode = require('!raw-loader!./ratingControlTester');
 const registerRendererCode = require('!raw-loader!./listings/registerRenderer.md');
 
+
 const ratingData = {
   rating: 2,
 };
@@ -133,24 +134,21 @@ export const CustomRenderers = ({ classes }) => {
       <p>
         JSON Forms maintains a registry of renderers (which are regular React components). When JSON Forms is instructed to
         render a given UI schema to produce a form, it will start with the root element of the UI Schema and try to
-        find a render for this UI Schema element in its registry of renderers.
-        To find a matching renderer, JSON Forms relies on the so-called testers of the renderers.
-        Every renderer has a tester associated with its registration. The tester will provide JSON Forms with
-        a priority for a given UI Schema Element for the respective tester.
-        This priority expresses if and how well a renderer can actually render the given UI Schema Element
-        (where -1 means "not at all").
+        find a renderer for this UI Schema element in its registry of renderers.
       </p>
-
       <p>
-        A tester is therefore just a function which is called with the current UI schema element and the
-        corresponding data subschema and returns a number for the priority.
+        To find a matching renderer, JSON Forms relies on so-called testers.
+        Every renderer has a tester associated with its registration, which is a function of a UI schema and a
+        JSON schema returning a number.
+        The returned number is the priority which expresses if and how well a renderer can actually render the
+        given UI Schema Element (where <code>-1</code> aka <code>NOT_APPLICABLE</code>) means "not at all").
       </p>
       <p>
         In order to create and register a renderer, we need to perform the following steps:
       </p>
 
       <ol className={classes.list}>
-        <li>Create a renderer (based on a React component)</li>
+        <li>Create a renderer (a React component)</li>
         <li>Create a corresponding tester for the renderer</li>
         <li>Register both the renderer and the tester with the framework</li>
       </ol>
@@ -161,27 +159,28 @@ export const CustomRenderers = ({ classes }) => {
       </p>
 
       <Typography variant='title' className={classes.title}>
-        Create a renderer
+        1. Create a renderer
       </Typography>
       <p>
       As mentioned previously, the seed app already features a component which we want to use as a renderer.
       It's contained in <code>src/Rating.js</code> and is a rating control, i.e. it allows to set a value between 0 and 5
       by selecting the appropriate number of stars. We won't go into detail about the control itself, but we should mention
       that we need to provide an <code>onClick</code> property in order to allow specifying a callback which gets called
-      every time the user clicks on a star as well as an initial <code>value</code>.
+      every time the user clicks on a star. We also need to suppy an initial <code>value</code>.
       </p>
 
       <p>
-        In order to leverage the component to a renderer, we need to connect it to the store. This will allow us to retrieve
-        the initial value and to send any events when the users clicks on a star. JSON Forms provides a
-        helper function <code>mapStateToFieldProps</code> which already provides most of the necessary props for us. In this case,
-        the props are <code>data</code>, which is the actual data bit to be rendered, and <code>path</code>, which is
-        necessary to propagate an update back to the store.
+        In order to leverage the React component to a JSON Forms compatible renderer, we need to connect it to the store.
+        This will allow us to retrieve the initial value and to emit events updating the respective value in the
+        store when the users clicks on a star. JSON Forms provides a
+        helper function <code>mapStateToControlProps</code> which already provides most of the necessary props for us.
+        In this case, the props are <code>data</code>, which is the actual data bit to be rendered, and <code>path</code>,
+        a dot-separated string, which is necessary to propagate an update back to the store.
       </p>
 
       <p>
         For the <code>onClick</code> prop we pass the <code>handleChange</code> handler, which we retrieve
-        via another helper function <code>mapDispatchToControlProps</code>.
+        via another helper function provided by JSON Forms called <code>mapDispatchToControlProps</code>.
         All the handler actually does is to emit a change with the new value.
       </p>
 
@@ -194,15 +193,15 @@ export const CustomRenderers = ({ classes }) => {
       />
 
       <Typography variant='title' className={classes.title}>
-        Create a tester
+        2. Create a tester
       </Typography>
       <p>
         Now that we have our renderer ready, we need to tell JSON Forms when we want to make use of it.
         For that purpose we create a tester that checks if the corresponding UI schema element is a control
         and whether it is bound to a path that ends with <code>rating</code>. If that is the case, we return a rank of
-        3. Since the default renderer sets provide a rank with a value of 2, our tester will rank the custom control higher, so it will 
-        be preferentially picked up for the rating control. The <code>ratingControlTester.js</code> file
-        contains the respective code as a default export.
+        3. That is because the default renderer sets provide a rank with a value of 2, hence our tester will need to
+        rank the custom control higher a bit higher, such that it will be picked up for the rating control during rendering.
+        The <code>ratingControlTester.js</code> file contains the respective code as a default export.
       </p>
 
       <MarkdownElement
@@ -212,12 +211,13 @@ export const CustomRenderers = ({ classes }) => {
       />
 
       <p>
-        Generally speaking, the tester API if made out of different predicates as well as functions that allow
-        for composition, such as <code>and</code> or <code>or</code>.
+        Generally speaking, the testers API if made out of different predicates and functions that allow
+        for composition (e.g. <code>and</code> or <code>or</code>) such that it is easy to target specific parts
+        of the UI schema and/or JSON schema.
       </p>
 
       <Typography variant='title'>
-        Register the renderer
+        3. Register the renderer
       </Typography>
       <p>
         All there is left to do is to register the renderer with its tester. We can do so by calling
