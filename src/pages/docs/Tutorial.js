@@ -102,7 +102,8 @@ const Tutorial = ({ classes }) => {
             text={`\`\`\`js\n${variables}\n\`\`\``}
           />
 
-          These variables are defined as follows, in case you are interested:
+          These variables are defined as follows, in case you are interested (hit the buttons in the upper right corner
+          of the box to switch through the listings):
 
           <Provider store={store}>
             <Demo
@@ -145,8 +146,9 @@ const Tutorial = ({ classes }) => {
 
         <li>
           Open the <code>App.js</code> file and
-          import the <code>JsonForms</code> component from <code>@jsonforms/react</code>. Add
-          the <code>JsonForms</code> anywhere you like in order to get a form rendered:
+          import the <code>JsonForms</code> component from <code>@jsonforms/react</code>.
+          Delete the `header` element and replace it with the <code>JsonForms</code> element
+          to get a form rendered:
           <MarkdownElement
             dir="ltr"
             className={classes.code}
