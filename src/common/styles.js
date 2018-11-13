@@ -58,5 +58,12 @@ export default {
     justifyContent: 'center',
     marginTop: '-1em',
     marginBottom: '0.5em'
+  },
+  warningContainer: {
+    backgroundColor: '#3D5AFE',
+    color: '#fff',
+    borderRadius: '0.25em',
+    padding: '0.25em',
+    marginTop: '1em'
   }
 }
