@@ -75,10 +75,18 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Condition</span>
+						<a href="scopable.html" class="tsd-signature-type">Scopable</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<a href="leafcondition.html" class="tsd-signature-type">LeafCondition</a>
+								<span class="target">Condition</span>
+								<ul class="tsd-hierarchy">
+									<li>
+										<a href="leafcondition.html" class="tsd-signature-type">LeafCondition</a>
+									</li>
+									<li>
+										<a href="schemabasedcondition.html" class="tsd-signature-type">SchemaBasedCondition</a>
+									</li>
+								</ul>
 							</li>
 						</ul>
 					</li>
@@ -91,6 +99,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="condition.html#scope" class="tsd-kind-icon">scope</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="condition.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
 						</section>
@@ -99,13 +108,29 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="scope" class="tsd-anchor"></a>
+					<h3>scope</h3>
+					<div class="tsd-signature tsd-kind-icon">scope<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="scopable.html">Scopable</a>.<a href="scopable.html#scope">scope</a></p>
+						<ul>
+							<li>Defined in models/uischema.ts:35</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The scope that determines to which part this element should be bound to.</p>
+						</div>
+					</div>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="type" class="tsd-anchor"></a>
-					<h3>type</h3>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> type</h3>
 					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in models/uischema.ts:81</li>
+							<li>Defined in models/uischema.ts:83</li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -131,6 +156,9 @@
 					<li class="current tsd-kind-interface">
 						<a href="condition.html" class="tsd-kind-icon">Condition</a>
 						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="condition.html#scope" class="tsd-kind-icon">scope</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="condition.html#type" class="tsd-kind-icon">type</a>
 							</li>
