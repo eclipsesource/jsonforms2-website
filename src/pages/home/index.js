@@ -173,7 +173,7 @@ const Home = ({ classes }) => {
                 <img src={reactLogo} alt="React logo" style={{ height: '80px' }}/>
                 <img src={reduxLogo} alt="Redux logo" style={{ height: '80px' }}/>
                 <Typography variant='title' style={{ color: '#212121' }}>
-                  JSON Forms currently primarily supports React/Redux based applications
+                  JSONForms currently primarily supports React/Redux based applications
                 </Typography>
               </Grid>
             </Grid>
