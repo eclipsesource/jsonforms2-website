@@ -1,18 +1,11 @@
 import React from 'react';
-import { array } from '@jsonforms/examples';
-import { JsonForms } from '@jsonforms/react';
-import { Provider } from 'react-redux';
-import Typography from "@material-ui/core/Typography";
-import withStyles from "@material-ui/core/styles/withStyles";
-import commonStyles from "../../common/styles";
+import {array} from '@jsonforms/examples';
+import {JsonForms} from '@jsonforms/react';
+import {Provider} from 'react-redux';
 import Demo from "../../common/Demo";
-import { createJsonFormsStore } from "../../common/store";
+import {createJsonFormsStore} from "../../common/store";
 
-const styles = () => ({
-  display1: commonStyles.display1
-});
-
-const Array = ({ classes }) => {
+const Array = () => {
 
   const uischema = {
     type: 'VerticalLayout',
@@ -30,24 +23,26 @@ const Array = ({ classes }) => {
   });
 
   return (
-    <div>
-      <Typography
-        variant={'display1'}
-        className={classes.display1}
-      >
-        Array Control
-      </Typography>
       <Provider store={store}>
         <Demo
           schema={array.schema}
           uischema={uischema}
+          style={{
+            padding: 0
+          }}
           js={() => (
-            <JsonForms />
+            <React.Fragment>
+              <div id='array-demo' className='examples__array'>
+                <JsonForms />
+              </div>
+              <div className='examples__array_note'>
+                Our current array renderer is not supported on mobile, sorry.
+              </div>
+            </React.Fragment>
           )}
         />
       </Provider>
-    </div>
   );
 };
 
-export default withStyles(styles)(Array);
+export default Array;

@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import {Link, withRouter} from "react-router-dom";
 import Radium from 'radium';
 
@@ -7,12 +8,12 @@ const RadiumLink = Radium(Link);
 // TODO: classes should be object with key-value-pairs where values map to stylename
 export const Links = ({ currentLocation, classes, url, routes, indentation = 1, history }) => {
   return routes.map(route => {
-    const slug = `${url}/${route.slug}`;
+    const slug = _.endsWith(url, '/') ? url + route.slug : `${url}/${route.slug}`;
     return (
       <React.Fragment key={slug}>
         <RadiumLink
           key={route.slug}
-          to={`${url}/${route.slug}`}
+          to={slug}
           className={classes.sidebarLink}
         >
           {
@@ -43,7 +44,7 @@ export const Links = ({ currentLocation, classes, url, routes, indentation = 1, 
                 <ConnectedLinks
                   currentLocation={currentLocation}
                   classes={classes}
-                  url={url + `/${route.slug}`}
+                  url={_.endsWith(url, '/') ? url + route.slug : `${url}/${route.slug}`}
                   routes={route.routes}
                   indentation={indentation + 1}
                 />

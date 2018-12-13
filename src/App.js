@@ -19,7 +19,7 @@ import Docs from "./pages/docs";
 import Examples from "./pages/examples";
 import Support from "./pages/support";
 import Footer from "./Footer";
-import { commonStyles, Logo } from './common';
+import { Logo } from './common';
 import NotFound from "./pages/NotFound";
 import CookiePolicy from "./pages/CookiePolicy";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
@@ -28,34 +28,13 @@ const styles = theme => ({
   root: {
     width: '100%',
   },
-  main: {
-    display: 'flex',
-    flex: 1,
-    minHeight: '100vh',
-    flexDirection: 'column'
-  },
   appBar: {
-    minHeight: '4em',
+    minHeight: '5vh',
     margin: 0,
     backgroundColor: '#212121',
     boxShadow: 'none',
-    padding: 0
-  },
-  content: {
-    display: 'flex',
-    paddingTop: '4em',
-    flex: 1,
-    padding: '0em'
-  },
-  logoTitle: {
-    textDecoration: 'none',
-    color: '#fff',
-    flex: '1'
-  },
-  link: {
-    ...commonStyles.link,
-    marginLeft: '1em',
-    fontWeight: 'bold'
+    paddingLeft: 10,
+    paddingRight: 10
   },
   menuButton: {
     marginLeft: -12,
@@ -77,38 +56,38 @@ class App extends Component {
 
     return (
       <Router>
-        <div className={classes.main}>
-          <AppBar className={classes.appBar}>
-            <Toolbar>
-              <RadiumLink to='/' style={{ alignItems: 'center', display: 'flex' }}>
+        <React.Fragment>
+          <AppBar className={classes.appBar} position='relative'>
+            <Toolbar style={{ padding: 0}} >
+              <RadiumLink to='/' className='logo__icon'>
                 <Logo width={45} height={30} color='#fff'/>
               </RadiumLink>
               &nbsp;
-              <RadiumLink to='/' className={classes.logoTitle}>
+              <RadiumLink to='/' className='logo__title'>
                 <Typography variant="title" color="inherit">
                   JSONForms
                 </Typography>
               </RadiumLink>
               <Button
-                component={({...props}) => <RadiumLink to='/examples/basic' {...props} className={classes.link} />}
+                component={({...props}) => <RadiumLink to='/examples/basic' {...props} className='nav__link' />}
               >
                 Examples
               </Button>
 
               <Button
-                component={props => <Link to="/docs/getting-started" {...props} className={classes.link} />}
+                component={props => <Link to="/docs" {...props} className='nav__link' />}
               >
                 Docs
               </Button>
               <Button
-                component={props => <Link to="/support" {...props} className={classes.link} />}
+                component={props => <Link to="/support" {...props} className={['nav__link', 'navbar__support-link'].join(' ')} />}
               >
                 Professional Support
               </Button>
             </Toolbar>
           </AppBar>
 
-          <div className={classes.content}>
+          <div className='content'>
             <Switch>
               <Route exact 
                 path="/"
@@ -145,7 +124,7 @@ class App extends Component {
           </div>
 
           <Footer />
-        </div>
+        </React.Fragment>
       </Router>
     );
   }

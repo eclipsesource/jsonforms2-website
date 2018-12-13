@@ -20,7 +20,6 @@ const styles = () => ({
     display: 'flex',
     justifyContent: 'center',
   },
-  display1: commonStyles.display1,
   p: {
     paddingTop: '0.5em'
   },
@@ -34,7 +33,7 @@ const Imprint = ({ classes }) => (
         <div className={classes.container}>
           <Card className={classes.card}>
             <CardContent>
-              <Typography variant="display1" className={classes.display1}>Imprint</Typography>
+              <Typography variant="h4">Imprint</Typography>
               <address>
                 EclipseSource München GmbH<br/>
                 Agnes-Pockels-Bogen 1<br/>

@@ -1,22 +1,16 @@
 import React from 'react';
-import { generateUISchema } from '@jsonforms/examples';
-import { JsonForms } from '@jsonforms/react';
-import { generateDefaultUISchema, generateJsonSchema } from '@jsonforms/core';
-import { Provider } from 'react-redux';
-import Typography from "@material-ui/core/Typography";
-import withStyles from "@material-ui/core/styles/withStyles";
-import { commonStyles, Demo, RadiumHashLink } from "../../common";
+import {generateUISchema} from '@jsonforms/examples';
+import {JsonForms} from '@jsonforms/react';
+import {generateDefaultUISchema, generateJsonSchema} from '@jsonforms/core';
+import {Provider} from 'react-redux';
+import {Demo, RadiumHashLink} from "../../common";
 import {createJsonFormsStore} from "../../common/store";
+import Typography from "@material-ui/core/Typography/Typography";
 
-const styles = () => ({
-  display1: commonStyles.display1,
-  link: commonStyles.link
-});
-
-const GenerateUISchemaExample = ({ classes }) => {
+const GenerateUISchemaExample = () => {
 
   const schema = generateJsonSchema(generateUISchema.data);
-  const uischema = generateDefaultUISchema(schema)
+  const uischema = generateDefaultUISchema(schema);
 
   const store = createJsonFormsStore({
     data: generateUISchema.data,
@@ -26,18 +20,11 @@ const GenerateUISchemaExample = ({ classes }) => {
 
   return (
     <div>
-      <Typography
-        variant={'display1'}
-        className={classes.display1}
-      >
-        Inferring a UI schema
-      </Typography>
-
-      <p>
+      <Typography variant='body1'>
         If you provide no UI schema to JSON Forms it'll generate one. The generated layout will be
-        a <RadiumHashLink to={'/docs/uischema/layouts#vertical-layout'} className={classes.link}>VerticalLayout</RadiumHashLink> containing
+        a <RadiumHashLink to={'/docs/uischema/layouts#vertical-layout'} className='link'>VerticalLayout</RadiumHashLink> containing
         controls for the provided JSON schema.
-      </p>
+      </Typography>
 
       <Provider store={store}>
         <Demo
@@ -52,4 +39,4 @@ const GenerateUISchemaExample = ({ classes }) => {
   );
 };
 
-export default withStyles(styles)(GenerateUISchemaExample);
+export default GenerateUISchemaExample;
