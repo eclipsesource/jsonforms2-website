@@ -68,11 +68,15 @@ export const uischema = {
             {
               type: "Control",
               scope: "#/properties/person/properties/lastName"
-            },
-            {
-              type: "Control",
-              scope: "#/properties/person/properties/age"
-            },
+            }
+          ]
+        },
+        {
+          type: "HorizontalLayout",
+          elements: [{
+            type: "Control",
+            scope: "#/properties/person/properties/age"
+          },
             {
               type: "Control",
               label: "Address",
@@ -96,7 +100,12 @@ export const uischema = {
             {
               type: "Control",
               scope: "#/properties/address/properties/street"
-            },
+            }
+          ]
+        },
+        {
+          type: "HorizontalLayout",
+          elements: [
             {
               type: "Control",
               scope: "#/properties/address/properties/city"
@@ -135,7 +144,12 @@ export const uischemas = {
           {
             type: "Control",
             scope: "#/properties/lastName"
-          },
+          }
+        ]
+      },
+      {
+        type: "HorizontalLayout",
+        elements: [
           {
             type: "Control",
             scope: "#/properties/age"
@@ -163,6 +177,11 @@ export const uischemas = {
             type: "Control",
             scope: "#/properties/street"
           },
+        ]
+      },
+      {
+        type: "HorizontalLayout",
+        elements: [
           {
             type: "Control",
             scope: "#/properties/city"

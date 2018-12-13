@@ -1,18 +1,13 @@
 import React from 'react';
-import { generateSchema } from '@jsonforms/examples';
-import { JsonForms } from '@jsonforms/react';
-import { generateDefaultUISchema, generateJsonSchema } from '@jsonforms/core';
-import { Provider } from 'react-redux';
+import {generateSchema} from '@jsonforms/examples';
+import {JsonForms} from '@jsonforms/react';
+import {generateDefaultUISchema, generateJsonSchema} from '@jsonforms/core';
+import {Provider} from 'react-redux';
 import Typography from "@material-ui/core/Typography";
-import withStyles from "@material-ui/core/styles/withStyles";
-import { commonStyles, Demo } from "../../common";
+import {Demo} from "../../common";
 import {createJsonFormsStore} from "../../common/store";
 
-const styles = () => ({
-  display1: commonStyles.display1
-});
-
-const GenerateSchemaExample = ({ classes }) => {
+const GenerateSchemaExample = () => {
 
   const schema = generateJsonSchema(generateSchema.data);
   // TODO: this example shouldn't generate its UI schema
@@ -26,22 +21,15 @@ const GenerateSchemaExample = ({ classes }) => {
 
   return (
     <div>
-      <Typography
-        variant={'display1'}
-        className={classes.display1}
-      >
-        Inferring a JSON schema and a UI schema
-      </Typography>
-
-      <p>
+      <Typography variant='body1'>
         This example demonstrates that JSON Forms is already able to render a form just by specifying
         the data to be rendered. Both, the JSON schema as well as the UI schema have been omitted in this example
         as you can see yourself if you check the provided schema and UI schema.
-      </p>
-      <p>
+      </Typography>
+      <Typography variant='body1'>
         If no JSON schema is provided to JSON Forms it will generate one. In most uses cases this might not be the
         thing you want, but it's a useful feature nevertheless, e.g. for rapid prototyping.
-      </p>
+      </Typography>
 
       <Provider store={store}>
         <Demo
@@ -56,4 +44,4 @@ const GenerateSchemaExample = ({ classes }) => {
   );
 };
 
-export default withStyles(styles)(GenerateSchemaExample);
+export default GenerateSchemaExample;

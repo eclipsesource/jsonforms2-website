@@ -1,54 +1,52 @@
 import React from 'react';
 import ApiLink from "../../common/ApiLink";
-import commonStyles from "../../common/styles";
 import Typography from "@material-ui/core/Typography";
-import withStyles from "@material-ui/core/styles/withStyles";
-import Warning from "../../common/Warning";
+import DocPage from "./DocPage";
 
-const styles = () => ({
-  display1: commonStyles.display1,
-  list: {
-    ...commonStyles.list,
-    listStyle: 'none'
-  }
-});
-
-const APIs = ({ classes }) => (
-  <div>
-    <Typography variant='display1' className={classes.display1}>
+const APIs = () => (
+  <DocPage>
+    <Typography variant='h1'>
       API Documentation
     </Typography>
-    <Warning>
-      <strong>ATTENTION</strong>: Please note that we do not yet follow SemVer conventions yet as the the API of the
-      WIP renderer sets is not considered stable yet. We'll switch versioning schemes starting with <strong>3.x.x</strong>.
-    </Warning>
-    <p>
+    <div className='grey-box'>
+      <Typography variant='subtitle2' color='error'>
+        ATTENTION
+      </Typography>
+      <Typography variant='body1'>
+        Please note that we do not yet follow SemVer conventions yet as the the API of the
+        WIP renderer sets is not considered stable yet.
+      </Typography>
+      <Typography variant='body1'>
+        We'll switch versioning schemes starting with <strong>3.x.x</strong>.
+      </Typography>
+    </div>
+    <Typography variant='body1'>
       This section provides links to the API documentation of all available JSON Forms modules.
-    </p>
-    <ul className={classes.list}>
+    </Typography>
+    <ul className='list'>
       <li>
-        <ApiLink link={'/api/core/'}>Core</ApiLink>
+        <Typography variant='body1'><ApiLink link={'/api/core/'}>Core</ApiLink></Typography>
       </li>
       <li>
-        <ApiLink link={'/api/react/'}>React integration</ApiLink>
+        <Typography variant='body1'><ApiLink link={'/api/react/'}>React integration</ApiLink></Typography>
       </li>
       <li>
-        <ApiLink link={'/api/material/'}>React-based Material renderers</ApiLink>
+        <Typography variant='body1'><ApiLink link={'/api/material/'}>React-based Material renderers</ApiLink></Typography>
       </li>
       <li>
-        <ApiLink link={'/api/vanilla/'}>React-based vanilla renderers (WIP)</ApiLink>
+        <Typography variant='body1'><ApiLink link={'/api/vanilla/'}>React-based vanilla renderers (WIP)</ApiLink></Typography>
       </li>
       <li>
-        <ApiLink link={'/api/material-tree-renderer/'}>React-based Material tree renderer (WIP)</ApiLink>
+        <Typography variant='body1'><ApiLink link={'/api/material-tree-renderer/'}>React-based Material tree renderer (WIP)</ApiLink></Typography>
       </li>
       <li>
-        <ApiLink link={'/api/angular-material/'}>Angular-based Material renderers</ApiLink>
+        <Typography variant='body1'><ApiLink link={'/api/angular-material/'}>Angular-based Material renderers</ApiLink></Typography>
       </li>
       <li>
-        <ApiLink link={'/api/ionic/'}>Angular-based Ionic renderers (WIP)</ApiLink>
+        <Typography variant='body1'><ApiLink link={'/api/ionic/'}>Angular-based Ionic renderers (WIP)</ApiLink></Typography>
       </li>
     </ul>
-  </div>
+  </DocPage>
 );
 
-export default withStyles(styles)(APIs);
+export default APIs;

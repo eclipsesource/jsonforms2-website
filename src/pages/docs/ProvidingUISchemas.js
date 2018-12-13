@@ -1,74 +1,49 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
-import withStyles from "@material-ui/core/styles/withStyles";
-import MarkdownElement from "../../common/MarkdownElement";
-import commonStyles from '../../common/styles';
+import DocPage from "./DocPage";
 /* eslint import/no-webpack-loader-syntax: off */
 const registerUISchemaCode = require('!raw-loader!./listings/registerUISchema.md');
 const retrieveUISchemaCode = require('!raw-loader!./listings/retrieveUISchema.md');
 
-
-const styles = theme => ({
-  code: commonStyles.code(theme),
-  headline: commonStyles.headline,
-  title: {
-    marginTop: '0.5em'
-  },
-  display1: commonStyles.display1,
-  list: commonStyles.list,
-  link: commonStyles.link
-});
-
-export const ProvidingUISchemas = ({ classes }) => {
+export const ProvidingUISchemas = () => {
 
   return (
-    <div>
-      <Typography variant={'display1'} className={classes.display1}>Providing UISchemas</Typography>
+    <DocPage>
+      <Typography variant='h1'>Providing UISchemas</Typography>
 
-      <p>
+      <Typography variant='body1'>
         When initializing JSON Forms you have to provide a UISchema. In many cases this is already enough as it covers most use cases.
         But in some cases, especially when rendering (nested) arrays, you have to provide a UISchema which can be retrieved.
         This allows subsequent renderers to use a different UI Schema than the the one specified initially.
-      </p>
+      </Typography>
 
-      <Typography variant={'title'} className={classes.title}>
+      <Typography variant='h2'>
         Registering an UISchema
       </Typography>
       <p>The registration of an UISchema looks as follows:</p>
 
-      <MarkdownElement
-        dir="ltr"
-        className={classes.code}
-        text={`\`\`\`jsx\n${registerUISchemaCode}\n\`\`\``}
-      />
+      <pre className='code-listing'>
+        <code className='language-jsx'>
+          {registerUISchemaCode}
+        </code>
+      </pre>
 
-      <Typography variant='title' className={classes.title}>
+      <Typography variant='h2'>
         Retrieving a registered UISchema
       </Typography>
-      <p>
+      <Typography variant='body1'>
         To retrieve the registered UISchema you can call the 'findUISchema' function which is provided through the properties.
         This function needs the schema, the schemaPath and a subpath. All those parameters are also passed through the properties.
         The usage is shown using a renderer.
-      </p>
+      </Typography>
 
-      <MarkdownElement
-        dir="ltr"
-        className={classes.code}
-        text={`\`\`\`jsx\n${retrieveUISchemaCode}\n\`\`\``}
-      />
-
-      <p style={{
-        backgroundColor: '#d1d1d1',
-        padding: '0.5em',
-        borderRadius: '0.5em',
-        marginTop: '0.5em',
-        marginBottom: '0.5em'
-      }}>
-        <strong>NOTE</strong>: We are working on the sections. Expect this page to be updated soon!
-      </p>
-    </div>
-
-);
+      <pre className='code-listing'>
+        <code className='language-jsx'>
+          {retrieveUISchemaCode}
+        </code>
+      </pre>
+    </DocPage>
+  );
 };
 
-export default withStyles(styles)(ProvidingUISchemas);
+export default ProvidingUISchemas;

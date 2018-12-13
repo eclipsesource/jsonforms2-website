@@ -1,66 +1,58 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
-import withStyles from "@material-ui/core/styles/withStyles";
-import MarkdownElement from "../../common/MarkdownElement";
-import commonStyles from "../../common/styles";
 import {RadiumLink} from "../../common";
+import DocPage from "./DocPage";
 
-const styles = () => ({
-  link: commonStyles.link,
-  list: commonStyles.list,
-  code: commonStyles.code,
-  display1: commonStyles.display1,
-});
-
-const GettingStarted = ({ classes }) => {
-
-  return (
-    <div>
-      <Typography
-        variant={'display1'}
-        className={classes.display1}
-      >
-        Getting started
-      </Typography>
-      <p>
-        This section describes how you can get quickly started with JSON Forms.
-      </p>
-      <ol className={classes.list}>
-        <li>
-          Clone the <a href="https://github.com/eclipsesource/jsonforms-react-seed" className={classes.link}>seed</a> app with:
-          <MarkdownElement
-            dir="ltr"
-            className={classes.code}
-            text={`\`\`\`bash\ngit clone https://github.com/eclipsesource/jsonforms-react-seed.git\n\`\`\``}
-          />
-        </li>
-        <li>
+const GettingStarted = () => (
+  <DocPage>
+    <Typography variant={'h1'}>
+      Getting started
+    </Typography>
+    <Typography variant='body1'>
+      This section describes how you can get quickly started with JSON Forms.
+    </Typography>
+    <ol className='list'>
+      <li>
+        <Typography variant={"body1"}>
+          Clone the <a href="https://github.com/eclipsesource/jsonforms-react-seed"
+                       className='link'>seed</a> app with:
+        </Typography>
+        <pre className='code-listing'>
+          <code className='language-bash'>
+            git clone https://github.com/eclipsesource/jsonforms-react-seed.git
+          </code>
+        </pre>
+      </li>
+      <li>
+        <Typography variant={"body1"}>
           Install dependencies with:
-          <MarkdownElement
-            dir="ltr"
-            className={classes.code}
-            text={`\`\`\`bash\nnpm install\n\`\`\``}
-          />
-        </li>
-        <li>
+        </Typography>
+        <pre className='code-listing'>
+          <code className='language-bash'>
+            npm install
+          </code>
+        </pre>
+      </li>
+      <li>
+        <Typography variant={"body1"}>
           Run the app with:
-          <MarkdownElement
-            dir="ltr"
-            className={classes.code}
-            text={`\`\`\`bash\nnpm run start\n\`\`\``}
-          />
-        </li>
-      </ol>
-      <p>
-        For more info about the seed app, please see the corresponding README file of the
-        the <a href="https://github.com/eclipsesource/jsonforms-react-seed" className={classes.link}>seed repo</a>.
-      </p>
-      <p>
-        For a more detailed tutorial about the usage of JSON Forms, please
-        see <RadiumLink to='/docs/tutorial' className={classes.link}>our tutorial</RadiumLink>.
-      </p>
-    </div>
-  );
-};
+        </Typography>
+        <pre className='code-listing'>
+          <code className='language-bash'>
+            npm run start
+          </code>
+        </pre>
+      </li>
+    </ol>
+    <Typography variant='body1'>
+      For more info about the seed app, please see the corresponding README file of the
+      the <a href="https://github.com/eclipsesource/jsonforms-react-seed" className='link'>seed repo</a>.
+    </Typography>
+    <Typography variant='body1'>
+      For a more detailed tutorial about the usage of JSON Forms, please
+      see <RadiumLink to='/docs/tutorial' className='link'>our tutorial</RadiumLink>.
+    </Typography>
+  </DocPage>
+);
 
-export default withStyles(styles)(GettingStarted);
+export default GettingStarted;

@@ -3,14 +3,9 @@ import { layout } from '@jsonforms/examples';
 import { JsonForms } from '@jsonforms/react';
 import { Provider } from 'react-redux';
 import Typography from "@material-ui/core/Typography";
-import withStyles from "@material-ui/core/styles/withStyles";
-import { commonStyles, Demo }from "../../common";
+import { Demo }from "../../common";
 import {createJsonFormsStore} from "../../common/store";
 
-const styles = () => ({
-  display1: commonStyles.display1,
-  headline: commonStyles.headline
-});
 
 const verticalLayoutStore = createJsonFormsStore({
   data: layout.data,
@@ -36,24 +31,17 @@ const complexStore = createJsonFormsStore({
   uischema: layout.uischemaComplex,
 });
 
-const Layouts = ({ classes }) => {
+const Layouts = () => {
   return (
     <div>
-      <Typography
-        variant={'display1'}
-        className={classes.display1}
-      >
-        Layouts
-      </Typography>
-      <p>
+      <Typography variant='body1'>
         All layout examples use the same schema which is an <code>object</code> with
         two <code>properties</code>, <code>name</code> and <code>birthDate</code>.
-      </p>
+      </Typography>
 
       {/* HORIZONTAL LAYOUT */}
       <Typography
-        variant={'headline'}
-        className={classes.headline}
+        variant='h3'
         id='horizontal-layout'
       >
         Horizontal Layout
@@ -68,8 +56,7 @@ const Layouts = ({ classes }) => {
 
       {/* VERTICAL LAYOUT */}
       <Typography
-        variant={'headline'}
-        className={classes.headline}
+        variant='h3'
         id='vertical-layout'
       >
         Vertical Layout
@@ -84,8 +71,7 @@ const Layouts = ({ classes }) => {
 
       {/* GROUP LAYOUT */}
       <Typography
-        variant={'headline'}
-        className={classes.headline}
+        variant='h3'
         id='group-layout'
       >
         Group Layout
@@ -104,8 +90,7 @@ const Layouts = ({ classes }) => {
 
       {/* NESTED LAYOUTS */}
       <Typography
-        variant={'headline'}
-        className={classes.headline}
+        variant='h3'
       >
         Nested Layouts
       </Typography>
@@ -126,4 +111,4 @@ const Layouts = ({ classes }) => {
   );
 };
 
-export default withStyles(styles)(Layouts);
+export default Layouts;

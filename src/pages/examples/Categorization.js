@@ -1,18 +1,13 @@
 import React from 'react';
-import { categorization } from '@jsonforms/examples';
-import { JsonForms } from '@jsonforms/react';
-import { Provider } from 'react-redux';
+import {categorization} from '@jsonforms/examples';
+import {JsonForms} from '@jsonforms/react';
+import {Provider} from 'react-redux';
 import Typography from "@material-ui/core/Typography";
-import withStyles from "@material-ui/core/styles/withStyles";
-import commonStyles from "../../common/styles";
 import Demo from "../../common/Demo";
 import {createJsonFormsStore} from "../../common/store";
 
-const styles = () => ({
-  display1: commonStyles.display1
-});
 
-const CategorizationExample = ({ classes }) => {
+const CategorizationExample = () => {
 
   const store = createJsonFormsStore({
     data: {
@@ -27,10 +22,7 @@ const CategorizationExample = ({ classes }) => {
 
   return (
     <div>
-      <Typography
-        variant={'display1'}
-        className={classes.display1}
-      >
+      <Typography variant={'h4'}>
         Categorization Control
       </Typography>
       <Provider store={store}>
@@ -46,4 +38,4 @@ const CategorizationExample = ({ classes }) => {
   );
 };
 
-export default withStyles(styles)(CategorizationExample);
+export default CategorizationExample;

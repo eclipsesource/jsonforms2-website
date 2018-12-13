@@ -1,65 +1,47 @@
 import React from 'react';
 import Typography from "@material-ui/core/Typography";
-import withStyles from "@material-ui/core/styles/withStyles";
-import commonStyles from "../../common/styles";
-import { Link } from 'react-router-dom';
-import Warning from "../../common/Warning";
+import {Link} from 'react-router-dom';
+import DocPage from "./DocPage";
 
-const styles = () => ({
-  display1: commonStyles.display1,
-  link: commonStyles.link,
-  list: {
-    ...commonStyles.list,
-    listStyleType: 'square'
-  },
-  container: {
-    backgroundColor: '#3D5AFE',
-    color: '#fff',
-    borderRadius: '0.25em',
-    padding: '0.25em',
-    marginTop: '1em'
-  }
-});
-
-const UiSchemaElements = ({ classes }) => (
-  <div>
-    <Typography
-      variant='display1'
-      className={classes.display1}
-    >
+const UiSchemaElements = () => (
+  <DocPage>
+    <Typography variant='h1'>
       UI Schema Elements
     </Typography>
-    <p>
+    <Typography variant='body1'>
       The UI schema, which is passed to JSON Forms,
       describes the general layout of a form and is just a regular JSON object.
       It describes the form by means of different UI schema elements, which can often categorized
       into either Controls or Layouts.
-    </p>
+    </Typography>
 
-    <Warning>
-      <p>
+    <div className='grey-box'>
+      <Typography variant='subtitle2' color='error'>
+        ATTENTION
+      </Typography>
+      <Typography variant='body1'>
         Please note that the UI schema hasn't been finalized yet!
         We'll try keep changes to a minimum and only do them if it's an substantial improvement to the framework.
-      </p>
-      <p>Thanks for your understanding!</p>
-    </Warning>
+      </Typography>
+      <Typography variant='body1'>Thanks for your understanding!</Typography>
+    </div>
 
-    <Typography variant='title' style={{ marginTop: '1em' }}>
+    <Typography variant='h2'>
       Available elements
     </Typography>
 
-    <ul className={classes.list}>
+    <ul className='bullet-list'>
       <li>
-        <Link to='/docs/uischema/controls' className={classes.link}>Controls</Link>
+        <Typography variant='body1'><Link to='/docs/uischema/controls' className='link'>Controls</Link></Typography>
       </li>
       <li>
-        <Link to='/docs/uischema/layouts' className={classes.link}>Layout</Link>
+        <Typography variant='body1'><Link to='/docs/uischema/layouts' className='link'>Layout</Link></Typography>
       </li>
       <li>
-        <Link to='/docs/uischema/rules' className={classes.link}>Rules</Link>
+        <Typography variant='body1'><Link to='/docs/uischema/rules' className='link'>Rules</Link></Typography>
       </li>
     </ul>
-  </div>
+  </DocPage>
 );
 
-export default withStyles(styles)(UiSchemaElements);
+export default UiSchemaElements;
