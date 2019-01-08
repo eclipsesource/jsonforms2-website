@@ -18,7 +18,7 @@ const Footer = ({classes}) => {
           Version {corePackageJson.version}
         </span>
         <span className='footer__version_and_copyright-copyright'>
-          © EclipseSource 2018
+          © EclipseSource 2019
         </span>
       </div>
       <div className='footer__links'>
