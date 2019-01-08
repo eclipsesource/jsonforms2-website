@@ -2,7 +2,6 @@ import React from 'react';
 import {categorization} from '@jsonforms/examples';
 import {JsonForms} from '@jsonforms/react';
 import {Provider} from 'react-redux';
-import Typography from "@material-ui/core/Typography";
 import Demo from "../../common/Demo";
 import {createJsonFormsStore} from "../../common/store";
 
