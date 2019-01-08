@@ -4,10 +4,10 @@
   "private": true,
   "homepage": "https://jsonforms.io",
   "dependencies": {
-    "@jsonforms/core": "2.0.12",
-    "@jsonforms/examples": "2.0.12",
-    "@jsonforms/material-renderers": "2.0.12",
-    "@jsonforms/react": "2.0.12",
+    "@jsonforms/core": "2.1.0",
+    "@jsonforms/examples": "2.1.0",
+    "@jsonforms/material-renderers": "2.1.0",
+    "@jsonforms/react": "2.1.0-rc.0",
     "@material-ui/core": "^3.5.1",
     "@material-ui/icons": "^3.0.1",
     "classnames": "^2.2.5",
@@ -43,8 +43,8 @@
     "gh-pages": "^1.2.0",
     "prepack": "^0.2.53",
     "raw-loader": "^0.5.1",
-    "react-scripts": "^2.1.1",
     "react-docgen": "^2.20.0",
+    "react-scripts": "^2.1.3",
     "text-loader": "0.0.1"
   },
   "browserslist": [
