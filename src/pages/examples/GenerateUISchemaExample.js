@@ -19,7 +19,7 @@ const GenerateUISchemaExample = () => {
   });
 
   return (
-    <div>
+    <div className='example'>
       <Typography variant='body1'>
         If you provide no UI schema to JSON Forms it'll generate one. The generated layout will be
         a <RadiumHashLink to={'/docs/uischema/layouts#vertical-layout'} className='link'>VerticalLayout</RadiumHashLink> containing

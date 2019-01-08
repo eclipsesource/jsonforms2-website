@@ -20,7 +20,7 @@ const GenerateSchemaExample = () => {
   });
 
   return (
-    <div>
+    <div className='example'>
       <Typography variant='body1'>
         This example demonstrates that JSON Forms is already able to render a form just by specifying
         the data to be rendered. Both, the JSON schema as well as the UI schema have been omitted in this example

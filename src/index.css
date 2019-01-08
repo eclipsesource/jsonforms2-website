@@ -157,6 +157,10 @@ p {
   box-sizing: border-box;
 }
 
+.example {
+  padding: 0.5em
+}
+
 .examples__main {
   flex: 80%;
 }

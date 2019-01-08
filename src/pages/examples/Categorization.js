@@ -21,20 +21,15 @@ const CategorizationExample = () => {
   });
 
   return (
-    <div>
-      <Typography variant={'h4'}>
-        Categorization Control
-      </Typography>
-      <Provider store={store}>
-        <Demo
-          schema={categorization.schema}
-          uischema={categorization.uischema}
-          js={() => (
-            <JsonForms />
-          )}
-        />
-      </Provider>
-    </div>
+    <Provider store={store}>
+      <Demo
+        schema={categorization.schema}
+        uischema={categorization.uischema}
+        js={() => (
+          <JsonForms />
+        )}
+      />
+    </Provider>
   );
 };
 

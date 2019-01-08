@@ -21,7 +21,7 @@ const CustomControlsExample = () => {
   store.dispatch(registerRenderer(ratingControlTester, RatingControl));
 
   return (
-    <div>
+    <div className='example'>
       <Typography variant='body1'>
         This example demonstrates that the default renderers of JSON Forms can be replaced with custom ones.
         We've replaced the default renderer for integers (which have a maximum value of 5 here) with one

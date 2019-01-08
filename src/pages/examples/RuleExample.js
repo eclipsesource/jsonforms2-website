@@ -16,7 +16,7 @@ const RuleExample = () => {
   });
 
   return (
-    <div>
+    <div className='example'>
       <Typography variant='body1'>
         This example uses a <RadiumHashLink to={'/docs/uischema/rules'} className='link'>Rule</RadiumHashLink> to
         display an additional selection control if the 'Is Alive' checkbox is unchecked.
