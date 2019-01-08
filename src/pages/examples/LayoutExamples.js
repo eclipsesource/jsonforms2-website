@@ -33,7 +33,7 @@ const complexStore = createJsonFormsStore({
 
 const Layouts = () => {
   return (
-    <div>
+    <div className='example'>
       <Typography variant='body1'>
         All layout examples use the same schema which is an <code>object</code> with
         two <code>properties</code>, <code>name</code> and <code>birthDate</code>.

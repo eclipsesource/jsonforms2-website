@@ -23,6 +23,7 @@ const Array = () => {
   });
 
   return (
+    <div className='example'>
       <Provider store={store}>
         <Demo
           schema={array.schema}
@@ -42,6 +43,7 @@ const Array = () => {
           )}
         />
       </Provider>
+    </div>
   );
 };
 

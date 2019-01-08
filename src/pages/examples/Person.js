@@ -14,7 +14,7 @@ const Person = () => {
   });
 
   return (
-    <div>
+    <div className='example'>
       <Provider store={store}>
         <Demo
           js={() => <JsonForms/>}
