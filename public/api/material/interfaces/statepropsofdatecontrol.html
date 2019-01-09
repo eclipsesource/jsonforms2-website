@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>StatePropsOfDateControl | JSON Forms Material Renderers</title>
+	<title>StatePropsOfDateControl | JSON Forms React Material Renderers</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">JSON Forms Material Renderers</a>
+					<a href="../index.html" class="title">JSON Forms React Material Renderers</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -344,7 +344,7 @@
 					<a name="finduischema" class="tsd-anchor"></a>
 					<h3>findUISchema</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">findUISchema<span class="tsd-signature-symbol">(</span>schema<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">JsonSchema</span>, schemaPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, fallbackLayoutType<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">UISchemaElement</span></li>
+						<li class="tsd-signature tsd-kind-icon">findUISchema<span class="tsd-signature-symbol">(</span>schema<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">JsonSchema</span>, schemaPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, fallbackLayoutType<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, control<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ControlElement</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">UISchemaElement</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -382,6 +382,12 @@
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> fallbackLayoutType: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the type of the layout to use</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> control: <span class="tsd-signature-type">ControlElement</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>may be checked for embedded inline uischema options</p>
 									</div>
 								</li>
 							</ul>

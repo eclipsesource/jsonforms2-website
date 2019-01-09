@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>DateControlRenderer | JSON Forms Angular Material</title>
+	<title>DateControlRenderer | JSON Forms Angular Material Renderers</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">JSON Forms Angular Material</a>
+					<a href="../index.html" class="title">JSON Forms Angular Material Renderers</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -96,10 +96,11 @@
 								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="datecontrolrenderer.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-inherited">
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="datecontrolrenderer.html#data" class="tsd-kind-icon">data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="datecontrolrenderer.html#dateadapter" class="tsd-kind-icon">date<wbr>Adapter</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="datecontrolrenderer.html#disabled" class="tsd-kind-icon">disabled</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="datecontrolrenderer.html#enabled" class="tsd-kind-icon">enabled</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="datecontrolrenderer.html#error" class="tsd-kind-icon">error</a></li>
@@ -122,11 +123,12 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="datecontrolrenderer.html#geteventvalue" class="tsd-kind-icon">get<wbr>Event<wbr>Value</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-protected"><a href="datecontrolrenderer.html#getownprops" class="tsd-kind-icon">get<wbr>Own<wbr>Props</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="datecontrolrenderer.html#mapadditionalprops" class="tsd-kind-icon">map<wbr>Additional<wbr>Props</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="datecontrolrenderer.html#mapadditionalprops" class="tsd-kind-icon">map<wbr>Additional<wbr>Props</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="datecontrolrenderer.html#maptoprops" class="tsd-kind-icon">map<wbr>ToProps</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="datecontrolrenderer.html#ngondestroy" class="tsd-kind-icon">ng<wbr>OnDestroy</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="datecontrolrenderer.html#ngoninit" class="tsd-kind-icon">ng<wbr>OnInit</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="datecontrolrenderer.html#onchange" class="tsd-kind-icon">on<wbr>Change</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="datecontrolrenderer.html#triggervalidation" class="tsd-kind-icon">trigger<wbr>Validation</a></li>
 							</ul>
 						</section>
 					</div>
@@ -138,14 +140,14 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Date<wbr>Control<wbr>Renderer<span class="tsd-signature-symbol">(</span>ngRedux<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NgRedux</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">JsonFormsState</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="datecontrolrenderer.html" class="tsd-signature-type">DateControlRenderer</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Date<wbr>Control<wbr>Renderer<span class="tsd-signature-symbol">(</span>ngRedux<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">NgRedux</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">JsonFormsState</span><span class="tsd-signature-symbol">&gt;</span>, dateAdapter<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DateAdapter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">NativeDateAdapter</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="datecontrolrenderer.html" class="tsd-signature-type">DateControlRenderer</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides JsonFormsControl.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/eclipsesource/jsonforms/blob/fcf48234/packages/angular-material/src/controls/date.renderer.ts#L27">controls/date.renderer.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/eclipsesource/jsonforms/blob/87844c77/packages/angular-material/src/controls/date.renderer.ts#L27">controls/date.renderer.ts:27</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -153,13 +155,16 @@
 								<li>
 									<h5>ngRedux: <span class="tsd-signature-type">NgRedux</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">JsonFormsState</span><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
+								<li>
+									<h5>dateAdapter: <span class="tsd-signature-type">DateAdapter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">NativeDateAdapter</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="datecontrolrenderer.html" class="tsd-signature-type">DateControlRenderer</a></h4>
 						</li>
 					</ul>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="data" class="tsd-anchor"></a>
@@ -169,6 +174,16 @@
 						<p>Inherited from JsonFormsControl.data</p>
 						<ul>
 							<li>Defined in /home/edgar/git/jsonforms/packages/angular-material/node_modules/@jsonforms/angular/lib/control.d.ts:14</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="dateadapter" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> date<wbr>Adapter</h3>
+					<div class="tsd-signature tsd-kind-icon">date<wbr>Adapter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">DateAdapter</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">NativeDateAdapter</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/eclipsesource/jsonforms/blob/87844c77/packages/angular-material/src/controls/date.renderer.ts#L31">controls/date.renderer.ts:31</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -351,7 +366,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides JsonFormsControl.getEventValue</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/eclipsesource/jsonforms/blob/fcf48234/packages/angular-material/src/controls/date.renderer.ts#L32">controls/date.renderer.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/eclipsesource/jsonforms/blob/87844c77/packages/angular-material/src/controls/date.renderer.ts#L41">controls/date.renderer.ts:41</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -383,26 +398,20 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 					<a name="mapadditionalprops" class="tsd-anchor"></a>
 					<h3>map<wbr>Additional<wbr>Props</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">map<wbr>Additional<wbr>Props<span class="tsd-signature-symbol">(</span>props<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ControlProps</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">map<wbr>Additional<wbr>Props<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from JsonFormsControl.mapAdditionalProps</p>
+								<p>Overrides JsonFormsControl.mapAdditionalProps</p>
 								<ul>
-									<li>Defined in /home/edgar/git/jsonforms/packages/angular-material/node_modules/@jsonforms/angular/lib/control.d.ts:25</li>
+									<li>Defined in <a href="https://github.com/eclipsesource/jsonforms/blob/87844c77/packages/angular-material/src/controls/date.renderer.ts#L36">controls/date.renderer.ts:36</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>props: <span class="tsd-signature-type">ControlProps</span></h5>
-								</li>
-							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -491,6 +500,24 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="triggervalidation" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> trigger<wbr>Validation</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">trigger<wbr>Validation<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from JsonFormsControl.triggerValidation</p>
+								<ul>
+									<li>Defined in /home/edgar/git/jsonforms/packages/angular-material/node_modules/@jsonforms/angular/lib/control.d.ts:29</li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -503,6 +530,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="autocompletecontrolrenderer.html" class="tsd-kind-icon">Autocomplete<wbr>Control<wbr>Renderer</a>
+					</li>
 					<li class=" tsd-kind-class">
 						<a href="booleancontrolrenderer.html" class="tsd-kind-icon">Boolean<wbr>Control<wbr>Renderer</a>
 					</li>
@@ -519,6 +549,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="datecontrolrenderer.html#data" class="tsd-kind-icon">data</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="datecontrolrenderer.html#dateadapter" class="tsd-kind-icon">date<wbr>Adapter</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="datecontrolrenderer.html#disabled" class="tsd-kind-icon">disabled</a>
@@ -571,7 +604,7 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited tsd-is-protected">
 								<a href="datecontrolrenderer.html#getownprops" class="tsd-kind-icon">get<wbr>Own<wbr>Props</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="datecontrolrenderer.html#mapadditionalprops" class="tsd-kind-icon">map<wbr>Additional<wbr>Props</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
@@ -585,6 +618,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="datecontrolrenderer.html#onchange" class="tsd-kind-icon">on<wbr>Change</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="datecontrolrenderer.html#triggervalidation" class="tsd-kind-icon">trigger<wbr>Validation</a>
 							</li>
 						</ul>
 					</li>
@@ -609,9 +645,6 @@
 						<a href="layoutrenderer.html" class="tsd-kind-icon">Layout<wbr>Renderer</a>
 					</li>
 					<li class=" tsd-kind-class">
-						<a href="masterdetailservice.html" class="tsd-kind-icon">Master<wbr>Detail<wbr>Service</a>
-					</li>
-					<li class=" tsd-kind-class">
 						<a href="masterlistcomponent.html" class="tsd-kind-icon">Master<wbr>List<wbr>Component</a>
 					</li>
 					<li class=" tsd-kind-class">
@@ -634,6 +667,9 @@
 					</li>
 					<li class=" tsd-kind-class">
 						<a href="verticallayoutrenderer.html" class="tsd-kind-icon">Vertical<wbr>Layout<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-is-not-exported">
+						<a href="../interfaces/ownpropsofautocomplete.html" class="tsd-kind-icon">Own<wbr>Props<wbr>OfAuto<wbr>Complete</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="../globals.html#datecontrolrenderertester" class="tsd-kind-icon">Date<wbr>Control<wbr>Renderer<wbr>Tester</a>
@@ -667,6 +703,12 @@
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="../globals.html#categorizationtester" class="tsd-kind-icon">categorization<wbr>Tester</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-is-not-exported">
+						<a href="../globals.html#emptyl10nconfig" class="tsd-kind-icon">empty<wbr>L10NConfig</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#enumcontroltester" class="tsd-kind-icon">enum<wbr>Control<wbr>Tester</a>
 					</li>
 					<li class=" tsd-kind-variable">
 						<a href="../globals.html#grouplayouttester" class="tsd-kind-icon">group<wbr>Layout<wbr>Tester</a>

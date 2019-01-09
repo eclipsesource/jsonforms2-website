@@ -325,14 +325,14 @@
 					<a name="finduischema" class="tsd-anchor"></a>
 					<h3>findUISchema</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">findUISchema<span class="tsd-signature-symbol">(</span>schema<span class="tsd-signature-symbol">: </span><a href="../globals.html#jsonschema" class="tsd-signature-type">JsonSchema</a>, schemaPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, fallbackLayoutType<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="uischemaelement.html" class="tsd-signature-type">UISchemaElement</a></li>
+						<li class="tsd-signature tsd-kind-icon">findUISchema<span class="tsd-signature-symbol">(</span>schema<span class="tsd-signature-symbol">: </span><a href="../globals.html#jsonschema" class="tsd-signature-type">JsonSchema</a>, schemaPath<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, fallbackLayoutType<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, control<span class="tsd-signature-symbol">?: </span><a href="controlelement.html" class="tsd-signature-type">ControlElement</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="uischemaelement.html" class="tsd-signature-type">UISchemaElement</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="statepropsofscopedrenderer.html">StatePropsOfScopedRenderer</a>.<a href="statepropsofscopedrenderer.html#finduischema">findUISchema</a></p>
 								<ul>
-									<li>Defined in util/renderer.ts:226</li>
+									<li>Defined in util/renderer.ts:227</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -364,6 +364,12 @@
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> fallbackLayoutType: <span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the type of the layout to use</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> control: <a href="controlelement.html" class="tsd-signature-type">ControlElement</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>may be checked for embedded inline uischema options</p>
 									</div>
 								</li>
 							</ul>
