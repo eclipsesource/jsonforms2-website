@@ -22,12 +22,17 @@ const Footer = ({classes}) => {
         </span>
       </div>
       <div className='footer__links'>
+
+        <a href="https://github.com/eclipsesource/jsonforms" className={linkClasses}>
+          Github
+        </a>
+
         <a href="https://twitter.com/JSONForms" className={linkClasses}>
           Twitter
         </a>
 
-        <a href="https://github.com/eclipsesource/jsonforms" className={linkClasses}>
-          Github
+        <a href="https://eclipsesource.com/blogs/tag/jsonforms/" className={linkClasses}>
+          Blog
         </a>
 
         <Link to="/imprint" className={linkClasses}>
