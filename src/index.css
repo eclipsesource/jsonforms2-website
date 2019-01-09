@@ -258,6 +258,17 @@ label {
   display: none;
 }
 
+.renderer-sets__table__supported {
+  background-color: #7da01f;
+  opacity: 0.5;
+}
+
+.renderer-sets__table__not-supported {
+  /*background-color: red;*/
+  opacity: 0.5;
+}
+
+
 @media only screen and (max-width: 600px) {
   .docs__main {
   }
