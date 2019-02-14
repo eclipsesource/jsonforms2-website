@@ -26,7 +26,7 @@ const Tutorial = () => (
       Tutorial
     </Typography>
     <Typography variant='body1'>
-      This section describes you to integrate JSON Forms into a React app from scratch.
+      This section describes how to integrate JSON Forms into a React app from scratch.
       Alternatively you can also clone
       the <a href="https://github.com/eclipsesource/jsonforms-react-seed" className='link'>seed app</a>.
     </Typography>
