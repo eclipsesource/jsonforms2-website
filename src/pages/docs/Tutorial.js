@@ -72,7 +72,11 @@ const Tutorial = () => (
               <code className="language-bash">
                 {installation}
               </code>
-            </pre>
+        </pre>
+        <Typography variant="body1">
+          Since 2.2.x JSON Forms does not include React, redux and react-redux as dependencies, but rather has them
+          configured as peer depenencies.
+        </Typography>
       </li>
 
       <li>
