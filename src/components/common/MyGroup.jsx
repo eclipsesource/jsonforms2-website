@@ -22,18 +22,18 @@
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
 */
-import { mapStateToLayoutProps, rankWith, uiTypeIs } from "@jsonforms/core";
-import { MaterialLayoutRenderer } from "@jsonforms/material-renderers";
+import { mapStateToLayoutProps, rankWith, uiTypeIs } from '@jsonforms/core';
+import { MaterialLayoutRenderer } from '@jsonforms/material-renderers';
 import {
   ExpansionPanel,
   ExpansionPanelDetails,
   ExpansionPanelSummary,
   Hidden,
   Typography
-} from "@material-ui/core";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import React from "react";
-import { connect } from "react-redux";
+} from '@material-ui/core';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import React from 'react';
+import { connect } from 'react-redux';
 
 const MyGroupRenderer = props => {
   const { uischema, schema, path, visible, renderers } = props;
@@ -42,7 +42,7 @@ const MyGroupRenderer = props => {
     elements: uischema.elements,
     schema: schema,
     path: path,
-    direction: "column",
+    direction: 'column',
     visible: visible,
     uischema: uischema,
     renderers: renderers
@@ -63,4 +63,4 @@ const MyGroupRenderer = props => {
 
 export default connect(mapStateToLayoutProps)(MyGroupRenderer);
 
-export const myGroupTester = rankWith(Number.MAX_VALUE, uiTypeIs("Group"));
+export const myGroupTester = rankWith(1000, uiTypeIs('Group'));
