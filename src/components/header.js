@@ -41,7 +41,7 @@ const Header = ({ classes }) => (
       </Link>
       &nbsp;
       <Link to="/" className={styles.logo__title}>
-        <Typography variant="title" color="inherit">
+        <Typography variant="body1" color="inherit">
           JSONForms
         </Typography>
       </Link>
