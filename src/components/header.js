@@ -37,12 +37,12 @@ const Header = ({ classes }) => (
   <AppBar className={classes.appBar} position="relative">
     <Toolbar style={{ padding: 0 }}>
       <Link to="/" className={styles.logo__icon}>
-        <Logo width={45} height={30} color="#fff" alt="JSONForms Logo" />
+        <Logo width={45} height={30} color="#fff" alt="JSON Forms Logo" />
       </Link>
       &nbsp;
       <Link to="/" className={styles.logo__title}>
-        <Typography variant="title" color="inherit">
-          JSONForms
+        <Typography variant="body1" color="inherit">
+          JSON Forms
         </Typography>
       </Link>
       <Link to="/examples" className={globalStyles.nav__link}>
@@ -50,6 +50,9 @@ const Header = ({ classes }) => (
       </Link>
       <Link to="/docs" className={globalStyles.nav__link}>
         Docs
+      </Link>
+      <Link to="/faq" className={globalStyles.nav__link}>
+        FAQ
       </Link>
       <Link
         to="/support"

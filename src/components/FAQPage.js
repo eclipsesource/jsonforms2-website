@@ -4,9 +4,9 @@ import Button from "@material-ui/core/Button";
 import SidebarLayout from "./common/sidebar/SidebarLayout";
 import styles from "../styles/global.module.css";
 
-const ExamplesPage = ({ children, pathname }) => {
+const FAQPage = ({ children, pathname }) => {
   const [menus, setMenus] = useState([]);
-  const doczMenus = useMenus({ filter: m => m.route.startsWith('/examples/') });
+  const doczMenus = useMenus({ filter: m => m.route.startsWith('/faq/') });
   useEffect(() => setMenus(doczMenus), []);
   return (
     <SidebarLayout menus={menus} pathname={pathname}>
@@ -14,7 +14,7 @@ const ExamplesPage = ({ children, pathname }) => {
       <Button
         variant="outlined"
         component={Link}
-        to="/examples"
+        to="/faq"
         className={styles.toc_button}
       >
         Back to Overview
@@ -23,4 +23,4 @@ const ExamplesPage = ({ children, pathname }) => {
   );
 }
 
-export default ExamplesPage;
+export default FAQPage;
