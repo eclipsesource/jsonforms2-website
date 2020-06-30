@@ -1,18 +1,18 @@
 import React from 'react';
-import TableCell from "@material-ui/core/TableCell/TableCell";
-import TableHead from "@material-ui/core/TableHead/TableHead";
-import Table from "@material-ui/core/Table/Table";
-import TableBody from "@material-ui/core/TableBody/TableBody";
-import TableRow from "@material-ui/core/TableRow/TableRow";
-import styles from '../../../styles/global.module.css'
+import TableCell from '@material-ui/core/TableCell/TableCell';
+import TableHead from '@material-ui/core/TableHead/TableHead';
+import Table from '@material-ui/core/Table/Table';
+import TableBody from '@material-ui/core/TableBody/TableBody';
+import TableRow from '@material-ui/core/TableRow/TableRow';
+import styles from '../../../styles/global.module.css';
 
 const Supported = () => (
   <TableCell className={styles.renderer_sets__table__supported} />
-)
+);
 
 const NotSupported = () => (
   <TableCell className={styles.renderer_sets__table__not_supported} />
-)
+);
 
 export const RendererSetSchemaFeatureTable = () => (
   <div className={styles.renderer_sets__features_table}>
@@ -24,8 +24,8 @@ export const RendererSetSchemaFeatureTable = () => (
           <TableCell>Renderer</TableCell>
           <TableCell>React Material</TableCell>
           <TableCell>Angular Material</TableCell>
-          <TableCell>Ionic</TableCell>
           <TableCell>React Vanilla</TableCell>
+          <TableCell>Angular Ionic*</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
@@ -42,24 +42,24 @@ export const RendererSetSchemaFeatureTable = () => (
           <TableCell>Toggle</TableCell>
           <NotSupported />
           <Supported />
-          <Supported />
           <NotSupported />
+          <Supported />
         </TableRow>
         <TableRow>
           <TableCell>integer</TableCell>
           <TableCell>Number</TableCell>
           <Supported />
           <NotSupported />
-          <NotSupported />
           <Supported />
+          <NotSupported />
         </TableRow>
         <TableRow>
           <TableCell />
           <TableCell>Text</TableCell>
           <NotSupported />
           <Supported />
-          <Supported />
           <NotSupported />
+          <Supported />
         </TableRow>
         <TableRow>
           <TableCell>String</TableCell>
@@ -90,8 +90,8 @@ export const RendererSetSchemaFeatureTable = () => (
           <TableCell>Autocomplete</TableCell>
           <NotSupported />
           <Supported />
-          <NotSupported />
           <Supported />
+          <NotSupported />
         </TableRow>
         <TableRow>
           <TableCell>Date format</TableCell>
@@ -106,48 +106,48 @@ export const RendererSetSchemaFeatureTable = () => (
           <TableCell>Time field</TableCell>
           <Supported />
           <NotSupported />
-          <NotSupported />
           <Supported />
+          <NotSupported />
         </TableRow>
         <TableRow>
           <TableCell>Datetime format</TableCell>
           <TableCell>Datetime field</TableCell>
           <Supported />
           <NotSupported />
-          <NotSupported />
           <Supported />
+          <NotSupported />
         </TableRow>
         <TableRow>
           <TableCell>Object</TableCell>
           <TableCell>Vertical grid</TableCell>
           <Supported />
           <Supported />
-          <Supported />
           <NotSupported />
+          <Supported />
         </TableRow>
         <TableRow>
           <TableCell>Array of primitives</TableCell>
           <TableCell>List</TableCell>
           <Supported />
           <NotSupported />
-          <NotSupported />
           <Supported />
+          <NotSupported />
         </TableRow>
         <TableRow>
           <TableCell>Array of objects</TableCell>
           <TableCell>Table</TableCell>
           <Supported />
           <NotSupported />
-          <NotSupported />
           <Supported />
+          <NotSupported />
         </TableRow>
         <TableRow>
           <TableCell />
           <TableCell>List with Detail</TableCell>
           <Supported />
           <Supported />
-          <Supported />
           <NotSupported />
+          <Supported />
         </TableRow>
         <TableRow>
           <TableCell>oneOf</TableCell>
@@ -175,6 +175,7 @@ export const RendererSetSchemaFeatureTable = () => (
         </TableRow>
       </TableBody>
     </Table>
+    <i>* Angular Ionic was supported until JSON Forms v.2.3.2</i>
   </div>
 );
 
@@ -188,8 +189,8 @@ export const RendererSetUISchemaFeatureTable = () => (
           <TableCell>Renderer</TableCell>
           <TableCell>React Material</TableCell>
           <TableCell>Angular Material</TableCell>
-          <TableCell>Ionic</TableCell>
           <TableCell>React Vanilla</TableCell>
+          <TableCell>Angular Ionic*</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
@@ -235,5 +236,6 @@ export const RendererSetUISchemaFeatureTable = () => (
         </TableRow>
       </TableBody>
     </Table>
+    <i>* Angular Ionic was supported until JSON Forms v.2.3.2</i>
   </div>
 );
