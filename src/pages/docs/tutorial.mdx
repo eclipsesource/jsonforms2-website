@@ -20,18 +20,19 @@ Alternatively you can also clone the [seed app](https://github.com/eclipsesource
    npx create-react-app my-jsonforms-app
    ```
 
-  If you want to use typescript within your project, use the following command instead:
-  ```bash
-  npx create-react-app my-jsonforms-app --typescript
-  ```
+If you want to use typescript within your project, use the following command instead:
 
-   Scaffolding may take a couple of moments. Once it's finished, switch to your newly created app and
-   install all dependencies:
+```bash
+npx create-react-app my-jsonforms-app --typescript
+```
 
-   ```bash
-   cd my-jsonforms-app
-   npm install
-   ```
+Scaffolding may take a couple of moments. Once it's finished, switch to your newly created app and
+install all dependencies:
+
+```bash
+cd my-jsonforms-app
+npm install
+```
 
 2. Install JSON Forms and the material renderer set. We'll use an example from JSON Forms in order to obtain
    a JSON schema, a corresponding UI schema and a data instance to be rendered. You don't need to install
@@ -58,7 +59,7 @@ Alternatively you can also clone the [seed app](https://github.com/eclipsesource
    import { person } from '@jsonforms/examples';
    import {
      materialRenderers,
-     materialCells
+     materialCells,
    } from '@jsonforms/material-renderers';
    ```
 
