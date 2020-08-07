@@ -1,20 +1,20 @@
 import React from 'react';
-import { control } from '@jsonforms/examples';
+import { controlOptions } from '@jsonforms/examples';
 import { JsonFormsDispatch, JsonFormsReduxContext } from '@jsonforms/react';
 import { Provider } from 'react-redux';
 import { createJsonFormsStore } from '../../common/store';
 import Demo from '../common/Demo';
 
 const controlStore = createJsonFormsStore({
-  data: control.data,
-  schema: control.schema,
-  uischema: control.uischema
+  data: controlOptions.data,
+  schema: controlOptions.schema,
+  uischema: controlOptions.uischema
 });
 
 const extendedControlStore = createJsonFormsStore({
-  data: control.extendedData,
-  schema: control.extendedSchema,
-  uischema: control.extendedUischema
+  data: controlOptions.extendedData,
+  schema: controlOptions.extendedSchema,
+  uischema: controlOptions.extendedUischema
 });
 
 export const Control = () => (
@@ -22,8 +22,8 @@ export const Control = () => (
     <JsonFormsReduxContext>
       <Demo
         js={() => <JsonFormsDispatch />}
-        schema={control.schema}
-        uischema={control.uischema}
+        schema={controlOptions.schema}
+        uischema={controlOptions.uischema}
       />
     </JsonFormsReduxContext>
   </Provider>
@@ -34,8 +34,8 @@ export const ExtendedControl = () => (
     <JsonFormsReduxContext>
       <Demo
         js={() => <JsonFormsDispatch />}
-        schema={control.extendedSchema}
-        uischema={control.extendedUischema}
+        schema={controlOptions.extendedSchema}
+        uischema={controlOptions.extendedUischema}
       />
     </JsonFormsReduxContext>
   </Provider>
