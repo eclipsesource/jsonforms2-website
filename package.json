@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "docz dev",
-    "build": "docz build && cpx _redirects .docz/dist"
+    "build": "docz build && cpx _redirects .docz/dist",
+    "build-next": "./get_next_version.sh"
   },
   "dependencies": {
     "@emotion/core": "^10.0.10",
