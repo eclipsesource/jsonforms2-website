@@ -15,6 +15,8 @@ import reactLogo from '../images/react-logo.svg';
 import reduxLogo from '../images/reduxLogo.svg';
 import schema from './schema.json';
 import uischema from './uischema.json';
+import tweets from '../pages/news/tweets.json';
+import { NewsSection } from './NewsSection';
 
 import { Demo, Logo } from '../components/common'
 import { createJsonFormsStore } from "../common/store"
@@ -143,6 +145,21 @@ const Home = ({ classes }) => {
             />
           </JsonFormsReduxContext>
         </Provider>
+      </div>
+
+      <div className={styles.landing_page__news}>
+        <Typography variant='h2' align='center' style={{ color: 'white' }}>News</Typography>
+        <div class={styles.news_section}>
+          <NewsSection tweets={tweets} amount="3" />
+        </div>
+        <Link
+          to='/news'
+          className={globalStyles.link}
+        >
+          <Button variant="contained">
+            view more
+          </Button>
+        </Link>
       </div>
     </React.Fragment >
   );
