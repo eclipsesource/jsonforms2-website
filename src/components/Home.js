@@ -78,7 +78,7 @@ const Home = ({ classes }) => {
               <div className={styles.feature}>
                 <Typography>
                   Version: {corePackageJson.version}
-                  {nextVersionText && <><br/>nextVersionText</>}
+                  {nextVersionText && <><br/>{nextVersionText}</>}
                 </Typography>
               </div>
               <div className={styles.feature}>
