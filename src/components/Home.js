@@ -52,7 +52,7 @@ const store = createJsonFormsStore({
 });
 
 const nextVersion = process.env.DOCZ_NEXTVERSION;
-const nextVersionText = ((nextVersion !== undefined) ? `Next Version: ${nextVersion}` : '');
+const nextVersionText = nextVersion && nextVersion !== corePackageJson.version ? `@next: ${nextVersion}` : '';
 
 const Home = ({ classes }) => {
   return (
@@ -77,8 +77,8 @@ const Home = ({ classes }) => {
               </div>
               <div className={styles.feature}>
                 <Typography>
-                  Stable Version: {corePackageJson.version}<br/>
-                  {nextVersionText}
+                  Version: {corePackageJson.version}
+                  {nextVersionText && <><br/>nextVersionText</>}
                 </Typography>
               </div>
               <div className={styles.feature}>
