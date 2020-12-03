@@ -5,5 +5,3 @@ NEXTVERSION=$(curl --silent "https://api.github.com/repos/eclipsesource/jsonform
 if [[ ${NEXTVERSION:0:1} == "v" ]] ; then NEXTVERSION="${NEXTVERSION:1}"; fi
 
 DOCZ_NEXTVERSION=$NEXTVERSION npm run build:docz
-
-exit 0
