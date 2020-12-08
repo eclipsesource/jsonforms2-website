@@ -67,6 +67,44 @@ hr {
   margin: auto;
 }
 
+.landing_page__architecture {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2em;
+  background: #f5f5f5;
+}
+
+.architecture_description {
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.architecture_default {
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+
+.architecture_custom {
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+  max-height: 280px;
+}
+
+.shift_left {
+  padding-left: 240px;
+}
+
+code {
+  background: #eee;
+  border-radius: 5px;
+  padding: 1px 3px;
+  font-family: inherit;
+}
+
 .schemaLogo {
   margin-right: 15px;
   width: auto;
@@ -79,7 +117,7 @@ hr {
   color: #ffffff;
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 960px) {
   .feature {
     display: flex;
     flex-direction: column;
@@ -99,6 +137,9 @@ hr {
   }
   .schemaLogo {
     filter: invert(1);
+  }
+  .shift_left { 
+    padding-left: initial;
   }
   .icon {
     color: #000000;
