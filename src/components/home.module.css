@@ -67,15 +67,15 @@ hr {
   margin: auto;
 }
 
-.schema_logo_white {
-  background: url("./schemalogo.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: inline-block;
+.schemaLogo {
+  margin-right: 15px;
+  width: auto;
+  height: 4em;
 }
 
 .icon {
+  width: auto;
+  height: 4em;
   color: #ffffff;
 }
 
@@ -97,13 +97,8 @@ hr {
     flex-direction: column;
     align-items: center;
   }
-  .schema_logo_white {
-  }
-  .schema_logo_black {
-    display: inline-block;
-    padding: 18px;
-    background: url("./schemalogo-black.svg");
-    background-size: 108px;
+  .schemaLogo {
+    filter: invert(1);
   }
   .icon {
     color: #000000;

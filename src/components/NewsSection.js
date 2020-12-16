@@ -9,7 +9,6 @@ import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles({
   card: {
-    width: 700,
     marginBottom: 20,
     background: '#f5f5f5',
   },

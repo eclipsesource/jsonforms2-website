@@ -16,6 +16,7 @@ import reduxLogo from '../images/reduxLogo.svg';
 import schema from './schema.json';
 import uischema from './uischema.json';
 import tweets from '../pages/news/tweets.json';
+import schemaLogo from './schemalogo.svg';
 import { NewsSection } from './NewsSection';
 
 import { Demo, Logo } from '../components/common'
@@ -31,15 +32,6 @@ const additionalStyles = () => ({
     marginTop: '0.5em',
     paddingBottom: '0.5em',
     fontSize: '2em',
-  },
-  icon: {
-    width: 'auto',
-    height: '4em'
-  },
-  schemaLogo: {
-    marginRight: '15px',
-    height: '6em',
-    width: '6em',
   },
   gettingStartedButton: {
     margin: '1em'
@@ -99,14 +91,14 @@ const Home = ({ classes }) => {
 
       <div className={styles.landing_page__features}>
         <div className={styles.feature}>
-          <div alt='JSON Schema Logo' className={[classes.schemaLogo, styles.schema_logo_black, styles.schema_logo_white].join(' ')} />
+          <img src={schemaLogo} className={styles.schemaLogo} />
           <p className={styles.landing_page__detail}>
             Declare your forms as JSON based on a JSON Schema
           </p>
         </div>
 
         <div className={styles.feature}>
-          <FeaturesIcon className={[classes.icon, styles.icon].join(' ')} />
+          <FeaturesIcon className={styles.icon} />
           <p className={styles.landing_page__detail}>
             Fully-featured forms including data-binding, input validation, and rule-based visibility
             out-of-the-box
@@ -114,7 +106,7 @@ const Home = ({ classes }) => {
         </div>
 
         <div className={styles.feature}>
-          <CustomizeIcon className={[classes.icon, styles.icon].join(' ')} />
+          <CustomizeIcon className={styles.icon} />
           <p className={styles.landing_page__detail}>
             Designed for customizability from custom styling to custom widgets
           </p>
