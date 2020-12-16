@@ -47,7 +47,7 @@ const additionalStyles = () => ({
 });
 
 const store = createJsonFormsStore({
-  data: { firstName: 'Max Power' },
+  data: { firstName: 'Max', lastName: 'Power' },
   schema,
   uischema
 });
