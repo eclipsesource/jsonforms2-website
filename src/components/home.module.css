@@ -6,6 +6,9 @@
   flex-basis: 33%;
   flex-grow: 0;
 }
+hr {
+  background: #dbdbdb;
+}
 
 .landing_page__features {
   display: flex;
@@ -46,14 +49,15 @@
   justify-content: center;
   flex-basis: 33%;
   flex-grow: 0;
+  padding-bottom: 2em;
 }
 .landing_page__news {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 2em;
-  background: #333333;
+  padding: 4em;
+  background: #fff;
 }
 .landing_page__news h2 {
   margin-bottom: 20px;

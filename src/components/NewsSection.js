@@ -2,7 +2,10 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import Grid from "@material-ui/core/Grid";
 import Typography from '@material-ui/core/Typography';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles({
   card: {
@@ -16,13 +19,19 @@ const useStyles = makeStyles({
       paddingBottom: 10
     }
   },
-  date: {
-    fontSize: 14,
+  footer: {
     marginTop: 20
+  },
+  date: {
+    fontSize: 14
   },
   pos: {
     marginBottom: 12,
   },
+  twitterIcon: {
+    color: '#1DA1F2',
+    fontSize: 20
+  }
 });
 
 const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
@@ -60,13 +69,24 @@ export const NewsSection = ({ tweets, amount }) => {
       text = `${text}<br/><a href="${tweet.link}" target="_blank">${tweet.link}</a>`;
     }
 
+    const linkToTweet = `https://twitter.com/JSONForms/status/${key}`;
+
     return (
       <Card className={classes.card} key={index}>
         <CardContent className={classes.cardContent}>
           <div dangerouslySetInnerHTML={{ __html: text }} />
-          <Typography className={classes.date} color="textSecondary" align="right">
-            {formattedTime(tweet.date)}
-          </Typography>
+          <Grid container className={classes.footer}>
+            <Grid item sm={6}>
+              <Link href={linkToTweet} target="_blank" rel="noopener">
+                <TwitterIcon className={classes.twitterIcon}/>
+              </Link>
+            </Grid>
+            <Grid item sm={6}>
+            <Typography className={classes.date} color="textSecondary" align="right">
+              {formattedTime(tweet.date)}
+            </Typography>
+            </Grid>
+          </Grid>
         </CardContent>
       </Card>
     )

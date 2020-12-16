@@ -147,17 +147,18 @@ const Home = ({ classes }) => {
         </Provider>
       </div>
 
+      <hr/>
+
       <div className={styles.landing_page__news}>
-        <Typography variant='h2' align='center' style={{ color: 'white' }}>News</Typography>
         <div class={styles.news_section}>
-          <NewsSection tweets={tweets} amount="3" />
+          <NewsSection tweets={tweets} amount="1" />
         </div>
         <Link
           to='/news'
           className={globalStyles.link}
         >
           <Button variant="contained">
-            view more
+            more news
           </Button>
         </Link>
       </div>
