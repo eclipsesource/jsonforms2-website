@@ -34,13 +34,12 @@ const additionalStyles = () => ({
   },
   icon: {
     width: 'auto',
-    height: '6em',
-    padding: 9,
+    height: '4em'
   },
   schemaLogo: {
-    padding: '18px',
-    height: '108px',
-    width: '108px',
+    marginRight: '15px',
+    height: '6em',
+    width: '6em',
   },
   gettingStartedButton: {
     margin: '1em'
