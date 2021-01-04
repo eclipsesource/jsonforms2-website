@@ -25,14 +25,12 @@ export const RendererSetSchemaFeatureTable = () => (
           <TableCell>React Material</TableCell>
           <TableCell>Angular Material</TableCell>
           <TableCell>React Vanilla</TableCell>
-          <TableCell>Angular Ionic*</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
         <TableRow>
           <TableCell>boolean</TableCell>
           <TableCell>Checkbox</TableCell>
-          <Supported />
           <Supported />
           <Supported />
           <Supported />
@@ -43,7 +41,6 @@ export const RendererSetSchemaFeatureTable = () => (
           <NotSupported />
           <Supported />
           <NotSupported />
-          <Supported />
         </TableRow>
         <TableRow>
           <TableCell>integer</TableCell>
@@ -51,7 +48,6 @@ export const RendererSetSchemaFeatureTable = () => (
           <Supported />
           <NotSupported />
           <Supported />
-          <NotSupported />
         </TableRow>
         <TableRow>
           <TableCell />
@@ -59,12 +55,10 @@ export const RendererSetSchemaFeatureTable = () => (
           <NotSupported />
           <Supported />
           <NotSupported />
-          <Supported />
         </TableRow>
         <TableRow>
           <TableCell>String</TableCell>
           <TableCell>Text</TableCell>
-          <Supported />
           <Supported />
           <Supported />
           <Supported />
@@ -75,14 +69,12 @@ export const RendererSetSchemaFeatureTable = () => (
           <Supported />
           <Supported />
           <Supported />
-          <Supported />
         </TableRow>
         <TableRow>
           <TableCell>Enum</TableCell>
           <TableCell>Combo</TableCell>
           <Supported />
           <NotSupported />
-          <Supported />
           <Supported />
         </TableRow>
         <TableRow>
@@ -91,12 +83,10 @@ export const RendererSetSchemaFeatureTable = () => (
           <NotSupported />
           <Supported />
           <Supported />
-          <NotSupported />
         </TableRow>
         <TableRow>
           <TableCell>Date format</TableCell>
           <TableCell>Date field</TableCell>
-          <Supported />
           <Supported />
           <Supported />
           <Supported />
@@ -107,7 +97,6 @@ export const RendererSetSchemaFeatureTable = () => (
           <Supported />
           <NotSupported />
           <Supported />
-          <NotSupported />
         </TableRow>
         <TableRow>
           <TableCell>Datetime format</TableCell>
@@ -115,7 +104,6 @@ export const RendererSetSchemaFeatureTable = () => (
           <Supported />
           <NotSupported />
           <Supported />
-          <NotSupported />
         </TableRow>
         <TableRow>
           <TableCell>Object</TableCell>
@@ -123,7 +111,6 @@ export const RendererSetSchemaFeatureTable = () => (
           <Supported />
           <Supported />
           <NotSupported />
-          <Supported />
         </TableRow>
         <TableRow>
           <TableCell>Array of primitives</TableCell>
@@ -131,7 +118,6 @@ export const RendererSetSchemaFeatureTable = () => (
           <Supported />
           <NotSupported />
           <Supported />
-          <NotSupported />
         </TableRow>
         <TableRow>
           <TableCell>Array of objects</TableCell>
@@ -139,7 +125,6 @@ export const RendererSetSchemaFeatureTable = () => (
           <Supported />
           <NotSupported />
           <Supported />
-          <NotSupported />
         </TableRow>
         <TableRow>
           <TableCell />
@@ -147,13 +132,11 @@ export const RendererSetSchemaFeatureTable = () => (
           <Supported />
           <Supported />
           <NotSupported />
-          <Supported />
         </TableRow>
         <TableRow>
           <TableCell>oneOf</TableCell>
           <TableCell>Tabs</TableCell>
           <Supported />
-          <NotSupported />
           <NotSupported />
           <NotSupported />
         </TableRow>
@@ -163,7 +146,6 @@ export const RendererSetSchemaFeatureTable = () => (
           <Supported />
           <NotSupported />
           <NotSupported />
-          <NotSupported />
         </TableRow>
         <TableRow>
           <TableCell>anyOf</TableCell>
@@ -171,11 +153,9 @@ export const RendererSetSchemaFeatureTable = () => (
           <Supported />
           <NotSupported />
           <NotSupported />
-          <NotSupported />
         </TableRow>
       </TableBody>
     </Table>
-    <i>* Angular Ionic was supported until JSON Forms v.2.3.2</i>
   </div>
 );
 
@@ -190,14 +170,12 @@ export const RendererSetUISchemaFeatureTable = () => (
           <TableCell>React Material</TableCell>
           <TableCell>Angular Material</TableCell>
           <TableCell>React Vanilla</TableCell>
-          <TableCell>Angular Ionic*</TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
         <TableRow>
           <TableCell>Vertical Layout</TableCell>
           <TableCell>Vertical Grid</TableCell>
-          <Supported />
           <Supported />
           <Supported />
           <Supported />
@@ -208,7 +186,6 @@ export const RendererSetUISchemaFeatureTable = () => (
           <Supported />
           <Supported />
           <Supported />
-          <Supported />
         </TableRow>
         <TableRow>
           <TableCell>Categorization</TableCell>
@@ -216,12 +193,10 @@ export const RendererSetUISchemaFeatureTable = () => (
           <Supported />
           <Supported />
           <Supported />
-          <Supported />
         </TableRow>
         <TableRow>
           <TableCell>Group</TableCell>
           <TableCell>Group</TableCell>
-          <Supported />
           <Supported />
           <Supported />
           <Supported />
@@ -232,10 +207,8 @@ export const RendererSetUISchemaFeatureTable = () => (
           <Supported />
           <Supported />
           <Supported />
-          <Supported />
         </TableRow>
       </TableBody>
     </Table>
-    <i>* Angular Ionic was supported until JSON Forms v.2.3.2</i>
   </div>
 );

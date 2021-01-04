@@ -1,3 +1,3 @@
-const hiddenPageRoutes = ['/docs/tutorial-redux'];
+const hiddenPageRoutes = ['/docs/tutorial-redux', '/docs/redux'];
 
 export default hiddenPageRoutes;

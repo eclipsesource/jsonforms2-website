@@ -33,6 +33,7 @@ export default {
   },
   menu: [
     'What is JSON Forms?',
+    'Architecture',
     'Getting Started',
     'UI Schema Elements',
     'Renderer sets',
@@ -40,7 +41,6 @@ export default {
     'Validation',
     'React Integration',
     'Angular Integration',
-    'Redux Integration',
     'Tutorials',
   ],
 };

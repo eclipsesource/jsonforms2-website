@@ -8,13 +8,11 @@ import withStyles from '@material-ui/core/styles/withStyles';
 
 import FeaturesIcon from '@material-ui/icons/Report';
 import CustomizeIcon from '@material-ui/icons/Brush';
-import AddIcon from '@material-ui/icons/Add';
 import { JsonFormsDispatch, JsonFormsReduxContext } from '@jsonforms/react';
 import corePackageJson from '@jsonforms/core/package';
 import { Provider } from 'react-redux';
 import angularLogo from '../images/angular.svg';
 import reactLogo from '../images/react-logo.svg';
-import reduxLogo from '../images/reduxLogo.svg';
 import architectureSmall from '../images/architecture_small.svg';
 import schema from './schema.json';
 import uischema from './uischema.json';
@@ -27,7 +25,6 @@ import { createJsonFormsStore } from '../common/store';
 import globalStyles from '../styles/global.module.css';
 import styles from './home.module.css';
 import { Grid } from '@material-ui/core';
-//import SEO from "../components/seo"
 
 const additionalStyles = () => ({
   logo: {
@@ -53,7 +50,6 @@ const nextVersionText = nextVersion && nextVersion !== corePackageJson.version ?
 const Home = ({ classes }) => {
   return (
     <React.Fragment>
-      {/*<SEO title="Home" keywords={[`jsonschema`, `json`, `react`, `forms`]} />*/}
       <div className={classes.logo}>
         <div style={{ paddingTop: '0.5em' }}>
           <Grid container>
@@ -70,8 +66,10 @@ const Home = ({ classes }) => {
                 </Typography>
               </div>
               <div className={styles.feature}>
-                <Typography>Version {corePackageJson.version}</Typography>
+                <Typography>
+                  Version: {corePackageJson.version}
                   {nextVersionText && <><br/>{nextVersionText}</>}
+                </Typography>
               </div>
               <div className={styles.feature}>
                 <Link to='/docs/getting-started' className={globalStyles.link}>
@@ -90,19 +88,12 @@ const Home = ({ classes }) => {
 
       <div className={styles.landing_page__features}>
         <div className={styles.feature}>
-          <div
-            alt='JSON Schema Logo'
-            className={[
-              classes.schemaLogo,
-              styles.schema_logo_black,
-              styles.schema_logo_white,
-            ].join(' ')}
-          />
+          <img src={schemaLogo} className={styles.schemaLogo} />
           <p className={styles.landing_page__detail}>
             Declare your forms as JSON based on a JSON Schema
           </p>
         </div>
-
+        
         <div className={styles.feature}>
           <FeaturesIcon className={styles.icon} />
           <p className={styles.landing_page__detail}>

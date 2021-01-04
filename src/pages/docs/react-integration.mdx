@@ -7,8 +7,13 @@ import Note from './components/Note';
 
 # React Integration
 
-As of version 2.3.0, JSON Forms can be used as a standalone component.
-For the legacy Redux integration, see [here](/docs/redux).
+<Note
+  title='ATTENTION'
+  body={<span>As of JSON Forms 2.5 the React-Redux variant is deprecated in favor of the JSON Forms "standalone" component.
+        The standalone component can still be used in combination with Redux like any other React component.
+        See our <a href="https://github.com/eclipsesource/jsonforms/blob/master/MIGRATION.md">migration guide</a> for more information.
+        For the legacy Redux integration, see <a href="/docs/redux">here</a>.</span>}
+/>
 
 The `JsonForms` component takes the following props:
 
@@ -18,7 +23,6 @@ The `JsonForms` component takes the following props:
 - [`renderers`](#renderers): The renderers that should be used for rendering the form
 - [`cells`](#cells): The cells that should be used for rendering the form
 - [`onChange`](#onchange): A callback which is called on each data change, containing the updated data and the validation result.
-  Please make sure to not create a "data cycle", the updated data doesn't need to be provided back to JSON Forms.
 - [`config`](#config): The default options element for all ui schema elements
 - [`uischemas`](#uischemas): A list of UI schemas to be used for specific schema elements
 - [`readonly`](#readonly): If set to _true_, the component will be rendered in its disabled state.
@@ -37,11 +41,11 @@ The `JsonForms` component takes the following props:
 ## `schema`
 
 The schema prop expects a [JSON Schema value](https://json-schema.org/) describing the underlying data for the form.
-If the schema is not provided, JSON Forms can generate one for you, as long as an `uischema` or `data` prop is available.
+If the schema is not provided, JSON Forms can generate one for you, as long as a `data` prop is available.
 You can see a generated schema example in [our Examples section](../examples/gen-both-schemas).
 The generated schema is useful for rapid prototyping, but generally it is preferred to provide your own schema.
 
-An example schema would look like this:
+An example schema could look like this:
 
 ```
 const schema = {
@@ -79,14 +83,14 @@ const schema = {
 
 ## `uischema`
 
-The `uischema` prop is a JSON describing the layout of the form. It can contain different UI schema elements, such as layouts
-and controls as well as rules for dynamically controlling different features of the UI elements based on data.
+The `uischema` prop is a JSON describing the layout of the form.
+It can contain different UI schema elements, such as layouts and controls as well as rules for dynamically controlling different features of the UI elements based on data.
 You can find more information on the different UI elements and rules [here](/docs/uischema).
 
-If no UI schema is provided, JSON Forms will generate one for you. You can find an example
-of a generated UI schema in [our Examples section](../examples/gen-uischema).
+If no UI schema is provided, JSON Forms will generate one for you.
+You can find an example of a generated UI schema in [our Examples section](../examples/gen-uischema).
 
-An example UI schema for the schema defined above would look like this:
+An example UI schema for the schema defined above could look like this:
 
 ```
 {
@@ -134,9 +138,10 @@ An example UI schema for the schema defined above would look like this:
           "rule": {
             "effect": "HIDE",
             "condition": {
-              "type": "LEAF",
               "scope": "#/properties/recurrence",
-              "expectedValue": "Never"
+              "schema": {
+                "const": "Never"
+              }
             }
           }
         }
@@ -150,86 +155,30 @@ An example UI schema for the schema defined above would look like this:
 
 The `data` prop represents an object containing the data to be rendered in the form.
 
-<Note
-  title='ATTENTION'
-  body='Never update the data prop except when you intentionally want to set new data.'
-/>
-
-The data given to JSON Forms should only be updated when necessary, for example, when clearing a form:
+The data given to JSON Forms can be updated when necessary, for example when clearing a form:
 
 ```jsx
-import React, { useState, useEffect } from 'react';
-import { JsonForms } from '@jsonforms/react';
-import schema from './schema.json';
-import uischema from './uischema.json';
-import {
-  materialCells,
-  materialRenderers,
-} from '@jsonforms/material-renderers';
-import { Button } from '@material-ui/core';
-
-const data = {
-  name: 'Send email to Adrian',
-  description: 'Confirm if you have passed the subject\nHereby ...',
-  done: true,
-  recurrence: 'Daily',
-  rating: 3,
+const initialData = {
+  name: 'Max Power',
 };
 
 const ClearFormExample = () => {
-  const [displayDataAsString, setDisplayDataAsString] = useState('');
-  const [jsonformsOutputData, setJsonformsOutputData] = useState < any > data;
-  const [jsonformsInputData, setJsonformsInputData] = useState < any > data;
+  const [data, setData] = useState(initialData);
 
-  useEffect(() => {
-    setDisplayDataAsString(JSON.stringify(jsonformsOutputData, null, 2));
-  }, [jsonformsOutputData]);
   return (
     <div>
-      <pre id='boundData'>{displayDataAsString}</pre>
       <JsonForms
         schema={schema}
         uischema={uischema}
-        data={jsonformsInputData}
+        data={data}
         renderers={materialRenderers}
         cells={materialCells}
-        onChange={({ data }) => setJsonformsOutputData(data)}
+        onChange={({ data, _errors }) => setData(data)}
       />
-      <Button onClick={() => setJsonformsInputData({})} color='primary'>
+      <Button onClick={() => setData({})} color='primary'>
         Clear form data
       </Button>
     </div>
-  );
-};
-```
-
-You should _never_ refeed JSON Forms with the data received from its `onChange` handler:
-
-```jsx
-const data = {
-  name: 'Send email to Adrian',
-  description: 'Confirm if you have passed the subject\nHereby ...',
-  done: true,
-  recurrence: 'Daily',
-  rating: 3,
-};
-
-const DoNotDoThis = () => {
-  const [standaloneData, setStandaloneData] = useState < any > data;
-
-  return (
-    <JsonForms
-      schema={schema}
-      uischema={uischema}
-      data={standaloneData}
-      renderers={materialRenderers}
-      cells={materialCells}
-      onChange={({ data }) => {
-        // Do not do this
-        // we modify the standaloneData, which we also pass to the data prop
-        setStandaloneData(data);
-      }}
-    />
   );
 };
 ```
@@ -241,30 +190,25 @@ You can choose one of the [renderer sets](/docs/renderer-sets) already provided 
 
 ## `cells`
 
-While the renderers supplied via the `renderers` prop are responsible for rendering the contents of the form,
-table controls use a special set of renderers for their cells, which can be provided via the `cells` prop.
+Cells are a second renderer set, intended to be used for simpler use cases than `renderers`, i.e. rendering inputs without labels and validation messages.
+In the `@jsonforms/material-renderers` they are used for rendering table cells.
+In the `@jsonforms/vanilla-renderers` they are used both for rendering table cells as well as the inner content of the regular renderers, i.e. the integer renderer will use an integer cell.
+
 You can use the cell renderers provided by one of the available [renderer sets](/docs/renderer-sets) or supply [your own custom ones](/docs/custom-renderers).
 
 ## `onChange`
 
-A callback which is called on each data change, containing the updated data and the validation result. JSON Forms will immediately produce
-an event with the results of the initial validation, even before the inputs of the form are changed.
-
-<Note
-  title='ATTENTION'
-  body='You should never use the onChange handler to update the data prop, except when you intentionally want to set new data.'
-/>
-
-Please refer to the information in the [data](#data) section above about correctly using the `onChange` handler to update the form data.
+A callback which is called on each data change, containing the updated data and the validation result.
+JSON Forms will immediately produce an event with the results of the initial validation, even before the inputs of the form are changed.
 
 ## `config`
 
 You can configure some options available for all UI schema elements via the `config` prop:
 
-- `restrict`: _boolean_ value specifying whether the number of characters should be restricted to 'maxLength' for inputs, if specified in the JSON schema
-- `trim`: _boolean_ value specifying whether the input width should be resized to 'maxLength', if specified in the JSON schema
-- `showUnfocusedDescription`: _boolean_ value specifying whether the input descriptions should hide when the input is not focused
-- `hideRequiredAsterisk`: _boolean_ value specifying whether the asterisks shown in labels for required fields should be hidden
+- `restrict`: _boolean_ value specifying whether the number of characters should be restricted to 'maxLength' specified in the JSON schema
+- `trim`: _boolean_ value indicating whether the control shall grab full width.
+- `showUnfocusedDescription`: _boolean_ value specifying whether the input descriptions should be shown even when the input is not focused
+- `hideRequiredAsterisk`: _boolean_ value specifying whether the asterisks shown in labels for required inputs should be hidden
 
 The default config used by JSON Forms looks like this:
 
@@ -277,10 +221,13 @@ defaultConfigOptions = {
 }
 ```
 
+When an UI schema element defines one of these properties in their `options` object, it will have a higher precedence.
+
 ## `uischemas`
 
-The `uischemas` prop can be used to register a list of UI schema and tester pairs that will be used for specific schema elements, e.g. for the detail of an element with detail.
+The `uischemas` prop can be used to register a list of UI schemas and corresponding testers that will be used whenever a 'detail' UI schema shall be rendered (for example in array and object renderers).
+This is useful when you need some kind of dynamic dispatching of uischemas.
 
 ## `readonly`
 
-If set to _true_, the component will be rendered in its disabled state. The data in the form can be viewed, but it cannot be edited.
+If set to _true_, all renderers will be instructed to render in a disabled state.

@@ -5,6 +5,7 @@ parent: Tutorials
 ---
 
 import { Default, WithCustomRenderer } from './components/custom-layouts';
+import Note from './components/Note';
 
 # Custom layouts
 
@@ -14,6 +15,13 @@ JSON Forms allows for this by registering a custom renderer that produces a diff
 for a given layout.
 
 In this section you will learn how to create and register a custom renderer for a layout.
+
+<Note
+  title='NOTE'
+  body='While the high level concepts are the same, there are large implementation differences between the offered React, Angular and Vue renderer sets.
+This tutorial describes how to add custom renderers for React-based renderer sets.'
+/>
+
 We will replace the default renderer for groups. By default a group is rendered like this:
 
 <Default />
@@ -179,6 +187,40 @@ Then, by simply passing the list of renderers to JSON Forms, our custom layout r
 
 And that's it! The MyGroup renderer will now be used to render the `Group` element.
 
+## Dispatching
+
 When writing custom renderers that themselves dispatch to JSON Forms, there are two components that can be used: `ResolvedJsonFormsDispatch` and `JsonFormsDispatch`.
-For such use cases and for performance reasons, it is almost always preferable to use the `ResolvedJsonFormsDispatch` component. In contrast to `ResolvedJsonFormsDispatch`, the `JsonFormsDispatch` component
-will additionally check and resolve schema refs, which is not needed in a nested component such as a renderer.
+For performance reasons, it is almost always preferable to use the `ResolvedJsonFormsDispatch` component.
+In contrast to `ResolvedJsonFormsDispatch`, the `JsonFormsDispatch` component will additionally check and resolve external schema refs, which is almost never needed in a nested component such as a renderer.
+
+Simple example renderer using dispatching:
+
+```javascript
+const MyLayoutRenderer = ({
+  schema,
+  uischema,
+  path,
+  renderers,
+  cells,
+  enabled,
+  visible,
+}) => {
+  return (
+    <div>
+      {visible &&
+        uischema.elements.map((child, index) => (
+          <ResolvedJsonFormsDispatch
+            schema={schema}
+            uischema={child}
+            path={path}
+            enabled={enabled}
+            renderers={renderers}
+            cells={cells}
+            key={index}
+          />
+        ))}
+    </div>
+  );
+};
+export default withJsonFormsLayoutProps(MyLayoutRenderer);
+```

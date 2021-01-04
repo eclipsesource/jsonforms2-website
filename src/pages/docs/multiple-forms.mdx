@@ -11,13 +11,12 @@ import {
 
 # Multiple Forms
 
-There are use cases where multiple forms should be embedded into a single page. This section
-describes some of these in more detail.
+There are use cases where multiple forms should be embedded into a single page.
+This section describes some of these in more detail.
 
 ## Interlinked inputs
 
-Withing the same form, inputs can be interlinked and interact with each other by using `$ref` and setting the `scope`
-property within the UI schema accordingly.
+Withing the same form, inputs can be interlinked and interact with each other by using `$ref` and setting the `scope` property within the UI schema accordingly.
 In the example below, the schema contains two entities, Person and Address. Each of them is rendered in their own group.
 Whenever we change the `shippingAddress` property of the person, it is subsequently updated in the address form and vice versa.
 
@@ -160,7 +159,7 @@ const InterLinkedForms = () => {
 
 ## Independent forms
 
-There might be use cases where you have forms that do not have anything in common, so your forms are independent, although they can share the same context.
+There might be use cases where you have forms that do not have anything in common, so your forms are independent.
 In such cases you use different `JsonForms` components and pass the necessary props to each of them.
 
 To illustrate, let's look again at the example from before, but this time the `person` and `address` schemas are not stored in any common parent schema.
@@ -258,7 +257,3 @@ const IndependentForms = () => {
   );
 };
 ```
-
-As you can see we explicitly pass in the `schema` and `uischema` props.
-
-If you are interested in using JSON Forms witout Redux, see more details in the [React integration](/docs/react) section.

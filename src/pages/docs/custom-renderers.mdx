@@ -19,8 +19,8 @@ We will replace the default renderer for integer values of a rating property.
 
 <Note
   title='NOTE'
-  body='There are fundamental differences between the React and Angular-based versions of JSON Forms.
-This section describes how to add custom renderers for React-based renderer sets.'
+  body='While the high level concepts are the same, there are large implementation differences between the offered React, Angular and Vue renderer sets.
+This tutorial describes how to add custom renderers for React-based renderer sets.'
 />
 
 By default an integer property is rendered like this:
@@ -165,6 +165,8 @@ And that's it!
 It should be noted that in order to create a full-fledged control there's more work left to do,
 since we did not cover concepts like validation or visibility.
 
+## Dispatching
+
 When writing custom renderers that themselves dispatch to JSON Forms, there are two components that can be used: `ResolvedJsonFormsDispatch` and `JsonFormsDispatch`.
-For such use cases and for performance reasons, it is almost always preferable to use the `ResolvedJsonFormsDispatch` component. In contrast to `ResolvedJsonFormsDispatch`, the `JsonFormsDispatch` component
-will additionally check and resolve schema refs, which is not needed in a nested component such as a renderer.
+For performance reasons, it is almost always preferable to use the `ResolvedJsonFormsDispatch` component.
+In contrast to `ResolvedJsonFormsDispatch`, the `JsonFormsDispatch` component will additionally check and resolve external schema refs, which is almost never needed in a nested component such as a renderer.

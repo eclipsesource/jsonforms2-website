@@ -11,7 +11,8 @@ import Note from './components/Note';
 
 <Note
   title='ATTENTION'
-  body='Deprecated: Please note that we are working towards removing the Redux integration. To ease migration, we recommend using the standalone component. Functionality previously available via actions can be replaced with corresponding props on the standalone component.'
+  body={<span>As of JSON Forms 2.5 the React-Redux variant is deprecated in favor of the <a href="/docs/react">JSON Forms "standalone" component</a>.
+        See our <a href="https://github.com/eclipsesource/jsonforms/blob/master/MIGRATION.md">migration guide</a> for more information.</span>}
 />
 
 JSON Forms provides a couple of actions to interact with the store, which we describe here. All actions might either be imported directly or via the Actions utility.
