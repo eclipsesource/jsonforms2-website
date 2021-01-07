@@ -170,3 +170,86 @@ since we did not cover concepts like validation or visibility.
 When writing custom renderers that themselves dispatch to JSON Forms, there are two components that can be used: `ResolvedJsonFormsDispatch` and `JsonFormsDispatch`.
 For performance reasons, it is almost always preferable to use the `ResolvedJsonFormsDispatch` component.
 In contrast to `ResolvedJsonFormsDispatch`, the `JsonFormsDispatch` component will additionally check and resolve external schema refs, which is almost never needed in a nested component such as a renderer.
+
+## Extending existing controls
+There are also scenarios where you just want to modify the HTML output of an existing control, e.g. to display an additional value defined in your schema.
+Let's say you want to add a checkbox to a form that reflects whether or not the customer want's expedited shipping, and you want to display the added price on the same level as the description is normally rendered. But you do not want the checkbox to behave any different than the stock JSON Forms checkbox.
+
+For this purpose, JSON Forms exposes its renderers in an unwrapped state. 
+
+### Add the Control to uischema.json
+```JSON
+	{ "type": "Control",
+	  "description": "Expedited Shipping",
+	  "scope": "#/properties/expedited_shipping"
+	}
+```
+### Add the field to schema.json
+```JSON
+	"expedited_shipping":{
+		"type": "boolean",
+		"price": 20
+	}
+```
+
+### Create a renderer and tester
+`src/CheckBoxWithPriceControl.tsx`:
+
+```javascript
+import React from 'react';
+import { JsonSchema,
+  ControlProps,
+  isBooleanControl,
+  RankedTester,
+  rankWith,
+} from '@jsonforms/core';
+import { withJsonFormsControlProps } from '@jsonforms/react';
+import Grid from '@material-ui/core/Grid';
+import { Unwrapped } from '@jsonforms/material-renderers';
+const { MaterialBooleanControl } = Unwrapped;
+
+ export const checkBoxWithPriceControl = (props: ControlProps) => {
+
+	// extend the schema to support price property
+	type JsonSchemaWithPrice = JsonSchema & {price: string}; 
+	const schema = props.schema as JsonSchemaWithPrice;
+	const hasPrice = schema.price !== undefined;  
+	
+	return (
+	<Grid container>
+			<Grid item sm={4}>
+				<MaterialBooleanControl { ...props}/>
+			</Grid>
+			{ hasPrice &&
+				<Grid item sm={4}> 
+					<div>{schema.price}</div>
+				</Grid>
+			}
+		</Grid>
+	);
+};
+
+export const checkBoxWithPriceControlTester: RankedTester = rankWith(
+  3,
+  isBooleanControl
+);
+export default withJsonFormsControlProps(checkBoxWithPriceControl);
+
+
+```
+
+### Add the renderer and tester
+```javascript
+import CheckBoxWithPriceControl, { checkBoxWithPriceControlTester } from './CheckBoxWithPriceControl';
+...
+const renderers = [
+  ...materialRenderers,
+  //register custom renderers
+  { tester: ratingControlTester, renderer: RatingControl
+  }, {
+	  tester: checkBoxWithPriceControlTester, renderer: CheckBoxWithPriceControl
+  }
+];
+```
+
+
