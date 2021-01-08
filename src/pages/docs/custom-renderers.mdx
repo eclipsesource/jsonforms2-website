@@ -176,15 +176,16 @@ There are also scenarios where you just want to modify the HTML output of an exi
 Let's say you want to add a checkbox to a form that reflects whether or not the customer want's expedited shipping, and you want to display the added price on the same level as the description is normally rendered. But you do not want the checkbox to behave any different than the stock JSON Forms checkbox.
 
 For this purpose, JSON Forms exposes its renderers in an unwrapped state. 
+The following steps are also based on the [seed repository](https://github.com/eclipsesource/jsonforms-react-seed).
 
-### Add the Control to uischema.json
+### 1. Add the Control to uischema.json
 ```JSON
 	{ "type": "Control",
 	  "description": "Expedited Shipping",
 	  "scope": "#/properties/expedited_shipping"
 	}
 ```
-### Add the field to schema.json
+### 2. Add the field to schema.json
 ```JSON
 	"expedited_shipping":{
 		"type": "boolean",
@@ -192,8 +193,56 @@ For this purpose, JSON Forms exposes its renderers in an unwrapped state.
 	}
 ```
 
-### Create a renderer and tester
-`src/CheckBoxWithPriceControl.tsx`:
+### 3. Create a renderer and tester
+The exported controls from '@jsonforms/material-renderers' are wrapped as a [Higher-Order Component (HOC)](https://reactjs.org/docs/higher-order-components.html) with their respective props for state/onchange and other functionality.
+If we were to use those wrapped controls, we would have to handle these props in our extended control as well, otherwise we would lose functionality of the control.
+A better way is to use the control in an unwrapped state, and then reuse the function used for wrapping by the respective control. This ensures the correct properties are passed to the original control.
+
+The unwrapped controls are all exported in an object called Unwrapped in ['@jsonforms/material-renderers'](https://github.com/eclipsesource/jsonforms/blob/master/packages/material/src/controls/index.ts).
+We can import that object, and then use [destructuring](https://medium.com/@lcriswell/destructuring-props-in-react-b1c295005ce0) to access a specific Control.
+```javascript
+import { Unwrapped } from '@jsonforms/material-renderers';
+const { MaterialBooleanControl } = Unwrapped;
+```
+
+To determine which HOC to use, we can look at the [source](https://github.com/eclipsesource/jsonforms/tree/master/packages/material/src/controls) for the respective control.
+Most controls use withJsonFormsControlProps, with exceptions.
+Having determined that, we can export our extended control with the same props, so that it maintains compatibility.
+```javascript
+export default withJsonFormsControlProps(checkBoxWithPriceControl);
+```
+
+Since our example also uses a field that is not defined for the type JsonSchema, the property is passed into our control, but cannot be accessed. 
+(TypeScript will complain that Property 'price' does not exist on type 'JsonSchema'.)
+This can be solved by extending the type with an additional property, and then casting the schema that was passed into the control into that extended type.
+```javascript
+type JsonSchemaWithPrice = JsonSchema & {price: string}; 
+const schema = props.schema as JsonSchemaWithPrice;
+```
+
+Finally, we can return the original control, with added HTML elements around it. We use the [Controlprops](https://www.typescriptlang.org/docs/handbook/interfaces.html), imported from core, to make sure our props
+have the correct data types.
+```javascript
+import { ControlProps } from '@jsonforms/core';
+...
+ export const checkBoxWithPriceControl = (props: ControlProps) => {
+ ...
+	return (
+	<Grid container>
+			<Grid item sm={4}>
+				<MaterialBooleanControl { ...props}/>
+			</Grid>
+			{ hasPrice &&
+				<Grid item sm={4}> 
+					<div>{schema.price}</div>
+				</Grid>
+			}
+		</Grid>
+	);
+}
+```
+
+The complete code of `src/CheckBoxWithPriceControl.tsx`:
 
 ```javascript
 import React from 'react';
@@ -207,9 +256,7 @@ import { withJsonFormsControlProps } from '@jsonforms/react';
 import Grid from '@material-ui/core/Grid';
 import { Unwrapped } from '@jsonforms/material-renderers';
 const { MaterialBooleanControl } = Unwrapped;
-
- export const checkBoxWithPriceControl = (props: ControlProps) => {
-
+export const checkBoxWithPriceControl = (props: ControlProps) => {
 	// extend the schema to support price property
 	type JsonSchemaWithPrice = JsonSchema & {price: string}; 
 	const schema = props.schema as JsonSchemaWithPrice;
@@ -234,11 +281,10 @@ export const checkBoxWithPriceControlTester: RankedTester = rankWith(
   isBooleanControl
 );
 export default withJsonFormsControlProps(checkBoxWithPriceControl);
-
-
 ```
 
-### Add the renderer and tester
+### 4. Register the renderer and tester in App.tsx
+Finally, as in the examples above, we need to register our renderers and testers:2
 ```javascript
 import CheckBoxWithPriceControl, { checkBoxWithPriceControlTester } from './CheckBoxWithPriceControl';
 ...
