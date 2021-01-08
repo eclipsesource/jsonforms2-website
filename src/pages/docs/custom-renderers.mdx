@@ -220,7 +220,7 @@ type JsonSchemaWithPrice = JsonSchema & {price: string};
 const schema = props.schema as JsonSchemaWithPrice;
 ```
 
-Finally, we can return the original control, with added HTML elements around it. We use the [Controlprops](https://www.typescriptlang.org/docs/handbook/interfaces.html), imported from core, to make sure our props
+Finally, we can return the original control, with added HTML elements around it. We use the [Interface](https://www.typescriptlang.org/docs/handbook/interfaces.html) ControlProps, imported from core, to make sure our props
 have the correct data types.
 ```javascript
 import { ControlProps } from '@jsonforms/core';
