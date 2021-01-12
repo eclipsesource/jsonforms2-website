@@ -18,7 +18,7 @@ or it might make sense to split up a very big schema into multiple smaller ones 
 If that's the case, you can add a custom ref resolver based on [JSON Schema \$Ref parser](https://github.com/APIDevTools/json-schema-ref-parser)
 that determines how `$ref`s will be resolved. You'll also need to adapt the AJV validator in order to enable validation of the referenced schema.
 
-To do, use the `refParserOptions` and `ajv` props of the `JsonForms` component and pass in the ref resolver together with the AJV instance.
+To do so, use the `refParserOptions` and `ajv` props of the `JsonForms` component and pass in the ref resolver together with the AJV instance.
 
 Here's an eample of how to accomplish this. We'll first create a customized AJV instance. `yourSchemaObject` is the actual schema to be referenced
 while `yourSchemaIdentifier` is the id that can be used to reference the schema via a `$ref`.
