@@ -1,7 +1,8 @@
 import React from 'react';
 import _ from 'lodash';
 import { Provider } from 'react-redux';
-import { JsonFormsDispatch, JsonFormsReduxContext } from '@jsonforms/react';
+import { JsonFormsDispatch } from '@jsonforms/react';
+import { JsonFormsReduxContext } from '@jsonforms/react/lib/redux';
 import { person } from '@jsonforms/examples';
 import { Demo } from '../../../../components/common';
 import { createJsonFormsStore } from '../../../../common/store';

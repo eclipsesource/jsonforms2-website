@@ -8,7 +8,8 @@ import withStyles from '@material-ui/core/styles/withStyles';
 
 import FeaturesIcon from '@material-ui/icons/Report';
 import CustomizeIcon from '@material-ui/icons/Brush';
-import { JsonFormsDispatch, JsonFormsReduxContext } from '@jsonforms/react';
+import { JsonFormsDispatch } from '@jsonforms/react';
+import { JsonFormsReduxContext } from '@jsonforms/react/lib/redux';
 import corePackageJson from '@jsonforms/core/package';
 import { Provider } from 'react-redux';
 import angularLogo from '../images/angular.svg';
@@ -45,7 +46,10 @@ const store = createJsonFormsStore({
 });
 
 const nextVersion = process.env.DOCZ_NEXTVERSION;
-const nextVersionText = nextVersion && nextVersion !== corePackageJson.version ? `@next: ${nextVersion}` : '';
+const nextVersionText =
+  nextVersion && nextVersion !== corePackageJson.version
+    ? `@next: ${nextVersion}`
+    : '';
 
 const Home = ({ classes }) => {
   return (
@@ -68,7 +72,12 @@ const Home = ({ classes }) => {
               <div className={styles.feature}>
                 <Typography>
                   Version: {corePackageJson.version}
-                  {nextVersionText && <><br/>{nextVersionText}</>}
+                  {nextVersionText && (
+                    <>
+                      <br />
+                      {nextVersionText}
+                    </>
+                  )}
                 </Typography>
               </div>
               <div className={styles.feature}>
@@ -93,7 +102,7 @@ const Home = ({ classes }) => {
             Declare your forms as JSON based on a JSON Schema
           </p>
         </div>
-        
+
         <div className={styles.feature}>
           <FeaturesIcon className={styles.icon} />
           <p className={styles.landing_page__detail}>
@@ -146,38 +155,54 @@ const Home = ({ classes }) => {
         </Provider>
       </div>
 
-      <hr/>
+      <hr />
 
       <div className={styles.landing_page__news}>
-        <div class={styles.news_section}>
-          <NewsSection tweets={tweets} amount="1" />
+        <div className={styles.news_section}>
+          <NewsSection tweets={tweets} amount='1' />
         </div>
-        <Link
-          to='/news'
-          className={globalStyles.link}
-        >
-          <Button variant="contained">
-            more news
-          </Button>
+        <Link to='/news' className={globalStyles.link}>
+          <Button variant='contained'>more news</Button>
         </Link>
       </div>
 
       <div className={styles.landing_page__architecture}>
-        <Grid container spacing={3} alignItems="center">
+        <Grid container spacing={3} alignItems='center'>
           <Grid item xs={12}>
-            <Typography variant='h3' align='center' className={styles.shift_left}>JSON Forms Architecture</Typography>
+            <Typography
+              variant='h3'
+              align='center'
+              className={styles.shift_left}
+            >
+              JSON Forms Architecture
+            </Typography>
           </Grid>
         </Grid>
-        <Grid container spacing={5} alignItems="center" justify="center" mt={4} className={styles.landing_page__architecture_inner}>
+        <Grid
+          container
+          spacing={5}
+          alignItems='center'
+          justify='center'
+          mt={4}
+          className={styles.landing_page__architecture_inner}
+        >
           <Grid item xs={12} lg={6}>
-          <Link to='/docs/architecture'>
-            <img src={architectureSmall} alt="JSON Forms Architecture" className={styles.architecture_small} />
-          </Link>
+            <Link to='/docs/architecture'>
+              <img
+                src={architectureSmall}
+                alt='JSON Forms Architecture'
+                className={styles.architecture_small}
+              />
+            </Link>
           </Grid>
           <Grid item xs={12} lg={6}>
             <Card>
               <CardContent>
-                JSON Forms has a modular architecture and can be customized on every level. The core functionality is pure Javascript and therefore independent from any UI framework. We offer bindings for  React, Angular and Vue. For more information see <Link to='/docs/architecture'>here</Link>.
+                JSON Forms has a modular architecture and can be customized on
+                every level. The core functionality is pure Javascript and
+                therefore independent from any UI framework. We offer bindings
+                for React, Angular and Vue. For more information see{' '}
+                <Link to='/docs/architecture'>here</Link>.
               </CardContent>
             </Card>
           </Grid>
