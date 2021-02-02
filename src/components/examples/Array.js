@@ -1,6 +1,5 @@
 import React from 'react';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import { array } from '@jsonforms/examples';
 import Demo from '../common/Demo';
 import styles from '../../styles/global.module.css';
 
@@ -15,6 +14,35 @@ const Array = () => {
     }
   });
 
+  const schema = {
+    type: 'object',
+    properties: {
+      comments: {
+        type: 'array',
+        items: {
+          type: 'object',
+          properties: {
+            date: {
+              type: 'string',
+              format: 'date'
+            },
+            message: {
+              type: 'string',
+              maxLength: 5
+            },
+            enum: {
+              type: 'string',
+              enum: [
+                'foo',
+                'bar'
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+
   const uischema = {
     type: 'VerticalLayout',
     elements: [
@@ -25,15 +53,28 @@ const Array = () => {
     ],
   };
 
+  const data = {
+    comments: [
+      {
+        date: new Date(2001, 8, 11).toISOString().substr(0, 10),
+        message: 'This is an example message'
+      },
+      {
+        date: new Date().toISOString().substr(0, 10),
+        message: 'Get ready for booohay'
+      }
+    ]
+  };
+
   return (
     <div className={styles.example}>
       <ThemeProvider theme={theme}>
         <Demo
           id='array-demo'
           className={styles.examples__array}
-          schema={array.schema}
+          schema={schema}
           uischema={uischema}
-          data={array.data}
+          data={data}
           style={{
             padding: 0,
           }}
