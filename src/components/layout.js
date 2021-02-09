@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import Header from './header';
 import Footer from './footer';
 import styles from '../styles/global.module.css';
 
@@ -77,7 +76,6 @@ const theme = {
 const Layout = ({ children, ...props }) => {
   return (
     <MuiThemeProvider theme={theme}>
-      <Header />
       <main className={styles.content}>{children}</main>
       <Footer />
     </MuiThemeProvider>

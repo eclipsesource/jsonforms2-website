@@ -1,7 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core';
 import { useMenus } from 'docz';
-import _ from 'lodash';
 import MenuLink from './common/sidebar/MenuLink';
 import styles from '../styles/global.module.css';
 import hiddenPageRoutes from '../pages/hiddenPageRoutes';

@@ -1,7 +1,6 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core';
 import { Link, useMenus } from 'docz';
-import _ from 'lodash';
 import { groupByParent } from '../common/menus';
 import styles from "../styles/global.module.css"
 

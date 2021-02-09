@@ -22,48 +22,17 @@ const useStyles = makeStyles((theme) =>
     },
     root: {
       position: 'relative',
-      width: '40vw',
-      [theme.breakpoints.up('sm')]: {
-        padding: `0 ${theme.spacing(1)}px`,
-        marginLeft: 0,
-        marginRight: 0,
-      },
+      width: '40vw'
     },
-    demo: theme.mixins.gutters({
-      minWidth: '30vw',
-      justifyContent: 'center',
-      paddingTop: theme.spacing(2),
-      paddingBottom: theme.spacing(2),
-      [theme.breakpoints.up('sm')]: {
-        paddingLeft: theme.spacing(3),
-        paddingRight: theme.spacing(3),
-        paddingTop: theme.spacing(2),
-      },
-    }),
     code: {
       padding: 0,
       margin: 0,
-      [theme.breakpoints.up('sm')]: {
-        display: 'block',
-      },
       '& pre': {
         overflow: 'auto',
         margin: '0px !important',
         borderRadius: '0px !important',
       },
-    },
-    schemaButton: {
-      left: theme.spacing(2),
-      right: theme.spacing(2),
-    },
-    uischemaButton: {
-      left: theme.spacing(2),
-      right: theme.spacing(2),
-    },
-    data: {
-      left: theme.spacing(2),
-      right: theme.spacing(2),
-    },
+    }
   })
 );
 
@@ -79,7 +48,6 @@ const Demo = (props) => {
   const uiSchemaAsString = JSON.stringify(uischema, null, 2);
 
   useEffect(() => {
-    global.Prism.highlightAll();
   }, [dataOpen, schemaOpen, uischemaOpen]);
 
   const handleClickOpenSchema = () => {

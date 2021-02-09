@@ -90,7 +90,7 @@ const Home = ({ classes }) => {
 
       <div className={styles.landing_page__features}>
         <div className={styles.feature}>
-          <img src={schemaLogo} className={styles.schemaLogo} />
+          <img src={schemaLogo} className={styles.schemaLogo} alt="Schema Logo" />
           <p className={styles.landing_page__detail}>
             Declare your forms as JSON based on a JSON Schema
           </p>

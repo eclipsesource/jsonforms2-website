@@ -61,11 +61,11 @@ export const NewsSection = ({ tweets, amount }) => {
   const output = Object.keys(tweets).map((key, index) => {
     const tweet = tweets[key];
     if (index >= amount) {
-      return;
+      return undefined;
     }
 
     let text = emojiReplace(tweet.text);
-    if(tweet.link != undefined) {
+    if(tweet.link !== undefined) {
       text = `${text}<br/><a href="${tweet.link}" target="_blank">${tweet.link}</a>`;
     }
 
