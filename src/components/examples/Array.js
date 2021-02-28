@@ -8,10 +8,10 @@ const Array = () => {
     overrides: {
       MuiSelect: {
         select: {
-          minWidth: 200,
-        }
-      }
-    }
+          minWidth: 250,
+        },
+      },
+    },
   });
 
   const schema = {
@@ -24,24 +24,21 @@ const Array = () => {
           properties: {
             date: {
               type: 'string',
-              format: 'date'
+              format: 'date',
             },
             message: {
               type: 'string',
-              maxLength: 5
+              maxLength: 5,
             },
             enum: {
               type: 'string',
-              enum: [
-                'foo',
-                'bar'
-              ]
-            }
-          }
-        }
-      }
-    }
-  }
+              enum: ['foo', 'bar'],
+            },
+          },
+        },
+      },
+    },
+  };
 
   const uischema = {
     type: 'VerticalLayout',
@@ -57,13 +54,13 @@ const Array = () => {
     comments: [
       {
         date: new Date(2001, 8, 11).toISOString().substr(0, 10),
-        message: 'This is an example message'
+        message: 'This is an example message',
       },
       {
         date: new Date().toISOString().substr(0, 10),
-        message: 'Get ready for booohay'
-      }
-    ]
+        message: 'Get ready for booohay',
+      },
+    ],
   };
 
   return (
