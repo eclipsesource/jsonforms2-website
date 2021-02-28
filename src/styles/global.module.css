@@ -212,11 +212,6 @@ ol li {
   color: #2d3747;
 }
 
-ul {
-  list-style: disc !important;
-  margin-left: 20px;
-}
-
 ul li {
   color: #2d3747;
   font-size: 1.2rem;

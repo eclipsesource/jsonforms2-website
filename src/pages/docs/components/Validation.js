@@ -10,14 +10,14 @@ const schema = {
   type: 'object',
   properties: {
     firstname: {
-      type: 'string'
+      type: 'string',
     },
     lastname: {
       type: 'string',
-      minLength: 1
+      minLength: 1,
     },
   },
-  required: ["lastname"]
+  required: ['lastname'],
 };
 
 const uischema = {
@@ -36,8 +36,8 @@ const uischema = {
 
 const data = {
   firstname: 'Max',
-  lastname: ''
-}
+  lastname: '',
+};
 
 let index = 0;
 
@@ -45,13 +45,14 @@ const ValidationExample = () => {
   const validationModes = [
     'ValidateAndShow',
     'ValidateAndHide',
-    'NoValidation'
+    'NoValidation',
   ];
-  
-  const [currentValidationMode, setValidationMode] = useState(validationModes[0]);
-  
+
+  const [currentValidationMode, setValidationMode] = useState(
+    validationModes[0]
+  );
+
   const toggleValidation = () => {
-    console.log(index);
     index++;
     if (index == validationModes.length) {
       index = 0;
@@ -59,28 +60,33 @@ const ValidationExample = () => {
     setValidationMode(validationModes[index]);
   };
 
+  const [formData, setFormData] = useState(data);
+  const [errors, setErrors] = useState([]);
+
   return (
     <div>
       <JsonForms
         schema={schema}
         uischema={uischema}
-        data={data}
+        data={formData}
         renderers={materialRenderers}
         cells={materialCells}
         validationMode={currentValidationMode}
+        onChange={(event) => {
+          setFormData(event.data);
+          setErrors(event.errors);
+        }}
       />
-      <Button
-        onClick={toggleValidation}
-        color='primary'
-        variant='contained'
-      >
-        Toggle Validation
+      <Button onClick={toggleValidation} color='primary' variant='contained'>
+        Switch Validation Mode
       </Button>
-      <br/>
-      <br/>
+      <br />
+      <br />
       Current mode: {currentValidationMode}
+      <br />
+      Emitted errors: {errors.map((error) => error.message).join(', ')}
     </div>
-  )
+  );
 };
 
 export default ValidationExample;
