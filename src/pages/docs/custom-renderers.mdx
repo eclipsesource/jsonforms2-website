@@ -186,7 +186,7 @@ The following steps are also based on the [seed repository](https://github.com/e
 
 The exported controls from `@jsonforms/material-renderers` are wrapped in [Higher-Order Components (HOC)](https://reactjs.org/docs/higher-order-components.html) to connect them with JSON Forms' internally managed state.
 If we were to use those wrapped controls, we would only have the basic props available which are used for dispatching.
-This is useful when you don't really care about the renderer's prop but would just like to wrap it in additional components.
+This is useful when you don't really care about the renderer's props but would like to wrap it in additional components.
 
 The unwrapped variants are the ones you want to use when you would like to access the same detailed props as the pure renderer.
 As we want to access the schema's price attribute as well as modify the calculated label, we'll use the unwrapped renderer.
@@ -199,8 +199,8 @@ const { MaterialBooleanControl } = Unwrapped;
 ```
 
 To determine which HOC to use, we can look at the [source](https://github.com/eclipsesource/jsonforms/tree/master/packages/material/src/controls) for the respective control.
-Most controls use `withJsonFormsControlProps`, with exceptions.
-Having determined that, we can export our extended control with the same props, so that it maintains compatibility.
+Most controls use `withJsonFormsControlProps`, with some exceptions for more specialized controls.
+Having determined that, we can export our extended control using the same HOC, so that it maintains compatibility.
 
 ```ts
 export default withJsonFormsControlProps(checkBoxWithPriceControl);
@@ -208,7 +208,7 @@ export default withJsonFormsControlProps(checkBoxWithPriceControl);
 
 Since our example also uses an attribute that is not defined in the `JsonSchema` type, TypeScript will complain that Property 'price' does not exist on type 'JsonSchema'.
 This can be solved by extending the type with an additional attribute, and then casting the schema that was passed into the control into that extended type.
-This is a save operation as we'll make sure that the renderer is only invoked for schemas which have the `price` attribute.
+This is a safe operation as we'll make sure that the renderer is only invoked for schemas which have the `price` attribute.
 
 ```ts
 type JsonSchemaWithPrice = JsonSchema & { price: string };
@@ -216,7 +216,7 @@ const schema = props.schema as JsonSchemaWithPrice;
 ```
 
 Finally, we can return the original control, with added components around it.
-We use the `ControlProps` interface, imported from core, to make sure our props have the correct data types.
+We use the `ControlProps` interface, imported from core, to make sure our props have the correct types.
 
 ```tsx
 import { ControlProps } from '@jsonforms/core';
@@ -290,12 +290,17 @@ export default withJsonFormsControlProps(checkBoxWithPriceControl);
 Finally, as in the examples above, we need to register our renderers and testers:
 
 ```ts
-import CheckBoxWithPriceControl, { checkBoxWithPriceControlTester } from './CheckBoxWithPriceControl';
-...
+import CheckBoxWithPriceControl, {
+  checkBoxWithPriceControlTester,
+} from './CheckBoxWithPriceControl';
+
 const renderers = [
   ...materialRenderers,
-  //register custom renderers
+  // register custom renderers
   { tester: ratingControlTester, renderer: RatingControl },
-	{ tester: checkBoxWithPriceControlTester, renderer: CheckBoxWithPriceControl }
+  {
+    tester: checkBoxWithPriceControlTester,
+    renderer: CheckBoxWithPriceControl,
+  },
 ];
 ```
