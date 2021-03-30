@@ -13,11 +13,6 @@ module.exports = {
       defaultMode: 'light',
       disableSwitch: true,
     },
-    announcementBar: {
-      id: 'version-2-5',
-      content:
-        '🎉 We just released verison 2.5! <a href="/news/jsonforms-2-5">Learn more</a>! 🎉',
-    },
     navbar: {
       title: 'JSON Forms',
       style: 'dark',
@@ -27,7 +22,7 @@ module.exports = {
       },
       items: [
         {
-          to: 'examples/array',
+          to: 'examples/basic',
           label: 'Examples',
           activeBasePath: 'examples',
           position: 'left',
@@ -205,7 +200,11 @@ module.exports = {
             from: '/docs/multiple-forms',
           },
           {
-            to: '/examples/array',
+            to: '/examples/basic',
+            from: '/examples/person',
+          },
+          {
+            to: '/examples/basic',
             from: '/examples',
           },
           {

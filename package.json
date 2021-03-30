@@ -6,7 +6,9 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build",
+    "build:docusaurus": "docusaurus build",
+    "build:env": "./build_with_next.sh",
+    "build": "npm run build:env && npm run build:docusaurus",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
@@ -28,8 +30,7 @@
     "docusaurus2-dotenv": "^1.4.0",
     "prism-react-renderer": "^1.2.0",
     "react": "^16.8.4",
-    "react-dom": "^16.8.4",
-    "react-redux": "^7.0.2"
+    "react-dom": "^16.8.4"
   },
   "browserslist": {
     "production": [

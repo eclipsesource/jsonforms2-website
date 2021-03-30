@@ -11,10 +11,7 @@ import TabItem from '@theme/TabItem';
 import Highlight, { defaultProps } from "prism-react-renderer";
 import usePrismTheme from '@theme/hooks/usePrismTheme';
 
-//
-// Based on https://github.com/mui-org/material-ui/blob/v1-beta/docs/src/modules/components/Demo.js
-//
-const useStyles = makeStyles((theme) =>
+const demoStyles = makeStyles((theme) =>
   createStyles({
     root: {
       color: '#000',
@@ -25,14 +22,14 @@ const useStyles = makeStyles((theme) =>
       },
     },
     tabs: {
-      "& li:first-child": {
-        marginRight: "auto"
+      '& li:first-child': {
+        marginRight: 'auto'
       }
     },
     demoTab: {
-      borderRadius: "4px",
-      padding: "16px",
-      border: "1px solid #eee"
+      borderRadius: 'var(--ifm-pre-border-radius)',
+      padding: '16px',
+      border: '1px solid #eee'
     },
   })
 );
@@ -47,8 +44,30 @@ const theme = createMuiTheme({
   },
 });
 
+const codeStyle = makeStyles((theme) =>
+  createStyles({
+    codeblockName: {
+      backgroundColor: '#292d3e',
+      color: '#fff',
+      borderTopRightRadius: 'var(--ifm-pre-border-radius)',
+      borderTopLeftRadius: 'var(--ifm-pre-border-radius)',
+      borderBottom: '1px solid #eee',
+      fontSize: 'var(--ifm-code-font-size)',
+      fontWeight: 500,
+      padding: '.75rem var(--ifm-pre-padding)'
+    },
+    codeBlockWithTitle: {
+      borderTopRightRadius: 0,
+      borderTopLeftRadius: 0,
+    }
+  })
+);
+
 const Code = (props) => {
+  const classes = codeStyle();
+
   let content = props.children;
+  let codeBlockTitle = props.name;
   if(content === undefined) {
     content = {};
   }
@@ -57,15 +76,22 @@ const Code = (props) => {
   return (
     <Highlight {...defaultProps} code={code} language="json" theme={prismTheme}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={style}>
-          {tokens.map((line, i) => (
-            <div {...getLineProps({ line, key: i })}>
-              {line.map((token, key) => (
-                <span {...getTokenProps({ token, key })} />
-              ))}
+        <div>
+          {codeBlockTitle && (
+            <div className={classes.codeblockName}>
+              {codeBlockTitle}
             </div>
-          ))}
-        </pre>
+          )}
+          <pre className={clsx(className, { [classes.codeBlockWithTitle]: codeBlockTitle })} style={style}>
+            {tokens.map((line, i) => (
+              <div {...getLineProps({ line, key: i })}>
+                {line.map((token, key) => (
+                  <span {...getTokenProps({ token, key })} />
+                ))}
+              </div>
+            ))}
+          </pre>
+        </div>
       )}
     </Highlight>
   )
@@ -75,7 +101,7 @@ export const Demo = (props) => {
   const { data: inputData, schema, uischema, id } = props;
   const [data, setData] = useState(inputData);
 
-  const classes = useStyles();
+  const classes = demoStyles();
   return (
     <div className={classes.root} id={id}>
       <Tabs
@@ -98,10 +124,10 @@ export const Demo = (props) => {
           </ThemeProvider>
         </TabItem>
         <TabItem value="schema">
-          <Code>{schema}</Code>
+          <Code name="schema.json">{schema}</Code>
         </TabItem>
         <TabItem value="uischema">
-          <Code>{uischema}</Code>
+          <Code name="uischema.json">{uischema}</Code>
         </TabItem>
         <TabItem value="data">
           <Code>{data}</Code>

@@ -2,6 +2,9 @@
 
 The JSON Forms documentation website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
 
+The content of the website can be found within the `content` folder. All the logic for demos, the index and the support page can be found within the `src` folder. 
+Some static files such as images, logos etc. can be found within the `static` folder. 
+
 ## Installation
 
 ```console

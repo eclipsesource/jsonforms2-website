@@ -91,18 +91,32 @@
 .sectionDemo {
   border-top: 1px solid #000;
   //background: #212121;
+  .frameworkLogos {
+    text-align: center;
+    svg {
+      height: 80px;
+      width: 80px;
+    }
+  }
+  .demoContent {
+    margin: auto;
+    max-width: 900px;
+  }
 }
 
-.sectionDemoContent {
+.sectionNews {
+  max-width: 700px;
   margin: auto;
-  max-width: 900px;
-}
-
-.frameworkLogos {
-  text-align: center;
-  svg {
-    height: 80px;
-    width: 80px;
+  .newsCard {
+    background: #f5f5f5;
+  }
+  .newsButton {
+    margin: 20px auto;
+    text-align: center;
+    display: block;
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 

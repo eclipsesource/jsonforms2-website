@@ -17,6 +17,7 @@ import VueLogo from '../../static/img/vue-logo.svg';
 
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import Button from '@material-ui/core/Button';
 
 import { Demo } from '../../src/components/common/Demo';
 import schema from './assets/schema.json';
@@ -97,9 +98,22 @@ function Home() {
               <VueLogo/>
             </div>
             <h3>JSON Forms is a JSON Schema based approach for creating forms. <br/>It comes with off the shelf support for React, Angular and Vue.</h3>
-            <div className={styles.sectionDemoContent}>
+            <div className={styles.demoContent}>
               <Demo schema={schema} uischema={uischema} data={data} />
             </div>
+          </section>
+          <hr/>
+          <section className={styles.sectionNews}>
+            <Card className={styles.newsCard}>
+              <CardContent>
+                Today we released JSON Forms v2.5 🎉 This release marks the final step in our quest to remove Redux as a hard dependency of JSON Forms. Check our updated migration guide if you'd like to migrate to the Redux-less variants.
+                We also like to announce the new JSON Forms Vue 2 & Vue 3 support. Many thanks to headwire.com whose sponsoring made the JSON Forms Vue bindings possible. Among others they plan to power peregrine-cms.com with JSON Forms Vue and decided to contribute back ❤️.
+                We now also work on a basic JSON Forms Vue renderer set which we plan to release with one of the next versions of JSON Forms! See you soon!
+              </CardContent>
+            </Card>
+            <Link to='/news' className={styles.newsButton}>
+              <Button variant='contained'>more news</Button>
+            </Link>
           </section>
           <section className={styles.sectionArchitecture}>
             <h2>JSON Forms Architecture</h2>

@@ -1,13 +1,13 @@
 module.exports = {
   examples: [
-    'array',
-    'categorization',
+    'basic',
     'control',
+    'categorization',
+    'layouts',
+    'array',
+    'rule',
     'custom-controls',
     'gen-uischema',
-    'gen-both-schemas',
-    'layouts',
-    'person',
-    'rule'
+    'gen-both-schemas'
   ]
 };
