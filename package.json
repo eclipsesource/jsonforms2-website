@@ -18,6 +18,7 @@
     "@docusaurus/core": "^2.0.0-alpha.72",
     "@docusaurus/plugin-client-redirects": "^2.0.0-alpha.72",
     "@docusaurus/preset-classic": "^2.0.0-alpha.72",
+    "@easyops-cn/docusaurus-search-local": "^0.16.1",
     "@jsonforms/core": "^2.5.0",
     "@jsonforms/examples": "^2.5.0",
     "@jsonforms/material-renderers": "^2.5.0",
