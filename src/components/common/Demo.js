@@ -38,9 +38,7 @@ const theme = createMuiTheme({
   overrides: {
     MuiFormHelperText: {
       root: {
-        '&:first-of-type': {
-          minHeight: '1.6em',
-        }
+        minHeight: '1.6em',
       }
     }
   },
