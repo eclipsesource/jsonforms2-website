@@ -15,9 +15,9 @@
     "clear": "docusaurus clear"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-alpha.73",
-    "@docusaurus/plugin-client-redirects": "2.0.0-alpha.73",
-    "@docusaurus/preset-classic": "2.0.0-alpha.73",
+    "@docusaurus/core": "^2.0.0-alpha.75",
+    "@docusaurus/plugin-client-redirects": "^2.0.0-alpha.75",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.75",
     "@easyops-cn/docusaurus-search-local": "^0.16.1",
     "@jsonforms/core": "^2.5.0",
     "@jsonforms/examples": "^2.5.0",
@@ -27,7 +27,7 @@
     "@material-ui/icons": "^4.11.2",
     "@mdx-js/react": "^1.6.22",
     "clsx": "^1.1.1",
-    "docusaurus-plugin-sass": "^0.1.12",
+    "docusaurus-plugin-sass": "^0.1.14",
     "docusaurus2-dotenv": "^1.4.0",
     "prism-react-renderer": "^1.2.0",
     "react": "^17.0.2",
@@ -46,6 +46,10 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.13.0"
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "buffer": "^6.0.3",
+    "https-browserify": "^1.0.0",
+    "sass": "^1.32.12",
+    "stream-http": "^3.2.0"
   }
 }
