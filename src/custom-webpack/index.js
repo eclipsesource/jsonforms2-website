@@ -1,25 +1,17 @@
-module.exports = function (context, options) {
+module.exports = function () {
   return {
     name: 'custom-webpack',
-    configureWebpack(config, isServer, utils) {
+    configureWebpack() {
       return {
         optimization: {
           splitChunks: {
             cacheGroups: {
               common: {
-                minChunks: 1
+                minChunks: 5,
               },
             },
-          }
+          },
         },
-        resolve: {
-          fallback: {
-            buffer: require.resolve("buffer/"),
-            http: require.resolve("stream-http"),
-            https: require.resolve("https-browserify"),
-            sass: require.resolve("sass")
-          }
-        }
       };
     },
   };
