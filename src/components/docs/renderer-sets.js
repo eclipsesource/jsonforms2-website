@@ -103,9 +103,9 @@ export const RendererSetSchemaFeatureTable = () => (
         <TableRow>
           <TableCell />
           <TableCell>Autocomplete</TableCell>
+          <Supported />
+          <Supported />
           <NotSupported />
-          <Supported />
-          <Supported />
           <NotSupported />
         </TableRow>
         <TableRow>
@@ -185,6 +185,14 @@ export const RendererSetSchemaFeatureTable = () => (
           <TableCell>Master Detail</TableCell>
           <Supported />
           <Supported />
+          <NotSupported />
+          <NotSupported />
+        </TableRow>
+        <TableRow>
+          <TableCell>Array of enums</TableCell>
+          <TableCell>Multiple Choice</TableCell>
+          <Supported />
+          <NotSupported />
           <NotSupported />
           <NotSupported />
         </TableRow>
