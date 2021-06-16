@@ -5,61 +5,75 @@ title: Ref Resolving
 
 :::caution ATTENTION
 
-Ref resolving is only supported out of the box within the React renderers.
+With version 3.0 of JSON Forms, we no longer include `json-schema-ref-parser` within the core page. 
+The old documentation for JSON Forms < 3.0 can be found <a href="/docs/deprecated/ref-resolving-legacy">here</a>. 
+For a migration guide, have a look <a href="https://github.com/eclipsesource/jsonforms/blob/master/MIGRATION.md">here</a>.
 
 :::
 
-Sometimes it might not be possible to have just a single schema that you can pass to JSON Forms
-or it might make sense to split up a very big schema into multiple smaller ones for maintenance reasons.
+Resolving of external dependencies is not a core feature of JSON Forms which is why we (until version 3.0) delegated it to a 3rd party dependency. 
+However the `json-schema-ref-parser` library is not only slow and mutating schemas in place but also brings in a number of questionable Node dependent dependencies.
+The way resolving was implemented resulted in the same flow as resolving it outside of JSON Forms and handing the resolved schema over for all but the very niche use case of unresolved schemas in the ui schema registry.
+Therefore we removed this dependency and the delegation in JSON Forms 3.0 and now only support basic ref resolving.
 
-If that's the case, you can add a custom ref resolver based on [JSON Schema \$Ref parser](https://github.com/APIDevTools/json-schema-ref-parser)
-that determines how `$ref`s will be resolved. You'll also need to adapt the AJV validator in order to enable validation of the referenced schema.
+For more complex cases, we recommend to use `json-schema-ref-parser` or `json-refs` before handing the schema to JSON Forms.
+Here is an example, how to use these libraries to resolve your refs before handing the schema to JSON Forms:
 
-To do so, use the `refParserOptions` and `ajv` props of the `JsonForms` component and pass in the ref resolver together with the AJV instance.
+```ts
+import React, { useState } from 'react';
+import { JsonForms } from '@jsonforms/react';
+import { materialCells, materialRenderers } from '@jsonforms/material-renderers';
+import $RefParser from '@apidevtools/json-schema-ref-parser';
+import JsonRefs from 'JsonRefs';
 
-Here's an eample of how to accomplish this. We'll first create a customized AJV instance. `yourSchemaObject` is the actual schema to be referenced
-while `yourSchemaIdentifier` is the id that can be used to reference the schema via a `$ref`.
-
-```javascript
-const ajv = createAjv();
-ajv.addSchema(yourSchemaObject, 'yourSchemaIdentifier');
-```
-
-Next, we'll set up the ref resolver. The implementation is up to you, but you'll need to implement a `canRead` method that
-determines whether a current ref needs to be resolved and a `read` method that returns the actual schema. The `order` property
-determines the order in which resolvers are executed, until the first one returns true for `canRead`. For more info about ref resolving
-please see the [JSON Schema \$Ref parser documentation](https://apidevtools.org/json-schema-ref-parser/docs/plugins/resolvers.html).
-Note that the name for the actual resolver, which we called `foo` here, does not actually matter.
-
-```javascript
-const yourSchemaResolver = {
-  order: 1,
-  canRead: function(file) {
-    return file.url.indexOf('yourSchemaIdentifier') !== -1;
+const schema = {
+  $defs: {
+    Base: {
+      type: 'object',
+      properties: {
+        width: {
+          type: 'integer'
+        }
+      }
+    },
+    Child: {
+      type: 'object',
+      allOf: [
+        { $ref: '#/$defs/Base' },
+        {
+          properties: {
+            geometry: {
+              type: 'string'
+            }
+          }
+        }
+      ]
+    }
   },
-  read: function() {
-    return JSON.stringify(yourSchemaObject);
-  },
+  type: 'object',
+  properties: {
+    element: {
+      $ref: '#/$defs/Child'
+    }
+  }
 };
-const refParserOptions = {
-  resolve: {
-    foo: yourSchemaResolver,
-  },
-};
+
+const resolvedSchema = $RefParser.dereference(schema)
+// or
+const resolvedSchema = JsonRefs.resolveRefs(schema)
+
+function App() {
+  const [data, setData] = useState(initialData);
+
+  return (
+    <JsonForms
+      schema={resolvedSchema}
+      uischema={uischema}
+      data={data}
+      renderers={materialRenderers}
+      cells={materialCells}
+      onChange={({ data, _errors }) => setData(data)}
+    />
+  );
+}
 ```
-
-Finally, you'll need to pass your resolver and ajv instance to JSON Forms:
-
-```javascript
-<JsonForms
-  schema={schema}
-  uischema={uischema}
-  data={data}
-  renderers={renderers}
-  cells={cells}
-  ajv={ajv}
-  refParserOptions={refParserOptions}
-/>
-```
-
-With these changes refs like `$ref: yourSchemaIdentifier#something` will be resolved accordingly.
