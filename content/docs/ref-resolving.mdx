@@ -5,24 +5,16 @@ title: Ref Resolving
 
 :::caution ATTENTION
 
-With version 3.0 of JSON Forms, we no longer include `json-schema-ref-parser` within the core page. 
-The old documentation for JSON Forms < 3.0 can be found <a href="/docs/deprecated/ref-resolving-legacy">here</a>. 
+With version 3.0 of JSON Forms, we no longer include `json-schema-ref-parser` within the core page.
+The old documentation for JSON Forms < 3.0 can be found <a href="/docs/deprecated/ref-resolving-legacy">here</a>.
 For a migration guide, have a look <a href="https://github.com/eclipsesource/jsonforms/blob/master/MIGRATION.md">here</a>.
 
 :::
 
-With version 3.0 of JSON Forms, we removed the `json-schema-ref-parser` dependency within the core package.
-This change only affects users of the React variant, Vue and Angular users are not affected.
+Resolving of external dependencies is not a core feature of JSON Forms which is why JSON Forms itself can only handle simple `$ref` resolving, which should be sufficient in most cases.
+For a more complex scenario or when resolving references pointing to external schemas, you can use `json-schema-ref-parser` of a similar library to resolve references before passing them to JSON Forms.
 
-`json-schema-ref-parser` was used to resolve external JSON Schema references.
-As a side effect it also resolved 'internal' references and therefore simplified the JSON Schema for JSON Forms' processing.
-However that resolving was quite slow, the JSON Schema was mutated in place and `json-schema-ref-parser` brought in Node-only dependencies which needed to be polyfilled.
-Also all users of JSON Forms React had to pay the resolving effort, whether they needed it or not.
-
-Most React users should be unaffected by this change and don't need to spend any migration efforts.
-However when you relied on the resolving of external JSON Schema references via the `refParserOptions` or use complicated references setups which can't yet be handled by JSON Forms' internal processing, you can resolve the JSON Schema before handing it over to JSON Forms.
-
-To restore the old behavior, you can use `json-schema-ref-parser` or other libraries like `json-refs` to resolve references on your own before passing the schema to JSON Forms.
+Below you can find an example, on how to use `json-schema-ref-parser`:
 
 ```ts
 import React, { useState } from 'react';
