@@ -7,14 +7,15 @@ title: Ref Resolving
 
 With version 3.0 of JSON Forms, we no longer include `json-schema-ref-parser` within the core page.
 The old documentation for JSON Forms < 3.0 can be found <a href="/docs/deprecated/ref-resolving-legacy">here</a>.
-For a migration guide, have a look <a href="https://github.com/eclipsesource/jsonforms/blob/master/MIGRATION.md">here</a>.
+For a migration guide, have a look [here](https://github.com/eclipsesource/jsonforms/blob/master/MIGRATION.md).
 
 :::
 
-Resolving of external dependencies is not a core feature of JSON Forms which is why JSON Forms itself can only handle simple `$ref` resolving, which should be sufficient in most cases.
-For a more complex scenario or when resolving references pointing to external schemas, you can use `json-schema-ref-parser` of a similar library to resolve references before passing them to JSON Forms.
+JSON Forms is able to resolve basic JSON Schema `$ref` pointers which is sufficient for most use cases.
+In case of complex reference setups or references pointing to external resources the schema needs to be resolved before handing it over to JSON Forms.
+We recommend using a library like `json-refs` ([Documentation](https://github.com/whitlockjc/json-refs/tree/master/docs)) or `json-schema-ref-parser` ([Documentation](https://apitools.dev/json-schema-ref-parser/)) for these use cases.
 
-Below you can find an example, on how to use `json-schema-ref-parser`:
+Below you can find an example on how to use `json-refs` and `json-schema-ref-parser`:
 
 ```ts
 import React, { useState } from 'react';
@@ -36,7 +37,7 @@ function App() {
   const [resolvedSchema, setSchema] = useState();
 
   useEffect(() => {
-    $RefParser.dereference(mySchemaWithReferences).then(res => setSchema(res.$schema));
+    $RefParser.dereference(mySchemaWithReferences, refParserOptions).then(res => setSchema(res.$schema));
     // or
     JsonRefs.resolveRefs(mySchemaWithReferences).then(res => setSchema(res.resolved));
   },[]);
