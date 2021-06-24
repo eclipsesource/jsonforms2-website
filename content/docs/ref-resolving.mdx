@@ -26,10 +26,21 @@ import JsonRefs from 'json-refs';
 
 import mySchemaWithReferences from 'myschema.json';
 
+const yourRemoteSchemaResolver = {
+  order: 1,
+  canRead: function(file) {
+    return file.url.indexOf('yourRemoteSchemaIdentifier') !== -1;
+  },
+  read: function() {
+    return JSON.stringify(yourSchemaObject);
+  },
+};
 const refParserOptions = {
   dereference: {
     circular: false
-  }
+  },
+  resolve: {
+    foo: yourRemoteSchemaResolver
 }
 
 function App() {
