@@ -1,0 +1,92 @@
+---
+id: readonly
+title: ReadOnly
+---
+
+import { ReadOnlyConfig, ReadOnlyUiSchema, ReadOnlySchema, ReadOnlyRule } from '../../src/components/examples/ReadOnly'
+
+## Form Wide
+
+There are multiple ways to use the `readonly` option.
+
+One is to define `readonly` on the JsonForms object itself. This will disable all fields of this form.
+
+```js
+<JsonForms
+  renderers={materialRenderers}
+  cells={materialCells}
+  data={data}
+  schema={schema}
+  uischema={uischema}
+  readonly
+/>
+```
+
+<ReadOnlyConfig />
+
+## Field based
+
+### Ui Schema
+
+If you want to set the `readonly` option on a per-field based, you can do so by setting `readonly: true` on the field options within the UI schema:
+
+```js
+{
+  type: "VerticalLayout",
+  elements: [
+    {
+      type: "Control",
+      label: "Completed",
+      scope: "#/properties/firstname",
+      options: {
+        readOnly: true
+      }
+    }
+  ]
+}
+```
+
+<ReadOnlyUiSchema />
+
+### Schema
+
+An alternative to setting the `readOnly` option via the ui schema, is to set this option via the schema:
+
+```js
+{
+  properties: {
+    firstname: {
+      type: "string",
+      readOnly: true
+    },
+  }
+}
+```
+
+<ReadOnlySchema />
+
+### Rule
+
+The last option to disable a field is to set a `DISABLE` rule on it. Read more about [rules](/docs/uischema/rules).
+
+```js
+{
+  type: "VerticalLayout",
+  elements: [
+    {
+      type: "Control",
+      label: "Completed",
+      scope: "#/properties/firstname",
+      rule: {
+        effect: "DISABLE",
+        condition: {
+          scope: "#/properties/name",
+          schema: {}
+        }
+      }
+    }
+  ]
+}
+```
+
+<ReadOnlyRule />
