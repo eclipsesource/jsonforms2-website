@@ -8,8 +8,7 @@ import { ReadOnlyConfig, ReadOnlyUiSchema, ReadOnlySchema, ReadOnlyRule } from '
 ## Form Wide
 
 There are multiple ways to use the `readonly` option.
-
-One is to define `readonly` on the JsonForms object itself. This will disable all fields of this form.
+One is to define `readonly` on the JsonForms object itself. This will disable *all* inputs of this form.
 
 ```js
 <JsonForms
@@ -17,18 +16,20 @@ One is to define `readonly` on the JsonForms object itself. This will disable al
   cells={materialCells}
   data={data}
   schema={schema}
-  uischema={uischema}
+  uischema={uischema}pp
   readonly
 />
 ```
 
+Although the example above shows a react example, this flag also exists for angular and vue.
+
 <ReadOnlyConfig />
 
-## Field based
+## Input based
 
-### Ui Schema
+### UI Schema
 
-If you want to set the `readonly` option on a per-field based, you can do so by setting `readonly: true` on the field options within the UI schema:
+If you want to set the `readonly` option on a per-input basis, you can do so by setting `readonly: true` on the element options within the UI schema:
 
 ```js
 {
@@ -39,7 +40,7 @@ If you want to set the `readonly` option on a per-field based, you can do so by 
       label: "Completed",
       scope: "#/properties/firstname",
       options: {
-        readOnly: true
+        readonly: true
       }
     }
   ]
@@ -50,7 +51,7 @@ If you want to set the `readonly` option on a per-field based, you can do so by 
 
 ### Schema
 
-An alternative to setting the `readOnly` option via the ui schema, is to set this option via the schema:
+An alternative to set the `readOnly` option via the UI Schema, is to set this option via the schema:
 
 ```js
 {
@@ -63,11 +64,14 @@ An alternative to setting the `readOnly` option via the ui schema, is to set thi
 }
 ```
 
+Note: `readonly` will be ignore within the schema, only `readOnly` is a [valid option](https://json-schema.org/draft/2020-12/json-schema-validation.html#rfc.section.9.4).
+
 <ReadOnlySchema />
 
 ### Rule
 
-The last option to disable a field is to set a `DISABLE` rule on it. Read more about [rules](/docs/uischema/rules).
+The last option to disable an input is to set a `DISABLE` (or `ENABLED` with a false condition) rule on it.
+Read more about [rules](/docs/uischema/rules).
 
 ```js
 {
@@ -81,7 +85,20 @@ The last option to disable a field is to set a `DISABLE` rule on it. Read more a
         effect: "DISABLE",
         condition: {
           scope: "#/properties/name",
-          schema: {}
+          schema: {} //always true
+        }
+      }
+    },
+    // OR
+    {
+      type: "Control",
+      label: "Completed",
+      scope: "#/properties/firstname",
+      rule: {
+        effect: "ENABLE",
+        condition: {
+          scope: "#/properties/name",
+          schema: { not: {} } //always false
         }
       }
     }
