@@ -50,7 +50,6 @@ const readonlyUischema = {
     elements: [
       {
         type: "Control",
-        label: "Completed",
         scope: "#/properties/firstname",
         options: {
           readOnly: true
@@ -58,7 +57,6 @@ const readonlyUischema = {
       },
       {
         type: "Control",
-        label: "Completed",
         scope: "#/properties/lastname",
       }
     ]
@@ -82,12 +80,10 @@ const readonlySchema = {
     elements: [
       {
         type: "Control",
-        label: "Completed",
         scope: "#/properties/firstname"
       },
       {
         type: "Control",
-        label: "Completed",
         scope: "#/properties/lastname"
       }
     ]
@@ -110,7 +106,6 @@ const readonlyRule = {
     elements: [
       {
         type: "Control",
-        label: "Completed",
         scope: "#/properties/firstname",
         rule: {
           effect: "DISABLE",
@@ -122,7 +117,6 @@ const readonlyRule = {
       },
       {
         type: "Control",
-        label: "Completed",
         scope: "#/properties/lastname"
       }
     ]
