@@ -11,6 +11,7 @@ module.exports = {
     },
     'renderer-sets',
     'ref-resolving',
+    'readonly',
     'validation',
     {
       type: 'category',

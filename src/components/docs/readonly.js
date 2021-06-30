@@ -9,10 +9,10 @@ const data = {
 const readonlyConfig = {
   schema: {
     properties: {
-      firstname: {
+      firstName: {
         type: "string"
       },
-      lastname: {
+      lastName: {
         type: "string"
       }
     }
@@ -22,13 +22,11 @@ const readonlyConfig = {
     elements: [
       {
         type: "Control",
-        label: "Completed",
-        scope: "#/properties/firstname"
+        scope: "#/properties/firstName"
       },
       {
         type: "Control",
-        label: "Completed",
-        scope: "#/properties/lastname",
+        scope: "#/properties/lastName",
       }
     ]
   }
@@ -37,10 +35,10 @@ const readonlyConfig = {
 const readonlyUischema = {
   schema: {
     properties: {
-      firstname: {
+      firstName: {
         type: "string"
       },
-      lastname: {
+      lastName: {
         type: "string"
       }
     }
@@ -50,14 +48,14 @@ const readonlyUischema = {
     elements: [
       {
         type: "Control",
-        scope: "#/properties/firstname",
+        scope: "#/properties/firstName",
         options: {
           readOnly: true
         }
       },
       {
         type: "Control",
-        scope: "#/properties/lastname",
+        scope: "#/properties/lastName",
       }
     ]
   }
@@ -66,11 +64,11 @@ const readonlyUischema = {
 const readonlySchema = {
   schema: {
     properties: {
-      firstname: {
+      firstName: {
         type: "string",
         readOnly: true
       },
-      lastname: {
+      lastName: {
         type: "string"
       }
     }
@@ -80,11 +78,11 @@ const readonlySchema = {
     elements: [
       {
         type: "Control",
-        scope: "#/properties/firstname"
+        scope: "#/properties/firstName"
       },
       {
         type: "Control",
-        scope: "#/properties/lastname"
+        scope: "#/properties/lastName"
       }
     ]
   }
@@ -93,10 +91,10 @@ const readonlySchema = {
 const readonlyRule = {
   schema: {
     properties: {
-      firstname: {
+      firstName: {
         type: "string"
       },
-      lastname: {
+      lastName: {
         type: "string"
       }
     }
@@ -106,18 +104,18 @@ const readonlyRule = {
     elements: [
       {
         type: "Control",
-        scope: "#/properties/firstname",
+        scope: "#/properties/firstName",
         rule: {
           effect: "DISABLE",
           condition: {
-            scope: "#/properties/name",
+            scope: "#",
             schema: {}
           }
         }
       },
       {
         type: "Control",
-        scope: "#/properties/lastname"
+        scope: "#/properties/lastName"
       }
     ]
   }

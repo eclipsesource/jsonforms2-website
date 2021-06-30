@@ -10,6 +10,6 @@ module.exports = {
     'gen-uischema',
     'gen-both-schemas',
     'combinators',
-    'list-with-detail',
-    'readonly'  ]
+    'list-with-detail'
+]
 };
