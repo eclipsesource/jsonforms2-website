@@ -60,6 +60,21 @@ const uiSchemaLabel = {
   }
 }
 
+const oneOfLabel = {
+  schema : {
+    properties: {
+      oneOfEnum: {
+        type: 'string',
+        oneOf: [
+          {const: 'foo', title: 'Foo'},
+          {const: 'bar', title: 'Bar'},
+          {const: 'foobar', title: 'FooBar'}
+        ]
+      }
+    }
+  }
+}
+
 export const PropertyLabel = () => (
   <Demo
     schema={propertyLabel.schema}
@@ -78,5 +93,11 @@ export const UiSchemaLabel = () => (
   <Demo
     schema={uiSchemaLabel.schema}
     uischema={uiSchemaLabel.uischema}
+  />
+);
+
+export const OneOfLabel = () => (
+  <Demo
+    schema={oneOfLabel.schema}
   />
 );

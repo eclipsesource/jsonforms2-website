@@ -3,7 +3,7 @@ id: labels
 title: Labels
 ---
 
-import { PropertyLabel, SchemaLabel, UiSchemaLabel } from '../../src/components/docs/labels'
+import { OneOfLabel, PropertyLabel, SchemaLabel, UiSchemaLabel } from '../../src/components/docs/labels'
 
 There are three different ways, how a label is determined by JSON Forms:
 - If there is no JSON Schema `title` and no UI schema `label`, it is derived from property name
@@ -58,3 +58,24 @@ Another option is to use the `title` attribute within the JSON schema.
 ```
 
 <SchemaLabel />
+
+## `oneOf` enum titles
+
+If you to assign a title to a `oneOf` enum, you can do so by setting the title like this:
+
+```js
+{
+  properties: {
+    oneOfEnum: {
+      type: 'string',
+      oneOf: [
+        {const: 'foo', title: 'Foo'},
+        {const: 'bar', title: 'Bar'},
+        {const: 'foobar', title: 'FooBar'}
+      ]
+    }
+  }
+}
+```
+
+<OneOfLabel />
