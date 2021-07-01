@@ -1,0 +1,60 @@
+---
+id: labels
+title: Labels
+---
+
+import { PropertyLabel, SchemaLabel, UiSchemaLabel } from '../../src/components/docs/labels'
+
+There are three different ways, how a label is determined by JSON Forms:
+- If there is no JSON Schema `title` and no UI schema `label`, it is derived from property name
+- If there is no UI schema `label` but a JSON Schema `title`, it will be taken
+- If there is a UI schema `label`, it will be used
+
+## Derived by property
+
+When no `title` in the UI schema and no `label` in the JSON schema is provided, JSON Forms will derive the name directly from the property name.
+For example if the input name is `firstname`, the label will be `Firstname`.
+In order to have a label with multiple separated words, camel case can be used.
+If the input name is `firstName`, the label will be `First Name`.
+
+:::note
+The first letter must always be lowercase!
+:::
+
+<PropertyLabel />
+
+## UI Schema `label`
+
+If you want to set a label explicitly, the recommend way is to use the `label` attribute within the UI schema.
+
+```js
+{
+  properties: {
+    name: {
+      type: "string",
+      title: "First Name"
+    }
+  }
+}
+```
+
+<UiSchemaLabel />
+
+## JSON Schema `title`
+
+Another option is to use the `title` attribute within the JSON schema.
+
+```js
+{
+  type: "VerticalLayout",
+  elements: [
+    {
+      type: "Control",
+      scope: "#/properties/name",
+      label: "First Name"
+    }
+  ]
+}
+```
+
+<SchemaLabel />
