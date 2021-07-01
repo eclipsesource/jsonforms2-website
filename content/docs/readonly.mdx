@@ -39,8 +39,7 @@ The option `readonly: true` can be set on any element in the UI schema:
   elements: [
     {
       type: "Control",
-      label: "Completed",
-      scope: "#/properties/firstname",
+      scope: "#/properties/firstName",
       options: {
         readonly: true
       }
@@ -58,7 +57,7 @@ To disable an input via JSON Schema, specify `readOnly: true`:
 ```js
 {
   properties: {
-    firstname: {
+    firstName: {
       type: "string",
       readOnly: true
     },
@@ -80,8 +79,7 @@ Any UI schema element can be enabled or disabled dynamically via our [rule suppo
   elements: [
     {
       type: "Control",
-      label: "Completed",
-      scope: "#/properties/firstname",
+      scope: "#/properties/firstName",
       rule: {
         effect: "DISABLE",
         condition: {
@@ -93,8 +91,7 @@ Any UI schema element can be enabled or disabled dynamically via our [rule suppo
     // OR
     {
       type: "Control",
-      label: "Completed",
-      scope: "#/properties/firstname",
+      scope: "#/properties/firstName",
       rule: {
         effect: "ENABLE",
         condition: {

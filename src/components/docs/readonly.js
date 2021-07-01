@@ -2,8 +2,8 @@ import React from 'react';
 import { Demo } from '../common';
 
 const data = {
-  firstname: "Max",
-  lastname: "Mustermann"
+  firstName: "Max",
+  lastName: "Mustermann"
 }
 
 const readonlyConfig = {
