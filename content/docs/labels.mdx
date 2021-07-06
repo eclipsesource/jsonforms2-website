@@ -5,27 +5,24 @@ title: Labels
 
 import { OneOfLabel, PropertyLabel, SchemaLabel, UiSchemaLabel } from '../../src/components/docs/labels'
 
-There are three different ways, how a label is determined by JSON Forms:
-- If there is no JSON Schema `title` and no UI schema `label`, it is derived from property name
-- If there is no UI schema `label` but a JSON Schema `title`, it will be taken
-- If there is a UI schema `label`, it will be used
+There are three different ways, how a label is determined by JSON Forms in the following order:
+- If an UI Schema `label` is set, it will be used as the label
+- If there is no UI Schema `label` **but** a JSON Schema `title`, the JSON Schema `title` will be used as the label
+- If there is no UI schema `label` **and** no JSON Schema `title`, the label will be derived derived from the property name
 
 ## Derived by property
 
-When no `title` in the UI schema and no `label` in the JSON schema is provided, JSON Forms will derive the name directly from the property name.
+When no `label` in the UI Schema and no `title` in the JSON Schema is provided, JSON Forms will derive the label directly from the property name.
 For example if the input name is `firstname`, the label will be `Firstname`.
 In order to have a label with multiple separated words, camel case can be used.
-If the input name is `firstName`, the label will be `First Name`.
-
-:::note
-The first letter must always be lowercase!
-:::
+So if the input name is `firstName`, the label will be `First Name`.
 
 <PropertyLabel />
 
-## UI Schema `label`
 
-If you want to set a label explicitly, the recommend way is to use the `label` attribute within the UI schema.
+## JSON Schema `title`
+
+If you want to set a label explicitly, one way is to use the `title` attribute within JSON schema.
 
 ```js
 {
@@ -38,11 +35,11 @@ If you want to set a label explicitly, the recommend way is to use the `label` a
 }
 ```
 
-<UiSchemaLabel />
+<SchemaLabel />
 
-## JSON Schema `title`
+## UI Schema `label`
 
-Another option is to use the `title` attribute within the JSON schema.
+Alternatively you can also set a label by using the `label` attribute within the UI schema.
 
 ```js
 {
@@ -57,21 +54,29 @@ Another option is to use the `title` attribute within the JSON schema.
 }
 ```
 
-<SchemaLabel />
+<UiSchemaLabel />
 
 ## `oneOf` enum titles
 
-If you to assign a title to a `oneOf` enum, you can do so by setting the title like this:
+Since JSON Schema does not provide any way to set custom labels for enums, you can use an `oneOf` enum construct in order to give your enums specific labels:
 
 ```js
 {
   properties: {
-    oneOfEnum: {
-      type: 'string',
+    gender: {
       oneOf: [
-        {const: 'foo', title: 'Foo'},
-        {const: 'bar', title: 'Bar'},
-        {const: 'foobar', title: 'FooBar'}
+        {
+          const: "male",
+          title: "Male"
+        },
+        {
+          const: "female",
+          title: "Female"
+        },
+        {
+          const: "other",
+          title: "Diverse"
+        }
       ]
     }
   }

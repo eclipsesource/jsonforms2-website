@@ -61,14 +61,22 @@ const uiSchemaLabel = {
 }
 
 const oneOfLabel = {
-  schema : {
-    properties: {
-      oneOfEnum: {
-        type: 'string',
-        oneOf: [
-          {const: 'foo', title: 'Foo'},
-          {const: 'bar', title: 'Bar'},
-          {const: 'foobar', title: 'FooBar'}
+  schema: {
+    "properties": {
+      "gender": {
+        "oneOf": [
+          {
+            "const": "male",
+            "title": "Male"
+          },
+          {
+            "const": "female",
+            "title": "Female"
+          },
+          {
+            "const": "other",
+            "title": "Diverse"
+          }
         ]
       }
     }
