@@ -5,11 +5,9 @@ import Layout from '@theme/Layout';
 import styles from './assets/support.module.scss';
 
 function Support() {
-  const context = useDocusaurusContext();
-  const {siteConfig = {}} = context;
   return (
     <Layout
-      title={siteConfig.title}
+      title="Professional Support"
       description="Description will go into a meta tag in <head />">
       <div className='support__main' style={{ justifyContent: 'center', alignItems: 'center', display: 'flex', flexDirection: 'column' }}>
         <div className={styles.comparison_container} style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>

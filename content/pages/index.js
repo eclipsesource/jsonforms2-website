@@ -37,7 +37,7 @@ function Home() {
   const {siteConfig = {}} = context;
   return (
     <Layout
-      title={siteConfig.title}
+      title={siteConfig.tagline}
       description={siteConfig.tagline}>
       <div className={styles.home}>
         <header className={clsx('hero', styles.heroBanner)}>
