@@ -1,5 +1,4 @@
 import React from 'react';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import styles from './assets/support.module.scss';

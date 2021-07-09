@@ -10,10 +10,10 @@ const schema = {
         type: 'object',
         title: 'Users',
         properties: {
-          firstname: { 
+          firstname: {
             type: 'string'
           },
-          lastname: { 
+          lastname: {
             type: 'string'
           },
           email: {

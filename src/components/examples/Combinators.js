@@ -18,7 +18,7 @@ const uischema = {
       scope: '#/properties/addressOrUser'
     }
   ]
-} 
+}
 
 const schema = {
   definitions: {
