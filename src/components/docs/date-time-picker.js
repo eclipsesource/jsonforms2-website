@@ -35,7 +35,7 @@ export const TimeSchemaInput = {
     scope: '#/properties/time',
   },
   data: {
-    time: '13:37',
+    time: '13:37:00',
   },
 };
 
@@ -63,7 +63,7 @@ export const TimeUiSchemaInput = {
     }
   },
   data: {
-    time: '13:37'
+    time: '13:37:00'
   },
 };
 
@@ -98,7 +98,7 @@ export const TimeUiSchemaOptionsInput = {
     }
   },
   data: {
-    time: '13:00'
+    time: '13:00:00'
   },
 };
 
