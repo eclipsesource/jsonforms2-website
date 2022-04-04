@@ -1,0 +1,167 @@
+---
+id: i18n
+title: i18n
+description: Translate jsonforms
+---
+
+import I18nExample from '../../src/components/docs/i18n';
+
+:::note
+
+Please note that the renderer sets themselves are not yet translated.
+You can find the current status here:
+https://github.com/eclipsesource/jsonforms/issues/1826
+
+:::
+
+The translate functionality of JSONForms is integrated into the core component.
+In order to translate JSONForms, you need to set a translation function and provide it to the JSONForms object:
+```ts
+const translator = (key, defaultMessage) => {
+  console.log(`Key: ${key}, Default Message: ${defaultMessage}`);
+  return defaultMessage;
+};
+
+const [locale, setLocale] = useState<'de'|'en'>('de');
+
+<JsonForms
+  i18n={{locale: locale, translate: translator}}
+  ...
+/>
+```
+
+The i18n prop consist of three components: `locale`, `translate`, `translateError`. 
+
+## `locale`
+
+Allows to specify the current locale of the application.
+
+## `translate`
+
+Allows to provide a translation function, which handles the actual translation.
+
+:::caution
+
+The translate function should be side effect free and should be stable (memoized) to avoid unnecessary re-renderings, i.e. the translate function should only change if there are new translations.
+
+:::
+
+
+The translate function has the following parameters:
+
+### `key`
+The key is used to identify the string, that needs to be translated.
+It can be set using the `UI Schema`, the `JSON Schema` or by default is generated based on the property path.
+
+#### UI Schema option
+
+The key can be set via the `i18n` UI Schema option:
+```json
+{ 
+  "type": "Control", 
+  "label": "name", 
+  "scope": "#/properties/name", 
+  "options": { 
+    "i18n": "customName" 
+  } 
+}
+```
+
+#### JSON Schema
+
+The key can also be set with the JSON Schema `i18n` option:
+```json
+{
+  "name": { 
+    "type": "string", 
+    "i18n": "myCUstomName" 
+  }
+} 
+```
+
+#### Default: Property path
+
+Is none of the above is set, the property path will be used as the key.
+e.g. `name`.
+
+### `defaultMessage`
+The default message is provided by JSONForms and can act as a fallback.
+
+:::note
+
+If the defaultMessage is `undefined` it should not be modified and still return `undefined` (and not an empty string or similar).
+
+:::
+
+## `translateError`
+
+`<i18nkey>` in the sections below refers to the key of the field (see `key` section above).
+
+#### Evaluation order
+
+#### `<i18nkey>.error.custom`
+
+If `error.custom` is set, just a single error will be output, no matter how many errors are present.
+
+#### `<i18nkey>.error.<keyword>`
+
+e.g. `name.error.required`
+
+If no `error.custom` is set, the translator will look for a concrete message for a specific field and a specific error. 
+In the example above, the function will look for a `required` error on the `name` field.
+
+#### `error.<keyword>`
+
+e.g. `error.required`
+
+If no specific field error message is set, the translator will then look for an error message, that is independent of the field. 
+In the example case above, the function will look for a `required` error translation.
+
+#### Default error translator
+
+Next the translator will look for a default message, which is provided by the core framework.
+
+#### Default AJV error message
+
+If none of the above are set and no default error is available, the error message provided by AJV will be output.
+
+## Enum translation
+
+Enum translations are a little different then the other control translations. 
+In order to translate enum values, you need to add one additional attribute to the translation for every value. 
+For example:
+Let's assume we have a field `Gender`, which has three possible values: 
+- `Male`
+- `Female`
+- `Other`
+
+If we now want to translate these, we need to reference them in the translation like this:
+```js
+gender: {
+  label: 'Geschlecht',
+  description: 'Das Geschlecht auswählen',
+  Male: 'Männlich',
+  Female: 'Weiblich',
+  Other: 'Divers'
+},
+```
+
+So the `label` attribute translates the `label` of the field, just like with any other control field. The same with the `description` attribute.
+All the other options translate the possible values of the enum.
+
+## Access translation in custom renderer sets
+
+If you want to access the translation function within a custom renderer set, you can use the JSONForms context for that:
+```
+const ctx = useJsonForms();
+
+const locale = ctx.i18n.locale;
+const translate = ctx.i18n.translate;
+const translateError = ctx.i18n.translateError;
+```
+
+With this you can for example change phone number patterns based on the current locale for validation.
+
+## Example
+
+<I18nExample />
