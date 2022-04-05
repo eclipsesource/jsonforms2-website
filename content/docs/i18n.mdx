@@ -141,13 +141,16 @@ JSON Forms will use `undefined  when the message could be skipped or another gen
 The values can contain additional context, if the key of the string is not enough to determine the correct translation.
 For example all error translations will have the error as part of the values object.
 
-## Error translation
+## Error Customizations
 
 TODO: Description
 
 #### `<i18nkey>.error.custom`
 
 If `error.custom` is set, just a single error will be output, no matter how many errors are present.
+The `translate` function is called for `error.custom`
+The `translateError` function is called for each error.
+By default it behaves like this:
 
 ## `translateError`
 
@@ -180,6 +183,23 @@ Next the translator will look for a default message, which is provided by the co
 #### Default AJV error message
 
 If none of the above are set and no default error is available, the error message provided by AJV will be output.
+
+### Example
+
+If we have the following schema:
+```js
+{
+  phone: {
+    type: "string",
+    minLength: 10,
+    pattern: "^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
+  }
+}
+```
+And the order in which the error keys are evaluated is the following:
+- `phone.error.custom`: if this is set, the `pattern` and `minLength` error will be ignore and just this message is output
+- `phone.error.pattern` & `phone.error.minLength`
+- `error.pattern` & `error.minLength`
 
 ## Enum translation
 
