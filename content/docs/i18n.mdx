@@ -48,8 +48,13 @@ The translate function should be side effect free and should be stable (memoized
 
 :::
 
+The type of the translate is
 
-The translate function has the following parameters:
+```
+(key: string, defaultMessage: string | undefined) => string | undefined)
+```
+
+and there for has the following parameters:
 
 ### `key`
 
@@ -89,7 +94,6 @@ Therefore the translation will be invoked with `myCustomName.label` & `myCustomN
 #### Default: Property path
 
 Is none of the above is set, the property path will be used as the key.
-e.g. `name`.
 
 ```
 {
@@ -122,6 +126,7 @@ e.g. `name`.
 
 The paths in the above example would be:
 - `firstName.label` & `firstName.description`
+- `address.label` & `address.description`
 - `address.street.label` & `address.street.description`
 - `comments.message.label` & `comments.message.description` (the path for arrays will not contain indices)
 
@@ -142,20 +147,59 @@ JSON Forms will use `undefined` when the message could be skipped or another mor
 The values can contain additional context for the current translation.
 For example all error translations will have the AJV error object as part of the values object.
 
+## `translateError`
+
+The `translateError` function is called whenever a single message is to be extracted from an AJV error object.
+ 
+The type of the `translateError` function is
+
+```
+(error: ErrorObject, translate: Translator, uischema?: UISchemaElement) => string
+```
+ 
+* The `error` is the AJV error object
+* `translate` is the i18n `translate` function handed over to JSON Forms
+* In cases where a UI Schema Element can be correlated to an `error` it will also be handed over
+* The `translateError` function always returns a `string`
+ 
+Usually this method does not need to be customized as JSON Forms already provides a sensible default implementation. A reason to customize this method could be to integrate third party frameworks like `ajv-i18n`.
+
+For more information about how errors can be customized, see the following section.
+
 ## Error Customizations
 
-TODO: Description
+For each control a list of errors are determined.
+This section describes the default behavior of JSON forms to offer translation support for them.
 
-#### `<i18nkey>.error.custom`
+### `<i18nkey>.error.custom`
 
-If `<i18nkey>.error.custom` is set, just this single message will be used, no matter how many errors are present.
+Before invoking the `translateError` function, JSON Forms will check whether a `<i18nkey>.error.custom` translation exists.
+If a `<i18nkey>.error.custom` exists, just this single message will be used, no matter how many errors are present.
 
 This is useful if there are many JSON Schema validaton keywords defined for a single property, but a single cohesive message shall be displayed.
 
 ## `translateError`
 
-The `translateError` is called for every AJV error. 
-`translateError` is an optional parameter to the i18n object. Usually it is not expected to customize this option.
+The `translateError` function is called whenever a single message is to be extracted from an AJV error object.
+
+The type of the `translateError` function is
+
+```
+(error: ErrorObject, translate: Translator, uischema?: UISchemaElement) => string
+```
+
+* The `error` is the AJV error object
+* `translate` is the i18n `translate` function handed over to JSON Forms
+* In cases where a UI Schema Element can be correlated to an `error` it will also be handed over
+* The `translateError` function always returns a `string`
+
+Usually this method does not need to be customized as JSON Forms already provides a sensible default implementation. A reason to customize this method could be to integrate third party frameworks like `ajv-i18n`.
+
+For more information about how errors can be customized, see the following section
+
+If no `<i18nkey>.error.custom` message is returned by the `translate` function, `translateError` will be called for each AJV error and the results combined.
+
+The default implementation of `translateError` will invoke `translate` multiple times to determine the best message for the given error. Therefore it's usually not necessary to customize `translateError` itself.
 By default error it works like this:
 
 `<i18nkey>` in the sections below refers to the key of the field (see `key` section above).
@@ -177,7 +221,7 @@ This is useful to customize for example `required` or `pattern` messages for all
 
 #### error message
 
-Next the translator will look for a default message, which is provided by the core framework.
+At last the default `translateError` implementation will check whether the `message` of the error object has a specific translation.
 
 #### Default AJV error message
 
@@ -208,10 +252,47 @@ Enum translations are based on the respective entries:
 
 Therefore, in order to translate enum values, an additional key is checked for each enum entry.
 For example:
-Let's assume we have a field `Gender`, which has three possible values: 
-- `Male`
-- `Female`
-- `Other`
+Let's assume we have an enum attribute `gender`, which looks like this:
+ 
+```js
+{
+  gender: {
+    type: "string",
+    enum: ["male", "female", "other"]
+  }
+}
+```
+ 
+In this case the `translate` function will be invoked with the keys `gender.male`, `gender.female` and `gender.other` to translate these enum values. In case `gender` had an `i18n` property, it would be used instead, i.e. `<i18nkey>.male` etc.
+ 
+Let's assume we have a `oneOf` enum attribute gender which looks like this:
+ 
+```js
+{
+  gender: {
+    oneOf: [
+      {
+        title: "Male",
+        const: 0
+      },
+      {
+        title: "Female",
+        const: "f",
+        i18n: "fem"
+      },
+      {
+        const: null
+      }
+    ]
+  }
+}
+```
+
+Here the requested keys are:
+
+* `gender.Male` - property path + `title` of the `oneOf` entry
+* `fem` - direct usage of the `i18n` property for the `oneOf` entry
+* `null` - the `title` attribute is missing, therefore the `null` value is stringified to `'null'`.
 
 
 ## Access translation in custom renderer sets
