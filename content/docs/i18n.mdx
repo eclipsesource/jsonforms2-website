@@ -14,8 +14,8 @@ https://github.com/eclipsesource/jsonforms/issues/1826
 
 :::
 
-The translate functionality of JSONForms is integrated into the core component.
-In order to translate JSONForms, you need to set a translation function and provide it to the JSONForms component:
+The translate functionality of JSON Forms is integrated into the core component.
+In order to translate JSON Forms, you need to set a translation function and provide it to the JSON Forms component:
 ```ts
 const translator = (key, defaultMessage) => {
   console.log(`Key: ${key}, Default Message: ${defaultMessage}`);
@@ -50,7 +50,7 @@ The translate function should be side effect free and should be stable (memoized
 
 The type of the translate is
 
-```
+```ts
 (key: string, defaultMessage: string | undefined) => string | undefined)
 ```
 
@@ -93,29 +93,29 @@ Therefore the translation will be invoked with `myCustomName.label` & `myCustomN
 
 #### Default: Property path
 
-Is none of the above is set, the property path will be used as the key.
+If none of the above is set, the property path will be used as the key.
 
-```
+```json
 {
-  properties: {
-    firstName: {
-      type: "string"
+  "properties": {
+    "firstName": {
+      "type": "string"
     },
-    address: {
-      type: "object",
-      properties: {
-        street: {
-          type: "string"
+    "address": {
+      "type": "object",
+      "properties": {
+        "street": {
+          "type": "string"
         }
       }
-    }
-    comments: {
-      type: "array",
-      items: {
-        type: "object",
-        properties: {
-          message: {
-            type: "string"
+    },
+    "comments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string"
           },
         }
       }
@@ -132,7 +132,7 @@ The paths in the above example would be:
 
 ### `defaultMessage`
 
-The default message is provided by JSONForms and can act as a fallback or could be translated.
+The default message is provided by JSON Forms and can act as a fallback or could be translated.
 
 :::note
 
@@ -144,7 +144,7 @@ JSON Forms will use `undefined` when the message could be skipped or another mor
 
 ### `values`
 
-The values can contain additional context for the current translation.
+`values` can contain additional context for the current translation.
 For example all error translations will have the AJV error object as part of the values object.
 
 ## `translateError`
@@ -153,7 +153,7 @@ The `translateError` function is called whenever a single message is to be extra
  
 The type of the `translateError` function is
 
-```
+```ts
 (error: ErrorObject, translate: Translator, uischema?: UISchemaElement) => string
 ```
  
@@ -162,40 +162,20 @@ The type of the `translateError` function is
 * In cases where a UI Schema Element can be correlated to an `error` it will also be handed over
 * The `translateError` function always returns a `string`
  
-Usually this method does not need to be customized as JSON Forms already provides a sensible default implementation. A reason to customize this method could be to integrate third party frameworks like `ajv-i18n`.
+Usually this method does not need to be customized as JSON Forms already provides a sensible default implementation.
+A reason to customize this method could be to integrate third party frameworks like `ajv-i18n`.
 
-For more information about how errors can be customized, see the following section.
+For more information about how errors can be customized, see the following section:
 
 ## Error Customizations
 
-For each control a list of errors are determined.
+For each control a list of errors is determined.
 This section describes the default behavior of JSON forms to offer translation support for them.
 
 ### `<i18nkey>.error.custom`
 
 Before invoking the `translateError` function, JSON Forms will check whether a `<i18nkey>.error.custom` translation exists.
-If a `<i18nkey>.error.custom` exists, just this single message will be used, no matter how many errors are present.
-
 This is useful if there are many JSON Schema validaton keywords defined for a single property, but a single cohesive message shall be displayed.
-
-## `translateError`
-
-The `translateError` function is called whenever a single message is to be extracted from an AJV error object.
-
-The type of the `translateError` function is
-
-```
-(error: ErrorObject, translate: Translator, uischema?: UISchemaElement) => string
-```
-
-* The `error` is the AJV error object
-* `translate` is the i18n `translate` function handed over to JSON Forms
-* In cases where a UI Schema Element can be correlated to an `error` it will also be handed over
-* The `translateError` function always returns a `string`
-
-Usually this method does not need to be customized as JSON Forms already provides a sensible default implementation. A reason to customize this method could be to integrate third party frameworks like `ajv-i18n`.
-
-For more information about how errors can be customized, see the following section
 
 If no `<i18nkey>.error.custom` message is returned by the `translate` function, `translateError` will be called for each AJV error and the results combined.
 
@@ -297,8 +277,9 @@ Here the requested keys are:
 
 ## Access translation in custom renderer sets
 
-If you want to directly access the i18n properties within a custom renderer, you can use the JSONForms context for that:
-```
+If you want to directly access the i18n properties within a custom renderer, you can use the JSON Forms context for that:
+
+```js
 const ctx = useJsonForms();
 
 const locale = ctx.i18n.locale;
