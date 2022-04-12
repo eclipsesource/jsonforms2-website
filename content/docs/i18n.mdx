@@ -15,7 +15,7 @@ https://github.com/eclipsesource/jsonforms/issues/1826
 :::
 
 The translate functionality of JSONForms is integrated into the core component.
-In order to translate JSONForms, you need to set a translation function and provide it to the JSONForms object:
+In order to translate JSONForms, you need to set a translation function and provide it to the JSONForms component:
 ```ts
 const translator = (key, defaultMessage) => {
   console.log(`Key: ${key}, Default Message: ${defaultMessage}`);
@@ -30,12 +30,12 @@ const [locale, setLocale] = useState<'de'|'en'>('de');
 />
 ```
 
-The i18n prop consist of three components: `locale`, `translate`, `translateError`. 
+The i18n prop consist of three components: `locale`, `translate` and `translateError`. 
 
 ## `locale`
 
 Allows to specify the current locale of the application.
-This can be used by renderers to render locale specific UI elements (for example formatting of dates).
+This can be used by renderers to render locale specific UI elements, for example for locale-aware formatting of numbers.
 
 
 ## `translate`
@@ -131,15 +131,16 @@ The default message is provided by JSONForms and can act as a fallback or could 
 
 :::note
 
-If the defaultMessage is `undefined` it should not be modified and still return as `undefined` (and not an empty string or similar).
-JSON Forms will use `undefined  when the message could be skipped or another generic key could be tried. 
+If the `defaultMessage` is `undefined` you should also return `undefined` if you don't have a translation for the given key.
+Returning an empty string (or something similar) instead may result in undesired behavior.
+JSON Forms will use `undefined` when the message could be skipped or another more generic key could be tried.
 
 :::
 
 ### `values`
 
-The values can contain additional context, if the key of the string is not enough to determine the correct translation.
-For example all error translations will have the error as part of the values object.
+The values can contain additional context for the current translation.
+For example all error translations will have the AJV error object as part of the values object.
 
 ## Error Customizations
 
@@ -147,10 +148,9 @@ TODO: Description
 
 #### `<i18nkey>.error.custom`
 
-If `error.custom` is set, just a single error will be output, no matter how many errors are present.
-The `translate` function is called for `error.custom`
-The `translateError` function is called for each error.
-By default it behaves like this:
+If `<i18nkey>.error.custom` is set, just this single message will be used, no matter how many errors are present.
+
+This is useful if there are many JSON Schema validaton keywords defined for a single property, but a single cohesive message shall be displayed.
 
 ## `translateError`
 
@@ -164,29 +164,28 @@ By default error it works like this:
 
 #### `<i18nkey>.error.<keyword>`
 
-e.g. `name.error.required`
+Example keys: `name.error.required`, `address.street.error.pattern`
 
-If no `error.custom` is set, the translator will look for a concrete message for a specific field and a specific error. 
-In the example above, the function will look for a `required` error on the `name` field.
+The default `translateError` will first look for a concrete message for a specific field and a specific error type.
 
 #### `error.<keyword>`
 
-e.g. `error.required`
+Example keys: `error.required`, `error.pattern`
 
-If no specific field error message is set, the translator will then look for an error message, that is independent of the field. 
-In the example case above, the function will look for a `required` error translation.
+After checking field specific translations, `translateError` will then look for form-wide translations of errors, independent of each respective field.
+This is useful to customize for example `required` or `pattern` messages for all properties.
 
-#### Default error translator
+#### error message
 
 Next the translator will look for a default message, which is provided by the core framework.
 
 #### Default AJV error message
 
-If none of the above are set and no default error is available, the error message provided by AJV will be output.
+If none of the above apply, the `message` provided by the AJV error object will be used.
 
 ### Example
 
-If we have the following schema:
+Consider the following schema for an object attribute:
 ```js
 {
   phone: {
@@ -196,38 +195,28 @@ If we have the following schema:
   }
 }
 ```
-And the order in which the error keys are evaluated is the following:
-- `phone.error.custom`: if this is set, the `pattern` and `minLength` error will be ignore and just this message is output
+The order in which the error keys are evaluated is the following:
+- `phone.error.custom`: if this is set, the `pattern` and `minLength` errors will be ignores and just this message is used
 - `phone.error.pattern` & `phone.error.minLength`
 - `error.pattern` & `error.minLength`
 
 ## Enum translation
 
-Enum translations are a little different then the other control translations. 
-In order to translate enum values, you need to add one additional attribute to the translation for every value. 
+Enum translations are based on the respective entries:
+ - For JSON Schema `enum`, the stringified value is used.
+ - For JSON Schema `oneOf` enums which consist of (`title`, `const`) pairs a specialized `i18n` key or `title` is used.
+
+Therefore, in order to translate enum values, an additional key is checked for each enum entry.
 For example:
 Let's assume we have a field `Gender`, which has three possible values: 
 - `Male`
 - `Female`
 - `Other`
 
-If we now want to translate these, we need to reference them in the translation like this:
-```js
-gender: {
-  label: 'Geschlecht',
-  description: 'Das Geschlecht auswählen',
-  Male: 'Männlich',
-  Female: 'Weiblich',
-  Other: 'Divers'
-},
-```
-
-So the `label` attribute translates the `label` of the field, just like with any other control field. The same with the `description` attribute.
-All the other options translate the possible values of the enum.
 
 ## Access translation in custom renderer sets
 
-If you want to access the translation function within a custom renderer set, you can use the JSONForms context for that:
+If you want to directly access the i18n properties within a custom renderer, you can use the JSONForms context for that:
 ```
 const ctx = useJsonForms();
 
