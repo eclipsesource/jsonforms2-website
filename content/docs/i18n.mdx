@@ -23,9 +23,10 @@ const translator = (key, defaultMessage) => {
 };
 
 const [locale, setLocale] = useState<'de'|'en'>('de');
+const translation = useMemo(() => translator(locale), [locale]);
 
 <JsonForms
-  i18n={{locale: locale, translate: translator}}
+  i18n={{locale: locale, translate: translation}}
   ...
 />
 ```
