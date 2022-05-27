@@ -73,6 +73,7 @@ code {
 .blog-wrapper {
   .avatar__photo {
     display: flex;
+    filter: invert(1);
   }
 }
 
