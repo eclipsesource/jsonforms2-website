@@ -18,10 +18,10 @@
     "clear": "docusaurus clear"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.20",
-    "@docusaurus/plugin-client-redirects": "2.0.0-beta.20",
-    "@docusaurus/preset-classic": "2.0.0-beta.20",
-    "@easyops-cn/docusaurus-search-local": "^0.26.1",
+    "@docusaurus/core": "2.0.0-beta.21",
+    "@docusaurus/plugin-client-redirects": "2.0.0-beta.21",
+    "@docusaurus/preset-classic": "2.0.0-beta.21",
+    "@easyops-cn/docusaurus-search-local": "^0.27.0",
     "@emotion/react": "^11.8.2",
     "@emotion/styled": "^11.8.1",
     "@jsonforms/core": "3.0.0-beta.2",
