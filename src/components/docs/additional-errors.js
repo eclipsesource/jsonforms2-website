@@ -5,8 +5,6 @@ import {
 } from '@jsonforms/material-renderers';
 import Button from '@mui/material/Button';
 import { JsonForms } from '@jsonforms/react';
-import { ErrorObject } from 'ajv';
-import { ValidationMode } from '@jsonforms/core';
 
 const schema = {
     type: 'object',
@@ -44,13 +42,13 @@ const data = {
 let index = 0;
 
 const AdditionalErrorsExample = () => {
-    const validationModes: ValidationMode[] = [
+    const validationModes = [
         'ValidateAndShow',
         'ValidateAndHide',
         'NoValidation',
     ];
 
-    const [currentValidationMode, setValidationMode] = useState<ValidationMode>(
+    const [currentValidationMode, setValidationMode] = useState(
         validationModes[0]
     );
 
@@ -76,7 +74,7 @@ const AdditionalErrorsExample = () => {
 
     const [formData, setFormData] = useState(data);
     const [errors, setErrors] = useState([]);
-    const [additionalErrors, setAdditionalErrors] = useState<ErrorObject[]>([]);
+    const [additionalErrors, setAdditionalErrors] = useState([]);
 
     return (
         <div>
