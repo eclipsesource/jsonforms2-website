@@ -24,7 +24,7 @@ import schema from './assets/schema.json';
 import uischema from './assets/uischema.json';
 
 const currentVersion = process.env.CURRENTVERSION ?? corePackageJson.version;
-const nextVersion = process.env.NEXTVERSION ?? '';
+const nextVersion = process.env.NEXTVERSION;
 const nextVersionText =
   nextVersion && nextVersion !== currentVersion
     ? `@next: ${nextVersion}`
