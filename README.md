@@ -47,3 +47,5 @@ The command only takes one argument: The relative path to the jsonforms reposito
 ```
 
 This script queries the latest preview version of JSON Forms from Github and writes it into the environment variables.
+
+## Test
