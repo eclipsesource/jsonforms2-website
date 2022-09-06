@@ -6,6 +6,11 @@ import {
 } from '@jsonforms/material-renderers';
 import Button from '@mui/material/Button';
 import { JsonForms } from '@jsonforms/react';
+import TableCell from '@mui/material/TableCell/TableCell';
+import TableHead from '@mui/material/TableHead/TableHead';
+import Table from '@mui/material/Table/Table';
+import TableBody from '@mui/material/TableBody/TableBody';
+import TableRow from '@mui/material/TableRow/TableRow';
 
 const i18n = {
   schema: {
@@ -104,7 +109,7 @@ export const de = {
   },
 };
 
-const I18nExample = () => {
+export const I18nExample = () => {
   const [locale, setLocale] = useState('de');
 
   const createTranslator = (locale) => (key, defaultMessage) => {
@@ -139,4 +144,33 @@ const I18nExample = () => {
   );
 };
 
-export default I18nExample;
+export const ValuesTable = () => (
+  <div>
+    <Table>
+      <TableHead>
+        <TableRow>
+          <TableCell>Parameter</TableCell>
+          <TableCell>Description</TableCell>
+        </TableRow>
+      </TableHead>
+      <TableBody>
+        <TableRow>
+          <TableCell>errors</TableCell>
+          <TableCell>Array of AJV errors, that occurred during validation</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>path</TableCell>
+          <TableCell>The path of the translated element</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>schema</TableCell>
+          <TableCell>The schema of the translated element</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>uischema</TableCell>
+          <TableCell>The uischema of the translated element</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+  </div>
+);

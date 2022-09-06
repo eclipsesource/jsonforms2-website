@@ -4,7 +4,7 @@ title: i18n
 description: Translate jsonforms
 ---
 
-import I18nExample from '../../src/components/docs/i18n';
+import { I18nExample, ValuesTable } from '../../src/components/docs/i18n';
 
 :::note
 
@@ -52,7 +52,7 @@ The translate function should be side effect free and should be stable (memoized
 The type of the translate is
 
 ```ts
-(key: string, defaultMessage: string | undefined) => string | undefined)
+(key: string, defaultMessage: string | undefined, context: any) => string | undefined)
 ```
 
 and there for has the following parameters:
@@ -143,10 +143,13 @@ JSON Forms will use `undefined` when the message could be skipped or another mor
 
 :::
 
-### `values`
+### `context`
 
-`values` can contain additional context for the current translation.
-For example all error translations will have the AJV error object as part of the values object.
+`context` can contain additional information for the current translation. The following parameters can be provided:
+
+<ValuesTable/>
+
+Schema translation provide all properties, while UI schema translations only provide the `uischema`-property.
 
 ## `translateError`
 
@@ -275,6 +278,67 @@ Here the requested keys are:
 * `fem` - direct usage of the `i18n` property for the `oneOf` entry
 * `null` - the `title` attribute is missing, therefore the `null` value is stringified to `'null'`.
 
+## UI Schema Translation
+
+The UI schema has the elements `group`, `category` and `label`, which can also be translated.
+
+If a i18n-key is provided in a `group` or `category` element, `<i18n>.label` will be used as key.  
+If no i18n key is provided, the value of the `label`-property is used as key.  
+In case nether a i18n-key nor a label is provided, `<property-path>.label` will be used as default key.
+
+The `label` UI schema element will use `<i18n>.text` as key, if provided.  
+If no i18n key is provided, the value of the `text`-property is used as key. 
+
+
+Let's assume we have the following UI schema:
+ 
+```js
+const uischema = {
+  type: 'VerticalLayout',
+  elements: [
+    {
+      type: 'Control',
+      scope: '#/properties/user',
+      options: {
+        detail: {
+          type: 'Group',
+          i18n: 'i18nUser',
+        }
+      }
+    },
+    {
+      type: 'Control',
+      scope: '#/properties/address',
+      options: {
+        detail: {
+          type: 'Group',
+          label: 'labelAddress',
+        }
+      }
+    },
+    {
+      type: 'Control',
+      scope: '#/properties/address'
+    },
+    {
+      type: 'Label',
+      i18n: 'i18nLabel'
+    },
+    {
+      type: 'Label',
+      text: 'textLabel'
+    },
+  ]
+};
+```
+
+Here the requested keys are:
+
+* `i18nUser.label` - i18n + `label`
+* `labelAddress` - direct usage of the `label` property
+* `address.label` - property path + `label`
+* `i18nLabel.text` - i18n + `text`
+* `textLabel` - direct usage of the `text` property
 
 ## Access translation in custom renderer sets
 
