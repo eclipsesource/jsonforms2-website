@@ -248,7 +248,6 @@ module.exports = {
       '@easyops-cn/docusaurus-search-local',
       {
         hashed: true,
-        indexDocs: false,
         docsDir: "./content/docs",
         blogDir: "./content/news"
       },
