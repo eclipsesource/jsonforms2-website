@@ -121,7 +121,7 @@ module.exports = {
       '@docusaurus/preset-classic',
       {
         theme: {
-          customCss: require.resolve('./src/css/global.scss'),
+          customCss: require.resolve('./src/css/global.css'),
         },
         docs: false,
         blog: false,
@@ -131,7 +131,6 @@ module.exports = {
   ],
   plugins: [
     path.resolve(__dirname, './src/custom-webpack'),
-    'docusaurus-plugin-sass',
     'docusaurus2-dotenv',
     [
       '@docusaurus/plugin-content-pages',
