@@ -24,6 +24,9 @@ module.exports = {
       defaultMode: 'light',
       disableSwitch: true,
     },
+    prism: {
+      additionalLanguages: ['json'],
+    },
     navbar: {
       title: 'JSON Forms',
       style: 'dark',
