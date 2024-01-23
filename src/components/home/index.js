@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
 import Link from '@docusaurus/Link';
@@ -23,13 +23,6 @@ import { Demo } from '../common/Demo';
 import schema from '../../../content/pages/assets/schema.json';
 import uischema from '../../../content/pages/assets/uischema.json';
 
-const currentVersion = process.env.CURRENTVERSION ?? corePackageJson.version;
-const nextVersion = process.env.NEXTVERSION;
-const nextVersionText =
-  nextVersion && nextVersion !== currentVersion
-    ? `@next: ${nextVersion}`
-    : '';
-
 const data = { firstName: 'Max', lastName: 'Power' };
 
 function Home({ recentPosts }) {
@@ -37,6 +30,14 @@ function Home({ recentPosts }) {
   const {siteConfig = {}} = context;
   const recentPost = recentPosts[0];
   const { BlogPost } = recentPost;
+
+  const currentVersionText = 
+    `Version: ${currentVersion ? currentVersion : corePackageJson.version}`;
+
+  const nextVersionText =
+    nextVersion && nextVersion !== currentVersion
+      ? `@next: ${nextVersion}`
+      : '';
 
   return (
     <Layout
@@ -50,7 +51,7 @@ function Home({ recentPosts }) {
             <p className={styles.subtitle}>{siteConfig.tagline}</p>
             <p className={styles.subsubtitle}>Complex forms in the blink of an eye</p>
             <p className={styles.version}>
-            Version: {currentVersion}
+            Version: {currentVersionText}
               {nextVersionText && (
                 <>
                   <br />
