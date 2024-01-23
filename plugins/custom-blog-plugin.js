@@ -32,7 +32,7 @@ async function blogPluginExtended(...pluginArgs) {
 
           // Inject the MDX excerpt as a JSX component prop
           // (what's above the <!-- truncate --> marker)
-          Preview: {
+          BlogPost: {
             __import: true,
             // The markdown file for the blog post will be loaded by webpack
             path: blogPost.metadata.source,
