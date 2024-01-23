@@ -36,6 +36,7 @@ function Home({ recentPosts }) {
   const context = useDocusaurusContext();
   const {siteConfig = {}} = context;
   const recentPost = recentPosts[0];
+  const { Preview } = recentPost;
 
   return (
     <Layout
@@ -109,7 +110,7 @@ function Home({ recentPosts }) {
           <section className={styles.sectionNews}>
             <Card className={styles.newsCard}>
               <CardContent>
-                {recentPost.metadata.description}
+                <Preview />
                 <span style={{ display: 'block', textAlign: 'right', width: '100%'}}>{recentPost.metadata.formattedDate}</span>
               </CardContent>
             </Card>
