@@ -109,11 +109,11 @@ function Home() {
               <CardContent>
                 We released v3.2.0 🎉. Besides various fixes and improved developer tooling, this release adds middleware support to all bindings. This makes it a breeze to hook into data updates!
                 <br/>
-                With this release, the Angular core and material renderer set finally are up to date again supporting Angular 16 and 17. Special thanks to [JBBianchi](https://github.com/JBBianchi) for contributing this massive upgrade.
+                With this release, the Angular core and material renderer set finally are up to date again supporting Angular 16 and 17. Special thanks to <a href="https://github.com/JBBianchi">JBBianchi</a> for contributing this massive upgrade.
                 <br />
-                You can find the full changelog in the [Github release](https://github.com/eclipsesource/jsonforms/releases/tag/v3.2.0).
+                You can find the full changelog in the <a href="https://github.com/eclipsesource/jsonforms/releases/tag/v3.2.0">Github release</a>.
                 <br />
-                We welcome any feedback of curious users. Any questions? Check out our [community forum](http://jsonforms.discourse.group).
+                We welcome any feedback of curious users. Any questions? Check out our <a href="http://jsonforms.discourse.group">community forum</a>.
                 <br/>
                 <span style={{ display: 'block', textAlign: 'right', width: '100%'}}>24th January 2024</span>
               </CardContent>
