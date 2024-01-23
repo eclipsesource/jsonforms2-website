@@ -176,7 +176,7 @@ module.exports = {
       },
     ],
     [
-      '@docusaurus/plugin-content-blog',
+      './plugins/custom-blog-plugin',
       {
         id: 'news',
         path: 'content/news',
