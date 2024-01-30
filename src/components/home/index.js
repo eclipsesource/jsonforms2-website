@@ -50,15 +50,10 @@ function Home({ recentPosts }) {
             <img className={styles.logo} src='img/logo.svg' />
             <p className={styles.subtitle}>{siteConfig.tagline}</p>
             <p className={styles.subsubtitle}>Complex forms in the blink of an eye</p>
-            <p className={styles.version}>
-            Version: {currentVersionText}
-              {nextVersionText && (
-                <>
-                  <br />
-                  {nextVersionText}
-                </>
-              )}
-            </p>
+            <div className={styles.versionwrapper}>
+              <p className={styles.version}>{currentVersionText}</p>
+              <p className={styles.nextversion}>{nextVersionText}</p>
+            </div>
             <div className={styles.buttons}>
               <Link
                 className={clsx(
