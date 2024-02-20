@@ -6,6 +6,7 @@ import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from '../../../content/pages/assets/index.module.css';
 import corePackageJson from '@jsonforms/core/package';
+import { currentVersion, nextVersion } from '../../static/current-version.js';
 
 import SchemaIcon from '../../../static/img/schemaIcon.svg';
 import FeaturesIcon from '@mui/icons-material/Report';

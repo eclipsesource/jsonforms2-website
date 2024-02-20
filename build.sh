@@ -4,31 +4,32 @@
 # Add versions to frontpage
 #
 
-VERSION_FILE="./static/current-version.json"
+JS_FILE="./static/current-version.js"
 
 function next() {
+    printf "\n" >> "$JS_FILE"
+
     NEXTVERSIONCANDIDATE=$(curl --silent "https://api.github.com/repos/eclipsesource/jsonforms/tags" | grep '"name":' | head -1 | sed -E 's/.*"([^"]+)".*/\1/')
-    if [[ ${NEXTVERSIONCANDIDATE:0:1} == "v" ]] && [[ $NEXTVERSIONCANDIDATE != $CURRENTVERSION ]] ; then NEXTVERSION="${NEXTVERSIONCANDIDATE:1}"; fi
-    printf "\n  \"next-version\": \"$NEXTVERSION\"" >> "$VERSION_FILE"
+    if [[ ${NEXTVERSIONCANDIDATE:0:1} == "v" ]] && [[ $NEXTVERSIONCANDIDATE != $CURRENTVERSION ]]; then
+        NEXTVERSION="${NEXTVERSIONCANDIDATE:1}"
+    fi
+    printf "export const nextVersion = '$NEXTVERSION';" >> "$JS_FILE"
 }
 
 function current() {
     CURRENTVERSION=$(curl --silent "https://api.github.com/repos/eclipsesource/jsonforms/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
-    printf "  \"current-version\": \"$CURRENTVERSION\"" >> "$VERSION_FILE"
+    printf "export const currentVersion = '$CURRENTVERSION';" >> "$JS_FILE"
 }
 
 WITH_NEXT=$1
 
-rm -f "$VERSION_FILE"
-printf "{\n" >> "$VERSION_FILE"
+rm -f "$JS_FILE"
 
-rm -f .env
 if [[ $WITH_NEXT = "next" ]]; then
     current
-    printf "," >> "$VERSION_FILE"
     next
 else
     current
 fi
 
-printf "\n}\n" >> "$VERSION_FILE"
+printf "\n" >> "$JS_FILE"
