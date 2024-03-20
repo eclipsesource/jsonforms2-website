@@ -121,7 +121,7 @@ For more information about custom renderers, have a look [here](/docs/tutorial/c
 
 ## How can I minimize re-rendering?
 
-JSON Forms uses React.memo to avoid any unnecessary re-rendering.
+JSON Forms uses `React.memo` to avoid any unnecessary re-rendering.
 Therefore props should in general be stable, for example by memoizing them.
 There are three exceptions: JSON Forms can handle "onChange" and "middleware" changes, for example to support anonymous functions. Also new "i18n" objects will be ignored as long as their properties are stable.
 
