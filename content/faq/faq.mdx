@@ -119,11 +119,11 @@ const renderers = [
 
 For more information about custom renderers, have a look [here](/docs/tutorial/custom-renderers).
 
-## How can I minimize re-rendering in React?
+## How can I minimize re-rendering?
 
 JSON Forms uses React.memo to avoid any unnecessary re-rendering.
 Therefore props should in general be stable, for example by memoizing them.
-There are three exceptions: JSON Forms can handle "onChange" and "middleware" changes, for example to support anonymous functions. Also new "i18n" objects will be ignored as long as its properties are stable.
+There are three exceptions: JSON Forms can handle "onChange" and "middleware" changes, for example to support anonymous functions. Also new "i18n" objects will be ignored as long as their properties are stable.
 
 JSON Forms is able to recognize `data` objects it emitted via `onChange`, so handing them over is safe too.
 However whenever a different `data` object is handed over, JSON Forms will revalidate and rerender.
@@ -149,9 +149,7 @@ const [data, setData] = useState(initialData);
 />
 ```
 Updating the state with a new object in the `onChange` function leads to a new render cycle, in which JSON Forms will revalidate the data and retrigger the onChange method, resulting in an endless loop.
-Only provide a new object to JSON Forms if necessary, for example if an object needs to be modified.
-
-React also provides other tools to stabilize data, such as the `useMemo`, `useCallback`, or `useRef` hooks, to improve the performance.
+Only provide a new object to JSON Forms if necessary, for example if the data was modified outside of JSON Forms.
 
 ## How can I use default values within JSON Forms?
 
