@@ -74,7 +74,7 @@ const middleware = (
 };
 ```
 
-In the following, we will explore two examples demonstrating how this middleware can be utilized to provide custom implementations for JSON Forms actions.
+In the following, we will explore two examples demonstrating how middlewares can be utilized to provide custom implementations for JSON Forms actions.
 
 ### Dependent Fields
 
@@ -178,12 +178,11 @@ export const ControlledStyle = () => {
       data={data}
       schema={schema}
       renderers={materialRenderers}
-      middleware={middleware0}
+      middleware={middleware}
       additionalErrors={errors}
       validationMode='NoValidation'
     />
   );
 };
-```
 
 <ControlledStyle />
