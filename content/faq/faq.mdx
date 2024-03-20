@@ -136,7 +136,7 @@ const [data, setData] = useState(initialData);
   onChange={({ data }) => setData(data)}
 />
 ```
-In this Scenario, onChange will set the data in the parent component.
+In this scenario, onChange will set the data in the parent component.
 Afterwards the data is passed on to JSON Forms, but JSON Forms will not revalidate and render again, since the data prop is the object emitted by the onChange method.
 On the other hand an anti pattern can be seen when looking at the `data` prop in the following example:
 
