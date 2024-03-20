@@ -14,6 +14,13 @@ import {
 JSON Forms offers the option to employ middleware, allowing you to integrate deeply with JSON Forms and directly modify JSON Forms state.
 This enables various use cases, for example to use JSON Forms in a controlled style and implementing custom data updates and validation methods.
 
+:::caution ATTENTION
+
+Middlewares allow for very powerful customization of internal JSON Forms behavior.
+Proceed with caution as it's easy to break core functionality if used inappropriately.
+
+:::
+
 In this tutorial, we'll introduce the JSON Forms reducer pattern and its key actions.
 Through two examples, we'll demonstrate how middleware enables controlled and customized form interactions.
 
@@ -42,7 +49,7 @@ JSON Forms' most important actions are: `INIT`, `UPDATE_CORE` and `UPDATE_DATA`.
 
 When a middleware is handed over to JSON Forms, it will be called during dispatching instead of the regular reducer.
 The middleware can apply arbitrary changes and therefore has full power over the JSON Forms state.
-The middleware's arguments are the current JSON Forms state, the disptached action and the default reducer of JSON Forms.
+The middleware's arguments are the current JSON Forms state, the dispatched action and the default reducer of JSON Forms.
 
 ```js
 interface Middleware {
@@ -54,7 +61,8 @@ interface Middleware {
 }
 ```
 
-The default reducer can be used in cases where the behavior of JSON Forms shouldn't be altered:
+The default reducer can be used to apply the default behavior of JSON Forms for the action in question.
+The following middleware has the same effect as not using any middleware:
 
 ```js
 const middleware = (
@@ -112,6 +120,7 @@ const middleware = useCallback((state, action, defaultReducer) => {
 
 In this example, we'll look at a form that lets you choose your activity for the weekend and validates that activity based on the current weather.
 Using middleware, we'll implement this example in JSON Forms with a controlled approach, meaning data and errors are stored in the parent components state.
+
 When an `INIT` or `UPDATE_DATA` action is triggered, we update the data in the parent's state and invoke our custom validation function, but return the original state in the middleware.
 This way JSON Forms doesn't update its internal state. Instead, the data and errors from the parent component are passed as properties to JSON Forms.
 In combination with the `NoValidation` mode, JSON Forms is entirely controlled by its parent component.
