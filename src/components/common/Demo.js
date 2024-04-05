@@ -1,35 +1,35 @@
-import React, { useState } from "react";
-import { JsonForms } from "@jsonforms/react";
-import { createTheme, styled, ThemeProvider } from "@mui/material/styles";
+import React, { useState } from 'react';
+import { JsonForms } from '@jsonforms/react';
+import { createTheme, styled, ThemeProvider } from '@mui/material/styles';
 import {
   materialCells,
   materialRenderers,
-} from "@jsonforms/material-renderers";
-import Tabs from "@theme/Tabs";
-import TabItem from "@theme/TabItem";
-import { Highlight, themes } from "prism-react-renderer";
-import { usePrismTheme } from "@docusaurus/theme-common";
+} from '@jsonforms/material-renderers';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+import { Highlight, themes } from 'prism-react-renderer';
+import { usePrismTheme } from '@docusaurus/theme-common';
 
 const theme = createTheme({
   components: {
     MuiFormControl: {
       styleOverrides: {
         root: {
-          margin: "0.8em 0",
+          margin: '0.8em 0',
         },
       },
       defaultProps: {
-        variant: "standard",
+        variant: 'standard',
       },
     },
     MuiTextField: {
       defaultProps: {
-        variant: "standard",
+        variant: 'standard',
       },
     },
     MuiSelect: {
       defaultProps: {
-        variant: "standard",
+        variant: 'standard',
       },
     },
   },
@@ -37,39 +37,39 @@ const theme = createTheme({
 
 const defaultTheme = createTheme();
 
-const CodeBlockName = styled("div")({
-  backgroundColor: "#292d3e",
-  color: "#fff",
-  borderTopRightRadius: "var(--ifm-pre-border-radius)",
-  borderTopLeftRadius: "var(--ifm-pre-border-radius)",
-  borderBottom: "1px solid #eee",
-  fontSize: "var(--ifm-code-font-size)",
+const CodeBlockName = styled('div')({
+  backgroundColor: '#292d3e',
+  color: '#fff',
+  borderTopRightRadius: 'var(--ifm-pre-border-radius)',
+  borderTopLeftRadius: 'var(--ifm-pre-border-radius)',
+  borderBottom: '1px solid #eee',
+  fontSize: 'var(--ifm-code-font-size)',
   fontWeight: 500,
-  padding: ".75rem var(--ifm-pre-padding)",
+  padding: '.75rem var(--ifm-pre-padding)',
 });
 
-const CodeBlock = styled("pre")({
+const CodeBlock = styled('pre')({
   borderTopRightRadius: 0,
   borderTopLeftRadius: 0,
 });
 
-const TabsWrapper = styled("div")({
-  color: "#000",
+const TabsWrapper = styled('div')({
+  color: '#000',
   marginBottom: 20,
-  margin: "auto",
-  overflow: "scroll",
+  margin: 'auto',
+  overflow: 'scroll',
 });
 
 const TabsContainer = styled(Tabs)({
-  "& li:first-child": {
-    marginRight: "auto",
+  '& li:first-child': {
+    marginRight: 'auto',
   },
 });
 
 const DemoTab = styled(TabItem)({
-  borderRadius: "var(--ifm-pre-border-radius)",
-  padding: "16px",
-  border: "1px solid #eee",
+  borderRadius: 'var(--ifm-pre-border-radius)',
+  padding: '16px',
+  border: '1px solid #eee',
 });
 
 const Code = (props) => {
@@ -78,10 +78,10 @@ const Code = (props) => {
   if (content === undefined) {
     content = {};
   }
-  const code = JSON.stringify(content, null, 2).replace(/\n$/, "");
+  const code = JSON.stringify(content, null, 2).replace(/\n$/, '');
   const prismTheme = usePrismTheme();
   return (
-    <Highlight code={code} language="json" theme={prismTheme}>
+    <Highlight code={code} language='json' theme={prismTheme}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <div>
           {codeBlockTitle && <CodeBlockName>{codeBlockTitle}</CodeBlockName>}
@@ -108,15 +108,15 @@ export const Demo = (props) => {
     <ThemeProvider theme={defaultTheme}>
       <TabsWrapper id={id}>
         <TabsContainer
-          defaultValue="demo"
+          defaultValue='demo'
           values={[
-            { label: "Demo", value: "demo" },
-            { label: "Schema", value: "schema" },
-            { label: "UI Schema", value: "uischema" },
-            { label: "Data", value: "data" },
+            { label: 'Demo', value: 'demo' },
+            { label: 'Schema', value: 'schema' },
+            { label: 'UI Schema', value: 'uischema' },
+            { label: 'Data', value: 'data' },
           ]}
         >
-          <DemoTab value="demo">
+          <DemoTab value='demo'>
             <ThemeProvider theme={theme}>
               <JsonForms
                 renderers={materialRenderers}
@@ -127,13 +127,13 @@ export const Demo = (props) => {
               />
             </ThemeProvider>
           </DemoTab>
-          <TabItem value="schema">
-            <Code name="schema.json">{schema}</Code>
+          <TabItem value='schema'>
+            <Code name='schema.json'>{schema}</Code>
           </TabItem>
-          <TabItem value="uischema">
-            <Code name="uischema.json">{uischema}</Code>
+          <TabItem value='uischema'>
+            <Code name='uischema.json'>{uischema}</Code>
           </TabItem>
-          <TabItem value="data">
+          <TabItem value='data'>
             <Code>{data}</Code>
           </TabItem>
         </TabsContainer>

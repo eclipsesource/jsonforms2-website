@@ -19,11 +19,7 @@ export const input = {
 };
 
 export const Example = () => (
-  <Demo
-    data={input.data}
-    schema={input.schema}
-    uischema={input.uischema}
-  />
+  <Demo data={input.data} schema={input.schema} uischema={input.uischema} />
 );
 
 export const customLabelInput = {
@@ -207,10 +203,7 @@ export const ExampleWithCustomClearBackground = () => (
             jsonforms: { input: { delete: { background: '#f44336' } } },
           }}
         >
-          <JsonFormsDispatch
-            schema={input.schema}
-            uischema={input.uischema}
-          />
+          <JsonFormsDispatch schema={input.schema} uischema={input.uischema} />
         </ThemeProvider>
       );
     }}
