@@ -255,7 +255,7 @@ export const CarWash = () => {
     const price = data.services.length*15;
     if (data.price === price){
         setFormData(data);
-    }else{
+    } else {
         setFormData({...data, price: price})
     }
   }
