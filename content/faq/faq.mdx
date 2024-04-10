@@ -207,7 +207,7 @@ Subsequently, we adjust the price fields based on the selected services and upda
 We additionally override the `INIT` and `UPDATE_CORE` actions, in case the data prop passed to JSON Forms doesn't have the correct price set yet.
 
 ```js
-import { INIT, UPDATE_DATA } from  '@jsonforms/core'
+import { INIT, UPDATE_CORE, UPDATE_DATA } from  '@jsonforms/core'
 
 ...
 const middleware = useCallback((state, action, defaultReducer) => {
