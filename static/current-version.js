@@ -1,2 +1,2 @@
-export const currentVersion = 'currentVersion';
-export const nextVersion = 'nextVersion';
+export const currentVersion = '3.3.0';
+export const nextVersion = undefined;
