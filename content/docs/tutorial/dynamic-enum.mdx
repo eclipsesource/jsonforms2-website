@@ -38,12 +38,12 @@ The `city` field, in turn, is dependent on the `region` field.
     "country": {
       "type": "string",
       "x-endpoint": "countries",
-      "x-dependencies": ["region", "city"]
+      "x-dependents": ["region", "city"]
     },
     "region": {
       "type": "string",
       "x-endpoint": "regions",
-      "x-dependencies": ["city"]
+      "x-dependents": ["city"]
     },
     "city": {
       "type": "string"
@@ -115,11 +115,11 @@ const { MaterialEnumControl } = Unwrapped;
 
 With the `MaterialEnumControl`in place the main question remains how to set the `options` and the `handleChange` attribute.
 To determine the available options, we need to access the API.
-And to implement the `handleChange` function, we need access to the `x-dependencies` field in the schema.
+And to implement the `handleChange` function, we need access to the `x-dependents` field in the schema.
 
 #### Accessing Schema Data
 
-The `x-endpoint` and `x-dependencies` fields can be obtained from the schema object provided to the custom renderer via JSON Forms.
+The `x-endpoint` and `x-dependents` fields can be obtained from the schema object provided to the custom renderer via JSON Forms.
 Since these fields are not part of the standard JSON schema type in JSON Forms, we must add them to the schema's interface and access them as follows:
 
 ```js
@@ -134,7 +134,7 @@ const CountryControl = (
 
   const schema = props.schema as JsonSchemaWithDependenciesAndEndpoint;
   const endpoint = schema['x-endpoint'];
-  const dependent = schema['x-dependencies'];
+  const dependent = schema['x-dependents'];
 ...
 }
 ```
@@ -166,7 +166,7 @@ const CountryControl = (
   const schema = props.schema as JsonSchemaDependenciesAndEndpoint;
 
   const endpoint = schema['x-endpoint'];
-  const dependent: string[] = schema['x-dependencies'] ? schema['x-dependencies'] : [];
+  const dependent: string[] = schema['x-dependents'] ? schema['x-dependents'] : [];
 
   useEffect(() => {
     api.get(endpoint).then((result) => {
@@ -205,7 +205,7 @@ Now all that´s left to do is to [create a tester](./custom-renderers#2-create-a
 ### The Region Renderer
 
 The region renderer can be implemented similarly to the country renderer.
-It also accesses the API via the context and includes `x-endpoint` and `x-dependencies` fields defined in its schema.
+It also accesses the API via the context and includes `x-endpoint` and `x-dependents` fields defined in its schema.
 However, the options, on the other hand, are also dependent on the selected country.
 JSON Forms provides the `useJsonForms` hook, allowing you to access form data and trigger component rerenders when the data changes.
 Let's use this hook in our region renderer to access the selected country:
@@ -230,7 +230,7 @@ const RegionControl = (
   const [previousCountry, setPreviousCountry] = useState<String>();
 
   const endpoint = schema['x-endpoint'];
-  const dependent: string[] = schema['x-dependencies'] ? schema['x-dependencies'] : [];
+  const dependent: string[] = schema['x-dependents'] ? schema['x-dependents'] : [];
 
   if (previousCountry !== country) {
     setOptions([]);
