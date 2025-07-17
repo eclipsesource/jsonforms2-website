@@ -68,7 +68,8 @@ const TabsContainer = styled(Tabs)({
 const DemoTab = styled(TabItem)({
   borderRadius: 'var(--ifm-pre-border-radius)',
   padding: '16px',
-  border: '1px solid #eee'
+  border: '1px solid #eee',
+  overflowX: 'auto',
 });
 
 const Code = (props) => {
