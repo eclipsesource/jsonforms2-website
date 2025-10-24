@@ -120,11 +120,12 @@ Since these fields are not part of the standard JSON schema type in JSON Forms, 
 
 ```js
 type JsonSchemaWithDependenciesAndEndpoint = JsonSchema & {
-  dependent: string[];
-  endpoint: string;
+  'x-dependent': string[];
+  'x-endpoint': string;
 };
+
 const CountryControl = (
-  props: ControlProps & OwnPropsOfEnum & WithOptionLabel & TranslateProps
+  props: ControlProps & WithOptionLabel & TranslateProps
 ) => {
 ...
 
@@ -149,12 +150,12 @@ import { Unwrapped, WithOptionLabel } from '@jsonforms/material-renderers';
 const { MaterialEnumControl } = Unwrapped;
 
 type JsonSchemaWithDependenciesAndEndpoint = JsonSchema & {
-  dependent: string[];
-  endpoint: string;
+  'x-dependent': string[];
+  'x-endpoint': string;
 };
 
 const CountryControl = (
-  props: ControlProps & OwnPropsOfEnum & WithOptionLabel & TranslateProps
+  props: ControlProps & WithOptionLabel & TranslateProps
 ) => {
   const { handleChange } = props;
   const [options, setOptions] = useState<string[]>([]);
@@ -190,7 +191,7 @@ const CountryControl = (
   );
 };
 
-export default withJsonFormsEnumProps(
+export default withJsonFormsControlProps(
   withTranslateProps(React.memo(CountryControl)),
   false
 );
@@ -216,7 +217,7 @@ type JsonSchemaWithDependenciesAndEndpoint = JsonSchema & {
 };
 
 const RegionControl = (
-  props: ControlProps & OwnPropsOfEnum & WithOptionLabel & TranslateProps
+  props: ControlProps & WithOptionLabel & TranslateProps
 ) => {
   const schema = props.schema as JsonSchemaWithDependenciesAndEndpoint;
   const { handleChange } = props;
@@ -256,7 +257,7 @@ const RegionControl = (
   );
 };
 
-export default withJsonFormsEnumProps(
+export default withJsonFormsControlProps(
   withTranslateProps(React.memo(RegionControl)),
   false
 );

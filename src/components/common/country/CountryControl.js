@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { withJsonFormsEnumProps, withTranslateProps } from '@jsonforms/react';
+import { withJsonFormsControlProps, withTranslateProps } from '@jsonforms/react';
 import { CircularProgress } from '@mui/material';
 import { Unwrapped } from '@jsonforms/material-renderers';
 import { APIContext } from '../../docs/tutorials/dynamic-enum';
@@ -16,8 +16,8 @@ const CountryControl = (
   const api = React.useContext(APIContext);
   const schema = props.schema ;
 
-  const endpoint = schema.endpoint;
-  const dependent = schema.dependent ? schema.dependent : [];
+  const endpoint = schema['x-endpoint'];
+  const dependent = schema['x-dependent'] ? schema['x-dependent'] : [];
 
   useEffect(() => {
     setOptions([]);
@@ -46,7 +46,7 @@ const CountryControl = (
   );
 };
 
-export default withJsonFormsEnumProps(
+export default withJsonFormsControlProps(
   withTranslateProps(React.memo(CountryControl)),
   false
 );

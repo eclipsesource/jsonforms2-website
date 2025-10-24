@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { useJsonForms, withJsonFormsEnumProps, withTranslateProps } from '@jsonforms/react';
+import { useJsonForms, withJsonFormsControlProps, withTranslateProps } from '@jsonforms/react';
 import { CircularProgress } from '@mui/material';
 import { Unwrapped } from '@jsonforms/material-renderers';
 import { APIContext } from '../../docs/tutorials/dynamic-enum';
@@ -16,8 +16,8 @@ const RegionControl = (
   const country = useJsonForms().core?.data.country;
   const [previousCountry, setPreviousCountry] = useState();
 
-  const endpoint = schema.endpoint;
-  const dependent = schema.dependent ? schema.dependent : [];
+  const endpoint = schema['x-endpoint'];
+  const dependent = schema['x-dependent'] ? schema['x-dependent'] : [];
 
   if (previousCountry !== country) {
     setOptions([]);
@@ -47,7 +47,7 @@ const RegionControl = (
   );
 };
 
-export default withJsonFormsEnumProps(
+export default withJsonFormsControlProps(
   withTranslateProps(React.memo(RegionControl)),
   false
 );

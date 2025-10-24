@@ -17,13 +17,13 @@ const schema = {
     "properties": {
       "country": {
         "type": "string",
-        "endpoint": "countries",
-        "dependent": ["region", "city"]
+        "x-endpoint": "countries",
+        "x-dependent": ["region", "city"]
       },
       "region": {
         "type": "string",
-        "endpoint": "regions",
-        "dependent": ["city"]
+        "x-endpoint": "regions",
+        "x-dependent": ["city"]
       },
       "city": {
         "type": "string"
