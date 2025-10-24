@@ -16,13 +16,13 @@ const RegionControl = (
   const country = useJsonForms().core?.data.country;
   const [previousCountry, setPreviousCountry] = useState();
 
-  const endponit = schema.endpoint;
+  const endpoint = schema.endpoint;
   const dependent = schema.dependent ? schema.dependent : [];
 
   if (previousCountry !== country) {
     setOptions([]);
     setPreviousCountry(country);
-    api.get(endponit + '/' + country).then((result) => {
+    api.get(endpoint + '/' + country).then((result) => {
       setOptions(result);
     });
   }

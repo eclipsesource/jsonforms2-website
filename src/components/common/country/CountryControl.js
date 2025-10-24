@@ -16,15 +16,15 @@ const CountryControl = (
   const api = React.useContext(APIContext);
   const schema = props.schema ;
 
-  const endponit = schema.endpoint;
+  const endpoint = schema.endpoint;
   const dependent = schema.dependent ? schema.dependent : [];
 
   useEffect(() => {
     setOptions([]);
-    api.get(endponit).then((result) => {
+    api.get(endpoint).then((result) => {
       setOptions(result);
     });
-  }, [api, endponit]);
+  }, [api, endpoint]);
 
   if (options.length === 0) {
     return <CircularProgress />;
