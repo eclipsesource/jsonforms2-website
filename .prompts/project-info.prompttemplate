@@ -1,7 +1,3 @@
-# JSON Forms Website - Architecture
-
-Docusaurus 3.x documentation site for [JSON Forms](https://jsonforms.io).
-
 ## Key Architectural Decisions
 
 - **Content in `/content/`**: All MDX content lives here, NOT in `/docs/` (Docusaurus default)
