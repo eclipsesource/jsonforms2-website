@@ -1,3 +1,7 @@
+# JSON Forms Documentation Website
+
+Docusaurus-based documentation website for [JSON Forms](https://github.com/eclipsesource/jsonforms), a declarative framework for building JSON Schema based forms.
+
 ## Key Architectural Decisions
 
 - **Content in `/content/`**: All MDX content lives here, NOT in `/docs/` (Docusaurus default)
@@ -10,9 +14,18 @@
 ### Interactive Examples
 Use the `Demo` component (`src/components/common/Demo.js`) which renders JSON Forms with Material-UI and provides tabbed Schema/UI Schema/Form views.
 
-### Adding New Documentation
-1. Create MDX file in `/content/docs/`
-2. Add entry to `/src/sidebars/docs.js`
+### Adding Documentation
+1. Create MDX file in `/content/docs/` or `/content/examples/`
+2. Add entry to the appropriate sidebar in `/src/sidebars/`
 
 ### Custom Renderers
 Example custom renderers exist in `src/components/common/` (rating, country, region controls).
+
+### Component Development
+- React components go in `/src/components/`
+- Use the existing Demo component pattern for interactive examples
+- Follow CSS Modules pattern for component-specific styles
+
+## Important Guidelines
+
+**Always build and test changes**: Run the build to check for compilation errors, then start the dev server and visually verify changes work correctly. Check for console errors in the browser. Do not consider a task complete until the build passes and changes have been visually verified.
