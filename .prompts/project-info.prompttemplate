@@ -1,125 +1,22 @@
-# JSON Forms Website - Project Architecture
+# JSON Forms Website - Architecture
 
-This repository contains the official documentation website for [JSON Forms](https://jsonforms.io), a declarative framework for building JSON-based forms.
+Docusaurus 3.x documentation site for [JSON Forms](https://jsonforms.io).
 
-## Technology Stack
+## Key Architectural Decisions
 
-- **Static Site Generator**: Docusaurus 3.x
-- **UI Framework**: React 18 with Material-UI (MUI)
-- **Content Format**: MDX (Markdown + JSX)
-- **Styling**: Infima CSS framework + Emotion CSS-in-JS
-- **Deployment**: Netlify
+- **Content in `/content/`**: All MDX content lives here, NOT in `/docs/` (Docusaurus default)
+- **Sidebars in `/src/sidebars/`**: Navigation configs are separate files, not in docusaurus.config.js
+- **Custom Blog Plugin** (`plugins/custom-blog-plugin.js`): Injects latest post into homepage
+- **Version fetching**: `build.sh` queries GitHub API, writes to `/static/current-version.js`
 
-## Directory Structure
+## Important Patterns
 
-```
-/
-├── content/                    # All content files (markdown/mdx)
-│   ├── docs/                   # Main documentation
-│   │   ├── tutorial/           # Tutorials and getting started guides
-│   │   ├── uischema/           # UI Schema documentation
-│   │   ├── integrations/       # Framework integrations (React, Angular, Vue)
-│   │   └── deprecated/         # Deprecated features documentation
-│   ├── examples/               # Interactive feature examples
-│   ├── news/                   # Blog posts and release announcements
-│   ├── community/              # Community content and extensions
-│   ├── faq/                    # FAQ content
-│   └── pages/                  # Custom pages (support page, assets)
-│
-├── src/                        # React components and configuration
-│   ├── components/             # React components organized by section
-│   │   ├── examples/           # Example demo components
-│   │   ├── docs/               # Documentation feature components
-│   │   ├── home/               # Homepage component
-│   │   ├── common/             # Shared components (Demo, custom renderers)
-│   │   └── faq/                # FAQ components
-│   ├── sidebars/               # Navigation sidebar configurations
-│   │   ├── docs.js             # Docs navigation structure
-│   │   ├── examples.js         # Examples navigation
-│   │   ├── community.js        # Community navigation
-│   │   └── faq.js              # FAQ navigation
-│   ├── css/
-│   │   └── global.css          # Global styles with theme variables
-│   └── custom-webpack/         # Custom webpack configuration plugin
-│
-├── plugins/
-│   └── custom-blog-plugin.js   # Extended blog plugin for homepage integration
-│
-├── static/                     # Static assets
-│   ├── img/                    # Images, logos, icons
-│   ├── api/                    # Generated API documentation
-│   └── current-version.js      # Version info (generated during build)
-│
-├── docusaurus.config.js        # Main Docusaurus configuration
-├── netlify.toml                # Netlify deployment configuration
-└── babel.config.js             # Babel configuration
-```
+### Interactive Examples
+Use the `Demo` component (`src/components/common/Demo.js`) which renders JSON Forms with Material-UI and provides tabbed Schema/UI Schema/Form views.
 
-## Content Architecture
+### Adding New Documentation
+1. Create MDX file in `/content/docs/`
+2. Add entry to `/src/sidebars/docs.js`
 
-### Documentation (`/content/docs/`)
-The main documentation organized into:
-- **Core Concepts**: Architecture, UI Schema elements, renderer sets
-- **Features**: Labels, i18n, validation, date/time pickers
-- **Tutorials**: Step-by-step guides for creating apps and custom renderers
-- **Integrations**: React, Angular, and Vue binding documentation
-
-### Examples (`/content/examples/`)
-Interactive examples demonstrating JSON Forms features:
-- Basic controls, arrays, layouts
-- Categorization and combinators
-- Custom controls and renderers
-
-### News (`/content/news/`)
-Blog posts and release announcements using a custom blog plugin.
-
-## Key Components
-
-### Demo Component (`src/components/common/Demo.js`)
-The central interactive component that:
-- Renders JSON Forms with Material-UI
-- Displays tabbed views for Schema, UI Schema, and rendered Form
-- Provides syntax highlighting for code display
-
-### Custom Renderers (`src/components/common/`)
-- **Rating Control**: Custom star rating renderer
-- **Country Control**: Country selection dropdown
-- **Region Control**: Region selection dropdown
-
-### Custom Plugins
-- **Custom Webpack Plugin** (`src/custom-webpack/`): Configures chunk splitting for optimized bundles
-- **Custom Blog Plugin** (`plugins/custom-blog-plugin.js`): Injects latest blog post into homepage
-
-## Navigation Structure
-
-Sidebars are configured in `src/sidebars/` with separate navigation for:
-- Documentation pages
-- Examples
-- Community content
-- FAQ
-
-## Configuration Files
-
-| File | Purpose |
-|------|---------|
-| `docusaurus.config.js` | Site config: title, navbar, footer, plugins, themes |
-| `netlify.toml` | Deployment: redirects, HTTP headers, CSP |
-| `src/sidebars/*.js` | Navigation structure for each content section |
-
-## Styling
-
-- **Infima**: Docusaurus default CSS framework
-- **CSS Variables**: Theme colors in `src/css/global.css`
-- **Primary Color**: `#25c2a0` (teal)
-- **CSS Modules**: Component-scoped styles
-- **Emotion**: CSS-in-JS for MUI integration
-
-## Version Management
-
-The website automatically fetches JSON Forms version information from the GitHub API during build. Version info is stored in `/static/current-version.js` and displayed on the homepage.
-
-## External Integrations
-
-- **GitHub API**: Fetches latest release version information
-- **Cloudflare Insights**: Analytics
-- **Local Search**: `@easyops-cn/docusaurus-search-local` plugin
+### Custom Renderers
+Example custom renderers exist in `src/components/common/` (rating, country, region controls).
