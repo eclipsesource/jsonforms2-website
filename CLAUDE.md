@@ -1,18 +1,14 @@
-# CLAUDE.md - AI Assistant Guidelines
+# JSON Forms Documentation Website
 
-This file provides context and guidelines for AI assistants working on the JSON Forms documentation website.
+Docusaurus-based documentation website for [JSON Forms](https://github.com/eclipsesource/jsonforms), a declarative framework for building JSON Schema based forms.
 
-## Project Context
-
-For detailed architecture information, see [.prompts/project-info.prompttemplate](.prompts/project-info.prompttemplate).
-
-This is a Docusaurus-based documentation website for the JSON Forms library. The site contains documentation, interactive examples, tutorials, and community content.
+For detailed architecture, see [.prompts/project-info.prompttemplate](.prompts/project-info.prompttemplate).
 
 ## Development Commands
 
 ### Install Dependencies
 ```bash
-npm install
+npm ci
 ```
 
 ### Start Development Server
