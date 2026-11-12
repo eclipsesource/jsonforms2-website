@@ -198,6 +198,59 @@ export const ExampleWithRadioGroup = () => (
   />
 );
 
+export const adornments = {
+  schema: {
+    type: 'object',
+    properties: {
+      price: { type: 'number' },
+      weight: { type: 'number' },
+      voltage: {
+        type: 'string',
+        enum: ['110', '230', '400'],
+      },
+    },
+  },
+  uischema: {
+    type: 'HorizontalLayout',
+    elements: [
+      {
+        type: 'Control',
+        scope: '#/properties/price',
+        options: {
+          startAdornment: '€',
+        },
+      },
+      {
+        type: 'Control',
+        scope: '#/properties/weight',
+        options: {
+          endAdornment: 'kg',
+        },
+      },
+      {
+        type: 'Control',
+        scope: '#/properties/voltage',
+        options: {
+          endAdornment: 'V',
+        },
+      },
+    ],
+  },
+  data: {
+    price: 19.99,
+    weight: 12.5,
+    voltage: '230',
+  },
+};
+
+export const ExampleWithAdornments = () => (
+  <Demo
+    data={adornments.data}
+    schema={adornments.schema}
+    uischema={adornments.uischema}
+  />
+);
+
 export const ExampleWithCustomClearBackground = () => (
   <Demo
     js={() => {

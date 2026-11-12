@@ -12,6 +12,7 @@ import {
   ExampleWithSortButtons,
   ExampleWithArrayLabel,
   ExampleWithRadioGroup,
+  ExampleWithAdornments,
   ExampleWithCustomClearBackground,
 } from '../../../src/components/docs/controls';
 
@@ -182,6 +183,28 @@ options: {
 ```
 
 When using the `readonly` option, you can disable the control or whole layout. See [example](/docs/readonly#ui-schema-option).
+
+### Adornments (`startAdornment`, `endAdornment`)
+
+:::info Note
+
+Adornment options are currently supported only by the React Material renderers.
+
+:::
+
+```json
+options: {
+  startAdornment: '€',
+  endAdornment: 'kg'
+}
+```
+
+Use the `startAdornment` and `endAdornment` options to show static text before or after the input, e.g. a currency symbol or a unit.
+The options are offered by the React Material renderer set for text, number, integer and enum controls. Enum controls support them both as autocomplete and as select.
+An end adornment is placed before built-in buttons like the clear button or the dropdown arrow.
+Date, time and date-time controls ignore these options.
+
+<ExampleWithAdornments />
 
 ## Theming
 
